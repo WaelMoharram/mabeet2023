@@ -21,9 +21,16 @@
             <li class="nav-item list-inline-item">
                 <a href="" class="btn btn-mabet btn">طلب جديد</a>
             </li>
+
+            @if(app()->getLocale() == 'ar')
             <li class="nav-item list-inline-item">
-                <a class="nav-item list-inline-item btn" href="#">English</a>
+                <a class="nav-item list-inline-item btn" href="{{route('lang-en')}}">English</a>
             </li>
+            @else
+                <li class="nav-item list-inline-item">
+                    <a class="nav-item list-inline-item btn" href="{{route('lang-ar')}}">العربية</a>
+                </li>
+            @endif
         </ul>
     </div>
 </nav>
