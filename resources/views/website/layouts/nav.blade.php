@@ -10,7 +10,7 @@
         <ul class="navbar-nav mr-auto">
 
             <li class="nav-item list-inline-item">
-                <a class="nav-item list-inline-item btn" href="login.html">تسجيل الدخول</a>
+                <a class="nav-item list-inline-item btn" href="{{route('login')}}">{{__('Login')}}</a>
             </li>
             <li class="nav-item list-inline-item">
                 <a class="nav-item list-inline-item btn" href="about-mabet.html">عن مبيت</a>

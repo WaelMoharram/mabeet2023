@@ -5,7 +5,7 @@
 
 <!-- Start Header -->
 
-<body class="mabet-home">
+<body class="@yield('type')">
 
 @include('website.layouts.nav')
 

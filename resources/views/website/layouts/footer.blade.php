@@ -3,7 +3,12 @@
         <div class="row">
             <div class="col-lg-12">
                 <div class="logo">
-                    <img src="asset/images/foot-logo.png" class="img-fluid">
+                    @hasSection('type')
+                        <img src="{{asset('/')}}/asset/images/foot-logo.png" class="img-fluid">
+                    @else
+                        <img src="{{asset('/')}}/asset/images/logo.png" class="img-fluid">
+
+                    @endif
                 </div>
                 <p>أطلب سكن و استقبل عروض من أصحاب المساكن مباشرة</p>
 

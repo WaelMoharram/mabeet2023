@@ -1,47 +1,71 @@
-<x-guest-layout>
-    <!-- Session Status -->
-    <x-auth-session-status class="mb-4" :status="session('status')" />
+@extends('website.layouts.app')
+@section('title'){!! __('Login') !!}@endsection
 
-    <form method="POST" action="{{ route('login') }}">
-        @csrf
 
-        <!-- Email Address -->
-        <div>
-            <x-input-label for="email" :value="__('Email')" />
-            <x-text-input id="email" class="block mt-1 w-full" type="email" name="email" :value="old('email')" required autofocus autocomplete="username" />
-            <x-input-error :messages="$errors->get('email')" class="mt-2" />
+
+@section('content')
+    <div class="register text-center new-order">
+        <div class="container">
+            <div class="main-title">
+                <h1>اشتراك حساب جديد</h1>
+                <h5>اشتراك حساب جديد مع منصّة مبيت لتتمكن من طلب وحدات سكنية.<br> لديك حساب؟ تسجيل الدخول</h5>
+            </div>
+
+
+            <div class="area">
+
+                <section class="grouped-radio">
+                    <form>
+                        <div class="row mb-3">
+                            <div class="col-lg-6 col-md-6">
+                                <div class="box">
+                                    <input type="radio" id="control_01" name="select" value="1">
+                                    <label for="control_01">
+                                        <h2>أنا ابحث عن سكن</h2>
+                                    </label>
+                                </div>
+                            </div>
+                            <div class="col-lg-6 col-md-6">
+                                <div class="box">
+                                    <input type="radio" id="control_02" name="select" value="2">
+                                    <label for="control_02">
+                                        <h2>أنا مالك وحدة سكنية</h2>
+                                    </label>
+                                </div>
+                            </div>
+
+                            <div class="col-12">
+                                <hr>
+                            </div>
+
+                            <a href="{{route('google-login')}}" class="col-12">
+                                <div class="box-social">
+                                    <h2>اشترك بحساب جوجل</h2>
+                                    <img src="asset/images/google.png" class="img-fluid">
+                                </div>
+                            </a>
+
+                            <div class="col-12">
+                                <div class="box-social">
+                                    <h2>اشترك بحساب آبل</h2>
+                                    <img src="asset/images/apple.png" class="img-fluid">
+                                </div>
+                            </div>
+
+                        </div>
+                    </form>
+                </section>
+
+
+                <div class="content">
+                    <p class="my-5 py-2">بالإشتراك، انت توافق تلقائياً على <a href="index.html">الشروط والأحكام</a> الخاصة بمنصة مبيت.</p>
+                </div>
+            </div>
         </div>
 
-        <!-- Password -->
-        <div class="mt-4">
-            <x-input-label for="password" :value="__('Password')" />
+        <!-- privacy -->
 
-            <x-text-input id="password" class="block mt-1 w-full"
-                            type="password"
-                            name="password"
-                            required autocomplete="current-password" />
 
-            <x-input-error :messages="$errors->get('password')" class="mt-2" />
-        </div>
+    </div>
+@endsection
 
-        <!-- Remember Me -->
-        <div class="block mt-4">
-            <label for="remember_me" class="inline-flex items-center">
-                <input id="remember_me" type="checkbox" class="rounded dark:bg-gray-900 border-gray-300 dark:border-gray-700 text-indigo-600 shadow-sm focus:ring-indigo-500 dark:focus:ring-indigo-600 dark:focus:ring-offset-gray-800" name="remember">
-                <span class="ml-2 text-sm text-gray-600 dark:text-gray-400">{{ __('Remember me') }}</span>
-            </label>
-        </div>
-
-        <div class="flex items-center justify-end mt-4">
-            @if (Route::has('password.request'))
-                <a class="underline text-sm text-gray-600 dark:text-gray-400 hover:text-gray-900 dark:hover:text-gray-100 rounded-md focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500 dark:focus:ring-offset-gray-800" href="{{ route('password.request') }}">
-                    {{ __('Forgot your password?') }}
-                </a>
-            @endif
-
-            <x-primary-button class="ml-3">
-                {{ __('Log in') }}
-            </x-primary-button>
-        </div>
-    </form>
-</x-guest-layout>

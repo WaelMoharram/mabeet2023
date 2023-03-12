@@ -1,5 +1,6 @@
 @extends('website.layouts.app')
 @section('title'){!! __('Home') !!}@endsection
+@section('type'){{'mabet-home'}}@endsection
 
 
 
