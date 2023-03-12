@@ -13,13 +13,13 @@
                 <a class="nav-item list-inline-item btn" href="{{route('login')}}">{{__('Login')}}</a>
             </li>
             <li class="nav-item list-inline-item">
-                <a class="nav-item list-inline-item btn" href="about-mabet.html">عن مبيت</a>
+                <a class="nav-item list-inline-item btn" href="about-mabet.html">{{__('About mabeet')}}</a>
             </li>
             <li class="nav-item list-inline-item">
-                <a class="nav-item list-inline-item btn" href="#">أعرض وحدتك</a>
+                <a class="nav-item list-inline-item btn" href="#">{{__('Add your unit')}}</a>
             </li>
             <li class="nav-item list-inline-item">
-                <a href="" class="btn btn-mabet btn">طلب جديد</a>
+                <a href="" class="btn btn-mabet btn">{{__('New request')}}</a>
             </li>
 
             @if(app()->getLocale() == 'ar')
