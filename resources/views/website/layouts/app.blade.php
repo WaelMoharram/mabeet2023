@@ -4,7 +4,9 @@
 @include('website.layouts.head')
 
 <!-- Start Header -->
-
+@auth
+    {{\Illuminate\Support\Facades\Auth::user()}}
+@endauth
 <body class="@yield('type')">
 
 @include('website.layouts.nav')
