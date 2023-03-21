@@ -13,7 +13,7 @@
                     <a href="" class="btn btn-mabet btn">{{__('New request')}}</a>
                 </li>
                 <li class="nav-item list-inline-item">
-                    <a class="nav-item list-inline-item btn" href="{{route('profile')}}">{{__('Profile')}}</a>
+                    <a class="nav-item list-inline-item btn" href="{{route('my-profile')}}">{{__('Profile')}}</a>
                 </li>
                 <li class="nav-item list-inline-item">
                     <a class="nav-item list-inline-item btn" href="{{route('orders')}}">{{__('Requests and offers')}}</a>
