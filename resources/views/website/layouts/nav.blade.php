@@ -30,6 +30,15 @@
                 <li class="nav-item list-inline-item">
                     <a href="" class="btn btn-mabet btn">{{__('New request')}}</a>
                 </li>
+                            @if(app()->getLocale() == 'ar')
+                            <li class="nav-item list-inline-item">
+                                <a class="nav-item list-inline-item btn" href="{{route('lang-en')}}">En</a>
+                            </li>
+                            @else
+                                <li class="nav-item list-inline-item">
+                                    <a class="nav-item list-inline-item btn" href="{{route('lang-ar')}}">عربى</a>
+                                </li>
+                            @endif
         @else
 
             <li class="nav-item list-inline-item">
@@ -44,16 +53,17 @@
             <li class="nav-item list-inline-item">
                 <a href="" class="btn btn-mabet btn">{{__('New request')}}</a>
             </li>
+                            @if(app()->getLocale() == 'ar')
+                            <li class="nav-item list-inline-item">
+                                <a class="nav-item list-inline-item btn" href="{{route('lang-en')}}">English</a>
+                            </li>
+                            @else
+                                <li class="nav-item list-inline-item">
+                                    <a class="nav-item list-inline-item btn" href="{{route('lang-ar')}}">العربية</a>
+                                </li>
+                            @endif
             @endauth
-{{--            @if(app()->getLocale() == 'ar')--}}
-{{--            <li class="nav-item list-inline-item">--}}
-{{--                <a class="nav-item list-inline-item btn" href="{{route('lang-en')}}">English</a>--}}
-{{--            </li>--}}
-{{--            @else--}}
-{{--                <li class="nav-item list-inline-item">--}}
-{{--                    <a class="nav-item list-inline-item btn" href="{{route('lang-ar')}}">العربية</a>--}}
-{{--                </li>--}}
-{{--            @endif--}}
+
         </ul>
     </div>
 </nav>
