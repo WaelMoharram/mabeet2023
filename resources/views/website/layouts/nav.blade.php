@@ -28,7 +28,7 @@
                 </li>
 
                 <li class="nav-item list-inline-item">
-                    <a href="" class="btn btn-mabet btn">{{__('New request')}}</a>
+                    <a href="{{route('request')}}" class="btn btn-mabet btn">{{__('New request')}}</a>
                 </li>
                             @if(app()->getLocale() == 'ar')
                             <li class="nav-item list-inline-item">
@@ -50,9 +50,9 @@
             <li class="nav-item list-inline-item">
                 <a class="nav-item list-inline-item btn" href="#">{{__('Add your unit')}}</a>
             </li>
-            <li class="nav-item list-inline-item">
-                <a href="" class="btn btn-mabet btn">{{__('New request')}}</a>
-            </li>
+{{--            <li class="nav-item list-inline-item">--}}
+{{--                <a href="" class="btn btn-mabet btn">{{__('New request')}}</a>--}}
+{{--            </li>--}}
                             @if(app()->getLocale() == 'ar')
                             <li class="nav-item list-inline-item">
                                 <a class="nav-item list-inline-item btn" href="{{route('lang-en')}}">English</a>
