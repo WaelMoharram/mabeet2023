@@ -9,20 +9,26 @@
     <div class="collapse navbar-collapse" id="navbarSupportedContent">
         <ul class="navbar-nav mr-auto">
         @auth
+
                 <li class="nav-item list-inline-item">
-                    <a href="" class="btn btn-mabet btn">{{__('New request')}}</a>
+                    <a class="nav-item list-inline-item btn" href="{{route('notifications')}}">{{__('Notifications')}}</a>
                 </li>
-                <li class="nav-item list-inline-item">
-                    <a class="nav-item list-inline-item btn" href="{{route('my-profile')}}">{{__('Profile')}}</a>
-                </li>
-                <li class="nav-item list-inline-item">
-                    <a class="nav-item list-inline-item btn" href="{{route('orders')}}">{{__('Requests and offers')}}</a>
-                </li>
+
                 <li class="nav-item list-inline-item">
                     <a class="nav-item list-inline-item btn" href="{{route('chat')}}">{{__('Chat')}}</a>
                 </li>
+
                 <li class="nav-item list-inline-item">
-                    <a class="nav-item list-inline-item btn" href="{{route('notifications')}}">{{__('Notifications')}}</a>
+                    <a class="nav-item list-inline-item btn" href="{{route('orders')}}">{{__('Requests and offers')}}</a>
+                </li>
+
+
+                <li class="nav-item list-inline-item">
+                    <a class="nav-item list-inline-item btn" href="{{route('my-profile')}}">{{__('Profile')}}</a>
+                </li>
+
+                <li class="nav-item list-inline-item">
+                    <a href="" class="btn btn-mabet btn">{{__('New request')}}</a>
                 </li>
         @else
 
