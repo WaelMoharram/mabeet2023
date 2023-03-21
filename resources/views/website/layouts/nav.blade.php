@@ -8,6 +8,23 @@
 
     <div class="collapse navbar-collapse" id="navbarSupportedContent">
         <ul class="navbar-nav mr-auto">
+        @auth
+                <li class="nav-item list-inline-item">
+                    <a href="" class="btn btn-mabet btn">{{__('New request')}}</a>
+                </li>
+                <li class="nav-item list-inline-item">
+                    <a class="nav-item list-inline-item btn" href="{{route('profile')}}">{{__('Profile')}}</a>
+                </li>
+                <li class="nav-item list-inline-item">
+                    <a class="nav-item list-inline-item btn" href="{{route('orders')}}">{{__('Requests and offers')}}</a>
+                </li>
+                <li class="nav-item list-inline-item">
+                    <a class="nav-item list-inline-item btn" href="{{route('chat')}}">{{__('Chat')}}</a>
+                </li>
+                <li class="nav-item list-inline-item">
+                    <a class="nav-item list-inline-item btn" href="{{route('notifications')}}">{{__('Notifications')}}</a>
+                </li>
+        @else
 
             <li class="nav-item list-inline-item">
                 <a class="nav-item list-inline-item btn" href="{{route('login')}}">{{__('Login')}}</a>
@@ -21,16 +38,16 @@
             <li class="nav-item list-inline-item">
                 <a href="" class="btn btn-mabet btn">{{__('New request')}}</a>
             </li>
-
-            @if(app()->getLocale() == 'ar')
-            <li class="nav-item list-inline-item">
-                <a class="nav-item list-inline-item btn" href="{{route('lang-en')}}">English</a>
-            </li>
-            @else
-                <li class="nav-item list-inline-item">
-                    <a class="nav-item list-inline-item btn" href="{{route('lang-ar')}}">العربية</a>
-                </li>
-            @endif
+            @endauth
+{{--            @if(app()->getLocale() == 'ar')--}}
+{{--            <li class="nav-item list-inline-item">--}}
+{{--                <a class="nav-item list-inline-item btn" href="{{route('lang-en')}}">English</a>--}}
+{{--            </li>--}}
+{{--            @else--}}
+{{--                <li class="nav-item list-inline-item">--}}
+{{--                    <a class="nav-item list-inline-item btn" href="{{route('lang-ar')}}">العربية</a>--}}
+{{--                </li>--}}
+{{--            @endif--}}
         </ul>
     </div>
 </nav>

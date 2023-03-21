@@ -9,14 +9,15 @@ use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Redirect;
 use Illuminate\View\View;
 
-class ProfileController extends Controller
+class OrderController extends Controller
 {
     /**
      * Display the user's profile.
      */
-    public function show(): View
+    public function index(): View
     {
-        return view('profile.show');
+        $orders = [];
+        return view('orders.index');
     }
     /**
      * Display the user's profile form.
