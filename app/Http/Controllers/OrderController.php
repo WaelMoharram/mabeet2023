@@ -26,7 +26,7 @@ class OrderController extends Controller
     public function index(): View
     {
         $orders = [];
-        return view('orders.index');
+        return view('website.orders.index');
     }
     /**
      * Display the user's profile form.
