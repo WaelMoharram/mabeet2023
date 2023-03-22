@@ -33,7 +33,7 @@ class OrderController extends Controller
      */
     public function create(): View
     {
-        return view('orders.create');
+        return view('website.orders.create');
     }
     /**
      * Display the user's profile form.
