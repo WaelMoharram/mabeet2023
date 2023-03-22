@@ -11,6 +11,15 @@ use Illuminate\View\View;
 
 class OrderController extends Controller
 {
+
+    /**
+     * Instantiate a new controller instance.
+     */
+    public function __construct()
+    {
+        $this->middleware('auth');
+    }
+
     /**
      * Display the user's profile.
      */
@@ -24,10 +33,7 @@ class OrderController extends Controller
      */
     public function create(): View
     {
-        $order = [];
-        return view('profile.edit', [
-            'user' => $request->user(),
-        ]);
+        return view('orders.create');
     }
     /**
      * Display the user's profile form.

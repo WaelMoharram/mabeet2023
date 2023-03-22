@@ -58,6 +58,11 @@ Route::middleware(['language'])->group(function () {
         Route::delete('/profile', [ProfileController::class, 'destroy'])->name('profile.destroy');
 
         Route::get('/orders', [OrderController::class, 'index'])->name('orders');
+
+        Route::get('create_order',[OrderController::class, 'create'])->name('orders.create');
+
+        Route::post('store_order',[OrderController::class, 'store'])->name('orders.store');
+
         Route::get('/chat', [OrderController::class, 'index'])->name('chat');
         Route::get('/notifications', [OrderController::class, 'index'])->name('notifications');
         Route::get('/request', [OrderController::class, 'create'])->name('request');
