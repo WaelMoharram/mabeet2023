@@ -269,8 +269,8 @@
                             <section class="grouped-radio row">
                                 <div class="col-lg-2 col-md-4 col-6">
                                     <div class="box">
-                                        <input type="radio" id="control_18" name="select" value="18">
-                                        <label for="control_18"><h2>1</h2></label>
+                                        <input type="radio" id="control_50" name="select" value="18">
+                                        <label for="control_50"><h2>1</h2></label>
                                     </div>
                                 </div>
                                 <div class="col-lg-2 col-md-4 col-6">
