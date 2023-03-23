@@ -22,8 +22,8 @@
                                     @foreach($cities as $city)
                                         <div class="col-lg-12 col-md-6">
                                             <div class="box">
-                                                <input type="radio" id="control_{{$city->id}}" name="city_id" value="{{$city->id}}">
-                                                <label for="control_{{$city->id}}">
+                                                <input type="radio" id="city_{{$city->id}}" name="city_id" value="{{$city->id}}">
+                                                <label for="city_{{$city->id}}">
                                                     <h2>{{$city->name}}</h2>
                                                 </label>
                                             </div>
