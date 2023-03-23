@@ -39,11 +39,11 @@
   }
   // Brand Logo Poisitons
   var LogoPosition = {
-    "theme-primary": "-120px -54px;",
+    "theme-primary": "-120px -10px;;",
     "theme-success": "-120px -10px",
     "theme-danger": "-10px -10px",
     "theme-info": "-10px -54px",
-    "theme-warning": "-120px -54px",
+    "theme-warning": "-120px -10px;",
     "theme-dark": "-65px -10px"
   }
 
