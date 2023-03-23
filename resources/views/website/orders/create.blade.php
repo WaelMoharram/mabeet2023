@@ -6,7 +6,7 @@
     <div class="new-order" style="margin-top:50px;margin-bottom: 50px;">
         <div class="container">
             <div class="main-title text-center">
-                <h1>طلب جديد</h1>
+                <h1>اضافة وحدة سكنية</h1>
                 <h5>ادخل تفاصيل الطلب الجديد لإستقبال افضل العروض</h5>
             </div>
 
@@ -19,22 +19,17 @@
                         <section class="grouped-radio">
                             <form>
                                 <div class="row">
-                                    <div class="col-lg-12 col-md-6">
-                                        <div class="box">
-                                            <input type="radio" id="control_01" name="select" value="1">
-                                            <label for="control_01">
-                                                <h2>مكة المكرمة</h2>
-                                            </label>
+                                    @foreach($cities as $city)
+                                        <div class="col-lg-12 col-md-6">
+                                            <div class="box">
+                                                <input type="radio" id="control_{{$city->id}}" name="city_id" value="{{$city->id}}">
+                                                <label for="control_{{$city->id}}">
+                                                    <h2>{{$city->name}}</h2>
+                                                </label>
+                                            </div>
                                         </div>
-                                    </div>
-                                    <div class="col-lg-12 col-md-6">
-                                        <div class="box">
-                                            <input type="radio" id="control_02" name="select" value="2">
-                                            <label for="control_02">
-                                                <h2>المدينة المنورة</h2>
-                                            </label>
-                                        </div>
-                                    </div>
+                                    @endforeach
+
                                 </div>
 
 

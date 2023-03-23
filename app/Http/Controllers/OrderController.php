@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Http\Requests\ProfileUpdateRequest;
+use App\Models\City;
 use Illuminate\Http\RedirectResponse;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
@@ -33,7 +34,8 @@ class OrderController extends Controller
      */
     public function create(): View
     {
-        return view('website.orders.create');
+        $cities = City::all();
+        return view('website.orders.create',compact('cities'));
     }
     /**
      * Display the user's profile form.
