@@ -426,9 +426,9 @@ body.fixed-footer footer.footer-dark {
   display : none;
 }
 .main-menu.menu-light .navigation > li.active > a {
-  background : -webkit-linear-gradient(208deg, #3fae56, rgba(242,223,165, 0.7));
-  background :         linear-gradient(-118deg, #3fae56, rgba(242,223,165, 0.7));
-  box-shadow : 0 0 10px 1px rgba(242,223,165, 0.7);
+  background : -webkit-linear-gradient(208deg, #3fae56, rgba(63,174,85, 0.7));
+  background :         linear-gradient(-118deg, #3fae56, rgba(63,174,85, 0.7));
+  box-shadow : 0 0 10px 1px rgba(63,174,85, 0.7);
   color : #FFFFFF;
   font-weight : 400;
   border-radius : 4px;
@@ -470,9 +470,9 @@ body.fixed-footer footer.footer-dark {
   color : #6C6C6C;
 }
 .main-menu.menu-light .navigation > li ul .active {
-  background : -webkit-linear-gradient(208deg, #3fae56, rgba(242,223,165, 0.7));
-  background :         linear-gradient(-118deg, #3fae56, rgba(242,223,165, 0.7));
-  box-shadow : 0 0 10px 1px rgba(242,223,165, 0.7);
+  background : -webkit-linear-gradient(208deg, #3fae56, rgba(63,174,85, 0.7));
+  background :         linear-gradient(-118deg, #3fae56, rgba(63,174,85, 0.7));
+  box-shadow : 0 0 10px 1px rgba(63,174,85, 0.7);
   border-radius : 4px;
 }
 .main-menu.menu-light .navigation > li ul .active > a {
@@ -592,9 +592,9 @@ body.fixed-footer footer.footer-dark {
   display : none;
 }
 .main-menu.menu-dark .navigation > li.active > a {
-  background : -webkit-linear-gradient(208deg, #3fae56, rgba(242,223,165, 0.7));
-  background :         linear-gradient(-118deg, #3fae56, rgba(242,223,165, 0.7));
-  box-shadow : 0 0 10px 1px rgba(242,223,165, 0.7);
+  background : -webkit-linear-gradient(208deg, #3fae56, rgba(63,174,85, 0.7));
+  background :         linear-gradient(-118deg, #3fae56, rgba(63,174,85, 0.7));
+  box-shadow : 0 0 10px 1px rgba(63,174,85, 0.7);
   color : #FFFFFF;
   font-weight : 400;
   border-radius : 4px;
@@ -636,9 +636,9 @@ body.fixed-footer footer.footer-dark {
   color : #E6E6E6;
 }
 .main-menu.menu-dark .navigation > li ul .active {
-  background : -webkit-linear-gradient(208deg, #3fae56, rgba(242,223,165, 0.7));
-  background :         linear-gradient(-118deg, #3fae56, rgba(242,223,165, 0.7));
-  box-shadow : 0 0 10px 1px rgba(242,223,165, 0.7);
+  background : -webkit-linear-gradient(208deg, #3fae56, rgba(63,174,85, 0.7));
+  background :         linear-gradient(-118deg, #3fae56, rgba(63,174,85, 0.7));
+  box-shadow : 0 0 10px 1px rgba(63,174,85, 0.7);
   border-radius : 4px;
 }
 .main-menu.menu-dark .navigation > li ul .active > a {
@@ -3585,7 +3585,7 @@ table.dataTable.complex-headers thead th, table.dataTable.complex-headers thead 
   border-left : 1px solid #DAE1E7;
 }
 table.dataTable tbody tr.selected {
-  background-color : rgba(242,223,165, 0.05) !important;
+  background-color : rgba(63,174,85, 0.05) !important;
   color : #3fae56 !important;
   box-shadow : 0 0 1px 0 #3fae56 !important;
   border-radius : 5px;

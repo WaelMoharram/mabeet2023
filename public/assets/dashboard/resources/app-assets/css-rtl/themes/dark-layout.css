@@ -217,7 +217,7 @@ body.dark-layout .data-list-view-header .dataTable tbody tr, body.dark-layout .d
   background-color : transparent;
 }
 body.dark-layout .data-list-view-header .dataTable tbody tr.selected td, body.dark-layout .data-thumb-view-header .dataTable tbody tr.selected td {
-  background-color : rgba(242,223,165, 0.05);
+  background-color : rgba(63,174,85, 0.05);
   color : #3fae56;
 }
 body.dark-layout .data-list-view-header .add-new-data, body.dark-layout .data-thumb-view-header .add-new-data {
@@ -472,8 +472,8 @@ body.dark-layout .activity-timeline {
   border-color : #414561;
 }
 body.dark-layout #dashboard-analytics .bg-analytics {
-  background : -webkit-linear-gradient(208deg, #3fae56, rgba(242,223,165, 0.7));
-  background :         linear-gradient(-118deg, #3fae56, rgba(242,223,165, 0.7));
+  background : -webkit-linear-gradient(208deg, #3fae56, rgba(63,174,85, 0.7));
+  background :         linear-gradient(-118deg, #3fae56, rgba(63,174,85, 0.7));
 }
 body.dark-layout #dashboard-analytics .bg-analytics p {
   color : #FFFFFF;
@@ -1425,10 +1425,10 @@ body.dark-layout.horizontal-layout.vertical-overlay-menu .main-menu .nav-item.ac
   border-radius : 0;
 }
 body.dark-layout.horizontal-layout.vertical-overlay-menu .main-menu .nav-item.active.sidebar-group-active .open ul li.active a {
-  background : -webkit-linear-gradient(208deg, #3fae56, rgba(242,223,165, 0.7)) !important;
-  background :         linear-gradient(-118deg, #3fae56, rgba(242,223,165, 0.7)) !important;
+  background : -webkit-linear-gradient(208deg, #3fae56, rgba(63,174,85, 0.7)) !important;
+  background :         linear-gradient(-118deg, #3fae56, rgba(63,174,85, 0.7)) !important;
   margin-bottom : 7px;
-  box-shadow : 0 0 6px 1px rgba(242,223,165, 0.6) !important;
+  box-shadow : 0 0 6px 1px rgba(63,174,85, 0.6) !important;
   color : #FFFFFF;
 }
 body.dark-layout.horizontal-layout.vertical-overlay-menu .main-menu ul li {

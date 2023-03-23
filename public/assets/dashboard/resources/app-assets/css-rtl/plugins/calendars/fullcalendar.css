@@ -31,7 +31,7 @@
 }
 .btn:focus, .fc .fc-button:focus, .btn.focus, .fc .focus.fc-button {
   outline : 0;
-  box-shadow : 0 0 0 0.2rem rgba(242,223,165, 0.25);
+  box-shadow : 0 0 0 0.2rem rgba(63,174,85, 0.25);
 }
 .btn.disabled, .fc .disabled.fc-button, .btn:disabled, .fc .fc-button:disabled {
   opacity : 0.65;
@@ -267,7 +267,7 @@ a.btn.disabled, .fc a.disabled.fc-button, fieldset:disabled a.btn, fieldset:disa
   border-color : #3fae56;
 }
 .btn-outline-primary:focus, .fc .fc-button:focus, .btn-outline-primary.focus, .fc .focus.fc-button {
-  box-shadow : 0 0 0 0.2rem rgba(242,223,165, 0.5);
+  box-shadow : 0 0 0 0.2rem rgba(63,174,85, 0.5);
 }
 .btn-outline-primary.disabled, .fc .disabled.fc-button, .btn-outline-primary:disabled, .fc .fc-button:disabled {
   color : #3fae56;
@@ -279,7 +279,7 @@ a.btn.disabled, .fc a.disabled.fc-button, fieldset:disabled a.btn, fieldset:disa
   border-color : #3fae56;
 }
 .btn-outline-primary:not(:disabled):not(.disabled):active:focus, .fc .fc-button:not(:disabled):not(.disabled):active:focus, .btn-outline-primary:not(:disabled):not(.disabled).active:focus, .fc .fc-button:not(:disabled):not(.disabled).active:focus, .show > .btn-outline-primary.dropdown-toggle:focus, .fc .show > .dropdown-toggle.fc-button:focus {
-  box-shadow : 0 0 0 0.2rem rgba(242,223,165, 0.5);
+  box-shadow : 0 0 0 0.2rem rgba(63,174,85, 0.5);
 }
 
 .btn-outline-secondary {
