@@ -11,7 +11,7 @@ return [
     |
     */
     'route'          => [
-        'prefix'     => 'translations',
+        'prefix'     => 'dashboard/translations',
         'middleware' => 'auth:admins',
     ],
 
