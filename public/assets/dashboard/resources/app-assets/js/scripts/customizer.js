@@ -11,7 +11,7 @@
   'use strict';
   // main menu active gradient colors object
   var themeColor = {
-    "theme-primary": "linear-gradient(118deg, #fccb32, rgba(242,223,165, 0.7))",
+    "theme-primary": "linear-gradient(118deg, #3fae56, rgba(242,223,165, 0.7))",
     "theme-success": "linear-gradient(118deg, #28c76f, rgba(40, 199, 111, 0.7))",
     "theme-danger": "linear-gradient(118deg, #ea5455, rgba(234, 84, 85, 0.7))",
     "theme-info": "linear-gradient(118deg, #00cfe8, rgba(0, 207, 232, 0.7))",
@@ -30,7 +30,7 @@
   // colors for navbar header text of main menu
   var currentColor = {
     "theme-default": "#fff",
-    "theme-primary": "#fccb32",
+    "theme-primary": "#3fae56",
     "theme-success": "#28c76f",
     "theme-danger": "#ea5455",
     "theme-info": "#00cfe8",
