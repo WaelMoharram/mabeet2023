@@ -6,7 +6,7 @@
     <div class="new-order" style="margin-top:50px;margin-bottom: 50px;">
         <div class="container">
             <div class="main-title text-center">
-                <h1>اضافة وحدة سكنية</h1>
+                <h1>طلب جديد</h1>
                 <h5>ادخل تفاصيل الطلب الجديد لإستقبال افضل العروض</h5>
             </div>
 
