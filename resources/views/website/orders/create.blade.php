@@ -324,28 +324,28 @@
                             <section class="grouped-radio row">
                                 <div class="col-lg-3 col-md-6">
                                     <div class="box">
-                                        <input type="radio" id="control_30" name="select" value="8">
+                                        <input type="radio" id="control_30" name="select1" value="30">
                                         <label for="control_30"><h2>أقل من 5,000</h2></label>
                                     </div>
                                 </div>
                                 <div class="col-lg-3 col-md-6">
 
                                     <div class="box">
-                                        <input type="radio" id="control_31" name="select" value="9">
+                                        <input type="radio" id="control_31" name="select1" value="31">
                                         <label for="control_31"><h2>10,000 ~ 5,000</h2></label>
                                     </div>
                                 </div>
                                 <div class="col-lg-3 col-md-6">
 
                                     <div class="box">
-                                        <input type="radio" id="control_32" name="select" value="10">
+                                        <input type="radio" id="control_32" name="select1" value="32">
                                         <label for="control_32"><h2>25,000 ~ 10,000</h2></label>
                                     </div>
                                 </div>
                                 <div class="col-lg-3 col-md-6">
 
                                     <div class="box">
-                                        <input type="radio" id="control_33" name="select" value="33">
+                                        <input type="radio" id="control_33" name="select1" value="33">
                                         <label for="control_33"><h2>لا يهم</h2></label>
                                     </div>
                                 </div>
