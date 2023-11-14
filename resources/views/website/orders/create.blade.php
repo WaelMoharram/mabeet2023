@@ -10,14 +10,15 @@
                 <h5>ادخل تفاصيل الطلب الجديد لإستقبال افضل العروض</h5>
             </div>
 
-            <div class="row">
+            <form class="row" method="post" action="{{route('orders.store')}}">
+                @csrf
                 <div class="col-lg-3">
                     <div class="area">
                         <h3>المكان</h3>
                         <p>تحديد مكان الإقامة والوحدة السكنية.</p>
 
                         <section class="grouped-radio">
-                            <form>
+
                                 <div class="row">
                                     @foreach($cities as $city)
                                         <div class="col-lg-12 col-md-6">
@@ -34,7 +35,7 @@
 
 
 
-                            </form>
+
                         </section>
                     </div>
                     <div class="area">
@@ -42,7 +43,6 @@
                         <p>تحديد موسم طلب الوحدة السكنية.</p>
 
                         <section class="grouped-radio">
-                            <form action="">
                                 <div class="row">
                                     <div class="col-lg-12 col-md-6">
                                         <div class="box">
@@ -86,7 +86,6 @@
                                     </div>
                                 </div>
 
-                            </form>
                         </section>
                     </div>
 
@@ -104,7 +103,6 @@
                         <h3>المسافة للمسجد</h3>
                         <p>الرجاء العلم ان الأسعار ترتفع كلما اقتربت الوحدة السكنية من المسجد.</p>
 
-                        <form>
                             <section class="grouped-radio row">
                                 <div class="col-lg-3 col-md-6">
                                     <div class="box">
@@ -136,7 +134,6 @@
 
 
                             </section>
-                        </form>
 
                     </div>
 
@@ -144,7 +141,6 @@
                         <h3>نوع الوحدة السكنية</h3>
                         <p>بإمكانك اختيار نوع السكن وتحديد عدد الوحدات المطلوبة تالياً.</p>
 
-                        <form>
                             <section class="grouped-radio row">
                                 <div class="col-lg-3 col-md-6">
                                     <div class="box">
@@ -192,7 +188,6 @@
 
 
                             </section>
-                        </form>
 
                     </div>
 
@@ -200,7 +195,6 @@
                         <h3>نوع الوحدة السكنية</h3>
                         <p>بإمكانك اختيار نوع السكن وتحديد عدد الوحدات المطلوبة تالياً.</p>
 
-                        <form>
                             <section class="grouped-radio row">
                                 <div class="col-lg-2 col-md-4 col-6">
                                     <div class="box">
@@ -257,7 +251,6 @@
                                     <input type="button" class="btn" value="تأكيد العدد">
                                 </div>
                             </div>
-                        </form>
 
                     </div>
 
@@ -265,49 +258,48 @@
                         <h3>عدد النزلاء</h3>
                         <p>هل ستسكن وحدك ام معك اشخاص اخرين؟</p>
 
-                        <form>
                             <section class="grouped-radio row">
                                 <div class="col-lg-2 col-md-4 col-6">
                                     <div class="box">
-                                        <input type="radio" id="control_50" name="select" value="18">
-                                        <label for="control_50"><h2>1</h2></label>
+                                        <input type="radio" id="control_24" name="select" value="18">
+                                        <label for="control_24"><h2>1</h2></label>
                                     </div>
                                 </div>
                                 <div class="col-lg-2 col-md-4 col-6">
 
                                     <div class="box">
-                                        <input type="radio" id="control_19" name="select" value="19">
-                                        <label for="control_19"><h2>2</h2></label>
+                                        <input type="radio" id="control_25" name="select" value="25">
+                                        <label for="control_25"><h2>2</h2></label>
                                     </div>
                                 </div>
                                 <div class="col-lg-2 col-md-4 col-6">
 
                                     <div class="box">
-                                        <input type="radio" id="control_20" name="select" value="20">
-                                        <label for="control_20"><h2>3</h2></label>
+                                        <input type="radio" id="control_26" name="select" value="26">
+                                        <label for="control_26"><h2>3</h2></label>
                                     </div>
                                 </div>
                                 <div class="col-lg-2 col-md-4 col-6">
 
                                     <div class="box">
-                                        <input type="radio" id="control_21" name="select" value="21">
-                                        <label for="control_21"><h2>4</h2></label>
-                                    </div>
-                                </div>
-
-                                <div class="col-lg-2 col-md-4 col-6">
-
-                                    <div class="box">
-                                        <input type="radio" id="control_22" name="select" value="22">
-                                        <label for="control_22"><h2>5</h2></label>
+                                        <input type="radio" id="control_27" name="select" value="27">
+                                        <label for="control_27"><h2>4</h2></label>
                                     </div>
                                 </div>
 
                                 <div class="col-lg-2 col-md-4 col-6">
 
                                     <div class="box">
-                                        <input type="radio" id="control_23" name="select" value="23">
-                                        <label for="control_23"><h2>6</h2></label>
+                                        <input type="radio" id="control_28" name="select" value="28">
+                                        <label for="control_28"><h2>5</h2></label>
+                                    </div>
+                                </div>
+
+                                <div class="col-lg-2 col-md-4 col-6">
+
+                                    <div class="box">
+                                        <input type="radio" id="control_29" name="select" value="29">
+                                        <label for="control_29"><h2>6</h2></label>
                                     </div>
                                 </div>
 
@@ -322,7 +314,6 @@
                                     <input type="button" class="btn" value="تأكيد العدد">
                                 </div>
                             </div>
-                        </form>
 
                     </div>
 
@@ -330,33 +321,32 @@
                         <h3>الميزانية</h3>
                         <p>قم بتحديد الميزانية لتكلفة الوحدة السكنية المطلوبة.</p>
 
-                        <form>
                             <section class="grouped-radio row">
                                 <div class="col-lg-3 col-md-6">
                                     <div class="box">
-                                        <input type="radio" id="control_08" name="select" value="8">
-                                        <label for="control_08"><h2>أقل من 5,000</h2></label>
+                                        <input type="radio" id="control_30" name="select" value="8">
+                                        <label for="control_30"><h2>أقل من 5,000</h2></label>
                                     </div>
                                 </div>
                                 <div class="col-lg-3 col-md-6">
 
                                     <div class="box">
-                                        <input type="radio" id="control_09" name="select" value="9">
-                                        <label for="control_09"><h2>10,000 ~ 5,000</h2></label>
+                                        <input type="radio" id="control_31" name="select" value="9">
+                                        <label for="control_31"><h2>10,000 ~ 5,000</h2></label>
                                     </div>
                                 </div>
                                 <div class="col-lg-3 col-md-6">
 
                                     <div class="box">
-                                        <input type="radio" id="control_010" name="select" value="10">
-                                        <label for="control_010"><h2>25,000 ~ 10,000</h2></label>
+                                        <input type="radio" id="control_32" name="select" value="10">
+                                        <label for="control_32"><h2>25,000 ~ 10,000</h2></label>
                                     </div>
                                 </div>
                                 <div class="col-lg-3 col-md-6">
 
                                     <div class="box">
-                                        <input type="radio" id="control_11" name="select" value="11">
-                                        <label for="control_11"><h2>لا يهم</h2></label>
+                                        <input type="radio" id="control_33" name="select" value="33">
+                                        <label for="control_33"><h2>لا يهم</h2></label>
                                     </div>
                                 </div>
 
@@ -367,7 +357,6 @@
                                 <label style="background: none; box-shadow: none; border-radius: 0; padding: 0; margin-bottom: 0; text-align: revert; position: relative; width: 100%;" class="form-check-label" for="exampleCheck1">بإضافة طلب جديد، انت توافق تلقائياً على الشروط والأحكام الخاصة بمنصة مبيت.</label>
                             </div>
 
-                        </form>
 
                     </div>
 
@@ -376,7 +365,8 @@
 
 
                 </div>
-            </div>
+            </form>
+
         </div>
     </div>
     <!-- New Order -->

@@ -18,7 +18,7 @@ class OrderController extends Controller
      */
     public function __construct()
     {
-        $this->middleware('auth');
+//        $this->middleware('auth');
     }
 
     /**
@@ -36,6 +36,14 @@ class OrderController extends Controller
     {
         $cities = City::all();
         return view('website.orders.create',compact('cities'));
+    }
+
+    public function store(Request $request)
+    {
+
+
+        toast(__('تمت الاضافة بنجاح - سيتم مراجعة طلبك قريبا'),'success');
+        return redirect()->back();
     }
     /**
      * Display the user's profile form.
