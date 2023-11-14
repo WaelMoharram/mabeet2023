@@ -46,7 +46,7 @@
                                 <div class="row">
                                     <div class="col-lg-12 col-md-6">
                                         <div class="box">
-                                            <input type="radio" id="control_03" name="select" value="3">
+                                            <input type="radio" id="control_03" name="select7" value="3">
                                             <label for="control_03">
                                                 <h2>موسم الحج</h2>
                                             </label>
@@ -54,7 +54,7 @@
                                     </div>
                                     <div class="col-lg-12 col-md-6">
                                         <div class="box">
-                                            <input type="radio" id="control_04" name="select" value="4">
+                                            <input type="radio" id="control_04" name="select7" value="4">
                                             <label for="control_04">
                                                 <h2>موسم العمرة (1-10 رمضان)</h2>
                                             </label>
@@ -62,7 +62,7 @@
                                     </div>
                                     <div class="col-lg-12 col-md-6">
                                         <div class="box">
-                                            <input type="radio" id="control_05" name="select" value="5">
+                                            <input type="radio" id="control_05" name="select7" value="5">
                                             <label for="control_05">
                                                 <h2>موسم العمرة (11-20 رمضان)</h2>
                                             </label>
@@ -70,7 +70,7 @@
                                     </div>
                                     <div class="col-lg-12 col-md-6">
                                         <div class="box">
-                                            <input type="radio" id="control_06" name="select" value="6">
+                                            <input type="radio" id="control_06" name="select7" value="6">
                                             <label for="control_06">
                                                 <h2>موسم العمرة (21-30 رمضان)</h2>
                                             </label>
@@ -106,28 +106,28 @@
                             <section class="grouped-radio row">
                                 <div class="col-lg-3 col-md-6">
                                     <div class="box">
-                                        <input type="radio" id="control_08" name="select" value="8">
+                                        <input type="radio" id="control_08" name="select6" value="8">
                                         <label for="control_08"><h2>300 متر او اقل</h2></label>
                                     </div>
                                 </div>
                                 <div class="col-lg-3 col-md-6">
 
                                     <div class="box">
-                                        <input type="radio" id="control_09" name="select" value="9">
+                                        <input type="radio" id="control_09" name="select6" value="9">
                                         <label for="control_09"><h2>600 متر او اقل</h2></label>
                                     </div>
                                 </div>
                                 <div class="col-lg-3 col-md-6">
 
                                     <div class="box">
-                                        <input type="radio" id="control_010" name="select" value="10">
+                                        <input type="radio" id="control_010" name="select6" value="10">
                                         <label for="control_010"><h2>ا كم او اقل</h2></label>
                                     </div>
                                 </div>
                                 <div class="col-lg-3 col-md-6">
 
                                     <div class="box">
-                                        <input type="radio" id="control_11" name="select" value="11">
+                                        <input type="radio" id="control_11" name="select6" value="11">
                                         <label for="control_11"><h2>لا يهم</h2></label>
                                     </div>
                                 </div>
@@ -144,28 +144,28 @@
                             <section class="grouped-radio row">
                                 <div class="col-lg-3 col-md-6">
                                     <div class="box">
-                                        <input type="radio" id="control_12" name="select" value="12">
+                                        <input type="radio" id="control_12" name="select5" value="12">
                                         <label for="control_12"><h2>سرير</h2></label>
                                     </div>
                                 </div>
                                 <div class="col-lg-3 col-md-6">
 
                                     <div class="box">
-                                        <input type="radio" id="control_13" name="select" value="13">
+                                        <input type="radio" id="control_13" name="select5" value="13">
                                         <label for="control_13"><h2>غرفة</h2></label>
                                     </div>
                                 </div>
                                 <div class="col-lg-3 col-md-6">
 
                                     <div class="box">
-                                        <input type="radio" id="control_14" name="select" value="14">
+                                        <input type="radio" id="control_14" name="select5" value="14">
                                         <label for="control_14"><h2>شقة</h2></label>
                                     </div>
                                 </div>
                                 <div class="col-lg-3 col-md-6">
 
                                     <div class="box">
-                                        <input type="radio" id="control_15" name="select" value="15">
+                                        <input type="radio" id="control_15" name="select5" value="15">
                                         <label for="control_15"><h2>دور كامل</h2></label>
                                     </div>
                                 </div>
@@ -173,7 +173,7 @@
                                 <div class="col-lg-3 col-md-6">
 
                                     <div class="box">
-                                        <input type="radio" id="control_16" name="select" value="16">
+                                        <input type="radio" id="control_16" name="select5" value="16">
                                         <label for="control_16"><h2>شاليه</h2></label>
                                     </div>
                                 </div>
@@ -181,7 +181,7 @@
                                 <div class="col-lg-3 col-md-6">
 
                                     <div class="box">
-                                        <input type="radio" id="control_17" name="select" value="17">
+                                        <input type="radio" id="control_17" name="select5" value="17">
                                         <label for="control_17"><h2>عمارة كاملة</h2></label>
                                     </div>
                                 </div>
@@ -198,28 +198,28 @@
                             <section class="grouped-radio row">
                                 <div class="col-lg-2 col-md-4 col-6">
                                     <div class="box">
-                                        <input type="radio" id="control_18" name="select" value="18">
+                                        <input type="radio" id="control_18" name="select4" value="18">
                                         <label for="control_18"><h2>1</h2></label>
                                     </div>
                                 </div>
                                 <div class="col-lg-2 col-md-4 col-6">
 
                                     <div class="box">
-                                        <input type="radio" id="control_19" name="select" value="19">
+                                        <input type="radio" id="control_19" name="select4" value="19">
                                         <label for="control_19"><h2>2</h2></label>
                                     </div>
                                 </div>
                                 <div class="col-lg-2 col-md-4 col-6">
 
                                     <div class="box">
-                                        <input type="radio" id="control_20" name="select" value="20">
+                                        <input type="radio" id="control_20" name="select4" value="20">
                                         <label for="control_20"><h2>3</h2></label>
                                     </div>
                                 </div>
                                 <div class="col-lg-2 col-md-4 col-6">
 
                                     <div class="box">
-                                        <input type="radio" id="control_21" name="select" value="21">
+                                        <input type="radio" id="control_21" name="select4" value="21">
                                         <label for="control_21"><h2>4</h2></label>
                                     </div>
                                 </div>
@@ -227,7 +227,7 @@
                                 <div class="col-lg-2 col-md-4 col-6">
 
                                     <div class="box">
-                                        <input type="radio" id="control_22" name="select" value="22">
+                                        <input type="radio" id="control_22" name="select4" value="22">
                                         <label for="control_22"><h2>5</h2></label>
                                     </div>
                                 </div>
@@ -235,7 +235,7 @@
                                 <div class="col-lg-2 col-md-4 col-6">
 
                                     <div class="box">
-                                        <input type="radio" id="control_23" name="select" value="23">
+                                        <input type="radio" id="control_23" name="select4" value="23">
                                         <label for="control_23"><h2>6</h2></label>
                                     </div>
                                 </div>
@@ -261,28 +261,28 @@
                             <section class="grouped-radio row">
                                 <div class="col-lg-2 col-md-4 col-6">
                                     <div class="box">
-                                        <input type="radio" id="control_24" name="select" value="18">
+                                        <input type="radio" id="control_24" name="select3" value="18">
                                         <label for="control_24"><h2>1</h2></label>
                                     </div>
                                 </div>
                                 <div class="col-lg-2 col-md-4 col-6">
 
                                     <div class="box">
-                                        <input type="radio" id="control_25" name="select" value="25">
+                                        <input type="radio" id="control_25" name="select3" value="25">
                                         <label for="control_25"><h2>2</h2></label>
                                     </div>
                                 </div>
                                 <div class="col-lg-2 col-md-4 col-6">
 
                                     <div class="box">
-                                        <input type="radio" id="control_26" name="select" value="26">
+                                        <input type="radio" id="control_26" name="select3" value="26">
                                         <label for="control_26"><h2>3</h2></label>
                                     </div>
                                 </div>
                                 <div class="col-lg-2 col-md-4 col-6">
 
                                     <div class="box">
-                                        <input type="radio" id="control_27" name="select" value="27">
+                                        <input type="radio" id="control_27" name="select3" value="27">
                                         <label for="control_27"><h2>4</h2></label>
                                     </div>
                                 </div>
@@ -290,7 +290,7 @@
                                 <div class="col-lg-2 col-md-4 col-6">
 
                                     <div class="box">
-                                        <input type="radio" id="control_28" name="select" value="28">
+                                        <input type="radio" id="control_28" name="select3" value="28">
                                         <label for="control_28"><h2>5</h2></label>
                                     </div>
                                 </div>
@@ -298,7 +298,7 @@
                                 <div class="col-lg-2 col-md-4 col-6">
 
                                     <div class="box">
-                                        <input type="radio" id="control_29" name="select" value="29">
+                                        <input type="radio" id="control_29" name="select3" value="29">
                                         <label for="control_29"><h2>6</h2></label>
                                     </div>
                                 </div>
