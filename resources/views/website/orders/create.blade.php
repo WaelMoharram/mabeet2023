@@ -76,14 +76,14 @@
                                             </label>
                                         </div>
                                     </div>
-                                    <div class="col-lg-12 col-md-6">
-                                        <div class="box">
-                                            <input type="radio" id="control_07" name="select" value="7">
-                                            <label for="control_07">
-                                                <h2>تاريخ آخر</h2>
-                                            </label>
-                                        </div>
-                                    </div>
+{{--                                    <div class="col-lg-12 col-md-6">--}}
+{{--                                        <div class="box">--}}
+{{--                                            <input type="radio" id="control_07" name="select" value="7">--}}
+{{--                                            <label for="control_07">--}}
+{{--                                                <h2>تاريخ آخر</h2>--}}
+{{--                                            </label>--}}
+{{--                                        </div>--}}
+{{--                                    </div>--}}
                                 </div>
 
                         </section>
