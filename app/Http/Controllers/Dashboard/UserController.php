@@ -5,6 +5,7 @@ namespace App\Http\Controllers\Dashboard;
 use App\Http\Controllers\Controller;
 
 use App\Http\Requests\UserRequest;
+use App\Models\Admin;
 use App\Models\User;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
@@ -173,10 +174,10 @@ class UserController extends Controller
      */
     public function switchTheme()
     {
-        if (Auth::user()->default_theme == 1){
-            User::find(Auth::id())->fill(['default_theme'=>0])->save();
+        if (Auth::user()->guard(['admins'])->default_theme == 1){
+            Admin::find(Auth::guard('admins')->id())->fill(['default_theme'=>0])->save();
         }else{
-            User::find(Auth::id())->fill(['default_theme'=>1])->save();
+            Admin::find(Auth::guard('admins')->id())->fill(['default_theme'=>1])->save();
         }
 
         return back();

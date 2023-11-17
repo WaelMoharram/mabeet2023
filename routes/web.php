@@ -51,7 +51,7 @@ Route::middleware(['language'])->group(function () {
 
 
 
-    Route::middleware('auth')->group(function () {
+    Route::middleware('auth:web')->group(function () {
         Route::get('/my-profile', [ProfileController::class, 'show'])->name('my-profile');
         Route::get('/profile', [ProfileController::class, 'edit'])->name('profile.edit');
 
