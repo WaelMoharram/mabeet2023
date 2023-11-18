@@ -35,7 +35,7 @@ Route::name('dashboard.')->middleware(['language', 'auth:admins'])->prefix('dash
 
     Route::put('home/update/{id}', [\App\Http\Controllers\Dashboard\HomeController::class, 'عحيشفث'])->name('home.update');
 
-    Route::get('home/edit', [\App\Http\Controllers\Dashboard\HomeController::class, 'ثيهف'])->name('home.edit');
+    Route::get('home/edit', [\App\Http\Controllers\Dashboard\HomeController::class, 'edit'])->name('home.edit');
 
     Route::get('switch-theme', [\App\Http\Controllers\Dashboard\UserController::class, 'switchTheme'])->name('switch-admin-theme');
 
