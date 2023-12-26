@@ -13,8 +13,8 @@
     <meta name="author" content="PIXINVENT">
     <meta name="csrf-token" content="{{ csrf_token() }}">
     <title>{{env('APP_NAME')}} | @yield('title')</title>
-    <link rel="apple-touch-icon" href="{{asset('assets/dashboard/resources')}}/app-assets/images/ico/apple-icon-120.png">
-    <link rel="shortcut icon" type="image/x-icon" href="{{asset('assets/dashboard/resources')}}/app-assets/images/ico/favicon.ico">
+    <link rel="apple-touch-icon" href="{{asset('assets/dashboard2/resources')}}/app-assets/images/ico/apple-icon-120.png">
+    <link rel="shortcut icon" type="image/x-icon" href="{{asset('assets/dashboard2/resources')}}/app-assets/images/ico/favicon.ico">
     <link href="https://fonts.googleapis.com/css?family=Montserrat:300,400,500,600" rel="stylesheet">
 
     @include('dashboard.layouts.partials._styles')
@@ -45,11 +45,8 @@
             </div>
             <div class="content-header-right text-md-right col-md-3 col-12 d-md-block d-none">
                 <div class="form-group breadcrum-right">
-                    <div class="dropdown">
+                    @yield('btn')
 
-                        @yield('btn')
-
-                    </div>
                 </div>
             </div>
         </div>

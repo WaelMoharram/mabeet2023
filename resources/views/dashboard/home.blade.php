@@ -1,140 +1,251 @@
 @extends('dashboard.layouts.app')
 @section('title'){!! __('Home') !!}@endsection
 @section('header')
-    <link rel="stylesheet" type="text/css" href="https://pixinvent.com/demo/vuexy-html-bootstrap-admin-template/app-assets/css/core/menu/menu-types/vertical-menu.min.css">
-    <link rel="stylesheet" type="text/css" href="https://pixinvent.com/demo/vuexy-html-bootstrap-admin-template/app-assets/css/pages/dashboard-ecommerce.min.css">
-    <link rel="stylesheet" type="text/css" href="https://pixinvent.com/demo/vuexy-html-bootstrap-admin-template/app-assets/css/plugins/charts/chart-apex.min.css">
-    <link rel="stylesheet" type="text/css" href="https://pixinvent.com/demo/vuexy-html-bootstrap-admin-template/app-assets/css/plugins/extensions/ext-component-toastr.min.css">@endsection
+    <link rel="stylesheet" type="text/css" href="{{asset('assets/dashboard2/resources')}}/app-assets/css/core/menu/menu-types/vertical-menu.min.css">
+
+    <link rel="stylesheet" type="text/css" href="{{asset('assets/dashboard2/resources')}}/app-assets/css/pages/dashboard-ecommerce.min.css">
+    <link rel="stylesheet" type="text/css" href="{{asset('assets/dashboard2/resources')}}/app-assets/css/plugins/charts/chart-apex.min.css">
+    <link rel="stylesheet" type="text/css" href="{{asset('assets/dashboard2/resources')}}/app-assets/css/plugins/extensions/ext-component-toastr.min.css">
+
+
+@endsection
 
 @section('content')
-    <section id="column-selectors">
-{{--        <div class="row">--}}
-{{--            <div class="col-12">--}}
-{{--                <div class="card">--}}
-{{--                    <div class="card-header">--}}
-{{--                        <h4>{{__('Search task by date')}}</h4>--}}
-{{--                    </div>--}}
-{{--                    <div class="card-content">--}}
-{{--                        <div class="card-body card-dashboard">--}}
-{{--                            {!! Form::open(['method'=>'get','class'=>'form']) !!}--}}
-{{--                            <div class="row">--}}
-{{--                                @if($errors->any())--}}
-{{--                                    {!! implode('', $errors->all('<div>:message</div>')) !!}--}}
-{{--                                @endif--}}
-{{--                                <div class="form-group py-1 col-md-6">--}}
-{{--                                    <label for="from_date"> {{__('From date')}}</label>--}}
-{{--                                    {!! Form::text('from',request()->from ??null,['class'=>'form-control col datepicker','id'=>'from_date']) !!}--}}
-{{--                                </div>--}}
+    <section id="dashboard-ecommerce">
+        <div class="row">
+            <div class="col-12 row match-height">
+                <div class=" col-12">
+                <div class="card">
+                    <div class="card-header d-flex justify-content-between pb-0">
+                        <h4 class="card-title">{{__('Website analytics')}}</h4>
+                    </div>
+                    <div class="card-body">
 
-{{--                                <div class="form-group py-1 col-md-6">--}}
-{{--                                    <label for="to_date"> {{__('To date')}} </label>--}}
-{{--                                    {!! Form::text('to',request()->to??null,['class'=>'form-control col datepicker','id'=>'to_date']) !!}--}}
-{{--                                </div>--}}
-{{--                                    @if (auth()->user()->can_manage_tasks_for_users == 1)--}}
-{{--                                    <div class="form-group py-1 col-md-12">--}}
-{{--                                        <label for="user_id"> {{__('User')}} </label>--}}
-{{--                                        {{Form::select('user_id',\App\User::get()->pluck('name','id') ,request()->user_id??null,['placeholder'=>__('Select User '),'class'=>'form-control mb-2','id'=>'user_id',disable_on_show()])}}--}}
-{{--                                        {{input_error($errors,'user_id')}}--}}
-{{--                                    </div>--}}
-{{--@endif--}}
-{{--                                <div class="col-12">--}}
-{{--                                    <button type="submit" class="btn col-12 btn-primary mr-1 mb-1 waves-effect waves-light">{{__('Search')}} <i class="fa fa-search"></i></button>--}}
-{{--                                </div>--}}
-{{--                            </div>--}}
-{{--                            {!! Form::close() !!}--}}
-{{--                        </div>--}}
-{{--                    </div>--}}
-{{--                </div>--}}
-{{--            </div>--}}
+                    </div>
 
-{{--        </div>--}}
-{{--        <div class="row">--}}
-{{--            <div class="col-12">--}}
-{{--                <div class="card">--}}
-{{--                    <div class="card-header">--}}
-{{--                        <h4 class="card-title">@yield('title')</h4>--}}
-{{--                    </div>--}}
-{{--                    <div class="card-content">--}}
-{{--                        <div class="card-body card-dashboard">--}}
-{{--                            <div class="table-responsive">--}}
-{{--                                @include('dashboard.tasks.partials._table')--}}
-{{--                            </div>--}}
-{{--                        </div>--}}
-{{--                    </div>--}}
-{{--                </div>--}}
-{{--            </div>--}}
-{{--        </div>--}}
-
-<!-- Statistics Card -->
-    <div class="col-xl-12 col-md-12 col-12">
-        <div class="card card-statistics">
-            <div class="card-header">
-                <h4 class="card-title">Statistics</h4>
-                <div class="d-flex align-items-center">
-                    <p class="card-text font-small-2 me-25 mb-0">Updated 1 month ago</p>
                 </div>
-            </div>
-
-            <div class="card-body statistics-body">
-                <div class="row">
-                    <div class="col-xl-3 col-sm-6 col-12 mb-2 mb-xl-0">
-                        <div class="d-flex flex-row">
-                            <div class="avatar bg-light-primary me-2">
+                </div>
+                <div class="col-md-3 col-6">
+                    <div class="card">
+                        <div class="card-header flex-column align-items-start pb-0">
+                            <div class="avatar bg-light-primary p-50 m-0">
                                 <div class="avatar-content">
-                                    <i data-feather="trending-up" class="avatar-icon"></i>
+                                    <i data-feather="users" class="font-medium-5"></i>
                                 </div>
                             </div>
-                            <div class="my-auto">
-                                <h4 class="fw-bolder mb-0">230k</h4>
-                                <p class="card-text font-small-3 mb-0">Sales</p>
-                            </div>
+                            <h2 class="font-weight-bolder mt-1">92.6k</h2>
+                            <p class="card-text">Subscribers Gained</p>
                         </div>
-                    </div>
-                    <div class="col-xl-3 col-sm-6 col-12 mb-2 mb-xl-0">
-                        <div class="d-flex flex-row">
-                            <div class="avatar bg-light-info me-2">
-                                <div class="avatar-content">
-                                    <i data-feather="user" class="avatar-icon"></i>
-                                </div>
-                            </div>
-                            <div class="my-auto">
-                                <h4 class="fw-bolder mb-0">8.549k</h4>
-                                <p class="card-text font-small-3 mb-0">Customers</p>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-xl-3 col-sm-6 col-12 mb-2 mb-sm-0">
-                        <div class="d-flex flex-row">
-                            <div class="avatar bg-light-danger me-2">
-                                <div class="avatar-content">
-                                    <i data-feather="box" class="avatar-icon"></i>
-                                </div>
-                            </div>
-                            <div class="my-auto">
-                                <h4 class="fw-bolder mb-0">1.423k</h4>
-                                <p class="card-text font-small-3 mb-0">Products</p>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-xl-3 col-sm-6 col-12">
-                        <div class="d-flex flex-row">
-                            <div class="avatar bg-light-success me-2">
-                                <div class="avatar-content">
-                                    <i data-feather="dollar-sign" class="avatar-icon"></i>
-                                </div>
-                            </div>
-                            <div class="my-auto">
-                                <h4 class="fw-bolder mb-0">$9745</h4>
-                                <p class="card-text font-small-3 mb-0">Revenue</p>
-                            </div>
-                        </div>
+                        <div id="gained-chart"></div>
                     </div>
                 </div>
+                <div class="col-md-3 col-6">
+                    <div class="card">
+                        <div class="card-header flex-column align-items-start pb-0">
+                            <div class="avatar bg-light-primary p-50 m-0">
+                                <div class="avatar-content">
+                                    <i data-feather="users" class="font-medium-5"></i>
+                                </div>
+                            </div>
+                            <h2 class="font-weight-bolder mt-1">92.6k</h2>
+                            <p class="card-text">Subscribers Gained</p>
+                        </div>
+                        <div id="gained-chart"></div>
+                    </div>
+                </div>
+                <div class="col-md-3 col-6">
+                    <div class="card">
+                        <div class="card-header flex-column align-items-start pb-0">
+                            <div class="avatar bg-light-primary p-50 m-0">
+                                <div class="avatar-content">
+                                    <i data-feather="users" class="font-medium-5"></i>
+                                </div>
+                            </div>
+                            <h2 class="font-weight-bolder mt-1">92.6k</h2>
+                            <p class="card-text">Subscribers Gained</p>
+                        </div>
+                        <div id="gained-chart"></div>
+                    </div>
+                </div>
+                <div class="col-md-3 col-6">
+                    <div class="card">
+                        <div class="card-header flex-column align-items-start pb-0">
+                            <div class="avatar bg-light-primary p-50 m-0">
+                                <div class="avatar-content">
+                                    <i data-feather="users" class="font-medium-5"></i>
+                                </div>
+                            </div>
+                            <h2 class="font-weight-bolder mt-1">92.6k</h2>
+                            <p class="card-text">Subscribers Gained</p>
+                        </div>
+                        <div id="gained-chart"></div>
+                    </div>
+                </div>
+
+                <div class="col-lg-12 col-12">
+                    <div class="card ">
+                        <div class="card-header d-flex justify-content-between pb-0">
+                            <h4 class="card-title">{{__('New orders')}}</h4>
+                        </div>
+                        <div class="card-body p-0">
+                            <br>
+                            <ul class="nav nav-tabs" role="tablist">
+                                <li class="nav-item">
+                                    <a class="nav-link active" id="homeIcon-tab" data-toggle="tab" href="#homeIcon" aria-controls="home" role="tab" aria-selected="true"><i data-feather="home"></i> {{__('Units for rent')}}</a>
+                                </li>
+                                <li class="nav-item">
+                                    <a class="nav-link" id="profileIcon-tab" data-toggle="tab" href="#profileIcon" aria-controls="profile" role="tab" aria-selected="false"><i data-feather="plus"></i> {{__('New units to add')}}</a>
+                                </li>
+
+                            </ul>
+                            <div class="tab-content">
+                                <div class="tab-pane active" id="homeIcon" aria-labelledby="homeIcon-tab" role="tabpanel">
+                                    <div class="table-responsive">
+                                        <table class="table">
+                                            <thead>
+                                            <tr>
+                                                <th>{{__('Order tenant')}}</th>
+                                                <th>{{__('Place')}}</th>
+                                                <th>{{__('Season')}}</th>
+                                                <th>{{__('Unit type')}}</th>
+                                                <th>{{__('Budget')}}</th>
+                                                <th>{{__('Options')}}</th>
+                                            </tr>
+                                            </thead>
+                                            <tbody>
+                                            <tr>
+                                                <td>
+                                                    <div class="d-flex align-items-center">
+                                                        <div class="avatar rounded">
+                                                            <div class="avatar-content">
+                                                                <img src="../../../app-assets/images/icons/toolbox.svg" alt="Toolbar svg" />
+                                                            </div>
+                                                        </div>
+                                                        <div>
+                                                            <div class="font-weight-bolder">Dixons</div>
+
+                                                        </div>
+                                                    </div>
+                                                </td>
+                                                <td>
+
+                                                        <span>Technology</span>
+
+                                                </td>
+                                                <td>
+
+                                                    <span>Technology</span>
+
+                                                </td>
+                                                <td>
+                                                    <div class="d-flex align-items-center">
+                                                        <div class="avatar bg-light-primary mr-1">
+                                                            <div class="avatar-content">
+                                                                <i data-feather="monitor" class="font-medium-3"></i>
+                                                            </div>
+                                                        </div>
+                                                        <span>Technology</span>
+                                                    </div>
+                                                </td>
+                                                <td>$891.2</td>
+                                                <td>
+                                                    @component('dashboard.layouts.partials.buttons._show_button',[
+                                                        'route' => '',
+                                                        'tooltip' => __('Show'),
+                                                         ])
+                                                    @endcomponent
+                                                    @component('dashboard.layouts.partials.buttons._edit_button',[
+                                                        'route' => '',
+                                                        'tooltip' => __('Edit'),
+                                                         ])
+                                                    @endcomponent
+                                                    @component('dashboard.layouts.partials.buttons._delete_button',[
+                                                        'route' => '',
+                                                        'id'=>'',
+                                                        'tooltip' => __('Show'),
+                                                         ])
+                                                    @endcomponent
+                                                </td>
+                                            </tr>
+
+                                            </tbody>
+                                        </table>
+                                    </div>
+
+                                </div>
+                                <div class="tab-pane" id="profileIcon" aria-labelledby="profileIcon-tab" role="tabpanel">
+                                    <div class="table-responsive">
+                                        <table class="table">
+                                            <thead>
+                                            <tr>
+                                                <th>Company2</th>
+                                                <th>Category</th>
+                                                <th>Views</th>
+                                                <th>Revenue</th>
+                                                <th>Sales</th>
+                                            </tr>
+                                            </thead>
+                                            <tbody>
+                                            <tr>
+                                                <td>
+                                                    <div class="d-flex align-items-center">
+                                                        <div class="avatar rounded">
+                                                            <div class="avatar-content">
+                                                                <img src="../../../app-assets/images/icons/toolbox.svg" alt="Toolbar svg" />
+                                                            </div>
+                                                        </div>
+                                                        <div>
+                                                            <div class="font-weight-bolder">Dixons</div>
+                                                            <div class="font-small-2 text-muted">meguc@ruj.io</div>
+                                                        </div>
+                                                    </div>
+                                                </td>
+                                                <td>
+                                                    <div class="d-flex align-items-center">
+                                                        <div class="avatar bg-light-primary mr-1">
+                                                            <div class="avatar-content">
+                                                                <i data-feather="monitor" class="font-medium-3"></i>
+                                                            </div>
+                                                        </div>
+                                                        <span>Technology</span>
+                                                    </div>
+                                                </td>
+                                                <td class="text-nowrap">
+                                                    <div class="d-flex flex-column">
+                                                        <span class="font-weight-bolder mb-25">23.4k</span>
+                                                        <span class="font-small-2 text-muted">in 24 hours</span>
+                                                    </div>
+                                                </td>
+                                                <td>$891.2</td>
+                                                <td>
+                                                    <div class="d-flex align-items-center">
+                                                        <span class="font-weight-bolder mr-1">68%</span>
+                                                        <i data-feather="trending-down" class="text-danger font-medium-1"></i>
+                                                    </div>
+                                                </td>
+                                            </tr>
+
+                                            </tbody>
+                                        </table>
+                                    </div>
+
+                                </div>
+
+                            </div>
+
+
+                        </div>
+                    </div>
+                </div>
+
             </div>
+
+
         </div>
-    </div>
-    <!--/ Statistics Card -->
+
+
     </section>
+
 
 @endsection
 

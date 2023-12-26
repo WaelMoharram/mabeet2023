@@ -18,8 +18,8 @@
                             <div class="row">
                                 @include('dashboard.users.partials._form_filter')
                                 <div class="col-12">
-                                    <button type="submit" class="btn btn-primary   waves-effect waves-light">{{__('Filter')}}</button>
-                                    <a href="{{route('dashboard.users.index')}}" class="  ml-1 btn btn-warning  waves-effect waves-light">{{__('Reset filter')}}</a>
+                                    <button type="submit" class="btn btn-primary   waves-effect waves-light btn-sm">{{__('Filter')}}</button>
+                                    <a href="{{route('dashboard.users.index')}}" class="  ml-1 btn btn-warning  waves-effect waves-light btn-sm">{{__('Reset filter')}}</a>
                                 </div>
                             </div>
                             {!! Form::close() !!}

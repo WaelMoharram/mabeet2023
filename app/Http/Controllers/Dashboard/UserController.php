@@ -33,7 +33,6 @@ class UserController extends Controller
     {
 
         $users = User::where(function ($q) use($request){
-
             // Name filter
             if ($request->has('name')  && $request->name != null  && $request->name != ''){
                 $q->where('name','like', '%'.$request->name.'%');
@@ -43,7 +42,14 @@ class UserController extends Controller
             if ($request->has('email')  && $request->email != null  && $request->email != ''){
                 $q->where('email','like', '%'.$request->email.'%');
             }
-        })->paginate(10);
+        });
+
+        if(\request()->text){
+            $users = $users->Search(\request()->text);
+        }
+
+        $users = $users->paginate(10);
+
         return view('dashboard.users.index', compact('users'));
     }
 

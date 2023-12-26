@@ -1,4 +1,4 @@
-<button data-toggle="modal" data-target="#usersDelete{{$id}}" @if(isset($tooltip) ) {{tooltip($tooltip)}} @endif  class="btn btn-md btn-danger" >
+<button data-toggle="modal" data-target="#usersDelete{{$id}}" @if(isset($tooltip) ) {{tooltip($tooltip)}} @endif  class="btn btn-icon btn-icon rounded-circle btn-danger waves-effect waves-float waves-light" >
 
     <i class="fa fa-trash-o"></i>
 </button>

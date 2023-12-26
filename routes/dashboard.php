@@ -43,6 +43,8 @@ Route::name('dashboard.')->middleware(['language', 'auth:admins'])->prefix('dash
 
     Route::get('users.suspend',[\App\Http\Controllers\Dashboard\UserController::class, 'suspend'])->name('users.suspend');
 
+    Route::resource('pages', \App\Http\Controllers\Dashboard\PageController::class);
+
     Route::resource('system-options', \App\Http\Controllers\Dashboard\OptionController::class)->only([
         'index', 'edit','update'
     ]);
