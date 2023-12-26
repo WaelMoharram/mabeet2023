@@ -23,9 +23,18 @@
             </ul>
         </div>
         <ul class="nav navbar-nav align-items-center ml-auto">
-            <li class="nav-item dropdown dropdown-language"><a class="nav-link dropdown-toggle" id="dropdown-flag" href="javascript:void(0);" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"><i class="flag-icon flag-icon-us"></i><span class="selected-language">English</span></a>
-                <div class="dropdown-menu dropdown-menu-right" aria-labelledby="dropdown-flag"><a class="dropdown-item" href="javascript:void(0);" data-language="en"><i class="flag-icon flag-icon-us"></i> English</a><a class="dropdown-item" href="javascript:void(0);" data-language="fr"><i class="flag-icon flag-icon-fr"></i> French</a><a class="dropdown-item" href="javascript:void(0);" data-language="de"><i class="flag-icon flag-icon-de"></i> German</a><a class="dropdown-item" href="javascript:void(0);" data-language="pt"><i class="flag-icon flag-icon-pt"></i> Portuguese</a></div>
-            </li>
+                                <li class="dropdown dropdown-language nav-item"><a class="dropdown-toggle nav-link" id="dropdown-flag" href="#" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"><i class="flag-icon
+                                    @if(App::isLocale('ar')) flag-icon-sa @else flag-icon-us @endif"></i><span class="selected-language">@if(App::isLocale('ar')) عربى @else English @endif</span></a>
+                                    <div class="dropdown-menu" aria-labelledby="dropdown-flag">
+                                        <a class="dropdown-item" href="{{route('dashboard.lang-en')}}" data-language="en">
+                                            <i class="flag-icon flag-icon-us"></i> English
+                                        </a>
+                                        <a class="dropdown-item" href="{{route('dashboard.lang-ar')}}" data-language="ar">
+                                            <i class="flag-icon flag-icon-sa"></i> عربى
+                                        </a>
+
+                                    </div>
+                                </li>
             <li class="nav-item d-none d-lg-block"><a class="nav-link nav-link-style"><i class="ficon" data-feather="moon"></i></a></li>
             <li class="nav-item nav-search"><a class="nav-link nav-link-search"><i class="ficon" data-feather="search"></i></a>
                 <div class="search-input">
@@ -129,7 +138,13 @@
                     <li class="scrollable-container media-list"><a class="d-flex" href="javascript:void(0)">
                             <div class="media d-flex align-items-start">
                                 <div class="media-left">
-                                    <div class="avatar"><img src="../../../app-assets/images/portrait/small/avatar-s-15.jpg" alt="avatar" width="32" height="32"></div>
+                                    <div class="avatar"><img
+                                            @if(auth()->user()->image != null)
+                     src = "{{url(auth()->user()->image)}}"
+                 @else
+                 src="{{asset('assets/dashboard2/resources')}}/app-assets/images/portrait/small/avatar-s-11.jpg"
+                @endif
+                                            alt="avatar" width="32" height="32"></div>
                                 </div>
                                 <div class="media-body">
                                     <p class="media-heading"><span class="font-weight-bolder">Congratulation Sam 🎉</span>winner!</p><small class="notification-text"> Won the monthly best seller badge.</small>
@@ -203,13 +218,27 @@
             <li class="nav-item dropdown dropdown-user"><a class="nav-link dropdown-toggle dropdown-user-link" id="dropdown-user" href="javascript:void(0);" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                     <div class="user-nav d-sm-flex d-none"><span class="user-name font-weight-bolder">John Doe</span><span class="user-status">Admin</span></div><span class="avatar"><img class="round" src="../../../app-assets/images/portrait/small/avatar-s-11.jpg" alt="avatar" height="40" width="40"><span class="avatar-status-online"></span></span>
                 </a>
-                <div class="dropdown-menu dropdown-menu-right" aria-labelledby="dropdown-user"><a class="dropdown-item" href="page-profile.html"><i class="mr-50" data-feather="user"></i> Profile</a><a class="dropdown-item" href="app-email.html"><i class="mr-50" data-feather="mail"></i> Inbox</a><a class="dropdown-item" href="app-todo.html"><i class="mr-50" data-feather="check-square"></i> Task</a><a class="dropdown-item" href="app-chat.html"><i class="mr-50" data-feather="message-square"></i> Chats</a>
-                    <div class="dropdown-divider"></div><a class="dropdown-item" href="page-account-settings.html"><i class="mr-50" data-feather="settings"></i> Settings</a><a class="dropdown-item" href="page-pricing.html"><i class="mr-50" data-feather="credit-card"></i> Pricing</a><a class="dropdown-item" href="page-faq.html"><i class="mr-50" data-feather="help-circle"></i> FAQ</a><a class="dropdown-item" href="page-auth-login-v2.html"><i class="mr-50" data-feather="power"></i> Logout</a>
-                </div>
+                <div class="dropdown-menu dropdown-menu-right">
+
+                                            <a class="dropdown-item" href="{{route('dashboard.home.edit')}}">
+                                                <i class="feather icon-user"></i> {{__('Profile')}}
+                                            </a>
+
+                                            <div class="dropdown-divider"></div>
+
+                                            <form method="post" action="{{route('logout')}}">
+                                                {{ csrf_field() }}
+                                            <button type=submit class="dropdown-item" style="width: 100%"><i
+                                                    class="feather icon-power"></i>
+                                                {!! __('Log out') !!}
+                                            </button>
+                                            </form>
+                                        </div>
             </li>
         </ul>
     </div>
 </nav>
+
 
 {{--<!-- BEGIN: Header-->--}}
 
