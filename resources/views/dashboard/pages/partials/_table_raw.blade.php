@@ -1,8 +1,7 @@
 <tr>
     <td>{!! $loop->index +1 !!}</td>
     <td>{!! $page->title !!}</td>
-    <td>{{route('page',$page->title)}}</td>
-    <td>{{ $page->visits_count }}</td>
+    <td><a href="{{route('page',$page->title)}}" target="_blank">{{$page->title}}</a></td>
     <td>
         <div class="btn-group" role="group" aria-label="Vertical button group">
             <div class="btn-group" role="group">

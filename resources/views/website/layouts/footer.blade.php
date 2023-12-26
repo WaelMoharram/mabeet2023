@@ -47,7 +47,7 @@
                     </div>
                 </div>
             </div>
-            <p class="copyright">© 2023 جميع الحقوق محفوظه مبيت.كوم </p>
+            <p class="copyright">© {{date('Y')}} جميع الحقوق محفوظه مبيت.كوم </p>
 
         </div>
     </div>
