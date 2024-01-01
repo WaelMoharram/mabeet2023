@@ -718,11 +718,11 @@ $(function () {
           dataLabels: {
             name: {
               fontSize: '2rem',
-              fontFamily: 'Montserrat'
+              fontFamily: 'Tajawal'
             },
             value: {
               fontSize: '1rem',
-              fontFamily: 'Montserrat'
+              fontFamily: 'Tajawal'
             },
             total: {
               show: true,
@@ -852,11 +852,11 @@ $(function () {
               show: true,
               name: {
                 fontSize: '2rem',
-                fontFamily: 'Montserrat'
+                fontFamily: 'Tajawal'
               },
               value: {
                 fontSize: '1rem',
-                fontFamily: 'Montserrat',
+                fontFamily: 'Tajawal',
                 formatter: function (val) {
                   return parseInt(val) + '%';
                 }

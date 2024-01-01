@@ -32,8 +32,8 @@
   --breakpoint-lg : 992px;
   --breakpoint-xl : 1200px;
   --breakpoint-xxl : 1440px;
-  --font-family-sans-serif : 'Montserrat', Helvetica, Arial, serif;
-  --font-family-monospace : 'Montserrat', Helvetica, Arial, serif;
+  --font-family-sans-serif : 'Tajawal', Helvetica, Arial, serif;
+  --font-family-monospace : 'Tajawal', Helvetica, Arial, serif;
 }
 
 *, *::before, *::after {
@@ -53,7 +53,7 @@ article, aside, figcaption, figure, footer, header, hgroup, main, nav, section {
 
 body {
   margin : 0;
-  font-family : 'Montserrat', Helvetica, Arial, serif;
+  font-family : 'Tajawal', Helvetica, Arial, serif;
   font-size : 1rem;
   font-weight : 400;
   line-height : 1.45;
@@ -165,7 +165,7 @@ a:not([href]):not([class]):hover {
 }
 
 pre, code, kbd, samp {
-  font-family : 'Montserrat', Helvetica, Arial, serif;
+  font-family : 'Tajawal', Helvetica, Arial, serif;
   font-size : 1em;
 }
 
@@ -6940,7 +6940,7 @@ a.close.disabled {
   z-index : 1070;
   display : block;
   margin : 0;
-  font-family : 'Montserrat', Helvetica, Arial, serif;
+  font-family : 'Tajawal', Helvetica, Arial, serif;
   font-style : normal;
   font-weight : 400;
   line-height : 1.45;
@@ -7053,7 +7053,7 @@ a.close.disabled {
   z-index : 1060;
   display : block;
   max-width : 276px;
-  font-family : 'Montserrat', Helvetica, Arial, serif;
+  font-family : 'Tajawal', Helvetica, Arial, serif;
   font-style : normal;
   font-weight : 400;
   line-height : 1.45;
@@ -12065,7 +12065,7 @@ a.bg-dark:hover, a.bg-dark:focus, button.bg-dark:hover, button.bg-dark:focus {
 }
 
 .text-monospace {
-  font-family : 'Montserrat', Helvetica, Arial, serif !important;
+  font-family : 'Tajawal', Helvetica, Arial, serif !important;
 }
 
 .text-justify {

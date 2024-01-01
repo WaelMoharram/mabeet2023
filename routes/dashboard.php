@@ -41,6 +41,16 @@ Route::name('dashboard.')->middleware(['language', 'auth:admins'])->prefix('dash
 
     Route::resource('users', \App\Http\Controllers\Dashboard\UserController::class);
 
+    Route::resource('admins', \App\Http\Controllers\Dashboard\AdminController::class);
+    Route::resource('roles', \App\Http\Controllers\Dashboard\RoleController::class);
+
+
+    Route::resource('seasons', \App\Http\Controllers\Dashboard\SeasonController::class);
+    Route::resource('unit-types', \App\Http\Controllers\Dashboard\UnitTypeController::class);
+    Route::resource('facilities', \App\Http\Controllers\Dashboard\FacilityController::class);
+    Route::resource('services', \App\Http\Controllers\Dashboard\ServiceController::class);
+
+
     Route::get('users.suspend',[\App\Http\Controllers\Dashboard\UserController::class, 'suspend'])->name('users.suspend');
 
     Route::resource('pages', \App\Http\Controllers\Dashboard\PageController::class);

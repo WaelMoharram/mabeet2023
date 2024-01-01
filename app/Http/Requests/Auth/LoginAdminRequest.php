@@ -45,7 +45,6 @@ class LoginAdminRequest extends FormRequest
     public function authenticate()
     {
         $this->ensureIsNotRateLimited();
-
         if (! Auth::guard('admins')->attempt($this->only('email', 'password'), $this->boolean('remember'))) {
             RateLimiter::hit($this->throttleKey());
 

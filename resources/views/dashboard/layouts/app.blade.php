@@ -16,6 +16,7 @@
     <link rel="apple-touch-icon" href="{{asset('assets/dashboard2/resources')}}/app-assets/images/ico/apple-icon-120.png">
     <link rel="shortcut icon" type="image/x-icon" href="{{asset('assets/dashboard2/resources')}}/app-assets/images/ico/favicon.ico">
     <link href="https://fonts.googleapis.com/css?family=Montserrat:300,400,500,600" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Alexandria:wght@400;500;600;700;800&family=Tajawal:wght@200;300;400;500;700;800;900&display=swap" rel="stylesheet">
 
     @include('dashboard.layouts.partials._styles')
     @yield('header')

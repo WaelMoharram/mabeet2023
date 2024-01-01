@@ -8,14 +8,15 @@
             <div class="btn-group" role="group">
             @component('dashboard.layouts.partials.buttons._show_button',[
                     'route' => route('dashboard.users.show',$user->id),
-                    'tooltip' => __('Show '.$user['name']),
+                    'tooltip' => __('Show').' '.$user['name'],
                      ])
             @endcomponent
             </div>
             <div class="btn-group" role="group">
         @component('dashboard.layouts.partials.buttons._edit_button',[
                     'route' => route('dashboard.users.edit',$user->id),
-                    'tooltip' => __('Edit '.$user['name']),
+                    'tooltip' => __('Edit').' '.$user['name'],
+                     ])'),
                      ])
             @endcomponent
             </div>

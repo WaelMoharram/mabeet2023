@@ -36,18 +36,32 @@
     <div class="main-menu-content">
         <ul class="navigation navigation-main" id="main-menu-navigation" data-menu="menu-navigation">
 
-            <li class=" nav-item  @if(Request::is('dashboard/home')) active  @endif"><a class="d-flex align-items-center" href="{{route('dashboard.home')}}"><i data-feather="home"></i><span class="menu-title text-truncate" data-i18n="Home">Home</span></a>
+            <li class=" nav-item  @if(Request::is('dashboard/home')) active  @endif"><a class="d-flex align-items-center" href="{{route('dashboard.home')}}"><i data-feather="home"></i><span class="menu-title text-truncate" data-i18n="Home">{{__('Home')}}</span></a>
             </li>
-
-            <li class=" nav-item @if(Request::is('dashboard/users')) active  @endif"><a class="d-flex align-items-center" href="{{route('dashboard.users.index')}}"><i data-feather="home"></i><span class="menu-title text-truncate" data-i18n="Home">Users</span></a>
+            @can('index roles')
+            <li class=" nav-item @if(Request::is('dashboard/roles')) active  @endif"><a class="d-flex align-items-center" href="{{route('dashboard.roles.index')}}"><i data-feather="user"></i><span class="menu-title text-truncate" data-i18n="Roles">{{__('Roles')}}</span></a>
             </li>
+            @endcan
+            @can('index admins')
+            <li class=" nav-item @if(Request::is('dashboard/admins')) active  @endif"><a class="d-flex align-items-center" href="{{route('dashboard.admins.index')}}"><i data-feather="user"></i><span class="menu-title text-truncate" data-i18n="Admins">{{__('Admins')}}</span></a>
+            </li>
+            @endcan
+            @canany(['index clients','index providers'])
+            <li class=" nav-item @if(Request::is('dashboard/users')) active  @endif"><a class="d-flex align-items-center" href="{{route('dashboard.users.index')}}"><i data-feather="users"></i><span class="menu-title text-truncate" data-i18n="Users">{{__('Users')}}</span></a>
+            </li>
+            @endcan
 
-            <li class=" navigation-header"><span data-i18n="Users">Users</span><i data-feather="more-horizontal"></i> {{--break--}}
+            @canany(['index seasons','index unit types','index facilities','index services'])
+                <li class=" nav-item @if(Request::is('dashboard/seasons') || Request::is('dashboard/unit-types') || Request::is('dashboard/facilities') || Request::is('dashboard/services')) active  @endif"><a class="d-flex align-items-center" href="{{route('dashboard.seasons.index')}}"><i data-feather="users"></i><span class="menu-title text-truncate" data-i18n="Seasons">{{__('Units settings')}}</span></a>
+                </li>
+            @endcan
+
+            <li class=" navigation-header"><span data-i18n="Users">{{__('Users')}}</span><i data-feather="more-horizontal"></i> {{--break--}}
 
 
 
 
-            <li class="nav-item @if(Request::is('dashboard/system-options') || Request::is('dashboard/pages')) open  @endif"><a class="d-flex align-items-center"><i data-feather="home"></i><span class="menu-title text-truncate" data-i18n="Dashboards">Settings</span><span class="badge badge-light-warning badge-pill ml-auto mr-1">2</span></a>
+            <li class="nav-item @if(Request::is('dashboard/system-options') || Request::is('dashboard/pages')) open  @endif"><a class="d-flex align-items-center"><i data-feather="home"></i><span class="menu-title text-truncate" data-i18n="Dashboards">{{__('Settings')}}</span><span class="badge badge-light-warning badge-pill ml-auto mr-1">2</span></a>
                 <ul class="menu-content">
                     <li class="@if(Request::is('dashboard/pages')) active @endif"><a class="d-flex align-items-center" href="{{route('dashboard.pages.index')}}"><i data-feather="file"></i><span class="menu-item text-truncate" data-i18n="Pages">{{__('Pages')}}</span></a>
                     </li>

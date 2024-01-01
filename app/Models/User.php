@@ -45,4 +45,11 @@ class User extends Authenticatable
     protected $casts = [
         'email_verified_at' => 'datetime',
     ];
+
+    const TYPES = [
+        'client',
+        'provider'
+    ];
+    const TYPE_CLIENT = 'client';
+    const TYPE_PROVIDER = 'provider';
 }

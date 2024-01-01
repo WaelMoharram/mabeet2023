@@ -1,7 +1,6 @@
 @extends('dashboard.layouts.app')
 @section('title'){!! __('Home') !!}@endsection
 @section('header')
-    <link rel="stylesheet" type="text/css" href="{{asset('assets/dashboard2/resources')}}/app-assets/css/core/menu/menu-types/vertical-menu.min.css">
 
     <link rel="stylesheet" type="text/css" href="{{asset('assets/dashboard2/resources')}}/app-assets/css/pages/dashboard-ecommerce.min.css">
     <link rel="stylesheet" type="text/css" href="{{asset('assets/dashboard2/resources')}}/app-assets/css/plugins/charts/chart-apex.min.css">

@@ -16,8 +16,8 @@ return new class extends Migration
             $table->timestamps();
             $table->softDeletes();
             $table->text('name');
-            $table->date('date_from');
-            $table->date('date_to');
+            $table->date('date_from')->nullable();
+            $table->date('date_to')->nullable();
             $table->boolean('status')->default(1);
 
         });

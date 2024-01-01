@@ -5,126 +5,110 @@
 <head>
     <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=0, minimal-ui">
-    <meta name="description" content="Get event Dashboard login page">
-    <meta name="author" content="GetEvent">
+    <meta name="viewport" content="width=device-width,initial-scale=1.0,user-scalable=0,minimal-ui">
+    <meta name="author" content="{{env('APP_NAME')}}">
     <title>Login {{env('APP_NAME')}}</title>
-    <link rel="apple-touch-icon" href="{{asset('assets/dashboard2/resources/app-assets/images/ico/apple-icon-120.png')}}">
-    <link rel="shortcut icon" type="image/x-icon" href="{{asset('assets/dashboard2/resources/app-assets/images/ico/favicon.ico')}}">
-    <link href="https://fonts.googleapis.com/css?family=Montserrat:300,400,500,600" rel="stylesheet">
-
+    <link rel="apple-touch-icon" href="{{asset('assets/dashboard2/resources')}}/app-assets/images/ico/apple-icon-120.png">
+    <link rel="shortcut icon" type="image/x-icon" href="{{asset('assets/dashboard2/resources')}}/app-assets/images/ico/favicon.ico">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Alexandria:wght@400;500;600;700;800&family=Tajawal:wght@200;300;400;500;700;800;900&display=swap" rel="stylesheet">
     <!-- BEGIN: Vendor CSS-->
-    <link rel="stylesheet" type="text/css" href="{{asset('assets/dashboard2/resources/app-assets/vendors/css/vendors.min.css')}}">
+    <link rel="stylesheet" type="text/css" href="{{asset('assets/dashboard2/resources')}}/app-assets/vendors/css/vendors.min.css">
     <!-- END: Vendor CSS-->
 
     <!-- BEGIN: Theme CSS-->
-    <link rel="stylesheet" type="text/css" href="{{asset('assets/dashboard2/resources/app-assets/css/bootstrap.css')}}">
-    <link rel="stylesheet" type="text/css" href="{{asset('assets/dashboard2/resources/app-assets/css/bootstrap-extended.css')}}">
-    <link rel="stylesheet" type="text/css" href="{{asset('assets/dashboard2/resources/app-assets/css/colors.css')}}">
-    <link rel="stylesheet" type="text/css" href="{{asset('assets/dashboard2/resources/app-assets/css/components.css')}}">
-    <link rel="stylesheet" type="text/css" href="{{asset('assets/dashboard2/resources/app-assets/css/themes/dark-layout.css')}}">
-    <link rel="stylesheet" type="text/css" href="{{asset('assets/dashboard2/resources/app-assets/css/themes/semi-dark-layout.css')}}">
+    <link rel="stylesheet" type="text/css" href="{{asset('assets/dashboard2/resources')}}/app-assets/css/bootstrap.css">
+    <link rel="stylesheet" type="text/css" href="{{asset('assets/dashboard2/resources')}}/app-assets/css/bootstrap-extended.css">
+    <link rel="stylesheet" type="text/css" href="{{asset('assets/dashboard2/resources')}}/app-assets/css/colors.css">
+    <link rel="stylesheet" type="text/css" href="{{asset('assets/dashboard2/resources')}}/app-assets/css/components.css">
+    <link rel="stylesheet" type="text/css" href="{{asset('assets/dashboard2/resources')}}/app-assets/css/themes/dark-layout.css">
+    <link rel="stylesheet" type="text/css" href="{{asset('assets/dashboard2/resources')}}/app-assets/css/themes/bordered-layout.css">
+    <link rel="stylesheet" type="text/css" href="{{asset('assets/dashboard2/resources')}}/app-assets/css/themes/semi-dark-layout.css">
 
     <!-- BEGIN: Page CSS-->
-    <link rel="stylesheet" type="text/css" href="{{asset('assets/dashboard2/resources/app-assets/css/core/menu/menu-types/vertical-menu.css')}}">
-    <link rel="stylesheet" type="text/css" href="{{asset('assets/dashboard2/resources/app-assets/css/core/colors/palette-gradient.css')}}">
-    <link rel="stylesheet" type="text/css" href="{{asset('assets/dashboard2/resources/app-assets/css/pages/authentication.css')}}">
+    <link rel="stylesheet" type="text/css" href="{{asset('assets/dashboard2/resources')}}/app-assets/css/core/menu/menu-types/vertical-menu.css">
+    <link rel="stylesheet" type="text/css" href="{{asset('assets/dashboard2/resources')}}/app-assets/css/plugins/forms/form-validation.css">
+    <link rel="stylesheet" type="text/css" href="{{asset('assets/dashboard2/resources')}}/app-assets/css/pages/page-auth.css">
     <!-- END: Page CSS-->
 
     <!-- BEGIN: Custom CSS-->
-    <link rel="stylesheet" type="text/css" href="{{asset('assets/css/style.css')}}">
+    <link rel="stylesheet" type="text/css" href="{{asset('assets/dashboard2/resources')}}/assets/css/style.css">
     <!-- END: Custom CSS-->
+
+    <style>
+        body{
+            font-family:"Tajawal" ;
+        }
+    </style>
 
 </head>
 <!-- END: Head-->
 
 <!-- BEGIN: Body-->
 
-<body class="vertical-layout vertical-menu-modern 1-column  navbar-floating footer-static bg-full-screen-image  blank-page blank-page" data-open="click" data-menu="vertical-menu-modern" data-col="1-column">
+<body class="vertical-layout vertical-menu-modern blank-page navbar-floating footer-static  " data-open="click" data-menu="vertical-menu-modern" data-col="blank-page">
 <!-- BEGIN: Content-->
-<div class="app-content content">
+<div class="app-content content ">
     <div class="content-overlay"></div>
     <div class="header-navbar-shadow"></div>
     <div class="content-wrapper">
         <div class="content-header row">
         </div>
         <div class="content-body">
-            <section class="row flexbox-container">
-                <div class="col-xl-8 col-11 d-flex justify-content-center">
-                    <div class="card bg-authentication rounded-0 mb-0">
-                        <div class="row m-0">
-                            <div class="col-lg-6 d-lg-block d-none text-center align-self-center px-1 py-0">
-                                <img src=" {{asset('assets/dashboard2/resources/app-assets/images/pages/login.png')}}" alt="branding logo">
-                            </div>
-                            <div class="col-lg-6 col-12 p-0">
-                                <div class="card rounded-0 mb-0 px-2">
-                                    <div class="card-header pb-1">
-                                        <div class="card-title">
-                                            <h4 class="mb-0">{{__('Login')}}</h4>
-                                        </div>
+            <div class="auth-wrapper auth-v2">
+                <div class="auth-inner row m-0">
+                    <!-- Brand logo--><a class="brand-logo" href="javascript:void(0);">
+                        <h2 class="brand-text text-primary ml-1">{{env('APP_NAME')}}</h2>
+                    </a>
+                    <!-- /Brand logo-->
+                    <!-- Left Text-->
+                    <div class="d-none d-lg-flex col-lg-8 align-items-center p-5">
+                        <div class="w-100 d-lg-flex align-items-center justify-content-center px-5"><img class="img-fluid" src="{{asset('assets/dashboard2/resources')}}/app-assets/images/pages/login-v2.svg" alt="Login V2" /></div>
+                    </div>
+                    <!-- /Left Text-->
+                    <!-- Login-->
+                    <div class="d-flex col-lg-4 align-items-center auth-bg px-2 p-lg-5">
+                        <div class="col-12 col-sm-8 col-md-6 col-lg-12 px-xl-2 mx-auto">
+                            <h2 class="card-title font-weight-bold mb-1">{{__('Login')}}</h2>
+                            <p class="card-text mb-2">{{__('Welcome back, please login to your account.')}}</p>
+                            <form class="auth-login-form mt-2" action="{{ url('dashboard/login') }}" method="POST">
+                                @csrf
+                                <div class="form-group">
+                                    <label class="form-label" for="email">{{__('Email')}}</label>
+                                    <input class="form-control" id="email" type="text" name="email" placeholder="john@example.com" aria-describedby="email" autofocus="" tabindex="1" />
+                                    {{input_error($errors,'email')}}
+                                </div>
+                                <div class="form-group">
+                                    <div class="d-flex justify-content-between">
+                                        <label for="password">{{__('Password')}}</label>
+{{--                                        <a href="page-auth-forgot-password-v2.html"><small>Forgot Password?</small></a>--}}
                                     </div>
-                                    <p class="px-2">{{__('Welcome back, please login to your account.')}}</p>
-                                    <div class="card-content">
-                                        <div class="card-body pt-1">
-
-                                            <form method="POST" action="{{ url('dashboard/login') }}" aria-label="{{ __('Login') }}">
-
-                                                @csrf
-                                                <fieldset class="form-label-group form-group position-relative has-icon-left">
-                                                    <input type="text" name="email" class="form-control" id="user-name" placeholder="{{__('Email')}}" required>
-                                                    <div class="form-control-position">
-                                                        <i class="feather icon-user"></i>
-                                                    </div>
-                                                    <label for="user-name">{{__('Email')}}</label>
-                                                    @error('email')
-                                                    <span class="invalid-feedback" style="display: block;" role="alert">
-                                                            <strong>{{ $message }}</strong>
-                                                        </span>
-                                                    @enderror
-                                                </fieldset>
-
-                                                <fieldset class="form-label-group position-relative has-icon-left">
-                                                    <input type="password" name="password" class="form-control" id="user-password" placeholder="{{__('Password')}}" required>
-                                                    <div class="form-control-position">
-                                                        <i class="feather icon-lock"></i>
-                                                    </div>
-                                                    <label for="user-password">{{__('Password')}}</label>
-                                                    @error('password')
-                                                    <span class="invalid-feedback" style="display: block;" role="alert">
-                                                            <strong>{{ $message }}</strong>
-                                                        </span>
-                                                    @enderror
-                                                </fieldset>
-                                                <div class="form-group d-flex justify-content-between align-items-center">
-                                                    <div class="text-left">
-                                                        <fieldset class="checkbox">
-                                                            <div class="vs-checkbox-con vs-checkbox-primary">
-                                                                <input type="checkbox">
-                                                                <span class="vs-checkbox">
-                                                                        <span class="vs-checkbox--check">
-                                                                            <i class="vs-icon feather icon-check"></i>
-                                                                        </span>
-                                                                    </span>
-                                                                <span class="">{{__('Remember me')}}</span>
-                                                            </div>
-                                                        </fieldset>
-                                                    </div>
-{{--                                                    <div class="text-right"><a href="auth-forgot-password.html" class="card-link">{{__('Forgot Password?')}}</a></div>--}}
-                                                </div>
-                                                <button type="submit" class="btn btn-primary float-right btn-inline">{{__('Login')}}</button>
-                                            </form>
-                                        </div>
-                                    </div>
-                                    <div class="login-footer">
-
+                                    <div class="input-group input-group-merge form-password-toggle">
+                                        <input class="form-control form-control-merge" id="password" type="password" name="password" placeholder="············" aria-describedby="login-password" tabindex="2" />
+                                        <div class="input-group-append"><span class="input-group-text cursor-pointer"><i data-feather="eye"></i></span></div>
+                                        {{input_error($errors,'password')}}
                                     </div>
                                 </div>
-                            </div>
+                                <div class="form-group">
+                                    <div class="custom-control custom-checkbox">
+                                        <input class="custom-control-input" name="remember" id="remember" type="checkbox" tabindex="3" />
+                                        <label class="custom-control-label" for="remember"> {{__('Remember me')}}</label>
+                                    </div>
+                                </div>
+                                <button class="btn btn-primary btn-block" tabindex="4">{{__('Login')}}</button>
+                            </form>
+{{--                            <p class="text-center mt-2"><span>New on our platform?</span><a href="page-auth-register-v2.html"><span>&nbsp;Create an account</span></a></p>--}}
+{{--                            <div class="divider my-2">--}}
+{{--                                <div class="divider-text">or</div>--}}
+{{--                            </div>--}}
+{{--                            <div class="auth-footer-btn d-flex justify-content-center"><a class="btn btn-facebook" href="javascript:void(0)"><i data-feather="facebook"></i></a><a class="btn btn-twitter white" href="javascript:void(0)"><i data-feather="twitter"></i></a><a class="btn btn-google" href="javascript:void(0)"><i data-feather="mail"></i></a><a class="btn btn-github" href="javascript:void(0)"><i data-feather="github"></i></a></div>--}}
+{{--                        --}}
                         </div>
                     </div>
+                    <!-- /Login-->
                 </div>
-            </section>
-
+            </div>
         </div>
     </div>
 </div>
@@ -132,21 +116,32 @@
 
 
 <!-- BEGIN: Vendor JS-->
-<script src=" {{asset('assets/dashboard2/resources/app-assets/vendors/js/vendors.min.js')}}"></script>
+<script src="{{asset('assets/dashboard2/resources')}}/app-assets/vendors/js/vendors.min.js"></script>
 <!-- BEGIN Vendor JS-->
 
 <!-- BEGIN: Page Vendor JS-->
+<script src="{{asset('assets/dashboard2/resources')}}/app-assets/vendors/js/forms/validation/jquery.validate.min.js"></script>
 <!-- END: Page Vendor JS-->
 
 <!-- BEGIN: Theme JS-->
-<script src=" {{asset('dashboard2/resources/app-assets/js/core/app-menu.js')}}"></script>
-<script src=" {{asset('dashboard2/resources/app-assets/js/core/app.js')}}"></script>
-<script src=" {{asset('dashboard2/resources/app-assets/js/scripts/components.js')}}"></script>
+<script src="{{asset('assets/dashboard2/resources')}}/app-assets/js/core/app-menu.js"></script>
+<script src="{{asset('assets/dashboard2/resources')}}/app-assets/js/core/app.js"></script>
 <!-- END: Theme JS-->
 
 <!-- BEGIN: Page JS-->
+<script src="{{asset('assets/dashboard2/resources')}}/app-assets/js/scripts/pages/page-auth-login.js"></script>
 <!-- END: Page JS-->
 
+<script>
+    $(window).on('load', function() {
+        if (feather) {
+            feather.replace({
+                width: 14,
+                height: 14
+            });
+        }
+    })
+</script>
 </body>
 <!-- END: Body-->
 

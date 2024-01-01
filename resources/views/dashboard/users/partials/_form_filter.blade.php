@@ -15,5 +15,5 @@
     {!! Form::email('email',request()->email ??null,['id'=>'email','class'=>'form-control col',disable_on_show()]) !!}
     {{input_error($errors,'email')}}
 </div>
-
+@if(request()->has('type')) <input type="hidden" name="type" value="{{request()->type}}"> @endif
 

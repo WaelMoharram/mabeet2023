@@ -21,7 +21,7 @@ class UserController extends Controller
      */
     public function __construct()
     {
-        $this->middleware('auth');
+        $this->middleware('auth:admins');
     }
 
     /**
@@ -32,23 +32,25 @@ class UserController extends Controller
     public function index(Request $request)
     {
 
-        $users = User::where(function ($q) use($request){
-            // Name filter
-            if ($request->has('name')  && $request->name != null  && $request->name != ''){
-                $q->where('name','like', '%'.$request->name.'%');
+            $users = User::where(function ($q) use ($request) {
+                // Name filter
+                if ($request->has('name') && $request->name != null && $request->name != '') {
+                    $q->where('name', 'like', '%' . $request->name . '%');
+                }
+
+                // Email filter
+                if ($request->has('email') && $request->email != null && $request->email != '') {
+                    $q->where('email', 'like', '%' . $request->email . '%');
+                }
+
+                $q->where('type',$request->type);
+            });
+
+            if (\request()->text) {
+                $users = $users->Search(\request()->text);
             }
 
-            // Email filter
-            if ($request->has('email')  && $request->email != null  && $request->email != ''){
-                $q->where('email','like', '%'.$request->email.'%');
-            }
-        });
-
-        if(\request()->text){
-            $users = $users->Search(\request()->text);
-        }
-
-        $users = $users->paginate(10);
+            $users = $users->paginate(10);
 
         return view('dashboard.users.index', compact('users'));
     }
