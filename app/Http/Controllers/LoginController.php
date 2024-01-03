@@ -15,7 +15,8 @@ class LoginController extends Controller
      */
     public function redirectToGoogle()
     {
-        return Socialite::driver('google')->redirect();
+        dd(request()->type);
+        return Socialite::driver('google')->with(['type' => request()->type])->redirect();
     }
 
     /**
@@ -40,7 +41,7 @@ class LoginController extends Controller
                     'name' => $user->name,
                     'email' => $user->email,
                     'google_id'=> $user->id,
-                    'password' => encrypt('')
+                    'password' => encrypt(''),
                 ]);
                 //every user needs a team for dashboard/jetstream to work.
                 //create a personal team for the user
