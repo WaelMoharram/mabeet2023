@@ -35,7 +35,6 @@ class LoginController extends Controller
             $user = Socialite::driver('google')->user();
             // Retrieve user_type from the session
             $userType = Cookie::get('type');
-dd($userType);
 
             // if the user exits, use that user and login
             $finduser = User::where('google_id', $user->id)->first();
@@ -50,7 +49,7 @@ dd($userType);
                     'email' => $user->email,
                     'google_id'=> $user->id,
                     'password' => encrypt(''),
-                    'type' => $userType,
+                    'type' =>$userType,
                 ]);
 
                 //login as the new user
