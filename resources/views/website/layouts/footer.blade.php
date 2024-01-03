@@ -16,10 +16,11 @@
             <div class="col-lg-12">
                 <div class="row links">
                     <div class="col-lg-3 col-md-6 group text-center">
-                        <h1 class="title-foot">تابعنا</h1>
+                        <h1 class="title-foot">{{__('Follow us')}}</h1>
                         <ul class="list-unstyled">
-                            <li><a href="">تويتر</a></li>
-                            <li><a href="">يوتيوب</a></li>
+                            <li><a href="{{option('twitter')}}">{{__('Twitter')}}</a></li>
+                            <li><a href="{{option('instagram')}}">{{__('Instagram')}}</a></li>
+                            <li><a href="{{option('youtube')}}">{{__('Youtube')}}</a></li>
                         </ul>
                     </div>
 
