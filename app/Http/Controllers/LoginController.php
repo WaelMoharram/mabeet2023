@@ -17,7 +17,8 @@ class LoginController extends Controller
      */
     public function redirectToGoogle()
     {
-        cookie()->forever('type', request()->type);
+        cookie('type', request()->type, 60);
+
 
         return Socialite::driver('google')->redirect();
     }
