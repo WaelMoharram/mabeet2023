@@ -81,13 +81,22 @@
                 $('.social-links').toggleClass('disabled', !isSelected);
 
                 const selectedValue = $('input[name="select"]:checked').val();
-                const googleLink = '{{route('google-login')}}' + '?type=' + selectedValue;
+                const googleLink = '{{ route('google-login') }}' + '?type=' + selectedValue;
                 $('#google-link').attr('href', googleLink);
                 // Enable/disable Google and Apple links based on the radio button selection
-
-
             });
 
+            // Handle clicking on links
+            $(document).on('click', '.social-links', function(e) {
+                // Check if the link is disabled
+                if ($(this).hasClass('disabled')) {
+                    e.preventDefault(); // Prevent the default action if the link is disabled
+                } else {
+                    // Perform the desired action when an enabled link is clicked
+                    // For example, you can redirect to the link's href
+                    window.location.href = $(this).attr('href');
+                }
+            });
         });
     </script>
 @endsection
