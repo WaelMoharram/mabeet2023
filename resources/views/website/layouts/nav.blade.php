@@ -28,7 +28,7 @@
 {{--                </li>--}}
                 <li class="nav-item list-inline-item dropdown">
                     <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                        {{__('Hello,').auth()->user()->name}}
+                       <span> {{__('Hello,').auth()->user()->name}} </span>
                     </a>
                     <div class="dropdown-menu" aria-labelledby="navbarDropdown">
                         <a class="dropdown-item" href="{{route('my-profile')}}">{{__('My profile')}}</a>
