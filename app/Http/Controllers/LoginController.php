@@ -1,5 +1,6 @@
 <?php
 namespace App\Http\Controllers;
+use Illuminate\Support\Facades\Cookie;
 use Illuminate\Support\Facades\Session;
 use Laravel\Socialite\Facades\Socialite;
 use Illuminate\Support\Facades\Auth;
@@ -16,7 +17,7 @@ class LoginController extends Controller
      */
     public function redirectToGoogle()
     {
-        Session::put('type', request()->type);
+        cookie()->forever('type', request()->type);
 
         return Socialite::driver('google')->redirect();
     }
@@ -28,12 +29,12 @@ class LoginController extends Controller
      */
     public function handleGoogleCallback()
     {
-        dd(Session::get('user_type'));
+        dd(Cookie::get('user_type'));
         try {
             //create a user using socialite driver google
             $user = Socialite::driver('google')->user();
             // Retrieve user_type from the session
-            $userType = Session::get('user_type');
+            $userType = Cookie::get('user_type');
 
             // Clear the session value if needed
             Session::forget('user_type');
