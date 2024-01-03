@@ -14,3 +14,8 @@
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.3.0/css/all.min.css">
 <link rel="stylesheet" href="{{asset('/')}}/asset/css/style.css">
 <link rel="stylesheet" href="{{asset('/')}}/asset/css/media.css">
+<style>
+    .nav-link {
+        color: #212529;
+    }
+</style>

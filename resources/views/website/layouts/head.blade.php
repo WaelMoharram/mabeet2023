@@ -4,4 +4,5 @@
     <link rel="shortcut icon" type="image/png" href="{{asset('/')}}/asset/images/fav.png">
     <title>@yield('title')</title>
     @include('website.layouts.style')
+
 </head>
