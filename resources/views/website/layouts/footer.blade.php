@@ -18,9 +18,9 @@
                     <div class="col-lg-3 col-md-6 group text-center">
                         <h1 class="title-foot">{{__('Follow us')}}</h1>
                         <ul class="list-unstyled">
-                            <li><a href="{{option('twitter')}}">{{__('Twitter')}}</a></li>
-                            <li><a href="{{option('instagram')}}">{{__('Instagram')}}</a></li>
-                            <li><a href="{{option('youtube')}}">{{__('Youtube')}}</a></li>
+                            <li><a target="_blank" href="{{option('twitter')}}">{{__('Twitter')}}</a></li>
+                            <li><a target="_blank" href="{{option('instagram')}}">{{__('Instagram')}}</a></li>
+                            <li><a target="_blank" href="{{option('youtube')}}">{{__('Youtube')}}</a></li>
                         </ul>
                     </div>
 
@@ -34,14 +34,16 @@
                         </ul>
                     </div>
                     <div class="col-lg-3 col-md-6 group text-center">
-                        <h1 class="title-foot">مالك السكن</h1>
+                        <h1 class="title-foot">{{__('Property Owner')}}</h1>
                         <ul class="list-unstyled">
+                            <li><a href="">كيفية إضافة مسكن</a></li>
+                            <li><a href="">إضافة مسكن</a></li>
                             <li><a href="">كيفية إضافة مسكن</a></li>
                             <li><a href="">إضافة مسكن</a></li>
                         </ul>
                     </div>
                     <div class="col-lg-3 col-md-6 group text-center">
-                        <h1 class="title-foot">طالب السكن</h1>
+                        <h1 class="title-foot">{{__('Housing Seeker')}}</h1>
                         <ul class="list-unstyled">
                             <li><a href="">كيف يعمل مبيت</a></li>
                             <li><a href="">طلب جديد</a></li>
