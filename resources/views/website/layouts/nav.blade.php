@@ -23,8 +23,18 @@
                 </li>
 
 
-                <li class="nav-item list-inline-item">
-                    <a class="nav-item list-inline-item btn" href="{{route('my-profile')}}">{{__('Hello,').auth()->user()->name}}</a>
+{{--                <li class="nav-item list-inline-item">--}}
+{{--                    <a class="nav-item list-inline-item btn" href="{{route('my-profile')}}">{{__('Hello,').auth()->user()->name}}</a>--}}
+{{--                </li>--}}
+                <li class="nav-item list-inline-item dropdown">
+                    <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                        {{__('Hello,').auth()->user()->name}}
+                    </a>
+                    <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+                        <a class="dropdown-item" href="{{route('my-profile')}}">{{__('My profile')}}</a>
+                        <div class="dropdown-divider"></div>
+                        <a class="dropdown-item" href="#">{{__('Logout')}}</a>
+                    </div>
                 </li>
 
                 <li class="nav-item list-inline-item">
