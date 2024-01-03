@@ -26,8 +26,7 @@
                     <div class="col-lg-3 col-md-6 group text-center">
                         <h1 class="title-foot">حول مبيت</h1>
                         <ul class="list-unstyled">
-                            <li><a href="">عن مبيت</a></li>
-                            <li><a href="">تواصل معنا (واتساب)</a></li>
+                            <li><a target="_blank" href="https://wa.me/{{option('whatsapp')}}">{{__('Contact us - whatsapp')}}</a></li>
                             @foreach(\App\Models\Page::where('show_in_footer',1)->get() as $page)
                                 <li><a href="{{route('page',$page->title)}}">{{$page->title}}</a></li>
                             @endforeach
