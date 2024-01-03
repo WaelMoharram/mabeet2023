@@ -24,7 +24,7 @@
 
 
                 <li class="nav-item list-inline-item">
-                    <a class="nav-item list-inline-item btn" href="{{route('my-profile')}}">{{__('Profile')}}</a>
+                    <a class="nav-item list-inline-item btn" href="{{route('my-profile')}}">{{__('Hello,').auth()->user()->name}}</a>
                 </li>
 
                 <li class="nav-item list-inline-item">
