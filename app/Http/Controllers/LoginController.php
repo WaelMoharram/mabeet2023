@@ -52,18 +52,7 @@ class LoginController extends Controller
                     'password' => encrypt(''),
                     'type' => $userType,
                 ]);
-                dd($newUser);
-                //every user needs a team for dashboard/jetstream to work.
-                //create a personal team for the user
-//                $newTeam = Team::forceCreate([
-//                    'user_id' => $newUser->id,
-//                    'name' => explode(' ', $user->name, 2)[0]."'s Team",
-//                    'personal_team' => true,
-//                ]);
-                // save the team and add the team to the user.
-//                $newTeam->save();
-//                $newUser->current_team_id = $newTeam->id;
-//                $newUser->save();
+
                 //login as the new user
                 Auth::login($newUser);
                 // go to the dashboard
