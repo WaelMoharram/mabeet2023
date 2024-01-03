@@ -23,7 +23,7 @@
 <div class="form-group py-1 col-md-12">
     <label for="formInputRole"> {{__('Show in footer')}}</label>
     <br>
-    {!! Form::select('show_in_footer',['1'=>__('Yes'),'0'=>__('No')],null,['class'=>'form-control col','placeholder'=>__("Show in footer")]) !!}
+    {!! Form::select('show_in_footer',['1'=>__('Yes'),'0'=>__('No')],null,['class'=>'form-control col']) !!}
     {{input_error($errors,'show_in_footer')}}
 </div>
 
@@ -35,7 +35,7 @@
 
 <div class="form-group py-1 col-md-6">
     <label for="title_en"> {{__('Title in English')}}</label>
-    {!! Form::text('title[en]',($page ? $page->getTranslation('title', 'ar') : null),['id'=>'title_en','class'=>'form-control col','placeholder'=>__("Title in English")]) !!}
+    {!! Form::text('title[en]',($page ? $page->getTranslation('title', 'en') : null),['id'=>'title_en','class'=>'form-control col','placeholder'=>__("Title in English")]) !!}
     {{input_error($errors,'title[en]')}}
 </div>
 
