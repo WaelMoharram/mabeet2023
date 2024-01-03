@@ -19,17 +19,17 @@
                         <div class="row mb-3">
                             <div class="col-lg-6 col-md-6">
                                 <div class="box">
-                                    <input type="radio" id="control_01" name="select" value="1">
+                                    <input type="radio" id="control_01" name="select" value="client">
                                     <label for="control_01">
-                                        <h2>أنا ابحث عن سكن</h2>
+                                        <h2>{{__('I am looking for accommodation')}}</h2>
                                     </label>
                                 </div>
                             </div>
                             <div class="col-lg-6 col-md-6">
                                 <div class="box">
-                                    <input type="radio" id="control_02" name="select" value="2">
+                                    <input type="radio" id="control_02" name="select" value="provider">
                                     <label for="control_02">
-                                        <h2>أنا مالك وحدة سكنية</h2>
+                                        <h2>{{__('I am the owner of a residential unit')}}</h2>
                                     </label>
                                 </div>
                             </div>
@@ -38,14 +38,14 @@
                                 <hr>
                             </div>
 
-                            <a href="{{route('google-login')}}" class="col-12">
+                            <a href="{{route('google-login')}}" class="col-12 social-link">
                                 <div class="box-sociall">
                                     <h2>اشترك بحساب جوجل</h2>
                                     <img src="asset/images/google.png" class="img-fluid">
                                 </div>
                             </a>
 
-                            <div class="col-12">
+                            <div class="col-12 social-link">
                                 <div class="box-sociall">
                                     <h2>اشترك بحساب آبل</h2>
                                     <img src="asset/images/apple.png" class="img-fluid">
