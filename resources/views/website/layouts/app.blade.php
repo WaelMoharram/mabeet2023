@@ -24,7 +24,7 @@
 <!-- Start Footer -->
 
 @include('website.layouts.script')
-
+@yield('footer')
 </body>
 
 </html>
