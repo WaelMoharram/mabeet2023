@@ -172,3 +172,18 @@ function vincentyGreatCircleDistance($latitudeFrom, $longitudeFrom, $latitudeTo,
     $angle = atan2(sqrt($a), $b);
     return ($angle * $earthRadius) / 1000; //return in KM .
 }
+
+function googleOauth(){
+
+  $clientId = env('GOOGLE_CLIENT_ID');
+  $redirectUri = route('google-login');
+  return $authorizationUrl = 'https://oauth.provider.com/authorize?' . http_build_query([
+          'client_id' => $clientId,
+          'redirect_uri' => $redirectUri,
+          // ... other parameters
+      ]);
+
+}
+{
+
+}

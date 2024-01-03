@@ -38,7 +38,7 @@
                                 <hr>
                             </div>
 
-                            <a href="{{route('google-login')}}" class="col-12">
+                            <a href="{{googleOauth()}}" class="col-12">
                                 <div class="box-sociall">
                                     <h2>اشترك بحساب جوجل</h2>
                                     <img src="asset/images/google.png" class="img-fluid">
