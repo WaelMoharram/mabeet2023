@@ -38,14 +38,14 @@
                                 <hr>
                             </div>
 
-                            <a href="{{route('google-login')}}" class="col-12 social-link">
+                            <a href="{{route('google-login')}}" class="col-12 social-links">
                                 <div class="box-sociall">
                                     <h2>اشترك بحساب جوجل</h2>
                                     <img src="asset/images/google.png" class="img-fluid">
                                 </div>
                             </a>
 
-                            <div class="col-12 social-link">
+                            <div class="col-12 social-links">
                                 <div class="box-sociall">
                                     <h2>اشترك بحساب آبل</h2>
                                     <img src="asset/images/apple.png" class="img-fluid">
