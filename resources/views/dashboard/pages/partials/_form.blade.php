@@ -19,7 +19,13 @@
     {!! Form::file('image',['class'=>'form-control col','placeholder'=>__("Image"),'onchange'=>"loadImage(event)"]) !!}
     {{input_error($errors,'image')}}
 </div>
-
+{{--//show_in_footer select--}}
+<div class="form-group py-1 col-md-12">
+    <label for="formInputRole"> {{__('Show in footer')}}</label>
+    <br>
+    {!! Form::select('show_in_footer',['1'=>__('Yes'),'0'=>__('No')],null,['class'=>'form-control col','placeholder'=>__("Show in footer")]) !!}
+    {{input_error($errors,'show_in_footer')}}
+</div>
 
 <div class="form-group py-1 col-md-6">
     <label for="title_ar"> {{__('Title in Arabic')}}</label>

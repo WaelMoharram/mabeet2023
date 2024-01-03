@@ -13,7 +13,7 @@ class Page extends Model
     public $timestamps = true;
     use HasTranslations;
 
-    protected $fillable = array('title','content','image');
+    protected $fillable = array('title','content','image','show_in_footer');
 
     public $translatable = ['title','content'];
 }

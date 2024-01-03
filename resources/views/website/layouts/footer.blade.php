@@ -28,7 +28,9 @@
                         <ul class="list-unstyled">
                             <li><a href="">عن مبيت</a></li>
                             <li><a href="">تواصل معنا (واتساب)</a></li>
-                            <li><a href="">شروط الإستخدام</a></li>
+                            @foreach(\App\Models\Page::where('show_in_footer',1)->get() as $page)
+                                <li><a href="{{route('page',$page->title)}}">{{$page->title}}</a></li>
+                            @endforeach
                         </ul>
                     </div>
                     <div class="col-lg-3 col-md-6 group text-center">
