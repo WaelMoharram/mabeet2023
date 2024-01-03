@@ -34,10 +34,9 @@ class LoginController extends Controller
             //create a user using socialite driver google
             $user = Socialite::driver('google')->user();
             // Retrieve user_type from the session
-            $userType = Cookie::get('user_type');
+            $userType = Cookie::get('type');
 
-            // Clear the session value if needed
-            Session::forget('user_type');
+
             // if the user exits, use that user and login
             $finduser = User::where('google_id', $user->id)->first();
             if($finduser){
