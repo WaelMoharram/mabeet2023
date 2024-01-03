@@ -23,7 +23,8 @@ class User extends Authenticatable
         'email',
         'password',
         'google_id',
-        'apple_id'
+        'apple_id',
+        'type'
     ];
     protected $searchable = ['name','email'];
 
