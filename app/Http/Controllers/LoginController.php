@@ -25,6 +25,7 @@ class LoginController extends Controller
      */
     public function handleGoogleCallback()
     {
+        dd(request()->all());
         try {
             //create a user using socialite driver google
             $user = Socialite::driver('google')->user();
@@ -44,6 +45,7 @@ class LoginController extends Controller
                     'password' => encrypt(''),
                     'type' => $userType,
                 ]);
+                dd($newUser);
                 //every user needs a team for dashboard/jetstream to work.
                 //create a personal team for the user
 //                $newTeam = Team::forceCreate([
