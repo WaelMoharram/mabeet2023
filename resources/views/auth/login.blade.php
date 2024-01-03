@@ -78,35 +78,16 @@
             $('input[name="select"]').change(function() {
                 // Check if any radio button is selected
                 const isSelected = $('input[name="select"]:checked').length > 0;
+                $('.social-links').toggleClass('disabled', !isSelected);
+
                 const selectedValue = $('input[name="select"]:checked').val();
                 const googleLink = '{{route('google-login')}}' + '?type=' + selectedValue;
                 $('#google-link').attr('href', googleLink);
                 // Enable/disable Google and Apple links based on the radio button selection
-                $('.social-links').toggleClass('disabled', !isSelected);
 
 
             });
 
-            // Prevent clicking on disabled links
-            $('.social-links.disabled').click(function(e) {
-                e.preventDefault();
-            });
-
-            // Handle Google link click
-            // $('#google-link').click(function(e) {
-            //     // Check if any radio button is selected
-            //     const isSelected = $('input[name="select"]:checked').length > 0;
-            //
-            //     if (!isSelected) {
-            //         // If no radio button is selected, prevent navigating to the Google route
-            //         e.preventDefault();
-            //     } else {
-            //         // If a radio button is selected, modify the href attribute of the Google link
-            //         const selectedValue = $('input[name="select"]:checked').val();
-            //         const googleLink = $(this).attr('href') + '?type=' + selectedValue;
-            //         $(this).attr('href', googleLink);
-            //     }
-            // });
         });
     </script>
 @endsection
