@@ -79,7 +79,7 @@
                 // Check if any radio button is selected
                 const isSelected = $('input[name="select"]:checked').length > 0;
                 const selectedValue = $('input[name="select"]:checked').val();
-                const googleLink = $('#google-link').attr('href') + '?type=' + selectedValue;
+                const googleLink = '{{route('google-login')}}' + '?type=' + selectedValue;
                 $('#google-link').attr('href', googleLink);
                 // Enable/disable Google and Apple links based on the radio button selection
                 $('.social-links').toggleClass('disabled', !isSelected);
