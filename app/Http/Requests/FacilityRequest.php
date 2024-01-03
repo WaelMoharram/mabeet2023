@@ -25,7 +25,7 @@ class FacilityRequest extends FormRequest
     {
         $id = $this->season ?? null;
         return [
-//            'image'=>'nullable|required_without:_method|image',
+            'image'=>'nullable|required_without:_method|image',
             'name.*'=>'required|string|min:2|max:191',
         ];
     }
@@ -33,6 +33,7 @@ class FacilityRequest extends FormRequest
     public function attributes()
     {
         return [
+            'image'=>__('Image'),
             'name.ar'=>__('Name in Arabic'),
             'name.en'=>__('Name in English'),
 

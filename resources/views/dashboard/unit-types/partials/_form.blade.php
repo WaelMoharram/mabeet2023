@@ -13,6 +13,12 @@
     {{input_error($errors,'name[en]')}}
 </div>
 
+<div class="form-group py-1 col-md-12 {{hidden_on_show()}}">
+    <label for="facilities"> {{__('Facilities')}} </label>
+    {{Form::select('facilities[]', \App\Models\Facility::all()->pluck('name', 'id'), (isset($unitType->facilities)? $unitType->facilities: null), ['id'=>'facilities','class'=>'form-control col select2',hidden_on_show(),  'multiple'] ) }}
+
+</div>
+
 
 
 

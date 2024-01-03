@@ -50,6 +50,9 @@ Route::name('dashboard.')->middleware(['language', 'auth:admins'])->prefix('dash
     Route::resource('facilities', \App\Http\Controllers\Dashboard\FacilityController::class);
     Route::resource('services', \App\Http\Controllers\Dashboard\ServiceController::class);
 
+    Route::resource('units', \App\Http\Controllers\Dashboard\UnitController::class);
+    Route::resource('orders', \App\Http\Controllers\Dashboard\OrderController::class);
+
 
     Route::get('users.suspend',[\App\Http\Controllers\Dashboard\UserController::class, 'suspend'])->name('users.suspend');
 

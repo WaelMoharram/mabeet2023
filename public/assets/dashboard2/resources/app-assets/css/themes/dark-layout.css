@@ -377,7 +377,7 @@ body.dark-layout {
   color: #b4b7bd; }
 
 .dark-layout .dropdown-menu .dropdown-item:hover, .dark-layout .dropdown-menu .dropdown-item:focus {
-  background: rgba(115, 103, 240, 0.12);
+  background: rgba(63,174,86, 0.12);
   color: #7367f0; }
 
 .dark-layout .dropdown-menu .dropdown-item:active, .dark-layout .dropdown-menu .dropdown-item.active {
@@ -999,7 +999,7 @@ body.dark-layout {
   box-shadow: 0 3px 10px 0 #283046; }
 
 .dark-layout .email-application .content-area-wrapper .email-app-list .email-user-list .media.selected-row-bg {
-  background-color: rgba(115, 103, 240, 0.06);
+  background-color: rgba(63,174,86, 0.06);
   border-color: #3b4253; }
 
 .dark-layout .email-application .content-area-wrapper .email-app-list .email-user-list .media .user-details p,

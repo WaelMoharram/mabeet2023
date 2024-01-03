@@ -1495,7 +1495,7 @@ footer .copyright {
     max-width: 1000px;
 }
 
-.register .box-social {
+.register .box-sociall {
     background: white;
     box-shadow: 0 0 7px 1px #DDD;
     transition: all 0.3s ease-in-out;
@@ -1505,11 +1505,11 @@ footer .copyright {
     margin-bottom: 20px;
 }
 
-.register .box-social:hover {
+.register .box-sociall:hover {
     box-shadow: 0 0 12px 3px #bbb;
 }
 
-.register .box-social img {
+.register .box-sociall img {
     display: block;
     position: absolute;
     right: 20px;

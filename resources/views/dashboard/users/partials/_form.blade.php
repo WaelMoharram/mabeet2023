@@ -24,7 +24,7 @@
     {{input_error($errors,'password_confirmation')}}
 </div>
 
-//country select
+
 <div class="form-group py-1 col-md-6">
     <label for="formInputRole"> {{__('Country')}} </label>
     {!! Form::select('country_id',\App\Models\Country::pluck('name','id'),null,['class'=>'form-control col','placeholder'=>__('Select country')]) !!}

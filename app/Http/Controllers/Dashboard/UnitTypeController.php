@@ -63,7 +63,7 @@ class UnitTypeController extends Controller
     {
         $requests=$request->all();
         $unitType = UnitType::create($requests);
-
+        $unitType->facilities()->sync($request->facilities);
 
         toast(__('Added successfully'),'success');
         return redirect(route('dashboard.unit-types.index'));
@@ -113,6 +113,7 @@ class UnitTypeController extends Controller
 
         $unitType->fill($requests)->save();
 
+        $unitType->facilities()->sync($request->facilities);
 
         toast(__('Edited successfully'),'success');
         return redirect(route('dashboard.unit-types.index'));

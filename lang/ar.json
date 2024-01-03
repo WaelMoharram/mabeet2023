@@ -248,5 +248,11 @@
     "Services": "الخدمات",
     "Add new services": "إضافة خدمة جديدة",
     "Create Service": "إنشاء خدمة جديدة",
-    "Edit Service": "تعديل الخدمة"
+    "Edit Service": "تعديل الخدمة",
+    "Unit-types": "أنواع الوحدات",
+    "Units": "الوحدات",
+    "Status": "الحالة",
+    "Add new units": "إضافة وحدة جديدة",
+    "Create Unit": "إنشاء وحدة جديدة",
+    "Orders": "الطلبات"
 }

@@ -62,6 +62,10 @@ class FacilityController extends Controller
     public function store(FacilityRequest $request)
     {
         $requests=$request->all();
+        if ($request->hasFile('image')) {
+            $requests['image'] = saveImage($request->image, 'images');
+            $request->files->remove('image');
+        }
         $facility = Facility::create($requests);
 
 
@@ -107,7 +111,10 @@ class FacilityController extends Controller
         //return $request->permissions;
 
         $requests=$request->all();
-
+        if ($request->hasFile('image')) {
+            $requests['image'] = saveImage($request->image, 'images');
+            $request->files->remove('image');
+        }
         $facility = Facility::find($id);
 
 
