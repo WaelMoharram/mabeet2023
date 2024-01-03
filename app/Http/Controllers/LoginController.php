@@ -1,5 +1,6 @@
 <?php
 namespace App\Http\Controllers;
+use Illuminate\Support\Facades\Session;
 use Laravel\Socialite\Facades\Socialite;
 use Illuminate\Support\Facades\Auth;
 use Exception;
@@ -15,7 +16,9 @@ class LoginController extends Controller
      */
     public function redirectToGoogle()
     {
-        return Socialite::driver('google')->with(['type' => request()->type])->redirect();
+        Session::put('type', request()->type);
+
+        return Socialite::driver('google')->redirect();
     }
 
     /**
@@ -29,7 +32,11 @@ class LoginController extends Controller
         try {
             //create a user using socialite driver google
             $user = Socialite::driver('google')->user();
-            $userType = request('type');
+            // Retrieve user_type from the session
+            $userType = Session::get('user_type');
+
+            // Clear the session value if needed
+            Session::forget('user_type');
             // if the user exits, use that user and login
             $finduser = User::where('google_id', $user->id)->first();
             if($finduser){
