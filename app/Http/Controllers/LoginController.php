@@ -28,7 +28,7 @@ class LoginController extends Controller
      */
     public function handleGoogleCallback()
     {
-        dd(request()->all());
+        dd(Session::get('user_type'));
         try {
             //create a user using socialite driver google
             $user = Socialite::driver('google')->user();
