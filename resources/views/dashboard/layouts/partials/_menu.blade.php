@@ -59,19 +59,16 @@
             </li>
             <li class=" nav-item @if(Request::is('dashboard/orders') ) active  @endif"><a class="d-flex align-items-center" href="{{route('dashboard.orders.index')}}"><i data-feather="users"></i><span class="menu-title text-truncate" data-i18n="Orders">{{__('Orders')}}</span></a>
             </li>
-{{--            <li class=" navigation-header"><span data-i18n="Users">{{__('Users')}}</span><i data-feather="more-horizontal"></i> --}}{{--break--}}
+            <li class=" navigation-header"><span data-i18n="Users">{{__('Settings')}}</span><i data-feather="more-horizontal"></i> break
 
-
-
-
-{{--            <li class="nav-item @if(Request::is('dashboard/system-options') || Request::is('dashboard/pages')) open  @endif"><a class="d-flex align-items-center"><i data-feather="home"></i><span class="menu-title text-truncate" data-i18n="Dashboards">{{__('Settings')}}</span><span class="badge badge-light-warning badge-pill ml-auto mr-1">2</span></a>--}}
-{{--                <ul class="menu-content">--}}
-{{--                    <li class="@if(Request::is('dashboard/pages')) active @endif"><a class="d-flex align-items-center" href="{{route('dashboard.pages.index')}}"><i data-feather="file"></i><span class="menu-item text-truncate" data-i18n="Pages">{{__('Pages')}}</span></a>--}}
-{{--                    </li>--}}
-{{--                    <li class="@if(Request::is('dashboard/system-options')) active @endif"><a class="d-flex align-items-center" href="{{route('dashboard.system-options.index')}}"><i data-feather="circle"></i><span class="menu-item text-truncate" data-i18n="Options">{{__('System options')}}</span></a>--}}
-{{--                    </li>--}}
-{{--                </ul>--}}
-{{--            </li>--}}
+            <li class="nav-item @if(Request::is('dashboard/system-options') || Request::is('dashboard/pages')) open  @endif"><a class="d-flex align-items-center"><i data-feather="home"></i><span class="menu-title text-truncate" data-i18n="Dashboards">{{__('General settings')}}</span><span class="badge badge-light-warning badge-pill ml-auto mr-1">2</span></a>
+                <ul class="menu-content">
+                    <li class="@if(Request::is('dashboard/pages')) active @endif"><a class="d-flex align-items-center" href="{{route('dashboard.pages.index')}}"><i data-feather="file"></i><span class="menu-item text-truncate" data-i18n="Pages">{{__('Pages')}}</span></a>
+                    </li>
+                    <li class="@if(Request::is('dashboard/system-options')) active @endif"><a class="d-flex align-items-center" href="{{route('dashboard.system-options.index')}}"><i data-feather="circle"></i><span class="menu-item text-truncate" data-i18n="Options">{{__('System options')}}</span></a>
+                    </li>
+                </ul>
+            </li>
 
 
 
