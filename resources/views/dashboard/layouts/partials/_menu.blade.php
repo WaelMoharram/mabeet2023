@@ -57,7 +57,7 @@
             @endcan
             <li class=" nav-item @if(Request::is('dashboard/units') ) active  @endif"><a class="d-flex align-items-center" href="{{route('dashboard.units.index')}}"><i data-feather="users"></i><span class="menu-title text-truncate" data-i18n="Units">{{__('Units')}}</span></a>
             </li>
-            <li class=" nav-item @if(Request::is('dashboard/orders') ) active  @endif"><a class="d-flex align-items-center" href="{{route('dashboard.orders.index')}}"><i data-feather="users"></i><span class="menu-title text-truncate" data-i18n="Orders">{{__('Orders')}}</span></a>
+            <li class=" nav-item @if(Request::is('dashboard/orders') ) active  @endif"><a class="d-flex align-items-center" href="#"><i data-feather="users"></i><span class="menu-title text-truncate" data-i18n="Orders">{{__('Orders')}}</span></a>
             </li>
             <li class=" navigation-header"><span data-i18n="Users">{{__('Settings')}}</span><i data-feather="more-horizontal"></i> break
 
