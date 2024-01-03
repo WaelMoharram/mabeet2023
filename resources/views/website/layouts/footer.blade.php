@@ -24,7 +24,7 @@
                     </div>
 
                     <div class="col-lg-3 col-md-6 group text-center">
-                        <h1 class="title-foot">حول مبيت</h1>
+                        <h1 class="title-foot">{{__('About mabeet')}}</h1>
                         <ul class="list-unstyled">
                             <li><a target="_blank" href="https://wa.me/{{option('whatsapp')}}">{{__('Contact us - whatsapp')}}</a></li>
                             @foreach(\App\Models\Page::where('show_in_footer',1)->get() as $page)
