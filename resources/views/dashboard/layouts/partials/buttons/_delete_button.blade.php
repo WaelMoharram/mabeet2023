@@ -1,6 +1,16 @@
-<button data-toggle="modal" data-target="#usersDelete{{$id}}" @if(isset($tooltip) ) {{tooltip($tooltip)}} @endif  class="btn btn-icon btn-icon btn-danger waves-effect waves-float waves-light" >
 
-    <i class="fa fa-trash-o"></i>
+
+
+<button style="background: none;
+	color: inherit;
+	border: none;
+	padding: 0;
+	font: inherit;
+	cursor: pointer;
+	outline: inherit;" data-toggle="modal" data-target="#usersDelete{{$id}}" @if(isset($tooltip) ) {{tooltip($tooltip)}} @endif  >
+
+    <img style="width: 25px;height: 25px;" src="{{asset('assets/mabeet-dashboard')}}/assets/images/Icon2.png" alt=""> @if(isset($buttonText)) {{$buttonText }} @endif
+
 </button>
 
 <!-- Modal -->
@@ -9,8 +19,14 @@
         <div class="modal-content">
             <div class="modal-header">
                 <h4 class="modal-title" id="myModalLabel1">{{__('Delete Record')}}</h4>
-                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                    <span aria-hidden="true">&times;</span>
+                <button style="background: none;
+	color: inherit;
+	border: none;
+	padding: 0;
+	font: inherit;
+	cursor: pointer;
+	outline: inherit;" type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <img style="width: 25px;height: 25px;" src="{{asset('assets/mabeet-dashboard')}}/assets/images/Icon2.png" alt="">
                 </button>
             </div>
             <div class="modal-body">
@@ -21,10 +37,10 @@
                     {{$route}}>
                     {{ method_field('DELETE') }}
                     {{ csrf_field() }}
-                    <button type="submit" class="btn btn-danger">{!! __('Delete') !!}</button>
+                    <button type="submit" class="btn btn-outline-danger">{!! __('Delete') !!}</button>
 
                 </form>
-                <button type="button" class="btn btn-primary" data-dismiss="modal">{{__('Close')}}</button>
+                <button type="button" class="btn btn-outline-success" data-dismiss="modal">{{__('Close')}}</button>
             </div>
         </div>
     </div>

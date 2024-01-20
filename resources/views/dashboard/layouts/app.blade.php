@@ -1,86 +1,73 @@
 <!doctype html>
 
 
-<html class="loading" lang="{{ str_replace('_', '-', app()->getLocale()) }}" data-textdirection="{!! app()->getLocale() == 'ar'?'rtl':'ltr' !!}">
+<html class="loading" lang="{{ str_replace('_', '-', app()->getLocale()) }}"
+      data-textdirection="rtl">
 <!-- BEGIN: Head-->
 
 <head>
-    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=0, minimal-ui">
-    <meta name="description" content="Vuexy admin is super flexible, powerful, clean &amp; modern responsive bootstrap 4 admin template with unlimited possibilities.">
-    <meta name="keywords" content="admin template, Vuexy admin template, dashboard template, flat admin template, responsive admin template, web app">
-    <meta name="author" content="PIXINVENT">
-    <meta name="csrf-token" content="{{ csrf_token() }}">
+
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <title>{{env('APP_NAME')}} | @yield('title')</title>
-    <link rel="apple-touch-icon" href="{{asset('assets/dashboard2/resources')}}/app-assets/images/ico/apple-icon-120.png">
-    <link rel="shortcut icon" type="image/x-icon" href="{{asset('assets/dashboard2/resources')}}/app-assets/images/ico/favicon.ico">
-    <link href="https://fonts.googleapis.com/css?family=Montserrat:300,400,500,600" rel="stylesheet">
-    <link href="https://fonts.googleapis.com/css2?family=Alexandria:wght@400;500;600;700;800&family=Tajawal:wght@200;300;400;500;700;800;900&display=swap" rel="stylesheet">
+    <!-- plugins:css -->
+    <link rel="stylesheet"
+          href="{{asset('assets/mabeet-dashboard')}}/assets/vendors/mdi/css/materialdesignicons.min.css">
+    <link rel="stylesheet" href="{{asset('assets/mabeet-dashboard')}}/assets/vendors/css/vendor.bundle.base.css">
+    <!-- endinject -->
+    <!-- Plugin css for this page -->
+    <!-- End plugin css for this page -->
+    <!-- inject:css -->
+    <!-- endinject -->
+    <!-- Layout styles -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Alexandria:wght@100;200;300;400;500;600;700;800;900&display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet" href="{{asset('assets/mabeet-dashboard')}}/assets/css/style.css">
+    <!-- End layout styles -->
+    <link rel="shortcut icon" href="{{asset('assets/mabeet-dashboard')}}/assets/images/favicon.ico"/>
 
     @include('dashboard.layouts.partials._styles')
     @yield('header')
 </head>
 <!-- END: Head-->
 
-<!-- BEGIN: Body-->
+<body>
+<div class="container-scroller">
+    @include('dashboard.layouts.partials._nav')
 
-<body class="vertical-layout {!! auth()->user()->default_theme?'':'dark-layout' !!}dark-layout vertical-menu-modern 2-columns  navbar-floating footer-static  " data-open="click" data-menu="vertical-menu-modern" data-col="2-columns">
+    <!-- partial:partials/_navbar.html -->
+    <!-- partial -->
+    <div class="container-fluid page-body-wrapper">
+        <!-- partial:partials/_sidebar.html -->
+        <nav class="sidebar sidebar-offcanvas" id="sidebar">
+            @include('dashboard.layouts.partials._menu')
 
-@include('dashboard.layouts.partials._nav')
+        </nav>
 
-@include('dashboard.layouts.partials._menu')
-
-<!-- BEGIN: Content-->
-<div class="app-content content">
-    <div class="content-overlay"></div>
-    <div class="header-navbar-shadow"></div>
-    <div class="content-wrapper">
-        <div class="content-header row">
-            <div class="content-header-left col-md-9 col-12 mb-2">
-                <div class="row breadcrumbs-top">
-                    <div class="col-12">
-                        @yield('breadcrumb')
-                    </div>
-                </div>
-            </div>
-            <div class="content-header-right text-md-right col-md-3 col-12 d-md-block d-none">
-                <div class="form-group breadcrum-right">
-                    @yield('btn')
-
-                </div>
-            </div>
-        </div>
-        <div class="content-body">
-            <!-- Description -->
+        <!-- partial -->
+        <div class="main-panel">
+            <div class="content-wrapper">
                 @yield('content')
-         <!--/ Description -->
+            </div>
+            <!-- content-wrapper ends -->
+            <!-- partial:partials/_footer.html -->
 
-
+            <!-- partial -->
         </div>
+        <!-- main-panel ends -->
     </div>
+    <!-- page-body-wrapper ends -->
 </div>
-<!-- END: Content-->
-
-<div class="sidenav-overlay"></div>
-<div class="drag-target"></div>
-
-<!-- BEGIN: Footer-->
-<footer class="footer footer-static footer-light">
-{{--    <p class="clearfix blue-grey lighten-2 mb-0"><span class="float-md-left d-block d-md-inline-block mt-25">COPYRIGHT &copy; {{date('Y')}}<a class="text-bold-800 grey darken-2" href="#" target="_blank">Mozawed,</a>All rights Reserved</span>--}}
-        <button class="btn btn-primary btn-icon scroll-top" type="button"><i class="feather icon-arrow-up"></i></button>
-    </p>
-</footer>
-<!-- END: Footer-->
-
 @include('dashboard.layouts.partials._scripts')
 @include('sweetalert::alert')
 @yield('js-validation')
 @yield('footer')
-
-
-
 </body>
-<!-- END: Body-->
+<!-- BEGIN: Body-->
+
 
 </html>

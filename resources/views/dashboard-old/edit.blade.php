@@ -1,8 +1,10 @@
-@extends('dashboard.layouts.app')
-@section('title'){!! __('Edit profile') !!}@endsection
+@extends('dashboard-old.layouts.app')
+@section('title')
+    {!! __('Edit profile') !!}
+@endsection
 @section('header')@endsection
 @section('breadcrumb')
-    @include('dashboard.layouts.partials._breadcrumb',['level'=>'users'])
+    @include('dashboard-old.layouts.partials._breadcrumb',['level'=>'users'])
 @endsection
 @section('content')
     <section id="column-selectors">
@@ -43,8 +45,7 @@
                                 </div>
 
 
-
-                            @component('dashboard.layouts.partials.buttons._save_button',[])
+                                @component('dashboard-old.layouts.partials.buttons._save_button',[])
                                 @endcomponent
                             </div>
                             {!! Form::close() !!}
