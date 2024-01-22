@@ -1,5 +1,5 @@
 @foreach($seasons as $season)
-    @include('dashboard-old.seasons.partials._table_raw')
+    @include('dashboard.seasons.partials._table_raw')
 @endforeach
 
 

@@ -1,10 +1,10 @@
-@extends('dashboard-old.layouts.app')
+@extends('dashboard.layouts.app')
 @section('title')
     {!! __('Edit Option') !!}
 @endsection
 @section('header')@endsection
 @section('breadcrumb')
-    @include('dashboard-old.layouts.partials._breadcrumb',['level'=>'system-options'])
+    @include('dashboard.layouts.partials._breadcrumb',['level'=>'system-options'])
 @endsection
 @section('content')
     <section id="column-selectors">
@@ -19,8 +19,8 @@
                             {!! Form::model($option,['method'=>'put','route'=>['dashboard.system-options.update',$option->id],'class'=>'form','enctype' => 'multipart/form-data']  ) !!}
                             @csrf()
                             <div class="row">
-                                @include('dashboard-old.system-options.partials._form')
-                                @component('dashboard-old.layouts.partials.buttons._save_button',[])
+                                @include('dashboard.system-options.partials._form')
+                                @component('dashboard.layouts.partials.buttons._save_button',[])
                                 @endcomponent
                             </div>
                             {!! Form::close() !!}

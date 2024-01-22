@@ -19,7 +19,7 @@
             <ul class="nav nav-tabs tabs-wg" id="myTab" role="tablist">
                 @can('index clients')
                 <li class="nav-item" role="presentation">
-                    <a href="{{route('dashboard.users.index',['type'=>\App\Models\User::TYPE_CLIENT])}}" class="nav-link @if(request()->has('type') && request()->type == \App\Models\User::TYPE_CLIENT) active @endif " id="home-tab" >{{__('Clients wishing to book')}}</a>
+                    <a href="{{route('dashboard.users.index',['type'=>\App\Models\User::TYPE_CLIENT])}}" class="nav-link @if(request()->has('type') && request()->type == \App\Models\User::TYPE_CLIENT) active @else  @endif " id="home-tab" >{{__('Clients wishing to book')}}</a>
                 </li>
                 @endcan
                 @can('index providers')

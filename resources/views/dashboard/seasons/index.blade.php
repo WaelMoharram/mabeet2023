@@ -1,4 +1,4 @@
-@extends('dashboard-old.layouts.app')
+@extends('dashboard.layouts.app')
 @section('title')
     {!! __('Seasons') !!}
 @endsection
@@ -6,11 +6,11 @@
 
 @endsection
 @section('breadcrumb')
-    @include('dashboard-old.layouts.partials._breadcrumb',['level'=>'seasons'])
+    @include('dashboard.layouts.partials._breadcrumb',['level'=>'seasons'])
 @endsection
 @section('btn')
     @can('add seasons')
-        @include('dashboard-old.layouts.partials._add_icon',['route'=>'seasons'])
+        @include('dashboard.layouts.partials._add_icon',['route'=>'seasons'])
     @endcan
 @endsection
 @section('content')
@@ -22,7 +22,7 @@
                     <div class="card-header row">
                         {{--                        <h4 class="card-title">@yield('title')</h4>--}}
                         <div class="col-6">
-                            @include('dashboard-old.settings.select')
+                            @include('dashboard.settings.select')
                         </div>
 
                     </div>
@@ -46,7 +46,7 @@
                                     <div class="card-body card-dashboard">
                                         {!! Form::open(['method'=>'get','class'=>'form','enctype' => 'multipart/form-data']) !!}
                                         <div class="row">
-                                            @include('dashboard-old.seasons.partials._form_filter')
+                                            @include('dashboard.seasons.partials._form_filter')
                                             <div class="col-12">
                                                 <button type="submit"
                                                         class="btn btn-primary   waves-effect waves-light btn-sm">{{__('Filter')}}</button>
@@ -60,7 +60,7 @@
                             </div>
 
                             <div class="row">
-                                @include('dashboard-old.seasons.partials._table')
+                                @include('dashboard.seasons.partials._table')
                             </div>
                         </div>
                     </div>

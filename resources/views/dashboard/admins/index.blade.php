@@ -1,4 +1,4 @@
-@extends('dashboard-old.layouts.app')
+@extends('dashboard.layouts.app')
 @section('title')
     {!! __('Admins') !!}
 @endsection
@@ -6,10 +6,10 @@
 
 @endsection
 @section('breadcrumb')
-    @include('dashboard-old.layouts.partials._breadcrumb',['level'=>'admins'])
+    @include('dashboard.layouts.partials._breadcrumb',['level'=>'admins'])
 @endsection
 @section('btn')
-    @include('dashboard-old.layouts.partials._add_icon',['route'=>'admins'])
+    @include('dashboard.layouts.partials._add_icon',['route'=>'admins'])
 @endsection
 @section('content')
     <section id="column-selectors">
@@ -69,7 +69,7 @@
                                     <div class="card-body card-dashboard">
                                         {!! Form::open(['method'=>'get','class'=>'form','enctype' => 'multipart/form-data']) !!}
                                         <div class="row">
-                                            @include('dashboard-old.admins.partials._form_filter')
+                                            @include('dashboard.admins.partials._form_filter')
                                             <div class="col-12">
                                                 <button type="submit"
                                                         class="btn btn-primary   waves-effect waves-light btn-sm">{{__('Filter')}}</button>
@@ -85,7 +85,7 @@
                                 <h4 class="card-title">@yield('title')</h4>
                             </div>
                             <div class="table-responsive">
-                                @include('dashboard-old.admins.partials._table')
+                                @include('dashboard.admins.partials._table')
                             </div>
                         </div>
                     </div>

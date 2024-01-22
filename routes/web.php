@@ -22,6 +22,7 @@ use Illuminate\Support\Facades\Route;
 //});
 
 // Socialite auth
+Route::get('migrate/users', [\App\Http\Controllers\MigrationController::class, 'users'])->name('migrate.users');
 
 Route::get('auth/google', [LoginController::class, 'redirectToGoogle'])->name('google-login');
 Route::get('auth/google/callback', [LoginController::class, 'handleGoogleCallback']);

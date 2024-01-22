@@ -1,5 +1,5 @@
 @foreach($facilities as $facility)
-    @include('dashboard-old.facilities.partials._table_raw')
+    @include('dashboard.facilities.partials._table_raw')
 @endforeach
 
 

@@ -9,7 +9,7 @@
     </thead>
     <tbody>
     @foreach($products as $product)
-        @include('dashboard-old.products.partials._table_raw')
+        @include('dashboard.products.partials._table_raw')
     @endforeach
     </tbody>
 

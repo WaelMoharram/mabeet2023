@@ -10,7 +10,7 @@
     </thead>
     <tbody>
     @foreach($images as $image)
-        @include('dashboard-old.images.partials._table_raw')
+        @include('dashboard.images.partials._table_raw')
     @endforeach
     </tbody>
 </table>

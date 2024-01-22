@@ -8,7 +8,7 @@
     </thead>
     <tbody>
     @foreach($units as $unit)
-        @include('dashboard-old.units.partials._table_raw')
+        @include('dashboard.units.partials._table_raw')
     @endforeach
     </tbody>
 

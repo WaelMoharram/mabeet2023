@@ -1,10 +1,10 @@
-@extends('dashboard-old.layouts.app')
+@extends('dashboard.layouts.app')
 @section('title')
     {!! __('Edit products') !!}
 @endsection
 @section('header')@endsection
 @section('breadcrumb')
-    @include('dashboard-old.layouts.partials._breadcrumb',['level'=>'products'])
+    @include('dashboard.layouts.partials._breadcrumb',['level'=>'products'])
 @endsection
 @section('content')
     <section id="column-selectors">
@@ -19,8 +19,8 @@
                             {!! Form::model($product,['method'=>'put','route'=>['dashboard.products.update',$product->id],'class'=>'form','enctype' => 'multipart/form-data']  ) !!}
                             @csrf()
                             <div class="row">
-                                @include('dashboard-old.products.partials._form')
-                                @component('dashboard-old.layouts.partials.buttons._save_button',[])
+                                @include('dashboard.products.partials._form')
+                                @component('dashboard.layouts.partials.buttons._save_button',[])
                                 @endcomponent
                             </div>
                             {!! Form::close() !!}

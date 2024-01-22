@@ -1,10 +1,10 @@
-@extends('dashboard-old.layouts.app')
+@extends('dashboard.layouts.app')
 @section('title')
     {!! __('Edit pages') !!}
 @endsection
 @section('header')@endsection
 @section('breadcrumb')
-    @include('dashboard-old.layouts.partials._breadcrumb',['level'=>'pages'])
+    @include('dashboard.layouts.partials._breadcrumb',['level'=>'pages'])
 @endsection
 @section('content')
     <section id="column-selectors">
@@ -19,8 +19,8 @@
                             {!! Form::model($page,['method'=>'put','route'=>['dashboard.pages.update',$page->id],'class'=>'form','enctype' => 'multipart/form-data']  ) !!}
                             @csrf()
                             <div class="row">
-                                @include('dashboard-old.pages.partials._form')
-                                @component('dashboard-old.layouts.partials.buttons._save_button',[])
+                                @include('dashboard.pages.partials._form')
+                                @component('dashboard.layouts.partials.buttons._save_button',[])
                                 @endcomponent
                             </div>
                             {!! Form::close() !!}

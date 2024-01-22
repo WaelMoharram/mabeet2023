@@ -1,10 +1,10 @@
-@extends('dashboard-old.layouts.app')
+@extends('dashboard.layouts.app')
 @section('title')
     {!! __('Show Service') !!}
 @endsection
 @section('header')@endsection
 @section('breadcrumb')
-    @include('dashboard-old.layouts.partials._breadcrumb',['level'=>'services'])
+    @include('dashboard.layouts.partials._breadcrumb',['level'=>'services'])
 @endsection
 @section('content')
     <section id="column-selectors">
@@ -19,7 +19,7 @@
                             {!! Form::model($service,['class'=>'form']  ) !!}
                             @csrf()
                             <div class="row">
-                                @include('dashboard-old.services.partials._form')
+                                @include('dashboard.services.partials._form')
                             </div>
                             {!! Form::close() !!}
                         </div>

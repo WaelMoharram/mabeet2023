@@ -20274,4 +20274,10 @@ dl li {
    margin-left:10px;
    padding:0 10px;
    border-radius:10px
-} 
+}
+.tabs-wg .nav-link {
+    border: solid #006f29!important;
+    border-radius: 50px;
+    color: #006f29;
+    margin-left: 10px;
+}

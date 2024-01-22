@@ -3,14 +3,14 @@
     border-radius: 5px;">
         <h4 class="card-title">{!! $unitType->name !!}</h4>
 
-        @component('dashboard-old.layouts.partials.buttons._edit_button',[
-                            'route' => route('dashboard-old.unit-types.edit',$unitType->id),
+        @component('dashboard.layouts.partials.buttons._edit_button',[
+                            'route' => route('dashboard.unit-types.edit',$unitType->id),
                             'tooltip' => __('Edit '.$unitType['name']),
                              ])
         @endcomponent
-        @component('dashboard-old.layouts.partials.buttons._delete_button',[
+        @component('dashboard.layouts.partials.buttons._delete_button',[
                                         'id'=>$unitType->id,
-                                        'route' => route('dashboard-old.unit-types.destroy',$unitType->id) ,
+                                        'route' => route('dashboard.unit-types.destroy',$unitType->id) ,
                                         'tooltip' => __('Delete'),
                                          ])
         @endcomponent

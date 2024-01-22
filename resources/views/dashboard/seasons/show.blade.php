@@ -1,10 +1,10 @@
-@extends('dashboard-old.layouts.app')
+@extends('dashboard.layouts.app')
 @section('title')
     {!! __('Show Season') !!}
 @endsection
 @section('header')@endsection
 @section('breadcrumb')
-    @include('dashboard-old.layouts.partials._breadcrumb',['level'=>'seasons'])
+    @include('dashboard.layouts.partials._breadcrumb',['level'=>'seasons'])
 @endsection
 @section('content')
     <section id="column-selectors">
@@ -19,7 +19,7 @@
                             {!! Form::model($season,['class'=>'form']  ) !!}
                             @csrf()
                             <div class="row">
-                                @include('dashboard-old.seasons.partials._form')
+                                @include('dashboard.seasons.partials._form')
                             </div>
                             {!! Form::close() !!}
                         </div>

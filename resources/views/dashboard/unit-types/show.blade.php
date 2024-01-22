@@ -1,10 +1,10 @@
-@extends('dashboard-old.layouts.app')
+@extends('dashboard.layouts.app')
 @section('title')
     {!! __('Show Unit type') !!}
 @endsection
 @section('header')@endsection
 @section('breadcrumb')
-    @include('dashboard-old.layouts.partials._breadcrumb',['level'=>'unit-types'])
+    @include('dashboard.layouts.partials._breadcrumb',['level'=>'unit-types'])
 @endsection
 @section('content')
     <section id="column-selectors">
@@ -19,7 +19,7 @@
                             {!! Form::model($unitType,['class'=>'form']  ) !!}
                             @csrf()
                             <div class="row">
-                                @include('dashboard-old.unit-types.partials._form')
+                                @include('dashboard.unit-types.partials._form')
                             </div>
                             {!! Form::close() !!}
                         </div>

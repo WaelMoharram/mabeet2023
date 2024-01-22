@@ -1,10 +1,10 @@
-@extends('dashboard-old.layouts.app')
+@extends('dashboard.layouts.app')
 @section('title')
     {!! __('Options') !!}
 @endsection
 @section('header')@endsection
 @section('breadcrumb')
-    @include('dashboard-old.layouts.partials._breadcrumb',['level'=>'system-options'])
+    @include('dashboard.layouts.partials._breadcrumb',['level'=>'system-options'])
 @endsection
 
 @section('content')
@@ -18,7 +18,7 @@
                     <div class="card-content">
                         <div class="card-body card-dashboard">
                             <div class="table-responsive">
-                                @include('dashboard-old.system-options.partials._table')
+                                @include('dashboard.system-options.partials._table')
                             </div>
                         </div>
                     </div>

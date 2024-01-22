@@ -1,10 +1,10 @@
-@extends('dashboard-old.layouts.app')
+@extends('dashboard.layouts.app')
 @section('title')
     {!! __('Create image') !!}
 @endsection
 @section('header')@endsection
 @section('breadcrumb')
-    @include('dashboard-old.layouts.partials._breadcrumb',['level'=>'images'])
+    @include('dashboard.layouts.partials._breadcrumb',['level'=>'images'])
 @endsection
 @section('content')
     <section id="column-selectors">
@@ -19,8 +19,8 @@
                             {!! Form::open(['method'=>'post','route'=>'dashboard.images.store','class'=>'form','enctype' => 'multipart/form-data']) !!}
                             @csrf()
                             <div class="row">
-                                @include('dashboard-old.images.partials._form')
-                                @component('dashboard-old.layouts.partials.buttons._save_button',[])
+                                @include('dashboard.images.partials._form')
+                                @component('dashboard.layouts.partials.buttons._save_button',[])
                                 @endcomponent
                             </div>
                             {!! Form::close() !!}

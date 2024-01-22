@@ -7,7 +7,7 @@
     </thead>
     <tbody>
     @foreach($roles as $role)
-        @include('dashboard-old.roles.partials._table_raw')
+        @include('dashboard.roles.partials._table_raw')
     @endforeach
     </tbody>
 

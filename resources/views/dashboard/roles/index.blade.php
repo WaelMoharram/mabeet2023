@@ -1,4 +1,4 @@
-@extends('dashboard-old.layouts.app')
+@extends('dashboard.layouts.app')
 @section('title')
     {!! __('Roles') !!}
 @endsection
@@ -6,10 +6,10 @@
 
 @endsection
 @section('breadcrumb')
-    @include('dashboard-old.layouts.partials._breadcrumb',['level'=>'roles'])
+    @include('dashboard.layouts.partials._breadcrumb',['level'=>'roles'])
 @endsection
 @section('btn')
-    @include('dashboard-old.layouts.partials._add_icon',['route'=>'roles'])
+    @include('dashboard.layouts.partials._add_icon',['route'=>'roles'])
 @endsection
 @section('content')
     <section id="column-selectors">
@@ -23,7 +23,7 @@
                     <div class="card-content">
                         <div class="card-body card-dashboard">
                             <div class="table-responsive">
-                                @include('dashboard-old.roles.partials._table')
+                                @include('dashboard.roles.partials._table')
                             </div>
                         </div>
                     </div>

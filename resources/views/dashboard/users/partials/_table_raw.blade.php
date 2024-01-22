@@ -3,7 +3,7 @@
     <td>{!! $user->name !!}</td>
     <td>{!! $user->email !!}</td>
     <td>
-{{--        <ul class="list-inline m-0">--}}
+        <ul class="list-inline m-0">
 {{--            <li class="list-inline-item">--}}
 {{--                <a href="#"><img src="{{asset('assets/mabeet-dashboard')}}/assets/images/Icon.png" alt=""></a>--}}
 {{--            </li>--}}
@@ -13,13 +13,16 @@
 {{--            <li class="list-inline-item">--}}
 {{--                <a href="#"><img src="{{asset('assets/mabeet-dashboard')}}/assets/images/Icon2.png" alt=""></a>--}}
 {{--            </li>--}}
-{{--        </ul>--}}
 
-                @component('dashboard.layouts.partials.buttons._show_button',[
+                        <li class="list-inline-item">
+
+        @component('dashboard.layouts.partials.buttons._show_button',[
                         'route' => route('dashboard.users.show',$user->id),
                         'tooltip' => __('Show').' '.$user['name'],
                          ])
                 @endcomponent
+                        </li>
+            <li class="list-inline-item">
 
                 @component('dashboard.layouts.partials.buttons._edit_button',[
                             'route' => route('dashboard.users.edit',$user->id),
@@ -28,14 +31,16 @@
                     '),
                     ])
                 @endcomponent
-
+            </li>
+            <li class="list-inline-item">
                 @component('dashboard.layouts.partials.buttons._delete_button',[
                                 'id'=>$user->id,
                                 'route' => route('dashboard.users.destroy',$user->id) ,
                                 'tooltip' => __('Delete'),
                                  ])
                 @endcomponent
-
+            </li>
+        </ul>
 
 
 

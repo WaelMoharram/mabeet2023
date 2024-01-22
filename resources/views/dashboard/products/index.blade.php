@@ -1,10 +1,10 @@
-@extends('dashboard-old.layouts.app')
+@extends('dashboard.layouts.app')
 @section('title')
     {!! __('Products') !!}
 @endsection
 @section('header')@endsection
 @section('breadcrumb')
-    @include('dashboard-old.layouts.partials._breadcrumb',['level'=>'products'])
+    @include('dashboard.layouts.partials._breadcrumb',['level'=>'products'])
 @endsection
 
 @section('btn')
@@ -24,7 +24,7 @@
                     <div class="card-content">
                         <div class="card-body card-dashboard">
                             <div class="table-responsive">
-                                @include('dashboard-old.products.partials._table')
+                                @include('dashboard.products.partials._table')
                             </div>
                         </div>
                     </div>

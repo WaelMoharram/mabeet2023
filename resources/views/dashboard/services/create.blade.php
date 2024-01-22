@@ -1,4 +1,4 @@
-@extends('dashboard-old.layouts.app')
+@extends('dashboard.layouts.app')
 @section('title')
     {!! __('Create Service') !!}
 @endsection
@@ -7,7 +7,7 @@
 
 @endsection
 @section('breadcrumb')
-    @include('dashboard-old.layouts.partials._breadcrumb',['level'=>'services'])
+    @include('dashboard.layouts.partials._breadcrumb',['level'=>'services'])
 @endsection
 @section('content')
     <section id="column-selectors">
@@ -22,8 +22,8 @@
                             {!! Form::open(['method'=>'post','route'=>'dashboard.services.store','class'=>'form','enctype' => 'multipart/form-data']) !!}
                             @csrf()
                             <div class="row">
-                                @include('dashboard-old.services.partials._form')
-                                @component('dashboard-old.layouts.partials.buttons._save_button',[])
+                                @include('dashboard.services.partials._form')
+                                @component('dashboard.layouts.partials.buttons._save_button',[])
                                 @endcomponent
                             </div>
                             {!! Form::close() !!}

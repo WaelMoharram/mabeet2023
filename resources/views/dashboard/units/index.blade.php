@@ -1,4 +1,4 @@
-@extends('dashboard-old.layouts.app')
+@extends('dashboard.layouts.app')
 @section('title')
     {!! __('Units') !!}
 @endsection
@@ -6,10 +6,10 @@
 
 @endsection
 @section('breadcrumb')
-    @include('dashboard-old.layouts.partials._breadcrumb',['level'=>'units'])
+    @include('dashboard.layouts.partials._breadcrumb',['level'=>'units'])
 @endsection
 @section('btn')
-    @include('dashboard-old.layouts.partials._add_icon',['route'=>'units'])
+    @include('dashboard.layouts.partials._add_icon',['route'=>'units'])
 @endsection
 @section('content')
     <section id="column-selectors">
@@ -72,7 +72,7 @@
                                     <div class="card-body card-dashboard">
                                         {!! Form::open(['method'=>'get','class'=>'form','enctype' => 'multipart/form-data']) !!}
                                         <div class="row">
-                                            @include('dashboard-old.units.partials._form_filter')
+                                            @include('dashboard.units.partials._form_filter')
                                             <div class="col-12">
                                                 <button type="submit"
                                                         class="btn btn-primary   waves-effect waves-light btn-sm">{{__('Filter')}}</button>
@@ -86,7 +86,7 @@
                             </div>
 
                             <div class="table-responsive">
-                                @include('dashboard-old.units.partials._table')
+                                @include('dashboard.units.partials._table')
                             </div>
                         </div>
                     </div>

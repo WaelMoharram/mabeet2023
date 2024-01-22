@@ -1,13 +1,13 @@
-@extends('dashboard-old.layouts.app')
+@extends('dashboard.layouts.app')
 @section('title')
     {!! __('Images') !!}
 @endsection
 @section('header')@endsection
 @section('breadcrumb')
-    @include('dashboard-old.layouts.partials._breadcrumb',['level'=>'images'])
+    @include('dashboard.layouts.partials._breadcrumb',['level'=>'images'])
 @endsection
 @section('btn')
-    @include('dashboard-old.layouts.partials._add_icon',['route'=>'images'])
+    @include('dashboard.layouts.partials._add_icon',['route'=>'images'])
 @endsection
 @section('content')
     <section id="column-selectors">
@@ -20,7 +20,7 @@
                     <div class="card-content">
                         <div class="card-body card-dashboard">
                             <div class="table-responsive">
-                                @include('dashboard-old.images.partials._table')
+                                @include('dashboard.images.partials._table')
                             </div>
                         </div>
                     </div>

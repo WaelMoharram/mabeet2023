@@ -1,10 +1,10 @@
-@extends('dashboard-old.layouts.app')
+@extends('dashboard.layouts.app')
 @section('title')
     {!! __('Show Admin') !!}
 @endsection
 @section('header')@endsection
 @section('breadcrumb')
-    @include('dashboard-old.layouts.partials._breadcrumb',['level'=>'admins'])
+    @include('dashboard.layouts.partials._breadcrumb',['level'=>'admins'])
 @endsection
 @section('content')
     <section id="column-selectors">
@@ -19,7 +19,7 @@
                             {!! Form::model($admin,['class'=>'form']  ) !!}
                             @csrf()
                             <div class="row">
-                                @include('dashboard-old.admins.partials._form')
+                                @include('dashboard.admins.partials._form')
                             </div>
                             {!! Form::close() !!}
                         </div>

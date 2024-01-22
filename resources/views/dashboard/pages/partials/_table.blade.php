@@ -8,7 +8,7 @@
     </thead>
     <tbody>
     @foreach($pages as $page)
-        @include('dashboard-old.pages.partials._table_raw')
+        @include('dashboard.pages.partials._table_raw')
     @endforeach
     </tbody>
 

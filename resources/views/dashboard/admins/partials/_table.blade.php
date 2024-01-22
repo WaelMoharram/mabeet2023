@@ -8,7 +8,7 @@
     </thead>
     <tbody>
     @foreach($admins as $admin)
-        @include('dashboard-old.admins.partials._table_raw')
+        @include('dashboard.admins.partials._table_raw')
     @endforeach
     </tbody>
 

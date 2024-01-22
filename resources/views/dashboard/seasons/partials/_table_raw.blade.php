@@ -11,14 +11,14 @@
                 <span>{{__('Date To')}} : {!! $season->date_to !!}</span>
             @endif
         </p>
-        @component('dashboard-old.layouts.partials.buttons._edit_button',[
-                            'route' => route('dashboard-old.seasons.edit',$season->id),
+        @component('dashboard.layouts.partials.buttons._edit_button',[
+                            'route' => route('dashboard.seasons.edit',$season->id),
                             'tooltip' => __('Edit '.$season['name']),
                              ])
         @endcomponent
-        @component('dashboard-old.layouts.partials.buttons._delete_button',[
+        @component('dashboard.layouts.partials.buttons._delete_button',[
                                         'id'=>$season->id,
-                                        'route' => route('dashboard-old.seasons.destroy',$season->id) ,
+                                        'route' => route('dashboard.seasons.destroy',$season->id) ,
                                         'tooltip' => __('Delete'),
                                          ])
         @endcomponent

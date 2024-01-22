@@ -8,7 +8,7 @@
     </thead>
     <tbody>
     @foreach($options as $option)
-        @include('dashboard-old.system-options.partials._table_raw')
+        @include('dashboard.system-options.partials._table_raw')
     @endforeach
     </tbody>
     <tfoot>

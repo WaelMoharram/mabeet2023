@@ -1,4 +1,4 @@
-@extends('dashboard-old.layouts.app')
+@extends('dashboard.layouts.app')
 @section('title')
     {!! __('Create Unit type') !!}
 @endsection
@@ -7,7 +7,7 @@
 
 @endsection
 @section('breadcrumb')
-    @include('dashboard-old.layouts.partials._breadcrumb',['level'=>'unit-types'])
+    @include('dashboard.layouts.partials._breadcrumb',['level'=>'unit-types'])
 @endsection
 @section('content')
     <section id="column-selectors">
@@ -22,8 +22,8 @@
                             {!! Form::open(['method'=>'post','route'=>'dashboard.unit-types.store','class'=>'form','enctype' => 'multipart/form-data']) !!}
                             @csrf()
                             <div class="row">
-                                @include('dashboard-old.unit-types.partials._form')
-                                @component('dashboard-old.layouts.partials.buttons._save_button',[])
+                                @include('dashboard.unit-types.partials._form')
+                                @component('dashboard.layouts.partials.buttons._save_button',[])
                                 @endcomponent
                             </div>
                             {!! Form::close() !!}
