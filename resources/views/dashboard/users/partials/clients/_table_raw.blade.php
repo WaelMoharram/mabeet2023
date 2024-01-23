@@ -1,6 +1,22 @@
 <tr>
     <td>{!! $loop->index +1 !!}</td>
     <td>{!! $user->name !!}</td>
+    <td>{!! $user->orders->count() !!}</td>
+    <td>{!! $user->created_at->format('Y-m-d') !!}</td>
+
+    @if($user->last_login_at)
+        <td>{!! $user->last_login_at->format('Y-m-d') !!}</td>
+    @else
+        <td>{!! __('Never') !!}</td>
+    @endif
+
+    @if($user->country)
+        <td>{!! $user->country->name !!}</td>
+    @else
+        <td>{!! __('Not set') !!}</td>
+    @endif
+
+    <td>{!! $user->phone !!}</td>
     <td>{!! $user->email !!}</td>
     <td>
         <ul class="list-inline m-0">

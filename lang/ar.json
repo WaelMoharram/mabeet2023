@@ -265,5 +265,12 @@
     "Instagram": "انستجرام",
     "Youtube": "يوتيوب",
     "Property Owner": "مالك السكن",
-    "Housing Seeker": "طالب السكن"
+    "Housing Seeker": "طالب السكن",
+    "Orders number": "عدد الطلبات",
+    "Last login": "آخر تسجيل دخول",
+    "Registration date": "تاريخ التسجيل",
+    "Country": "الدولة",
+    "Mobile": "الهاتف",
+    "Never": "أبدا",
+    "Not set": "غير محدد"
 }

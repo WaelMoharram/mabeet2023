@@ -22,18 +22,23 @@ class MigrationController extends Controller
     {
         $oldUsers = UserOld::all();
         foreach ($oldUsers as $oldUser) {
-            $user = new User();
-            $user->name = $oldUser->name;
-            $user->email = $oldUser->email;
-            $user->password = $oldUser->password;
-            if ($oldUser->type == 1) {
-                $user->type = 'client';
-            } else {
-                $user->type = 'provider';
-            }
-            $user->phone = $oldUser->phone;
-            $user->gender = $oldUser->gender;
-            $user->save();
+//            $user = User::where('phone', $oldUser->phone)->first();
+//            $user->created_at = $oldUser->created_at;
+//            $user->save();
+            #############################
+//            $user = new User();
+//            $user->created_at = $oldUser->created_at;
+//            $user->name = $oldUser->name;
+//            $user->email = $oldUser->email;
+//            $user->password = $oldUser->password;
+//            if ($oldUser->type == 1) {
+//                $user->type = 'client';
+//            } else {
+//                $user->type = 'provider';
+//            }
+//            $user->phone = $oldUser->phone;
+//            $user->gender = $oldUser->gender;
+//            $user->save();
         }
         return 'done';
     }

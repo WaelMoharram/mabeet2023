@@ -37,10 +37,10 @@
                     {{$route}}>
                     {{ method_field('DELETE') }}
                     {{ csrf_field() }}
-                    <button type="submit" class="btn btn-outline-danger">{!! __('Delete') !!}</button>
+                    <button style="border-radius: 25px;" type="submit" class="btn btn-outline-danger">{!! __('Delete') !!}</button>
 
                 </form>
-                <button type="button" class="btn btn-outline-success" data-dismiss="modal">{{__('Close')}}</button>
+                <button style="border-radius: 25px;" type="button" class="btn btn-outline-success" data-dismiss="modal">{{__('Close')}}</button>
             </div>
         </div>
     </div>

@@ -22,9 +22,12 @@ class User extends Authenticatable
         'name',
         'email',
         'password',
-        'google_id',
-        'apple_id',
-        'type'
+        'type',
+        'phone',
+        'country_id',
+        'gender',
+        'active',
+        'last_login_at'
     ];
     protected $searchable = ['name','email'];
 
@@ -53,4 +56,14 @@ class User extends Authenticatable
     ];
     const TYPE_CLIENT = 'client';
     const TYPE_PROVIDER = 'provider';
+
+
+    public function orders(){
+        return $this->hasMany(Order::class);
+    }
+
+    public function setLastLoginAtAttribute($value)
+    {
+        $this->attributes['last_login_at'] = now(); // Assuming you want to set it to the current timestamp when a user logs in.
+    }
 }

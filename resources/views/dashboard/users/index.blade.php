@@ -29,7 +29,11 @@
                 @endcan
             </ul>
             <div class="table-responsive">
-                @include('dashboard.users.partials._table')
+                @if(request()->type == \App\Models\User::TYPE_CLIENT)
+                    @include('dashboard.users.partials.clients._table')
+                @else
+                    @include('dashboard.users.partials.providers._table')
+                @endif
             </div>
         </div>
     </div>
