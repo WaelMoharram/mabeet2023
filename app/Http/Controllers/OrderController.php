@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Http\Requests\ProfileUpdateRequest;
 use App\Models\City;
+use App\Models\Order;
 use Illuminate\Http\RedirectResponse;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
@@ -36,6 +37,12 @@ class OrderController extends Controller
     {
         $cities = City::all();
         return view('website.orders.create',compact('cities'));
+    }
+
+    public function show():View
+    {
+//        $order = Order::findOrFail($order_id);
+        return view('website.orders.details');
     }
 
     public function store(Request $request)

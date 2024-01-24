@@ -5,6 +5,7 @@ use App\Http\Controllers\LoginController;
 use App\Http\Controllers\ProfileController;
 use App\Http\Controllers\OrderController;
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\OffersController;
 
 /*
 |--------------------------------------------------------------------------
@@ -75,3 +76,7 @@ Route::middleware(['language'])->group(function () {
 
     require __DIR__ . '/auth.php';
 });
+
+Route::get('order-details', [OrderController::class, 'show'])->name('orders.show');
+Route::get('offers', [OffersController::class, 'index'])->name('offers');
+Route::get('offers-details', [OffersController::class, 'show'])->name('offers.show');
