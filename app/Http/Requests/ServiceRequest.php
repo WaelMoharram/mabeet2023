@@ -25,7 +25,7 @@ class ServiceRequest extends FormRequest
     {
         $id = $this->season ?? null;
         return [
-//            'image'=>'nullable|required_without:_method|image',
+            'image'=>'nullable|required_without:_method|image',
             'name.*'=>'required|string|min:2|max:191'
 
         ];

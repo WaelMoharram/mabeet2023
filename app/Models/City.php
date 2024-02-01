@@ -16,4 +16,9 @@ class City extends Model
     protected $guarded = array('id');
 
     public $translatable = ['name'];
+
+    public function neighborhoods()
+    {
+        return $this->hasMany(Neighborhood::class);
+    }
 }

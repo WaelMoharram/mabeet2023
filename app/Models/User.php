@@ -62,6 +62,11 @@ class User extends Authenticatable
         return $this->hasMany(Order::class);
     }
 
+    public function units(){
+        return $this->hasMany(Unit::class);
+    }
+
+
     public function setLastLoginAtAttribute($value)
     {
         $this->attributes['last_login_at'] = now(); // Assuming you want to set it to the current timestamp when a user logs in.

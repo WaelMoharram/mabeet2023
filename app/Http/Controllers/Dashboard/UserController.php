@@ -97,8 +97,15 @@ class UserController extends Controller
     {
 
         $user = User::findOrFail($id);
+        $data=[];
+        if (\request()->has('show') && \request()->show == 'orders'){
+            $data = $user->orders;
+        }
+        if (\request()->has('show') && \request()->show == 'units'){
+            $data = $user->units;
+        }
 
-        return view('dashboard.users.show',compact('user'));
+        return view('dashboard.users.show',compact('user','data'));
     }
 
     /**

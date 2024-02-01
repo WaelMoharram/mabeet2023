@@ -14,7 +14,7 @@
                 @csrf
                 <div class="col-lg-3">
                     <div class="area">
-                        <h3>المكان</h3>
+                        <h3>{{__('Place')}}</h3>
                         <p>تحديد مكان الإقامة والوحدة السكنية.</p>
 
                         <section class="grouped-radio">

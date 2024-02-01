@@ -7,6 +7,8 @@
     @include('dashboard.layouts.partials._breadcrumb',['level'=>'users'])
 @endsection
 @section('content')
+    <div class="main-panel">
+        <div class="content-wrapper">
     <div class="card">
         <div class="card-body">
             <h4 class="card-title">@yield('title')</h4>
@@ -14,14 +16,19 @@
             {!! Form::model($user,['method'=>'put','route'=>['dashboard.users.update',$user->id],'class'=>'form','enctype' => 'multipart/form-data']  ) !!}
             @csrf()
             <div class="row">
-                @include('dashboard.users.partials._form')
+                @if($user->type == 'client')
+                    @include('dashboard.users.partials.clients._form')
+                @else
+                    @include('dashboard.users.partials.providers._form')
+                @endif
                 @component('dashboard.layouts.partials.buttons._save_button',[])
                 @endcomponent
             </div>
             {!! Form::close() !!}
         </div>
     </div>
-
+        </div>
+    </div>
 
 @endsection
 @section('js-validation')

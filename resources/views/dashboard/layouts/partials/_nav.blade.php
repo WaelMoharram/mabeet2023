@@ -249,7 +249,7 @@
         <button class="navbar-toggler navbar-toggler align-self-center" type="button" data-toggle="minimize">
             <span class="mdi mdi-menu"></span>
         </button>
-        <h3 class="page-tit">الرئيسيه</h3>
+        <h3 class="page-tit">@yield('title')</h3>
 
         <ul class="navbar-nav navbar-nav-right">
             <li class="nav-item dropdown">

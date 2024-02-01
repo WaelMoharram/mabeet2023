@@ -20,4 +20,14 @@ class Order extends Model
     public function services(){
         return $this->belongsToMany(Service::class);
     }
+
+    public function statuses()
+    {
+        return $this->hasMany(OrderStatus::class);
+    }
+
+    public function getCurrentStatusAttribute()
+    {
+        return $this->statuses()->latest()->first();
+    }
 }

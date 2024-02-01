@@ -20302,3 +20302,15 @@ dl li {
     transition: border-color 0.15s ease-in-out, box-shadow 0.15s ease-in-out;
     transition: border-color 0.15s ease-in-out, box-shadow 0.15s ease-in-out, -webkit-box-shadow 0.15s ease-in-out;
 }
+
+.page-item.active .page-link {
+    z-index: 3;
+    color: #fff;
+    background-color: #006b27;
+    border-color: #3fae56;
+}
+
+
+.page-link {
+    color: #006b27;
+}

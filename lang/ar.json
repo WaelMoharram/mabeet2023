@@ -273,6 +273,13 @@
     "Mobile": "الهاتف",
     "Never": "أبدا",
     "Not set": "غير محدد",
+    "Units count": "عدد الوحدات السكنية",
+    "Place": "المكان",
+    "Search": "بحث",
+    "Owner info": "معلومات المالك",
+    "Subscription date": "تاريخ الاشتراك",
+    "Orders finished": "الطلبات المكتملة"
+    "Not set": "غير محدد",
     "Order details": "تفاصيل الطلب",
     "Offers": "العروض"
 }

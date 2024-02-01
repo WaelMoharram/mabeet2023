@@ -1,6 +1,7 @@
 <tr>
     <td>{!! $loop->index +1 !!}</td>
     <td>{!! $user->name !!}</td>
+    <td>{!! $user->units->count() !!}</td>
     <td>{!! $user->orders->count() !!}</td>
     <td>{!! $user->created_at->format('Y-m-d') !!}</td>
 
@@ -20,15 +21,6 @@
     <td>{!! $user->email !!}</td>
     <td>
         <ul class="list-inline m-0">
-{{--            <li class="list-inline-item">--}}
-{{--                <a href="#"><img src="{{asset('assets/mabeet-dashboard')}}/assets/images/Icon.png" alt=""></a>--}}
-{{--            </li>--}}
-{{--            <li class="list-inline-item">--}}
-{{--                <a href="#"><img src="{{asset('assets/mabeet-dashboard')}}/assets/images/Icon1.png" alt=""></a>--}}
-{{--            </li>--}}
-{{--            <li class="list-inline-item">--}}
-{{--                <a href="#"><img src="{{asset('assets/mabeet-dashboard')}}/assets/images/Icon2.png" alt=""></a>--}}
-{{--            </li>--}}
 
                         <li class="list-inline-item">
 

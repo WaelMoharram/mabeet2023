@@ -12,6 +12,8 @@
     @include('dashboard.layouts.partials._add_icon',['route'=>'admins'])
 @endsection
 @section('content')
+    <div class="main-panel">
+        <div class="content-wrapper">
     <section id="column-selectors">
         <div class="row">
             {{--            <div class="col-12">--}}
@@ -93,6 +95,7 @@
             </div>
         </div>
     </section>
-
+        </div>
+    </div>
 @endsection
 

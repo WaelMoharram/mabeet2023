@@ -59,6 +59,10 @@ class ServiceController extends Controller
     public function store(ServiceRequest $request)
     {
         $requests=$request->all();
+        if ($request->hasFile('image')) {
+            $requests['image'] = saveImage($request->image, 'images');
+            $request->files->remove('image');
+        }
         $service = Service::create($requests);
 
 
@@ -104,7 +108,10 @@ class ServiceController extends Controller
         //return $request->permissions;
 
         $requests=$request->all();
-
+        if ($request->hasFile('image')) {
+            $requests['image'] = saveImage($request->image, 'images');
+            $request->files->remove('image');
+        }
         $service = Service::find($id);
 
 

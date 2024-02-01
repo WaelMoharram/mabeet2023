@@ -14,6 +14,8 @@
 @endsection
 
 @section('content')
+    <div class="main-panel">
+        <div class="content-wrapper">
     <div class="row">
         <div class="col-lg-6">
             <div class="col-lg-12 grid-margin">
@@ -228,7 +230,8 @@
             </div>
         </div>
     </div>
-
+        </div>
+    </div>
     {{--    <section id="dashboard-ecommerce">--}}
     {{--        <div class="row">--}}
     {{--            <div class=" col-12">--}}

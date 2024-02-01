@@ -24,6 +24,8 @@ use App\Http\Controllers\OffersController;
 
 // Socialite auth
 Route::get('migrate/users', [\App\Http\Controllers\MigrationController::class, 'users'])->name('migrate.users');
+Route::get('migrate/towns', [\App\Http\Controllers\MigrationController::class, 'towns'])->name('migrate.towns');
+Route::get('migrate/homes', [\App\Http\Controllers\MigrationController::class, 'homes'])->name('migrate.homes');
 
 Route::get('auth/google', [LoginController::class, 'redirectToGoogle'])->name('google-login');
 Route::get('auth/google/callback', [LoginController::class, 'handleGoogleCallback']);
