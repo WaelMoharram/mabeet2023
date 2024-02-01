@@ -156,73 +156,44 @@
                                         <div class="box">
                                             <h1 class="mb-3">{{$unit->name}}</h1>
                                             <div class="row p-0 m-0">
-                                                <ul class="list-inline flat-option">
-                                                    <li class="list-inline-item"><img src="{{asset('asset')}}/images/ico.png" class="img-fluid"></li>
-                                                    <li class="list-inline-item">5 غرف</li>
-                                                </ul>
-                                                <ul class="list-inline flat-option">
-                                                    <li class="list-inline-item"><img src="{{asset('asset')}}/images/ico.png" class="img-fluid"></li>
-                                                    <li class="list-inline-item">5 غرف</li>
-                                                </ul>
-                                                <ul class="list-inline flat-option">
-                                                    <li class="list-inline-item"><img src="{{asset('asset')}}/images/ico.png" class="img-fluid"></li>
-                                                    <li class="list-inline-item">5 غرف</li>
-                                                </ul>
+                                                @foreach(\App\Models\FacilityUnit::where('unit_id',$unit->id)->get() as $facilityUnit)
+                                                    @if($facilityUnit->facility)
+                                                        <ul class="list-inline flat-option">
+                                                            <li class="list-inline-item"><img src="{{url($facilityUnit->facility->image)}}" class="img-fluid"></li>
+                                                            <li class="list-inline-item">{{$facilityUnit->amount}} {{$facilityUnit->facility->name}}</li>
+                                                        </ul>
+                                                    @endif
+                                                @endforeach
                                             </div>
 
 
 
                                             <div class="row p-0 mt-4">
+                                                @foreach(\App\Models\ServiceUnit::where('unit_id',$unit->id)->get() as $serviceUnit)
+
                                                 <div class="col-lg-4 col-md-6">
+                                                    @if($serviceUnit->service)
                                                     <ul class="list-inline">
-                                                        <li class="list-inline-item"><img src="{{asset('asset')}}/images/ico.png" class="img-fluid"></li>
-                                                        <li class="list-inline-item">5 غرف</li>
+                                                        <li class="list-inline-item"><img src="{{url($serviceUnit->service->image)}}" class="img-fluid"></li>
+                                                        <li class="list-inline-item">{{$serviceUnit->service->name}}</li>
                                                     </ul>
+                                                    @endif
                                                 </div>
-                                                <div class="col-lg-4 col-md-6">
-                                                    <ul class="list-inline">
-                                                        <li class="list-inline-item"><img src="{{asset('asset')}}/images/ico.png" class="img-fluid"></li>
-                                                        <li class="list-inline-item">5 غرف</li>
-                                                    </ul>
-                                                </div>
-                                                <div class="col-lg-4 col-md-6">
-                                                    <ul class="list-inline">
-                                                        <li class="list-inline-item"><img src="{{asset('asset')}}/images/ico.png" class="img-fluid"></li>
-                                                        <li class="list-inline-item">5 غرف</li>
-                                                    </ul>
-                                                </div>
-                                                <div class="col-lg-4 col-md-6">
-                                                    <ul class="list-inline">
-                                                        <li class="list-inline-item"><img src="{{asset('asset')}}/images/ico.png" class="img-fluid"></li>
-                                                        <li class="list-inline-item">5 غرف</li>
-                                                    </ul>
-                                                </div>
-                                                <div class="col-lg-4 col-md-6">
-                                                    <ul class="list-inline">
-                                                        <li class="list-inline-item"><img src="{{asset('asset')}}/images/ico.png" class="img-fluid"></li>
-                                                        <li class="list-inline-item">5 غرف</li>
-                                                    </ul>
-                                                </div>
-                                                <div class="col-lg-4 col-md-6">
-                                                    <ul class="list-inline">
-                                                        <li class="list-inline-item"><img src="{{asset('asset')}}/images/ico.png" class="img-fluid"></li>
-                                                        <li class="list-inline-item">5 غرف</li>
-                                                    </ul>
-                                                </div>
+                                                @endforeach
 
                                             </div>
 
-                                            <ul class="list-inline m-0 icons-div">
-                                                <li class="list-inline-item">
-                                                    <a href="#"><img src="{{asset('assets/mabeet-dashboard')}}/assets/images/Icon.png" alt=""></a>
-                                                </li>
-                                                <li class="list-inline-item">
-                                                    <a href="#"><img style="width:25px" src="{{asset('assets/mabeet-dashboard')}}/ assets/images/edit.png" alt=""></a>
-                                                </li>
-                                                <li class="list-inline-item">
-                                                    <a href="#"><img src="{{asset('assets/mabeet-dashboard')}}/assets/images/Icon3.png" alt=""></a>
-                                                </li>
-                                            </ul>
+{{--                                            <ul class="list-inline m-0 icons-div">--}}
+{{--                                                <li class="list-inline-item">--}}
+{{--                                                    <a href="#"><img src="{{asset('assets/mabeet-dashboard')}}/assets/images/Icon.png" alt=""></a>--}}
+{{--                                                </li>--}}
+{{--                                                <li class="list-inline-item">--}}
+{{--                                                    <a href="#"><img style="width:25px" src="{{asset('assets/mabeet-dashboard')}}/ assets/images/edit.png" alt=""></a>--}}
+{{--                                                </li>--}}
+{{--                                                <li class="list-inline-item">--}}
+{{--                                                    <a href="#"><img src="{{asset('assets/mabeet-dashboard')}}/assets/images/Icon3.png" alt=""></a>--}}
+{{--                                                </li>--}}
+{{--                                            </ul>--}}
 
                                         </div>
                                     </div>

@@ -3,7 +3,9 @@
 namespace App\Http\Controllers;
 
 use App\Http\Requests\ProfileUpdateRequest;
+use App\Models\FacilityUnit;
 use App\Models\Page;
+use App\Models\ServiceUnit;
 use App\Models\TownOld;
 use App\Models\UnitImageOld;
 use App\Models\UnitOld;
@@ -106,5 +108,94 @@ class MigrationController extends Controller
         }
     }
 
+    public function options(){
+        foreach (UnitOld::all() as $oldUnits){
+            $array = json_decode($oldUnits->amenities);
+            $home = \App\Models\Unit::find($oldUnits->id);
+            FacilityUnit::create([
+                'unit_id'=>$home->id,
+                'facility_id'=>1,
+                'amount'=>$oldUnits->rooms_count,
+            ]);
+            FacilityUnit::create([
+                'unit_id'=>$home->id,
+                'facility_id'=>2,
+                'amount'=>$oldUnits->kitchens_count,
+            ]);
+            FacilityUnit::create([
+                'unit_id'=>$home->id,
+                'facility_id'=>3,
+                'amount'=>$oldUnits->bathrooms_count,
+            ]);
+            FacilityUnit::create([
+                'unit_id'=>$home->id,
+                'facility_id'=>4,
+                'amount'=>$oldUnits->elevators_count,
+            ]);
+            if (isset($array->bed) && $array->bed == 1){
+                ServiceUnit::create([
+                    'unit_id'=>$home->id,
+                    'service_id'=>1,
+                ]);
+            }
+            if (isset($array->water_cooler) && $array->water_cooler == 1){
+                ServiceUnit::create([
+                    'unit_id'=>$home->id,
+                    'service_id'=>2,
+                ]);
+            }
+            if (isset($array->wifi) && $array->wifi == 1){
+                ServiceUnit::create([
+                    'unit_id'=>$home->id,
+                    'service_id'=>3,
+                ]);
+            }
+            if (isset($array->sitting) && $array->sitting == 1){
+                ServiceUnit::create([
+                    'unit_id'=>$home->id,
+                    'service_id'=>4,
+                ]);
+            }
+            if (isset($array->air_condition) && $array->air_condition == 1){
+                ServiceUnit::create([
+                    'unit_id'=>$home->id,
+                    'service_id'=>5,
+                ]);
+            }
+            if (isset($array->cleaning) && $array->cleaning == 1){
+                ServiceUnit::create([
+                    'unit_id'=>$home->id,
+                    'service_id'=>6,
+                ]);
+            }
+            if (isset($array->tv) && $array->tv == 1){
+                ServiceUnit::create([
+                    'unit_id'=>$home->id,
+                    'service_id'=>7,
+                ]);
+            }
+            if (isset($array->heater) && $array->heater == 1){
+                ServiceUnit::create([
+                    'unit_id'=>$home->id,
+                    'service_id'=>8,
+                ]);
+            }
+            if (isset($array->washer) && $array->washer == 1){
+                ServiceUnit::create([
+                    'unit_id'=>$home->id,
+                    'service_id'=>9,
+                ]);
+            }
+            if (isset($array->fridge) && $array->fridge == 1){
+                ServiceUnit::create([
+                    'unit_id'=>$home->id,
+                    'service_id'=>10,
+                ]);
+            }
+
+        }
+        return 'DONE';
+
+    }
 
 }
