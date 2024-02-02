@@ -5,7 +5,7 @@
     <td>{!! $user->created_at->format('Y-m-d') !!}</td>
 
     @if($user->last_login_at)
-        <td>{!! $user->last_login_at->format('Y-m-d') !!}</td>
+        <td>{!! $user->last_login_at !!}</td>
     @else
         <td>{!! __('Never') !!}</td>
     @endif

@@ -3,6 +3,7 @@
 namespace App\Models;
 
 // use Illuminate\Contracts\Auth\MustVerifyEmail;
+use App\Traits\Search;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Foundation\Auth\User as Authenticatable;
 use Illuminate\Notifications\Notifiable;
@@ -11,7 +12,7 @@ use Spatie\Permission\Traits\HasRoles;
 
 class Admin extends Authenticatable
 {
-    use HasApiTokens, HasFactory, Notifiable, HasRoles;
+    use HasApiTokens, HasFactory, Notifiable, HasRoles,Search;
 
     /**
      * The attributes that are mass assignable.
@@ -24,7 +25,8 @@ class Admin extends Authenticatable
         'phone',
         'image',
         'password',
-        'default_theme'
+        'default_theme',
+        'last_login_at'
     ];
 
     /**
@@ -57,4 +59,11 @@ class Admin extends Authenticatable
         'services',
         'options'
     ];
+
+    protected $searchable = ['name','email','phone'];
+
+    public function setLastLoginAtAttribute($value)
+    {
+        $this->attributes['last_login_at'] = now(); // Assuming you want to set it to the current timestamp when a user logs in.
+    }
 }

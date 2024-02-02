@@ -16,8 +16,8 @@
         <div class="content-wrapper">
     <div class="card">
         <div class="card-body">
-            <div class="col-lg-7">
-            <h4 class="card-title">الطلبات الجديدة</h4>
+            <div class="col-lg-10">
+            <h4 class="card-title">@yield('title')</h4>
             <ul class="nav nav-tabs tabs-wg" id="myTab" role="tablist">
                 @can('index clients')
                 <li class="nav-item" role="presentation">

@@ -55,7 +55,13 @@ class AdminController extends Controller
                     $q->where('name',$request->role);
                 });
             }
-        })->paginate(15);
+
+        });
+        if (\request()->text) {
+            $admins = $admins->Search(\request()->text);
+        }
+
+        $admins = $admins->paginate(15);
         return view('dashboard.admins.index', compact('admins'));
     }
 

@@ -1,3 +1,4 @@
+
 @extends('dashboard.layouts.app')
 @section('title')
     {!! __('Units') !!}
@@ -12,88 +13,63 @@
     @include('dashboard.layouts.partials._add_icon',['route'=>'units'])
 @endsection
 @section('content')
-    <section id="column-selectors">
-        <div class="row">
-            {{--            <div class="col-12">--}}
-            {{--                <div class="card">--}}
-            {{--                    <div class="card-content">--}}
-            {{--                        <div class="card-body card-dashboard">--}}
-            {{--                            {!! Form::open(['method'=>'get','class'=>'form','enctype' => 'multipart/form-data']) !!}--}}
-            {{--                            <div class="row">--}}
-            {{--                                @include('dashboard.units.partials._form_filter')--}}
-            {{--                                <div class="col-12">--}}
-            {{--                                    <button type="submit" class="btn btn-primary   waves-effect waves-light btn-sm">{{__('Filter')}}</button>--}}
-            {{--                                    <a href="{{route('dashboard.units.index')}}" class="  ml-1 btn btn-warning  waves-effect waves-light btn-sm">{{__('Reset filter')}}</a>--}}
-            {{--                                </div>--}}
-            {{--                            </div>--}}
-            {{--                            {!! Form::close() !!}--}}
-            {{--                        </div>--}}
-            {{--                    </div>--}}
-            {{--                </div>--}}
-            {{--            </div>--}}
-            {{--            <div class="col-12" style="height: 15px;"></div>--}}
-            <div class="col-12">
-                <div class="card">
-                    <div class="card-header row">
-                        {{--                        <h4 class="card-title">@yield('title')</h4>--}}
-                        <div class="col-6">
-                            <a href="{{route('dashboard.units.index')}}"
-                               class="btn  @if(!request()->has('unit_type_id')) btn-success @else btn-outline-success @endif round waves-effect">{{__('All')}}</a>
-                            @foreach(\App\Models\UnitType::all() as $type)
-                                <a href="{{route('dashboard.units.index',['unit_type_id'=>$type->id])}}"
-                                   class="btn @if(request()->has('unit_type_id') && request()->unit_type_id == $type->id) btn-success @else btn-outline-success @endif round waves-effect">{{$type->name}}</a>
-                            @endforeach
-                        </div>
+    <div class="main-panel">
+        <div class="content-wrapper">
+            <div class="card">
+                <div class="card-body">
+                    <div class="row">
+                        <div class="col-lg-9">
+                            <h4 class="card-title">@yield('title')</h4>
+                            <ul class="nav nav-tabs tabs-wg" id="myTab" role="tablist">
+                                <li class="nav-item" role="presentation">
+                                    <a href="{{route('dashboard.units.index')}}" class="nav-link @if(!request()->has('unit_type_id') ) active   @endif " id="home-tab" >{{__('All')}}</a>
+                                </li>
+                                @foreach(\App\Models\UnitType::all() as $type)
+                                    <li class="nav-item" role="presentation">
+                                        <a href="{{route('dashboard.units.index',['unit_type_id'=>$type->id])}}" class="nav-link @if(request()->has('unit_type_id') && request()->unit_type_id == $type->id ) active @else  @endif " id="home-tab" >{{$type->name}}</a>
+                                    </li>
 
-                    </div>
-                    <div class="card-content">
-                        <div class="card-body card-dashboard">
-                            <div class="card ">
-                                <div class="card-header">
-                                    <h4 class="card-title">@yield('title')</h4>
-                                    <div class="heading-elements">
-                                        <ul class="list-inline mb-0">
-                                            <li>
-                                                <a data-action="collapse"
-                                                   class=" btn btn-outline-success round waves-effect"><i
-                                                            data-feather="filter"></i> {{__('Filter')}}</a>
-                                            </li>
-                                            {{--                                            <li>--}}
-                                            {{--                                                <a data-action="reload"><svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-rotate-cw"><polyline points="23 4 23 10 17 10"></polyline><path d="M20.49 15a9 9 0 1 1-2.12-9.36L23 10"></path></svg></a>--}}
-                                            {{--                                            </li>--}}
-                                            {{--                                            <li>--}}
-                                            {{--                                                <a data-action="close"><svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-x"><line x1="18" y1="6" x2="6" y2="18"></line><line x1="6" y1="6" x2="18" y2="18"></line></svg></a>--}}
-                                            {{--                                            </li>--}}
-                                        </ul>
-                                    </div>
-                                </div>
-                                <div class="card-content collapse @if(count(request()->except('unit_type_id')) > 0) show @endif
-                                 ">
-                                    <div class="card-body card-dashboard">
-                                        {!! Form::open(['method'=>'get','class'=>'form','enctype' => 'multipart/form-data']) !!}
-                                        <div class="row">
-                                            @include('dashboard.units.partials._form_filter')
-                                            <div class="col-12">
-                                                <button type="submit"
-                                                        class="btn btn-primary   waves-effect waves-light btn-sm">{{__('Filter')}}</button>
-                                                <a href="{{route('dashboard.units.index')}}"
-                                                   class="  ml-1 btn btn-warning  waves-effect waves-light btn-sm">{{__('Reset filter')}}</a>
+                                @endforeach
+
+                                <li class="nav-item" role="presentation">
+                                    <form class="">
+                                        @if(request()->has('unit_type_id'))
+                                            <input type="hidden" name="unit_type_id" value="{{request()->unit_type_id}}">
+                                        @endif
+                                        <div class="d-flex align-items-center search-form">
+                                            <div class="input-group">
+                                                <div class="input-group-prepend bg-transparent">
+                                                    <img style="position: relative;top:8px" src="assets/images/search.png" alt="">
+                                                </div>
+                                                <input type="text" name="text" class="form-control bg-transparent border-0" value="{{request()->text}}" style="padding:12px" placeholder="{{__('Search')}}">
                                             </div>
+                                            <button class="nav-link active" type="submit">{{__('Search')}}</button>
                                         </div>
-                                        {!! Form::close() !!}
-                                    </div>
-                                </div>
-                            </div>
 
-                            <div class="table-responsive">
-                                @include('dashboard.units.partials._table')
-                            </div>
+                                    </form>
+                                </li>
+
+                            </ul>
+
                         </div>
+                        <div class="col-lg-3 mt-3 text-left">
+                            @yield('btn')
+
+                        </div>
+                    </div>
+
+                    <div class="table-responsive">
+                        @include('dashboard.units.partials._table')
+
                     </div>
                 </div>
             </div>
+
+
         </div>
-    </section>
+    </div>
 
 @endsection
+
+
 

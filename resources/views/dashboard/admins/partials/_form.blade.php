@@ -12,7 +12,7 @@
         <img id="image" style="width: 100px;border-radius: 50px;">
     </div>
 @endif
-<div class="form-group py-1 col-md-12">
+<div class="form-group py-1 col-md-12 {{hidden_on_show()}}">
     <label for="formInputRole"> {{__('Image ')}}</label>
     <br>
     {!! Form::file('image',['class'=>'form-control col','placeholder'=>__("Image"),'onchange'=>"loadImage(event)"]) !!}

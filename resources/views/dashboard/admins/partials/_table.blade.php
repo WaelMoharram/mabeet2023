@@ -3,7 +3,10 @@
     <tr>
         <th scope="col">{{__('#') }}</th>
         <th scope="col">{{__('Full name')}}</th>
+        <th scope="col">{{__('Registration date')}}</th>
+        <th scope="col">{{__('Last login')}}</th>
         <th scope="col">{{__('Email')}}</th>
+        <th scope="col">{{__('phone')}}</th>
         <th scope="col">{{__('Options')}}</th>
     </thead>
     <tbody>

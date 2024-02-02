@@ -20314,3 +20314,16 @@ dl li {
 .page-link {
     color: #006b27;
 }
+
+.btn-green{
+    color: #fff;
+    background-color: #006E29;
+    border: none !important;
+    border-radius: 50px;
+}
+.btn-green:hover {
+    border: solid #006f29 !important;
+    border-radius: 50px;
+    color: #006f29;
+    background-color: white;
+}
