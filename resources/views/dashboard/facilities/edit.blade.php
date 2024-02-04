@@ -7,32 +7,30 @@
     @include('dashboard.layouts.partials._breadcrumb',['level'=>'facilities'])
 @endsection
 @section('content')
-    <section id="column-selectors">
-        <div class="row">
-            <div class="col-12">
-                <div class="card">
-                    <div class="card-header">
-                        <h4 class="card-title">@yield('title')</h4>
+    <div class="main-panel">
+        <div class="content-wrapper">
+            <div class="card">
+                <div class="card-body">
+                    <h4 class="card-title">@yield('title')</h4>
+
+                    {!! Form::model($facility,['method'=>'put','route'=>['dashboard.facilities.update',$facility->id],'class'=>'form','enctype' => 'multipart/form-data']  ) !!}
+                    @csrf()
+                    <div class="row">
+
+                        @include('dashboard.facilities.partials._form')
+
+                        @component('dashboard.layouts.partials.buttons._save_button',[])
+                        @endcomponent
                     </div>
-                    <div class="card-content">
-                        <div class="card-body card-dashboard">
-                            {!! Form::model($facility,['method'=>'put','route'=>['dashboard.facilities.update',$facility->id],'class'=>'form','enctype' => 'multipart/form-data']  ) !!}
-                            @csrf()
-                            <div class="row">
-                                @include('dashboard.facilities.partials._form')
-                                @component('dashboard.layouts.partials.buttons._save_button',[])
-                                @endcomponent
-                            </div>
-                            {!! Form::close() !!}
-                        </div>
-                    </div>
+                    {!! Form::close() !!}
                 </div>
             </div>
         </div>
-    </section>
+    </div>
 
 @endsection
 @section('js-validation')
     <script type="text/javascript" src="{{ asset('vendor/jsvalidation/js/jsvalidation.js')}}"></script>
-    {{--    {!! JsValidator::formRequest('App\Http\Requests\FacilityRequest', '.form'); !!}--}}
+    {{--    {!! JsValidator::formRequest('App\Http\Requests\UserRequest', '.form'); !!}--}}
 @endsection
+

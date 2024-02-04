@@ -20327,3 +20327,7 @@ dl li {
     color: #006f29;
     background-color: white;
 }
+
+.select2-selection{
+    padding: 0.94rem 1.375rem;
+}
