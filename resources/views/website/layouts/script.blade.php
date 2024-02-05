@@ -8,4 +8,7 @@
 <script>
     new WOW().init();
 </script>
+<!-- Parsley js -->
+<script src="{{asset('asset/js/parsleyjs/parsley.min.js')}}"></script>
+<script src="{{asset('asset/js/parsleyjs/parsley_ar.js')}}"></script>
 <script src="{{asset('/')}}/asset/js/script.js"></script>

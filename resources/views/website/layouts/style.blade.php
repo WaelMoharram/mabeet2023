@@ -12,10 +12,14 @@
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/assets/owl.theme.default.min.css">
 <link href="https://cdn.jsdelivr.net/npm/wowjs@1.1.3/css/libs/animate.min.css " rel="stylesheet">
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.3.0/css/all.min.css">
+<link href="{{asset('asset/js/parsleyjs/parsley.css')}}" rel="stylesheet" type="text/css" />
 <link rel="stylesheet" href="{{asset('/')}}/asset/css/style.css">
 <link rel="stylesheet" href="{{asset('/')}}/asset/css/media.css">
 <style>
     .nav-link {
         color: #212529;
+    }
+    .help-block-error {
+        color: red;
     }
 </style>

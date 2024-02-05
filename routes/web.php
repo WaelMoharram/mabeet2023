@@ -6,7 +6,7 @@ use App\Http\Controllers\ProfileController;
 use App\Http\Controllers\OrderController;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\OffersController;
-
+use App\Http\Controllers\Provider\UnitsController;
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -83,3 +83,8 @@ Route::middleware(['language'])->group(function () {
 Route::get('order-details', [OrderController::class, 'show'])->name('orders.show');
 Route::get('offers', [OffersController::class, 'index'])->name('offers');
 Route::get('offers-details', [OffersController::class, 'show'])->name('offers.show');
+
+// Provider Routes ..
+Route::resource('units', UnitsController::class);
+
+

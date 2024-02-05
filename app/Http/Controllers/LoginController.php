@@ -76,7 +76,7 @@ class LoginController extends Controller
             ['phone' => request('phone')],
             ['type' =>  request('type')],
         );
-        $user->update(['verify_code'=>rand(0000,9999)]);
+        $user->update(['verify_code'=>1111]);
 
         \session()->flash("success",'Verify your phone.');
         return redirect()->route('verify',['phone'=>request('phone')]);
@@ -91,7 +91,6 @@ class LoginController extends Controller
     {
         $user = User::where('phone',$phone)->where('verify_code',$request->verify_code)->first();
         if(!$user){
-
             return redirect()->route('verify',['phone'=>$phone])->with('error','الكود غير صحيح');
         }
         \auth()->login($user);

@@ -15,7 +15,7 @@
             <div class="area">
 
                 <section class="grouped-radio">
-                    <form action="{{route('login.post')}}" method="post" >
+                    <form action="{{route('login.post')}}" method="post" data-parsley-validate="novalidate">
                         @csrf
                         <div class="row mb-3">
                             <div class="col-lg-6 col-md-6">
@@ -48,6 +48,7 @@
                                             <h3>قم بتسجيل الدخول او انشاء حساب جديد</h3>
                                             <p>ادخل كود الدولة ورقم الهاتف للتأكيد</p>
                                             <input type="number" required class="form-control mb-3"
+
                                                    name="phone"
 {{--                                                   oninput="this.value = Math.abs(this.value)"--}}
                                                    placeholder="كود الدولة ورقم الجوال">
