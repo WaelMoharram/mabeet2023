@@ -4,6 +4,7 @@ namespace App\Http\Controllers\Provider;
 
 use App\Http\Controllers\Controller;
 use App\Models\City;
+use App\Models\UnitType;
 use Illuminate\Http\Request;
 
 class UnitsController extends Controller
@@ -22,7 +23,8 @@ class UnitsController extends Controller
     public function create()
     {
         $cities = City::all();
-        return view('website.units.create',compact('cities'));
+        $unitTypes = UnitType::all();
+        return view('website.units.create',compact('cities','unitTypes'));
     }
 
     /**

@@ -60,7 +60,6 @@
                                    style="z-index: 0;position: absolute;top: 11px;left: 113px;height: 34px;width: 63%;"
                                    maxlength="200">
 
-
                             <div id="map" style="width: 100%; height: 450px;"></div>
                             <input type="hidden" name="lat" id="lat"/>
                             <input type="hidden" name="lng" id="lng"/>
@@ -84,7 +83,7 @@
                                         <div class="js--image-preview"></div>
                                         <div class="upload-options">
                                             <label>
-                                                <input type="file" class="image-upload" accept="image/*"/>
+                                                <input required name="image1" type="file" class="image-upload" accept="image/*"/>
                                             </label>
                                         </div>
                                     </div>
@@ -99,7 +98,7 @@
                                         <div class="js--image-preview"></div>
                                         <div class="upload-options">
                                             <label>
-                                                <input type="file" class="image-upload" accept="image/*"/>
+                                                <input name="image2" type="file" class="image-upload" accept="image/*"/>
                                             </label>
                                         </div>
                                     </div>
@@ -109,7 +108,7 @@
                                         <div class="js--image-preview"></div>
                                         <div class="upload-options">
                                             <label>
-                                                <input type="file" class="image-upload" accept="image/*"/>
+                                                <input name="image3" type="file" class="image-upload" accept="image/*"/>
                                             </label>
                                         </div>
                                     </div>
@@ -119,7 +118,7 @@
                                         <div class="js--image-preview"></div>
                                         <div class="upload-options">
                                             <label>
-                                                <input type="file" class="image-upload" accept="image/*"/>
+                                                <input name="image4" type="file" class="image-upload" accept="image/*"/>
                                             </label>
                                         </div>
                                     </div>
@@ -129,7 +128,7 @@
                                         <div class="js--image-preview"></div>
                                         <div class="upload-options">
                                             <label>
-                                                <input type="file" class="image-upload" accept="image/*"/>
+                                                <input name="image4" type="file" class="image-upload" accept="image/*"/>
                                             </label>
                                         </div>
                                     </div>
@@ -139,7 +138,7 @@
                                         <div class="js--image-preview"></div>
                                         <div class="upload-options">
                                             <label>
-                                                <input type="file" class="image-upload" accept="image/*"/>
+                                                <input name="image6" type="file" class="image-upload" accept="image/*"/>
                                             </label>
                                         </div>
                                     </div>
@@ -149,7 +148,7 @@
                                         <div class="js--image-preview"></div>
                                         <div class="upload-options">
                                             <label>
-                                                <input type="file" class="image-upload" accept="image/*"/>
+                                                <input name="image7" type="file" class="image-upload" accept="image/*"/>
                                             </label>
                                         </div>
                                     </div>
@@ -216,70 +215,7 @@
 
                     </div>
 
-                    <div class="box-details">
-                        <h3>نوع الوحدة السكنية</h3>
-                        <p>بإمكانك اختيار نوع السكن وتحديد عدد الوحدات المطلوبة تالياً.</p>
 
-
-                        <section class="grouped-radio row">
-                            <div class="col-lg-2 col-md-4 col-6">
-                                <div class="box">
-                                    <input type="radio" id="control_18" name="select" value="18">
-                                    <label for="control_18"><h2>1</h2></label>
-                                </div>
-                            </div>
-                            <div class="col-lg-2 col-md-4 col-6">
-
-                                <div class="box">
-                                    <input type="radio" id="control_19" name="select" value="19">
-                                    <label for="control_19"><h2>2</h2></label>
-                                </div>
-                            </div>
-                            <div class="col-lg-2 col-md-4 col-6">
-
-                                <div class="box">
-                                    <input type="radio" id="control_20" name="select" value="20">
-                                    <label for="control_20"><h2>3</h2></label>
-                                </div>
-                            </div>
-                            <div class="col-lg-2 col-md-4 col-6">
-
-                                <div class="box">
-                                    <input type="radio" id="control_21" name="select" value="21">
-                                    <label for="control_21"><h2>4</h2></label>
-                                </div>
-                            </div>
-
-                            <div class="col-lg-2 col-md-4 col-6">
-
-                                <div class="box">
-                                    <input type="radio" id="control_22" name="select" value="22">
-                                    <label for="control_22"><h2>5</h2></label>
-                                </div>
-                            </div>
-
-                            <div class="col-lg-2 col-md-4 col-6">
-
-                                <div class="box">
-                                    <input type="radio" id="control_23" name="select" value="23">
-                                    <label for="control_23"><h2>6</h2></label>
-                                </div>
-                            </div>
-
-
-                        </section>
-                        <p class="mb-3 mt-3">او ادخل العدد المطلوب يدوياً:</p>
-                        <div class="row">
-                            <div class="col-lg-7 col-8">
-                                <input type="text" class="form-control" placeholder="ادخل العدد...">
-                            </div>
-                            <div class="col-lg-5 col-4">
-                                <input type="button" class="btn" value="تأكيد العدد">
-                            </div>
-                        </div>
-
-
-                    </div>
 
                     <div class="box-details">
                         <h3>عدد النزلاء</h3>
