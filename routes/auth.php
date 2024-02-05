@@ -17,10 +17,13 @@ Route::middleware('guest')->group(function () {
 
     Route::post('register', [RegisteredUserController::class, 'store']);
 
-    Route::get('login', [AuthenticatedSessionController::class, 'create'])
+    Route::get('login', [\App\Http\Controllers\LoginController::class, 'login'])
                 ->name('login');
 
-    Route::post('login', [AuthenticatedSessionController::class, 'store']);
+    Route::post('login', [\App\Http\Controllers\LoginController::class, 'postLogin'])->name('login.post');
+
+    Route::get('phone-verify/{phone}',[\App\Http\Controllers\LoginController::class, 'viewVerification'])->name('verify');
+    Route::post('verify-login/{phone}',[\App\Http\Controllers\LoginController::class, 'verifyAndLogin'])->name('post.verify');
 
     Route::get('forgot-password', [PasswordResetLinkController::class, 'create'])
                 ->name('password.request');

@@ -1,5 +1,6 @@
 <?php
 namespace App\Http\Controllers;
+use App\Http\Requests\Auth\LoginRequest;
 use Illuminate\Support\Facades\Cookie;
 use Illuminate\Support\Facades\Session;
 use Laravel\Socialite\Facades\Socialite;
@@ -7,6 +8,7 @@ use Illuminate\Support\Facades\Auth;
 use Exception;
 use App\Models\User;
 use App\Models\Team;
+use Illuminate\Http\Request;
 
 class LoginController extends Controller
 {
@@ -61,5 +63,38 @@ class LoginController extends Controller
         } catch (Exception $e) {
             dd($e->getMessage());
         }
+    }
+
+    public function login()
+    {
+        return view('website.auth.login-register-phone');
+    }
+
+    public function postLogin(LoginRequest $request)
+    {
+        $user = User::firstOrCreate(
+            ['phone' => request('phone')],
+            ['type' =>  request('type')],
+        );
+        $user->update(['verify_code'=>rand(0000,9999)]);
+
+        \session()->flash("success",'Verify your phone.');
+        return redirect()->route('verify',['phone'=>request('phone')]);
+    }
+
+    public function viewVerification($phone)
+    {
+        return view('website.auth.verification',compact('phone'));
+    }
+
+    public function verifyAndLogin(Request $request,$phone)
+    {
+        $user = User::where('phone',$phone)->where('verify_code',$request->verify_code)->first();
+        if(!$user){
+
+            return redirect()->route('verify',['phone'=>$phone])->with('error','الكود غير صحيح');
+        }
+        \auth()->login($user);
+        return redirect()->route('home');
     }
 }

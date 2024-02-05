@@ -14,7 +14,7 @@ $(document).ready(function(){
 
 
     //Init the carousel
-    $("#owl-demo").owlCarousel({
+    $("#owl-demo").owlCarousel({      
       items: 1,
       loop: true,
       nav:true,
@@ -25,7 +25,7 @@ $(document).ready(function(){
       onTranslate: resetProgressBar,
       onTranslated: startProgressBar
     });
-
+  
      function startProgressBar() {
       // apply keyframe animation
       $(".slide-progress").css({
@@ -49,8 +49,8 @@ $(document).ready(function(){
       start();
     }
 
-
-
+ 
+ 
 });
 
 
@@ -62,11 +62,11 @@ function showhide() {
 
   if (dots.style.display === "none") {
     dots.style.display = "inline";
-    btnText.innerHTML = "Read more";
+    btnText.innerHTML = "Read more"; 
     moreText.style.display = "none";
   } else {
     dots.style.display = "none";
-    btnText.innerHTML = "Read less";
+    btnText.innerHTML = "Read less"; 
     moreText.style.display = "inline";
   }
 }
@@ -105,13 +105,13 @@ function handlePaste(e) {
   })
 }
 
-function handleBackspace(e) {
+function handleBackspace(e) { 
   const input = e.target
   if (input.value) {
     input.value = ''
     return
   }
-
+  
   input.previousElementSibling.focus()
 }
 
@@ -136,7 +136,7 @@ inputs.forEach(input => {
       e.target.select()
     }, 0)
   })
-
+  
   input.addEventListener('keydown', e => {
     switch(e.keyCode) {
       case KEYBOARDS.backspace:
@@ -148,7 +148,7 @@ inputs.forEach(input => {
       case KEYBOARDS.arrowRight:
         handleArrowRight(e)
         break
-      default:
+      default:  
     }
   })
 })
