@@ -11,9 +11,9 @@ class Budget extends Model
 
     protected $table = 'budgets';
     public $timestamps = true;
-    use HasTranslations;
+//    use HasTranslations;
 
     protected $guarded = array('id');
 
-    public $translatable = ['name'];
+//    public $translatable = ['name'];
 }

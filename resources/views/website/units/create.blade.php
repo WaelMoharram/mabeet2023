@@ -10,7 +10,7 @@
                 <h5>ادخل تفاصيل السكن الجديد لإستقبال افضل العروض</h5>
             </div>
 
-            <form class="row" method="post" action="{{route('units.store')}}" enctype="multipart/form-data">
+            <form class="row" method="post" action="{{route('units.store')}}" enctype="multipart/form-data"  data-parsley-validate="novalidate">
                 @csrf
                 <div class="col-lg-3">
                     <div class="area">
@@ -46,9 +46,18 @@
                     <div class="box-details">
                         <h3>تفاصيل السكن</h3>
                         <p>ادخل عنوان وتفاصيل اضافتك للوحدة السكنية.</p>
-                        <input required name="name" class="form-control mb-3" placeholder="عنوان او اسم السكن">
+                        <input type="text" required name="name" class="form-control mb-3" placeholder="عنوان او اسم السكن"
+                        data-parsley-required-message="الحقل مطلوب"
+                        >
                         <textarea required name="description" class="form-control mb-3"
                                   placeholder="التفاصيل"></textarea>
+
+                        <input type="number" required name="amount" class="form-control mb-3" placeholder="سعر الوحدة" min="0" >
+                        <div class="col-12">
+                            <div class="alert text-center" role="alert">
+سعر الوحدة هو السعر الأساسي . بإمكانك دائما تعديل السعر عند تقديم عروض على طلبات العملاء.
+                            </div>
+                        </div>
                     </div>
 
                     <div class="box-details">
@@ -56,21 +65,14 @@
                         <p>قم بتحديد مكان الوحدة السكنية بشكل دقيق على الخريطة.</p>
                         <div class="responsive-map">
 
-                            <input type="text" class="form-control" id="pac-input" data-parsley-required-message="ابحث عن عنوان"
+                            <input  type="text" class="form-control" id="pac-input" data-parsley-required-message="ابحث عن عنوان"
                                    name="address" placeholder="ابحث عن الموقع" required
                                    style="z-index: 0;position: absolute;top: 11px;left: 113px;height: 34px;width: 63%;"
                                    maxlength="200">
 
-                            <div id="map" style="width: 100%; height: 1000px;"></div>
-                            <input type="hidden" name="lat" id="lat"/>
-                            <input type="hidden" name="lng" id="lng"/>
-{{--                            <div id="map" style="height: 400px; width: 100%;"></div>--}}
-
-{{--                            <input type="hidden" id="address" placeholder="Address">--}}
-{{--                            <input type="hidden" id="lat" placeholder="Latitude">--}}
-{{--                            <input type="hidden" id="lng" placeholder="Longitude">--}}
-
-
+                            <div id="map" style="width: 100%; height: 100%;"></div>
+                            <input required type="hidden" name="lat" id="lat"/>
+                            <input required type="hidden" name="lng" id="lng"/>
                         </div>
                     </div>
 
@@ -129,7 +131,7 @@
                                         <div class="js--image-preview"></div>
                                         <div class="upload-options">
                                             <label>
-                                                <input name="image4" type="file" class="image-upload" accept="image/*"/>
+                                                <input name="image5" type="file" class="image-upload" accept="image/*"/>
                                             </label>
                                         </div>
                                     </div>
@@ -169,7 +171,7 @@
                             @foreach($unitTypes as $unitType)
                             <div class="col-lg-3 col-md-6">
                                 <div class="box">
-                                    <input type="radio" id="control_{{$unitType->id}}" name="select" value="{{$unitType->id}}">
+                                    <input required type="radio" id="control_{{$unitType->id}}" name="unit_type_id" value="{{$unitType->id}}">
                                     <label for="control_{{$unitType->id}}"><h2>{{$unitType->name}}</h2></label>
                                 </div>
                             </div>
@@ -186,58 +188,55 @@
                         <h3>عدد النزلاء</h3>
                         <p>هل ستسكن وحدك ام معك اشخاص اخرين؟</p>
 
-
                         <section class="grouped-radio row">
                             <div class="col-lg-2 col-md-4 col-6">
                                 <div class="box">
-                                    <input type="radio" id="control_18" name="select" value="18">
-                                    <label for="control_18"><h2>1</h2></label>
+                                    <input class="guest-numbers" type="radio" id="control_0018" value="1" name="guestNumbersSelect">
+                                    <label for="control_0018"><h2>1</h2></label>
                                 </div>
                             </div>
                             <div class="col-lg-2 col-md-4 col-6">
 
                                 <div class="box">
-                                    <input type="radio" id="control_19" name="select" value="19">
-                                    <label for="control_19"><h2>2</h2></label>
+                                    <input class="guest-numbers" type="radio" id="control_0019" value="2" name="guestNumbersSelect">
+                                    <label for="control_0019"><h2>2</h2></label>
                                 </div>
                             </div>
                             <div class="col-lg-2 col-md-4 col-6">
 
                                 <div class="box">
-                                    <input type="radio" id="control_20" name="select" value="20">
-                                    <label for="control_20"><h2>3</h2></label>
+                                    <input class="guest-numbers" type="radio" id="control_0020" value="3" name="guestNumbersSelect">
+                                    <label for="control_0020"><h2>3</h2></label>
                                 </div>
                             </div>
                             <div class="col-lg-2 col-md-4 col-6">
 
                                 <div class="box">
-                                    <input type="radio" id="control_21" name="select" value="21">
-                                    <label for="control_21"><h2>4</h2></label>
-                                </div>
-                            </div>
-
-                            <div class="col-lg-2 col-md-4 col-6">
-
-                                <div class="box">
-                                    <input type="radio" id="control_22" name="select" value="22">
-                                    <label for="control_22"><h2>5</h2></label>
+                                    <input class="guest-numbers" type="radio" id="control_0021" value="4" name="guestNumbersSelect">
+                                    <label for="control_0021"><h2>4</h2></label>
                                 </div>
                             </div>
 
                             <div class="col-lg-2 col-md-4 col-6">
 
                                 <div class="box">
-                                    <input type="radio" id="control_23" name="select" value="23">
-                                    <label for="control_23"><h2>6</h2></label>
+                                    <input class="guest-numbers" type="radio" id="control_0022" value="5" name="guestNumbersSelect">
+                                    <label for="control_0022"><h2>5</h2></label>
                                 </div>
                             </div>
 
+                            <div class="col-lg-2 col-md-4 col-6">
+                                <div class="box">
+                                    <input class="guest-numbers" type="radio" id="control_0023" value="6" name="guestNumbersSelect">
+                                    <label for="control_0023"><h2>6</h2></label>
+                                </div>
+                            </div>
 
                         </section>
                         <p class="mb-3 mt-3">او ادخل العدد يدوياً:</p>
                         <div class="row">
                             <div class="col-lg-7 col-8">
-                                <input type="text" class="form-control" placeholder="ادخل العدد...">
+                                <input id="guest_numbers" required name="guest_numbers" type="text" class="form-control" placeholder="ادخل العدد...">
                             </div>
                             <div class="col-lg-5 col-4">
                                 <input type="button" class="btn" value="تأكيد العدد">
@@ -252,38 +251,24 @@
 
 
                         <section class="grouped-radio row">
-                            <div class="col-lg-3 col-md-6">
-                                <div class="box">
-                                    <input type="radio" id="control_08" name="select" value="8">
-                                    <label for="control_08"><h2>أقل من 5,000</h2></label>
+                            @foreach($budgets as $budget)
+
+                                <div class="col-lg-3 col-md-6">
+                                    <div class="box">
+                                        <input required type="radio" id="control_1{{$budget->id}}" name="budget_id" value="{{$budget->id}}">
+                                        <label for="control_1{{$budget->id}}"><h2>{{$budget->name}}</h2></label>
+                                    </div>
                                 </div>
-                            </div>
-                            <div class="col-lg-3 col-md-6">
+                            @endforeach
 
                                 <div class="box">
-                                    <input type="radio" id="control_09" name="select" value="9">
-                                    <label for="control_09"><h2>10,000 ~ 5,000</h2></label>
+                                    <input type="radio" id="control_1111111" name="budget_id" >
+                                    <label for="control_1111111"><h2>لا يهم</h2></label>
                                 </div>
-                            </div>
-                            <div class="col-lg-3 col-md-6">
-
-                                <div class="box">
-                                    <input type="radio" id="control_010" name="select" value="10">
-                                    <label for="control_010"><h2>25,000 ~ 10,000</h2></label>
-                                </div>
-                            </div>
-                            <div class="col-lg-3 col-md-6">
-
-                                <div class="box">
-                                    <input type="radio" id="control_11" name="select" value="11">
-                                    <label for="control_11"><h2>لا يهم</h2></label>
-                                </div>
-                            </div>
-
 
                         </section>
                         <div class="form-group form-check mt-3">
-                            <input type="checkbox" class="form-check-input" id="exampleCheck1">
+                            <input required type="checkbox" class="form-check-input" id="exampleCheck1">
                             <label
                                 style="background: none; box-shadow: none; border-radius: 0; padding: 0; margin-bottom: 0; text-align: revert; position: relative; width: 100%;"
                                 class="form-check-label" for="exampleCheck1">بإضافة طلب جديد، انت توافق تلقائياً على
@@ -301,70 +286,27 @@
 
                         <div id="div_id_radio_buttons" class="form-group">
                             <div class="row">
-                                <label for="id_id_radio_buttons_0_10" class="custom-control custom-radio col-md-4">
-                                    <input type="checkbox" class="custom-control-input is-invalid" name="radio_buttons"
-                                           id="id_id_radio_buttons_0_10" value="option_one"/>
-                                    <label for="id_id_radio_buttons_0_10" class="custom-control-label">مجلس
+                                @foreach($services as $service)
+                                    <label for="id_id_radio_buttons_0_{{$service->id}}" class="custom-control custom-radio col-md-4">
+                                        <input type="checkbox" class="custom-control-input is-invalid" name="service_ids[]"
+                                               id="id_id_radio_buttons_0_{{$service->id}}" value="{{$service->id}}"/>
+                                        <label for="id_id_radio_buttons_0_{{$service->id}}" class="custom-control-label">{{$service->name}}
+                                        </label>
                                     </label>
-                                </label>
-                                <label for="id_id_radio_buttons_0_20" class="custom-control custom-radio col-md-4">
-                                    <input type="checkbox" class="custom-control-input is-invalid" name="radio_buttons"
-                                           id="id_id_radio_buttons_0_20" value="option_two"/>
-                                    <label for="id_id_radio_buttons_0_20" class="custom-control-label">برادات ماء
-                                    </label>
-                                </label>
-                                <label for="id_id_radio_buttons_0_30" class="custom-control custom-radio col-md-4">
-                                    <input type="checkbox" class="custom-control-input is-invalid" name="radio_buttons"
-                                           id="id_id_radio_buttons_0_30" value="option_three"/>
-                                    <label for="id_id_radio_buttons_0_30" class="custom-control-label">مكيف
-                                    </label>
-                                </label>
-                                <label for="id_id_radio_buttons_0_40" class="custom-control custom-radio col-md-4">
-                                    <input type="checkbox" class="custom-control-input is-invalid" name="radio_buttons"
-                                           id="id_id_radio_buttons_0_40" value="option_three"/>
-                                    <label for="id_id_radio_buttons_0_40" class="custom-control-label">ادوات نظافة
-                                    </label>
-                                </label>
-                                <label for="id_id_radio_buttons_0_50" class="custom-control custom-radio col-md-4">
-                                    <input type="checkbox" class="custom-control-input is-invalid" name="radio_buttons"
-                                           id="id_id_radio_buttons_0_50" value="option_three"/>
-                                    <label for="id_id_radio_buttons_0_50" class="custom-control-label">سرير
-                                    </label>
-                                </label>
-                                <label for="id_id_radio_buttons_0_60" class="custom-control custom-radio col-md-4">
-                                    <input type="checkbox" class="custom-control-input is-invalid" name="radio_buttons"
-                                           id="id_id_radio_buttons_0_60" value="option_three"/>
-                                    <label for="id_id_radio_buttons_0_60" class="custom-control-label">ثلاجة
-                                    </label>
-                                </label>
-                                <label for="id_id_radio_buttons_0_70" class="custom-control custom-radio col-md-4">
-                                    <input type="checkbox" class="custom-control-input is-invalid" name="radio_buttons"
-                                           id="id_id_radio_buttons_0_70" value="option_three"/>
-                                    <label for="id_id_radio_buttons_0_70" class="custom-control-label">واي فاي
-                                    </label>
-                                </label>
-                                <label for="id_id_radio_buttons_0_80" class="custom-control custom-radio col-md-4">
-                                    <input type="checkbox" class="custom-control-input is-invalid" name="radio_buttons"
-                                           id="id_id_radio_buttons_0_80" value="option_three"/>
-                                    <label for="id_id_radio_buttons_0_80" class="custom-control-label">سخان
-                                    </label>
-                                </label>
-                                <label for="id_id_radio_buttons_0_90" class="custom-control custom-radio col-md-4">
-                                    <input type="checkbox" class="custom-control-input is-invalid" name="radio_buttons"
-                                           id="id_id_radio_buttons_0_90" value="option_three"/>
-                                    <label for="id_id_radio_buttons_0_90" class="custom-control-label">غسالة
-                                    </label>
-                                </label>
+                                @endforeach
+
+
+
                             </div>
-                            <p class="mb-3 mt-3">او ادخل الخدمه يدوياً:</p>
-                            <div class="row">
-                                <div class="col-lg-7 col-8">
-                                    <input type="text" class="form-control" placeholder="ادخل العدد...">
-                                </div>
-                                <div class="col-lg-5 col-4">
-                                    <input type="button" class="btn" value="تأكيد العدد">
-                                </div>
-                            </div>
+{{--                            <p class="mb-3 mt-3">او ادخل الخدمه يدوياً:</p>--}}
+{{--                            <div class="row">--}}
+{{--                                <div class="col-lg-7 col-8">--}}
+{{--                                    <input type="text" class="form-control" placeholder="ادخل العدد...">--}}
+{{--                                </div>--}}
+{{--                                <div class="col-lg-5 col-4">--}}
+{{--                                    <input type="button" class="btn" value="تأكيد العدد">--}}
+{{--                                </div>--}}
+{{--                            </div>--}}
                         </div>
                     </div>
                     <button type="submit" class="btn btn-success w-100 mb-5">تأكيد الطلب</button>
@@ -378,65 +320,118 @@
 @endsection
 
 @section('scripts')
-{{--    <script async defer src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCfNbY4ldFKy2apqzKoQmR7arfGypZHI3I&callback=initMap"></script>--}}
+    <script>
+        document.querySelectorAll('.guest-numbers').forEach(function(radio) {
+            radio.addEventListener('change', function() {
+                if (this.checked) {
+                    document.getElementById('guest_numbers').value = this.value;
+                }
+            });
+        });
+    </script>
+    <script>
+        function initImageUpload(box) {
+            let uploadField = box.querySelector(".image-upload");
 
-{{--    <script>--}}
-{{--        function initMap() {--}}
-{{--            var initialLocation = { lat: -34.397, lng: 150.644 }; // Replace with your desired initial location--}}
-{{--            var map = new google.maps.Map(document.getElementById('map'), {--}}
-{{--                zoom: 8,--}}
-{{--                center: initialLocation--}}
-{{--            });--}}
+            uploadField.addEventListener("change", getFile);
 
-{{--            var marker = new google.maps.Marker({--}}
-{{--                position: initialLocation,--}}
-{{--                map: map,--}}
-{{--                draggable: true // Optional: if you want the marker to be draggable--}}
-{{--            });--}}
+            function getFile(e) {
+                let file = e.currentTarget.files[0];
+                checkType(file);
+            }
 
-{{--            // Add click event listener to the map--}}
-{{--            map.addListener('click', function(e) {--}}
-{{--                placeMarkerAndPanTo(e.latLng, map, marker);--}}
-{{--            });--}}
+            function previewImage(file) {
+                let thumb = box.querySelector(".js--image-preview"),
+                    reader = new FileReader();
 
-{{--            // Update the inputs when the marker is moved--}}
-{{--            google.maps.event.addListener(marker, 'dragend', function() {--}}
-{{--                updateInputs(marker.getPosition());--}}
-{{--            });--}}
-{{--        }--}}
+                reader.onload = function() {
+                    thumb.style.backgroundImage = "url(" + reader.result + ")";
+                };
+                reader.readAsDataURL(file);
+                thumb.className += " js--no-default";
+            }
 
-{{--        function placeMarkerAndPanTo(latLng, map, marker) {--}}
-{{--            marker.setPosition(latLng);--}}
-{{--            map.panTo(latLng);--}}
-{{--            updateInputs(latLng);--}}
-{{--        }--}}
+            function checkType(file) {
+                let imageType = /image.*/;
+                if (!file.type.match(imageType)) {
+                    throw "Datei ist kein Bild";
+                } else if (!file) {
+                    throw "Kein Bild gewählt";
+                } else {
+                    previewImage(file);
+                }
+            }
+        }
 
-{{--        function updateInputs(latLng) {--}}
-{{--            document.getElementById('lat').value = latLng.lat();--}}
-{{--            document.getElementById('lng').value = latLng.lng();--}}
+        // initialize box-scope
+        var boxes = document.querySelectorAll(".box-content");
 
-{{--            // Get the address using reverse geocoding--}}
-{{--            var geocoder = new google.maps.Geocoder;--}}
-{{--            geocoder.geocode({ 'location': latLng }, function(results, status) {--}}
-{{--                if (status === 'OK') {--}}
-{{--                    if (results[0]) {--}}
-{{--                        document.getElementById('address').value = results[0].formatted_address;--}}
-{{--                    } else {--}}
-{{--                        window.alert('No results found');--}}
-{{--                    }--}}
-{{--                } else {--}}
-{{--                    window.alert('Geocoder failed due to: ' + status);--}}
-{{--                }--}}
-{{--            });--}}
-{{--        }--}}
+        for (let i = 0; i < boxes.length; i++) {
+            let box = boxes[i];
+            initDropEffect(box);
+            initImageUpload(box);
+        }
 
-{{--    </script>--}}
+        /// drop-effect
+        function initDropEffect(box) {
+            let area,
+                drop,
+                areaWidth,
+                areaHeight,
+                maxDistance,
+                dropWidth,
+                dropHeight,
+                x,
+                y;
+
+            // get clickable area for drop effect
+            area = box.querySelector(".js--image-preview");
+            area.addEventListener("click", fireRipple);
+
+            function fireRipple(e) {
+                area = e.currentTarget;
+                // create drop
+                if (!drop) {
+                    drop = document.createElement("span");
+                    drop.className = "drop";
+                    this.appendChild(drop);
+                }
+                // reset animate class
+                drop.className = "drop";
+
+                // calculate dimensions of area (longest side)
+                areaWidth = getComputedStyle(this, null).getPropertyValue("width");
+                areaHeight = getComputedStyle(this, null).getPropertyValue("height");
+                maxDistance = Math.max(parseInt(areaWidth, 10), parseInt(areaHeight, 10));
+
+                // set drop dimensions to fill area
+                drop.style.width = maxDistance + "px";
+                drop.style.height = maxDistance + "px";
+
+                // calculate dimensions of drop
+                dropWidth = getComputedStyle(this, null).getPropertyValue("width");
+                dropHeight = getComputedStyle(this, null).getPropertyValue("height");
+
+                // calculate relative coordinates of click
+                // logic: click coordinates relative to page - parent's position relative to page - half of self height/width to make it controllable from the center
+                x = e.pageX - this.offsetLeft - parseInt(dropWidth, 10) / 2;
+                y = e.pageY - this.offsetTop - parseInt(dropHeight, 10) / 2 - 30;
+
+                // position drop and animate
+                drop.style.top = y + "px";
+                drop.style.left = x + "px";
+                drop.className += " animate";
+                e.stopPropagation();
+            }
+        }
+    </script>
     <script>
         function initAutocomplete() {
             var map = new google.maps.Map(document.getElementById('map'), {
                 center: {lat: 24.678172168108613, lng: 46.58194551717516},
                 zoom: 10,
-                mapTypeId: 'roadmap'
+                mapTypeId: 'roadmap',
+                zoomControl: true, // Enable zoom controls
             });
 
             var marker;
@@ -562,5 +557,6 @@
     <script
         src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCfNbY4ldFKy2apqzKoQmR7arfGypZHI3I&language=ar&libraries=places&callback=initAutocomplete&loading=async"
         async defer></script>
+
 
 @endsection

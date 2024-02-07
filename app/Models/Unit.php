@@ -12,6 +12,8 @@ class Unit extends Model
     protected $table = 'units';
     public $timestamps = true;
 
+    protected $guarded =['id'];
+
 //    protected $guarded = array('id');
 
 
