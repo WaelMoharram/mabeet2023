@@ -10,7 +10,7 @@
                 <h5>ادخل تفاصيل السكن الجديد لإستقبال افضل العروض</h5>
             </div>
 
-            <form class="row" method="post" action="{{route('units.store')}}">
+            <form class="row" method="post" action="{{route('units.store')}}" enctype="multipart/form-data">
                 @csrf
                 <div class="col-lg-3">
                     <div class="area">
