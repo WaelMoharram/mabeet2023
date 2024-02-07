@@ -40,8 +40,11 @@ class UnitsController extends Controller
     public function store(AddUnitRequest $request)
     {
 
-        $unitData = $request->except(['_token','image1', 'image2', 'image3', 'image4', 'image5', 'image6', 'image7', 'service_ids',]);
+        $unitData = $request->except(['_token','image1', 'image2', 'image3', 'image4', 'image5', 'image6', 'image7', 'service_ids']);
         $unitData['user_id']=auth()->id();
+        $budget = Budget::find($request->budget_id);
+        $unitData['amount_from'] =$budget->amount_from;
+        $unitData['amount_to'] =$budget->amount_to;
         for ($i =1 ; $i<=7;$i++){
             if ($request->hasFile('image'.$i)) {
                 $unitData['image'.$i] = saveImage(request('image'.$i), 'images');
