@@ -10,7 +10,8 @@
                 <h5>ادخل تفاصيل السكن الجديد لإستقبال افضل العروض</h5>
             </div>
 
-            <form class="row">
+            <form class="row" method="post" action="{{route('units.store')}}">
+                @csrf
                 <div class="col-lg-3">
                     <div class="area">
                         <h3>المكان</h3>
@@ -60,7 +61,7 @@
                                    style="z-index: 0;position: absolute;top: 11px;left: 113px;height: 34px;width: 63%;"
                                    maxlength="200">
 
-                            <div id="map" style="width: 100%; height: 450px;"></div>
+                            <div id="map" style="width: 100%; height: 1000px;"></div>
                             <input type="hidden" name="lat" id="lat"/>
                             <input type="hidden" name="lng" id="lng"/>
 {{--                            <div id="map" style="height: 400px; width: 100%;"></div>--}}
@@ -83,7 +84,7 @@
                                         <div class="js--image-preview"></div>
                                         <div class="upload-options">
                                             <label>
-                                                <input required name="image1" type="file" class="image-upload" accept="image/*"/>
+                                                <input  name="image1" type="file" class="image-upload" accept="image/*"/>
                                             </label>
                                         </div>
                                     </div>
@@ -165,50 +166,14 @@
 
 
                         <section class="grouped-radio row">
+                            @foreach($unitTypes as $unitType)
                             <div class="col-lg-3 col-md-6">
                                 <div class="box">
-                                    <input type="radio" id="control_12" name="select" value="12">
-                                    <label for="control_12"><h2>سرير</h2></label>
+                                    <input type="radio" id="control_{{$unitType->id}}" name="select" value="{{$unitType->id}}">
+                                    <label for="control_{{$unitType->id}}"><h2>{{$unitType->name}}</h2></label>
                                 </div>
                             </div>
-                            <div class="col-lg-3 col-md-6">
-
-                                <div class="box">
-                                    <input type="radio" id="control_13" name="select" value="13">
-                                    <label for="control_13"><h2>غرفة</h2></label>
-                                </div>
-                            </div>
-                            <div class="col-lg-3 col-md-6">
-
-                                <div class="box">
-                                    <input type="radio" id="control_14" name="select" value="14">
-                                    <label for="control_14"><h2>شقة</h2></label>
-                                </div>
-                            </div>
-                            <div class="col-lg-3 col-md-6">
-
-                                <div class="box">
-                                    <input type="radio" id="control_15" name="select" value="15">
-                                    <label for="control_15"><h2>دور كامل</h2></label>
-                                </div>
-                            </div>
-
-                            <div class="col-lg-3 col-md-6">
-
-                                <div class="box">
-                                    <input type="radio" id="control_16" name="select" value="16">
-                                    <label for="control_16"><h2>شاليه</h2></label>
-                                </div>
-                            </div>
-
-                            <div class="col-lg-3 col-md-6">
-
-                                <div class="box">
-                                    <input type="radio" id="control_17" name="select" value="17">
-                                    <label for="control_17"><h2>عمارة كاملة</h2></label>
-                                </div>
-                            </div>
-
+                            @endforeach
 
                         </section>
 
@@ -402,7 +367,7 @@
                             </div>
                         </div>
                     </div>
-                    <button class="btn btn-success w-100 mb-5">تأكيد الطلب</button>
+                    <button type="submit" class="btn btn-success w-100 mb-5">تأكيد الطلب</button>
 
                 </div>
 
@@ -469,8 +434,8 @@
     <script>
         function initAutocomplete() {
             var map = new google.maps.Map(document.getElementById('map'), {
-                center: {lat: 25.11113306029435, lng: 46.81614047357911},
-                zoom: 7,
+                center: {lat: 24.678172168108613, lng: 46.58194551717516},
+                zoom: 10,
                 mapTypeId: 'roadmap'
             });
 
@@ -595,7 +560,7 @@
     </script>
 
     <script
-        src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCfNbY4ldFKy2apqzKoQmR7arfGypZHI3I&language=ar&libraries=places&callback=initAutocomplete"
+        src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCfNbY4ldFKy2apqzKoQmR7arfGypZHI3I&language=ar&libraries=places&callback=initAutocomplete&loading=async"
         async defer></script>
 
 @endsection
