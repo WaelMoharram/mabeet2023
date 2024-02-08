@@ -19,7 +19,8 @@ class UnitsController extends Controller
      */
     public function index()
     {
-        //
+        $units = Unit::where('user_id',auth()->id())->orderBy('id','desc')->get();
+        return view('website.units.my-units',compact('units'));
     }
 
     /**

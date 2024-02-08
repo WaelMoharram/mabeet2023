@@ -49,6 +49,10 @@
                 </li>
                 @if(auth()->check() && auth()->user()->type == \App\Models\User::TYPE_PROVIDER)
                     <li class="nav-item list-inline-item">
+                        <a href="{{route('units.index')}}" class="btn btn-mabet btn">{{__('الوحدات السكنية')}}</a>
+                    </li>
+
+                    <li class="nav-item list-inline-item">
                         <a href="{{route('units.create')}}" class="btn btn-mabet btn">{{__('إضافة سكن')}}</a>
                     </li>
                 @else

@@ -32,4 +32,20 @@ class Unit extends Model
         return $this->belongsTo(Facility::class)->withPivot('amount');
     }
 
+    public function services(){
+        return $this->belongsToMany(Service::class,'service_unit');
+    }
+
+    public function city(){
+        return $this->belongsTo(City::class,'city_id');
+    }
+
+    public function type(){
+        return $this->belongsTo(UnitType::class,'unit_type_id');
+    }
+
+    public function budget(){
+        return $this->belongsTo(Budget::class,'budget_id');
+    }
+
 }
