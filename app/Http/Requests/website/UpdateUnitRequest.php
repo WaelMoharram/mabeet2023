@@ -34,7 +34,7 @@ class UpdateUnitRequest extends FormRequest
             'guestNumbersSelect'=>'required|numeric|min:1|max:1000',
             'budget_id'=>'required|numeric|exists:budgets,id',
             'service_ids.*'=>'required|numeric|exists:services,id',
-            'image1'=>'required|image',
+            'image1'=>'nullable|image',
             'image2'=>'nullable|image',
             'image3'=>'nullable|image',
             'image4'=>'nullable|image',

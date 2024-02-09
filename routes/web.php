@@ -7,6 +7,7 @@ use App\Http\Controllers\OrderController;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\OffersController;
 use App\Http\Controllers\Provider\UnitsController;
+use App\Http\Controllers\Provider\ProviderOrders;
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -86,5 +87,6 @@ Route::get('offers-details', [OffersController::class, 'show'])->name('offers.sh
 
 // Provider Routes ..
 Route::resource('units', UnitsController::class);
+Route::resource('provider-orders', ProviderOrders::class);
 
 
