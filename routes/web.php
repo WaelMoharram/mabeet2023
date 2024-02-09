@@ -86,7 +86,7 @@ Route::get('offers', [OffersController::class, 'index'])->name('offers');
 Route::get('offers-details', [OffersController::class, 'show'])->name('offers.show');
 
 // Provider Routes ..
-Route::resource('units', UnitsController::class);
+Route::resource('units', UnitsController::class)->middleware('auth');
 Route::resource('provider-orders', ProviderOrders::class);
 
 
