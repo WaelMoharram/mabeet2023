@@ -20,3 +20,5 @@
 <script src="{{asset('assets/mabeet-dashboard')}}/assets/js/dashboard.js"></script>
 <script src="{{asset('assets/mabeet-dashboard')}}/assets/js/todolist.js"></script>
 <!-- End custom js for this page -->
+
+<script src="https://cdn.ckeditor.com/4.14.1/full/ckeditor.js"></script>
