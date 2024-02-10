@@ -7,6 +7,8 @@ use App\Http\Requests\website\AddUnitRequest;
 use App\Http\Requests\website\UpdateUnitRequest;
 use App\Models\Budget;
 use App\Models\City;
+use App\Models\Facility;
+use App\Models\FacilityUnitType;
 use App\Models\Service;
 use App\Models\Unit;
 use App\Models\UnitType;
@@ -134,5 +136,17 @@ class UnitsController extends Controller
     public function destroy(string $id)
     {
         //
+    }
+
+    public function getFacilitiesByUnitTypeId(Request $request){
+        $facilities_ids =FacilityUnitType::whereUnitTypeId($request->unit_type_id)->pluck('facility_id');
+        if($facilities_ids->count() >0){
+            $facilities = Facility::whereIn('id',$facilities_ids)->get();
+            return response()->json([
+                'status' => true,
+                'data' => view('website.units.SelectFacilities')->with(['facilities' => $facilities])->render()
+            ]);
+        }
+
     }
 }

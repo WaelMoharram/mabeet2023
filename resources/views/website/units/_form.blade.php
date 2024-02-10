@@ -179,6 +179,171 @@
 
         </div>
 
+        <div class="box-details">
+            <h3 class="mb-4">المرافق الاساسية</h3>
+            <p class="mb-4">قم بتحديد العدد المتوفر من المرافق الاساسية للوحدة السكنية.</p>
+
+            <div class="row">
+                <!-- Card 1 -->
+                <div class="col-md-12">
+                    <div class="card  mb-4" style="background-color: #eef2ec; border-color: #ffffff;">
+                        <div class="card-body">
+                            <h5 class="card-title"><i class="fa fa-check-circle" style="color: #81CC6DFF;"></i> سرير</h5>
+                            <section class="grouped-radio row">
+                                <div class="col-lg-2 col-md-4 col-6">
+                                    <div class="box">
+                                        <input class="guest-numbers" type="radio" id="control_0018" value="1" name="guestNumbersSelect"
+                                              checked
+                                        >
+                                        <label for="control_0018"><h2>1</h2></label>
+                                    </div>
+                                </div>
+                                <div class="col-lg-2 col-md-4 col-6">
+
+                                    <div class="box">
+                                        <input class="guest-numbers" type="radio" id="control_0019" value="2" name="guestNumbersSelect"
+
+                                        >
+                                        <label for="control_0019"><h2>2</h2></label>
+                                    </div>
+                                </div>
+                                <div class="col-lg-2 col-md-4 col-6">
+
+                                    <div class="box">
+                                        <input class="guest-numbers" type="radio" id="control_0020" value="3" name="guestNumbersSelect"
+
+                                        >
+                                        <label for="control_0020"><h2>3</h2></label>
+                                    </div>
+                                </div>
+                                <div class="col-lg-2 col-md-4 col-6">
+
+                                    <div class="box">
+                                        <input class="guest-numbers" type="radio" id="control_0021" value="4" name="guestNumbersSelect"
+
+                                        >
+                                        <label for="control_0021"><h2>4</h2></label>
+                                    </div>
+                                </div>
+
+                                <div class="col-lg-2 col-md-4 col-6">
+
+                                    <div class="box">
+                                        <input class="guest-numbers" type="radio" id="control_0022" value="5" name="guestNumbersSelect"
+
+                                        >
+                                        <label for="control_0022"><h2>5</h2></label>
+                                    </div>
+                                </div>
+
+                                <div class="col-lg-2 col-md-4 col-6">
+                                    <div class="box">
+                                        <input class="guest-numbers" type="radio" id="control_0023" value="6" name="guestNumbersSelect"
+
+                                        >
+                                        <label for="control_0023"><h2>6</h2></label>
+                                    </div>
+                                </div>
+
+                            </section>
+                            <p class="mb-3 mt-3">او ادخل العدد يدوياً:</p>
+                            <div class="row">
+                                <div class="col-lg-7 col-8">
+                                    <input id="guest_numbers" required name="guest_numbers" type="text" class="form-control"
+                                           placeholder="ادخل العدد..."
+
+                                    >
+                                </div>
+                                <div class="col-lg-5 col-4">
+                                    {{--                    <input type="button" class="btn" value="تأكيد العدد">--}}
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Card 2 -->
+                <div class="col-md-12">
+                    <div class="card  mb-4" style="background-color: #eef2ec; border-color: #ffffff;">
+                        <div class="card-body">
+                            <h5 class="card-title"><i class="fa fa-check-circle" style="color: #81CC6DFF;"></i> حمام</h5>
+                            <section class="grouped-radio row">
+                                <div class="col-lg-2 col-md-4 col-6">
+                                    <div class="box">
+                                        <input class="guest-numbers" type="radio" id="control_0018" value="1" name="guestNumbersSelect"
+                                               checked
+                                        >
+                                        <label for="control_0018"><h2>1</h2></label>
+                                    </div>
+                                </div>
+                                <div class="col-lg-2 col-md-4 col-6">
+
+                                    <div class="box">
+                                        <input class="guest-numbers" type="radio" id="control_0019" value="2" name="guestNumbersSelect"
+
+                                        >
+                                        <label for="control_0019"><h2>2</h2></label>
+                                    </div>
+                                </div>
+                                <div class="col-lg-2 col-md-4 col-6">
+
+                                    <div class="box">
+                                        <input class="guest-numbers" type="radio" id="control_0020" value="3" name="guestNumbersSelect"
+
+                                        >
+                                        <label for="control_0020"><h2>3</h2></label>
+                                    </div>
+                                </div>
+                                <div class="col-lg-2 col-md-4 col-6">
+
+                                    <div class="box">
+                                        <input class="guest-numbers" type="radio" id="control_0021" value="4" name="guestNumbersSelect"
+
+                                        >
+                                        <label for="control_0021"><h2>4</h2></label>
+                                    </div>
+                                </div>
+
+                                <div class="col-lg-2 col-md-4 col-6">
+
+                                    <div class="box">
+                                        <input class="guest-numbers" type="radio" id="control_0022" value="5" name="guestNumbersSelect"
+
+                                        >
+                                        <label for="control_0022"><h2>5</h2></label>
+                                    </div>
+                                </div>
+
+                                <div class="col-lg-2 col-md-4 col-6">
+                                    <div class="box">
+                                        <input class="guest-numbers" type="radio" id="control_0023" value="6" name="guestNumbersSelect"
+
+                                        >
+                                        <label for="control_0023"><h2>6</h2></label>
+                                    </div>
+                                </div>
+
+                            </section>
+                            <p class="mb-3 mt-3">او ادخل العدد يدوياً:</p>
+                            <div class="row">
+                                <div class="col-lg-7 col-8">
+                                    <input id="guest_numbers" required name="guest_numbers" type="text" class="form-control"
+                                           placeholder="ادخل العدد..."
+
+                                    >
+                                </div>
+                                <div class="col-lg-5 col-4">
+                                    {{--                    <input type="button" class="btn" value="تأكيد العدد">--}}
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+
+
 
         <div class="box-details">
             <h3>عدد النزلاء</h3>

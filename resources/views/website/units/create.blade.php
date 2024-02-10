@@ -257,4 +257,8 @@
         src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCfNbY4ldFKy2apqzKoQmR7arfGypZHI3I&language=ar&libraries=places&callback=initAutocomplete&loading=async"
         async defer></script>
 
+    <script>
+
+    </script>
+
 @endsection
