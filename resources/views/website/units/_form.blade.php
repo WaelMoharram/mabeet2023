@@ -65,8 +65,8 @@
                        maxlength="200">
 
                 <div id="map" style="width: 100%; height: 100%;"></div>
-                <input required type="hidden" name="lat" id="lat" value="{{$unit->lat}}"/>
-                <input required type="hidden" name="lng" id="lng" value="{{$unit->lat}}"/>
+                <input required type="hidden" name="lat" id="lat" @if(isset($unit)) value="{{$unit->lat}}" @endif />
+                <input required type="hidden" name="lng" id="lng" @if(isset($unit)) value="{{$unit->lat}}" @endif />
             </div>
         </div>
 
