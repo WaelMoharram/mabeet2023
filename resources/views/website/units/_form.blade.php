@@ -256,41 +256,41 @@
 
         </div>
 
-        <div class="box-details">
-            <h3>الميزانية</h3>
-            <p>قم بتحديد الميزانية لتكلفة الوحدة السكنية المطلوبة.</p>
+{{--        <div class="box-details">--}}
+{{--            <h3>الميزانية</h3>--}}
+{{--            <p>قم بتحديد الميزانية لتكلفة الوحدة السكنية المطلوبة.</p>--}}
 
 
-            <section class="grouped-radio row">
-                @foreach($budgets as $budget)
+{{--            <section class="grouped-radio row">--}}
+{{--                @foreach($budgets as $budget)--}}
 
-                    <div class="col-lg-3 col-md-6">
-                        <div class="box">
-                            <input required type="radio" id="control_1{{$budget->id}}" name="budget_id"
-                                   value="{{$budget->id}}"
-                                   @if(isset($unit)) @if($unit->budget_id ==$budget->id) checked @endif @endif
-                            >
-                            <label for="control_1{{$budget->id}}"><h2>{{$budget->name}}</h2></label>
-                        </div>
-                    </div>
-                @endforeach
+{{--                    <div class="col-lg-3 col-md-6">--}}
+{{--                        <div class="box">--}}
+{{--                            <input required type="radio" id="control_1{{$budget->id}}" name="budget_id"--}}
+{{--                                   value="{{$budget->id}}"--}}
+{{--                                   @if(isset($unit)) @if($unit->budget_id ==$budget->id) checked @endif @endif--}}
+{{--                            >--}}
+{{--                            <label for="control_1{{$budget->id}}"><h2>{{$budget->name}}</h2></label>--}}
+{{--                        </div>--}}
+{{--                    </div>--}}
+{{--                @endforeach--}}
 
-                <div class="box">
-                    <input type="radio" id="control_1111111" name="budget_id">
-                    <label for="control_1111111"><h2>لا يهم</h2></label>
-                </div>
+{{--                <div class="box">--}}
+{{--                    <input type="radio" id="control_1111111" name="budget_id">--}}
+{{--                    <label for="control_1111111"><h2>لا يهم</h2></label>--}}
+{{--                </div>--}}
 
-            </section>
-            <div class="form-group form-check mt-3">
-                <input required type="checkbox" class="form-check-input" id="exampleCheck1">
-                <label
-                    style="background: none; box-shadow: none; border-radius: 0; padding: 0; margin-bottom: 0; text-align: revert; position: relative; width: 100%;"
-                    class="form-check-label" for="exampleCheck1">بإضافة طلب جديد، انت توافق تلقائياً على
-                    الشروط والأحكام الخاصة بمنصة مبيت.</label>
-            </div>
+{{--            </section>--}}
+{{--            <div class="form-group form-check mt-3">--}}
+{{--                <input required type="checkbox" class="form-check-input" id="exampleCheck1">--}}
+{{--                <label--}}
+{{--                    style="background: none; box-shadow: none; border-radius: 0; padding: 0; margin-bottom: 0; text-align: revert; position: relative; width: 100%;"--}}
+{{--                    class="form-check-label" for="exampleCheck1">بإضافة طلب جديد، انت توافق تلقائياً على--}}
+{{--                    الشروط والأحكام الخاصة بمنصة مبيت.</label>--}}
+{{--            </div>--}}
 
 
-        </div>
+{{--        </div>--}}
 
         <div class="box-details">
 

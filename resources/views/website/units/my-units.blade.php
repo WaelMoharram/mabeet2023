@@ -83,7 +83,7 @@
                                                     <ul class="list-inline flat-option">
                                                         <li class="list-inline-item"><img src="asset/images/ico.png"
                                                                                           class="img-fluid"></li>
-                                                        <li class="list-inline-item"> الميزانيه: {{$unit->budget->name}} </li>
+{{--                                                        <li class="list-inline-item"> الميزانيه: {{$unit->budget->name}} </li>--}}
                                                     </ul>
                                                 </div>
 
