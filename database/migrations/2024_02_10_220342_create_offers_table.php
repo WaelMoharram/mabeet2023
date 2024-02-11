@@ -12,6 +12,9 @@ return new class extends Migration
     public function up(): void
     {
         Schema::create('offers', function (Blueprint $table) {
+            $table->engine = 'MyISAM';
+            $table->charset = 'utf8mb4';
+            $table->collation = 'utf8mb4_unicode_ci';
             $table->id();
             $table->unsignedBigInteger('order_id');
             $table->unsignedBigInteger('unit_id');

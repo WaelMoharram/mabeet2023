@@ -281,5 +281,35 @@
     "Orders finished": "الطلبات المكتملة",
     "Order details": "تفاصيل الطلب",
     "Offers": "العروض",
-    "Add new pages" : "إضافة صفحة جديدة"
+    "Add new pages" : "إضافة صفحة جديدة",
+    "Request accommodation and receive offers directly from homeowners": "أطلب سكن و استقبل عروض من أصحاب المساكن مباشرة",
+    "How to add unit": "كيفية إضافة مسكن",
+    "How Mabeet work": "كيف يعمل مبيت",
+    "New order": "طلب جديد",
+    "Enter the details of the new request to receive the best offers": "ادخل تفاصيل الطلب الجديد لإستقبال افضل العروض",
+    "Determine the location of residence and housing unit.": "تحديد مكان الإقامة والوحدة السكنية.",
+    "Season": "الموسم",
+    "Determine the season for requesting the housing unit.": "تحديد الموسم طلب الوحدة السكنية.",
+    "Another date": "تاريخ آخر",
+    "Enter the address and details of your housing unit request.": "أدخل عنوان وتفاصيل طلب وحدتك السكنية.",
+    "Order address": "عنوان الطلب",
+    "Details": "التفاصيل",
+    "The distance to the mosque.": "المسافة إلى المسجد.",
+    "Please note that prices increase as the housing unit gets closer to the mosque.": "يرجى ملاحظة أن الأسعار تزيد كلما اقتربت الوحدة السكنية من المسجد.",
+    "Does not matter.": "لا يهم.",
+    "The type of housing unit.": "نوع الوحدة السكنية.",
+    "You can choose the type of accommodation and specify the number of units required below.": "يمكنك اختيار نوع السكن وتحديد عدد الوحدات المطلوبة أدناه.",
+    "The number of units required": "عدد الوحدات المطلوبة.",
+    "You can specify the number of units required.": "يمكنك تحديد عدد الوحدات المطلوبة.",
+    "Please enter the quantity...": "الرجاء إدخال العدد...",
+    "Or enter the required quantity manually:": "أو أدخل الكمية المطلوبة يدويا:",
+    "The number of guests.": "عدد الضيوف.",
+    "Will you be living alone or with other people?": "هل ستعيش وحدك أم مع أشخاص آخرين؟",
+    "The budget.": "الميزانية.",
+    "Specify the budget for the required housing unit cost": "حدد الميزانية لتكلفة الوحدة السكنية المطلوبة.",
+    "By adding a new order, you automatically agree to the terms and conditions of the Stay platform": "من خلال إضافة طلب جديد، فإنك توافق تلقائيا على شروط وأحكام منصة مبيت.",
+    "Order confirmation": "تأكيد الطلب"
+
+
+
 }

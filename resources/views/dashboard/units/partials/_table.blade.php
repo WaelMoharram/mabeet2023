@@ -14,4 +14,4 @@
 
 </table>
 
-{{$units->appends(request()->except('page'))->links()}}
+{{$units->appends(request()->except('page'))->links('pagination::bootstrap-4')}}

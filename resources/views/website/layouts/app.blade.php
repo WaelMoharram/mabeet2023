@@ -2,7 +2,7 @@
 <html lang="{!! app()->getLocale()!!}" dir="{!! app()->getLocale() == 'ar' ? 'rtl' : 'ltr' !!}">
 
 @include('website.layouts.head')
-
+@yield('header')
 <!-- Start Header -->
 {{--@auth--}}
 {{--    {{\Illuminate\Support\Facades\Auth::user()}}--}}

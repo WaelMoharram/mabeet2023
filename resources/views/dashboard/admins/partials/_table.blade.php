@@ -17,4 +17,4 @@
 
 </table>
 
-{{$admins->appends(request()->except('page'))->links()}}
+{{$admins->appends(request()->except('page'))->links('pagination::bootstrap-4')}}
