@@ -5,9 +5,9 @@ use App\Http\Controllers\LoginController;
 use App\Http\Controllers\ProfileController;
 use App\Http\Controllers\OrderController;
 use Illuminate\Support\Facades\Route;
-use App\Http\Controllers\OffersController;
+use App\Http\Controllers\Provider\OffersController;
 use App\Http\Controllers\Provider\UnitsController;
-use App\Http\Controllers\Provider\ProviderOrders;
+
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -83,13 +83,16 @@ Route::middleware(['language'])->group(function () {
 });
 
 Route::get('order-details', [OrderController::class, 'show'])->name('orders.show');
-Route::get('offers', [OffersController::class, 'index'])->name('offers');
-Route::get('offers-details', [OffersController::class, 'show'])->name('offers.show');
+
 
 // Provider Routes ...
 Route::resource('units', UnitsController::class)->middleware('auth');
 Route::post('get-facilities-by-unit-type-id',[UnitsController::class,'getFacilitiesByUnitTypeId'])->name('get.facilities.by.type');
 Route::post('destroy-unit-image',[UnitsController::class,'destroyUnitImage'])->name('unit.image.destroy');
-Route::resource('provider-orders', ProviderOrders::class);
+
+
+// Provider Offers pages
+Route::get('provider/offers', [OffersController::class, 'index'])->name('offers');
+Route::get('provider/offers-details/{id}', [OffersController::class, 'show'])->name('offers.show');
 
 

@@ -11,7 +11,7 @@
 
             <div class="row mt-5">
                 <div class="col-md-3">
-                    <a href="order-details.html" class="d-block text-dark mt-4 mb-4"> <i class="fas fa-arrow-circle-right mx-1 text-dark"></i> عوده للطلبات </a>
+                    <a href="{{route('offers')}}" class="d-block text-dark mt-4 mb-4"> <i class="fas fa-arrow-circle-right mx-1 text-dark"></i> عوده للطلبات </a>
 
                     <div class="sidebar my-2">
                         <div class="teble-responsive">

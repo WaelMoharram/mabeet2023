@@ -23,14 +23,14 @@
                 @if(auth()->check() && auth()->user()->type == \App\Models\User::TYPE_PROVIDER)
                     <li class="nav-item list-inline-item">
                         <a class="nav-item list-inline-item btn"
-                           href="{{route('provider-orders.index')}}">{{__('Requests and offers')}}</a>
+                           href="{{route('offers')}}">{{__('Requests and offers')}}</a>
                     </li>
                 @else
                     <li class="nav-item list-inline-item">
                         <a class="nav-item list-inline-item btn"
                            href="{{route('orders')}}">{{__('Requests and offers')}}</a>
                     </li>
-                    @endif
+                @endif
 
 
                 {{--                <li class="nav-item list-inline-item">--}}
@@ -67,9 +67,9 @@
                         <a href="{{route('orders.create')}}" class="btn btn-mabet btn">{{__('New request')}}</a>
                     </li>
                 @endif
-{{--                <li class="nav-item list-inline-item">--}}
-{{--                    <a href="{{route('orders.create')}}" class="btn btn-mabet btn">{{__('New request')}}</a>--}}
-{{--                </li>--}}
+                {{--                <li class="nav-item list-inline-item">--}}
+                {{--                    <a href="{{route('orders.create')}}" class="btn btn-mabet btn">{{__('New request')}}</a>--}}
+                {{--                </li>--}}
 
                 @if(app()->getLocale() == 'ar')
                     <li class="nav-item list-inline-item">

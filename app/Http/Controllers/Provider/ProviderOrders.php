@@ -21,7 +21,7 @@ class ProviderOrders extends Controller
         $unitTypes = UnitType::all();
         $budgets = Budget::all();
         $seasons = Season::all();
-        return view('website.provider-orders.index',compact('cities','unitTypes','budgets','seasons'));
+        return view('website.provider-offers.index',compact('cities','unitTypes','budgets','seasons'));
     }
 
     /**
