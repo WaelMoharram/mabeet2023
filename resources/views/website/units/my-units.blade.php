@@ -73,18 +73,22 @@
                                                     <ul class="list-inline flat-option">
                                                         <li class="list-inline-item"><img src="asset/images/ico.png"
                                                                                           class="img-fluid"></li>
-                                                        <li class="list-inline-item"> عدد النزلاء {{$unit->guest_numbers}}</li>
+                                                        <li class="list-inline-item">نوع الوحدة : {{$unit->type->name}} </li>
                                                     </ul>
                                                     <ul class="list-inline flat-option">
                                                         <li class="list-inline-item"><img src="asset/images/ico.png"
                                                                                           class="img-fluid"></li>
-                                                        <li class="list-inline-item">{{$unit->type->name}} نوع الوحدة</li>
+                                                        <li class="list-inline-item"> عدد النزلاء : {{$unit->guest_numbers}}</li>
                                                     </ul>
-                                                    <ul class="list-inline flat-option">
-                                                        <li class="list-inline-item"><img src="asset/images/ico.png"
-                                                                                          class="img-fluid"></li>
-{{--                                                        <li class="list-inline-item"> الميزانيه: {{$unit->budget->name}} </li>--}}
-                                                    </ul>
+
+                                                    @foreach($unit->facilities as $facility)
+                                                        <ul class="list-inline flat-option">
+                                                            <li class="list-inline-item"><img src="asset/images/ico.png"
+                                                                                              class="img-fluid"></li>
+                                                            <li class="list-inline-item"> {{$facility->name}} : {{$facility->pivot->amount}}  </li>
+                                                        </ul>
+                                                    @endforeach
+
                                                 </div>
 
                                                 <div class="price-wishlist">

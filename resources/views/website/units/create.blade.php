@@ -19,6 +19,7 @@
 @endsection
 
 @section('scripts')
+
     <script>
         document.querySelectorAll('.guest-numbers').forEach(function (radio) {
             radio.addEventListener('change', function () {
@@ -28,6 +29,8 @@
             });
         });
     </script>
+
+
     <script>
         function initImageUpload(box) {
             let uploadField = box.querySelector(".image-upload");
@@ -258,7 +261,78 @@
         async defer></script>
 
     <script>
+        $.ajaxSetup({
+            headers: {
+                'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
+            }
+        });
+        document.querySelectorAll('.unitTypeSelection').forEach(function (radio) {
+            radio.addEventListener('change', function () {
+                if (this.checked) {
+                    checkedValue = this.value;
+                    // console.log(checkedValue);
+                    xhr = $.ajax({
+                        url: '{{route('get.facilities.by.type')}}',
+                        type: 'POST',
+                        data: {unit_type_id:checkedValue},
+                        headers: {
+                            'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content') // Ensure CSRF token is sent
+                        },
+                        success: function (data) {
+                            // Handle success
+                            if (data.status === true) {
 
+                                $('#render-facilities').html("");
+                                $('#render-facilities').html(data.data);
+
+                                document.querySelectorAll('.selectedFacilityValue').forEach(function (radio) {
+                                    radio.addEventListener('change', function () {
+                                        if (this.checked) {
+                                            theId= $(this).data('id');
+                                            theCount= $(this).val();
+                                            document.getElementById('facilityCount'+theId).value =theCount;
+                                        }
+                                    });
+                                });
+
+                            } else {
+
+                            }
+                        },
+                        error: function (response) {
+
+                        }
+                    });
+                }
+            });
+        });
+
+    </script>
+
+    <script type="text/javascript">
+        // ... Your existing script code ...
+
+        // This script listens for changes on each radio button within a card
+        // and sets the value of the corresponding input field in the same card.
+        document.addEventListener('DOMContentLoaded', function () {
+            // Iterate over each card
+            document.querySelectorAll('.card').forEach(function (card) {
+                // Find all radio buttons within this card
+                let radios = card.querySelectorAll('input[type="radio"][name="guestNumbersSelect"]');
+                // Find the number input field within this card
+                let numberInput = card.querySelector('input[type="text"][name="guest_numbers"]');
+
+                // Add a change event listener to each radio button
+                radios.forEach(function (radio) {
+                    radio.addEventListener('change', function () {
+                        if (this.checked) {
+                            // Set the number input value to the checked radio's value
+                            numberInput.value = this.value;
+                        }
+                    });
+                });
+            });
+        });
     </script>
 
 @endsection
