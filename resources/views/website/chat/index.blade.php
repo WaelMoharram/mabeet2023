@@ -143,11 +143,11 @@
     <script src="https://js.pusher.com/8.2.0/pusher.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-scrollTo/2.1.3/jquery.scrollTo.min.js"></script>
 
+    @if($offer)
 
     <script>
         // Enable pusher logging - don't include this in production
         // Pusher.logToConsole = true;
-
         var pusher = new Pusher('bbc610262f3ce7937b30', {
             cluster: 'eu'
         });
@@ -241,6 +241,6 @@
         }
     </script>
 
-
+    @endif
 
 @endsection
