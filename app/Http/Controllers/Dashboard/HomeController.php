@@ -5,7 +5,9 @@ namespace App\Http\Controllers\Dashboard;
 use App\Http\Controllers\Controller;
 use App\Http\Requests\UserRequest;
 
+use App\Models\Order;
 use App\Models\Task;
+use App\Models\Unit;
 use App\Models\User;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
@@ -33,8 +35,11 @@ class HomeController extends Controller
     public function index()
     {
 
+        $orders = Order::where('is_reviewed',0)->latest()->take(6)->get();
+        $units = Unit::where('status',0)->latest()->take(6)->get();
 
-        return view('dashboard.home');
+
+        return view('dashboard.home',compact('orders','units'));
     }
 
 
