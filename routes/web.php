@@ -85,8 +85,10 @@ Route::get('order-details', [OrderController::class, 'show'])->name('orders.show
 Route::get('offers', [OffersController::class, 'index'])->name('offers');
 Route::get('offers-details', [OffersController::class, 'show'])->name('offers.show');
 
-// Provider Routes ..
+// Provider Routes ...
 Route::resource('units', UnitsController::class)->middleware('auth');
+Route::post('get-facilities-by-unit-type-id',[UnitsController::class,'getFacilitiesByUnitTypeId'])->name('get.facilities.by.type');
+Route::post('destroy-unit-image',[UnitsController::class,'destroyUnitImage'])->name('unit.image.destroy');
 Route::resource('provider-orders', ProviderOrders::class);
 
 

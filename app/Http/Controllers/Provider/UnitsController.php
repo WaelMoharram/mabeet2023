@@ -45,7 +45,7 @@ class UnitsController extends Controller
     public function store(AddUnitRequest $request)
     {
 
-        $unitData = $request->except(['_token','image1', 'image2', 'image3', 'image4', 'image5', 'image6', 'image7', 'service_ids']);
+        $unitData = $request->only(['city_id','name','description','amount','address','lat','lng','unit_type_id','guest_numbers']);
         $unitData['user_id']=auth()->id();
 //        $budget = Budget::find($request->budget_id);
 //        $unitData['amount_from'] =$budget->amount_from;
@@ -62,6 +62,11 @@ class UnitsController extends Controller
             $unitServicesData[]= ['service_id'=>$service_id,'unit_id'=>$unit->id];
         }
         DB::table('service_unit')->insert($unitServicesData);
+
+        foreach ($request->facilities as $facilityId){
+            $unitFacilityData[]= ['facility_id'=>$facilityId,'unit_id'=>$unit->id,'amount'=>request('facility-count-'.$facilityId)];
+        }
+        DB::table('facility_unit')->insert($unitFacilityData);
 
         session()->flash('success','تم ارسال الطلب بنجاح');
         return view('website.success',[
@@ -99,8 +104,9 @@ class UnitsController extends Controller
      */
     public function update(UpdateUnitRequest $request, string $id)
     {
+
         $unit = Unit::findOrFail($id);
-        $unitData = $request->except(['_token','image1', 'image2', 'image3', 'image4', 'image5', 'image6', 'image7', 'service_ids']);
+        $unitData = $request->only(['city_id','name','description','amount','address','lat','lng','unit_type_id','guest_numbers']);
 //        $budget = Budget::find($request->budget_id);
 //        $unitData['amount_from'] =$budget->amount_from;
 //        $unitData['amount_to'] =$budget->amount_to;
@@ -120,6 +126,11 @@ class UnitsController extends Controller
         $unit->update($unitData);
 
         $unit->services()->sync($request->service_ids);
+        foreach ($request->facilities as $facilityId){
+            $unitFacilityData[]= ['facility_id'=>$facilityId,'unit_id'=>$unit->id,'amount'=>request('facility-count-'.$facilityId)];
+        }
+        DB::table('facility_unit')->where('unit_id',$unit->id)->delete();
+        DB::table('facility_unit')->insert($unitFacilityData);
 
         session()->flash('success','تم ارسال طلب التعديل بنجاح');
         return view('website.success',[
@@ -146,7 +157,23 @@ class UnitsController extends Controller
                 'status' => true,
                 'data' => view('website.units.SelectFacilities')->with(['facilities' => $facilities])->render()
             ]);
+        }else{
+            return response()->json([
+                'status' => true,
+                'data' => view('website.units.SelectFacilities')->with(['facilities' => collect()])->render()
+            ]);
         }
+    }
 
+    public function destroyUnitImage(Request $request){
+        $unit = Unit::find($request->unit_id);
+        if (File::exists(public_path($unit['image'.$request->imageNum]))) {
+            // Delete the file
+            File::delete(public_path($unit['image'.$request->imageNum]));
+        }
+        $unit->update(['image'.$request->imageNum=>null]);
+        return response()->json([
+            'status'=>true,
+        ]);
     }
 }

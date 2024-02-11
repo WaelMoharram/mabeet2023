@@ -2,6 +2,41 @@
 @section('title')
     {!! __('Edit Unit') !!}
 @endsection
+@extends('website.layouts.app')
+
+@section('title')
+    {!! __('Add New Unit') !!}
+@endsection
+
+@section('styles')
+    <style>
+        .image-container {
+            position: relative;
+            display: inline-block; /* or block, depending on your layout */
+            width: 100%;
+            max-height: 40%;
+        }
+        .image-container button.btn-delete {
+            position: absolute;
+            top: 0; /* Position at the top */
+            left: 0; /* Position on the right */
+            z-index: 2; /* Ensure the button is above the image */
+            padding: 0.5em; /* Optional: to give some spacing inside the button */
+            background-color: #dc3545; /* Bootstrap's .btn-danger color */
+            border: none; /* Remove border if present */
+            color: white; /* Button text color */
+            cursor: pointer; /* To indicate the button is clickable */
+            border-radius: 0; /* Optional: if you want square corners */
+        }
+        .image-container img {
+            display: block; /* Remove any default inline spacing */
+            width: 100%; /* Image fills container width */
+            height: auto; /* Maintain aspect ratio */
+        }
+    </style>
+@section('styles')
+
+@endsection
 @section('content')
     <div class="add-mabet new-order">
         <div class="container">
@@ -20,6 +55,67 @@
 @endsection
 
 @section('scripts')
+
+    <script>
+        document.querySelectorAll('.selectedFacilityValue').forEach(function (radio) {
+            radio.addEventListener('change', function () {
+                if (this.checked) {
+                    theId= $(this).data('id');
+                    theCount= $(this).val();
+                    document.getElementById('facilityCount'+theId).value =theCount;
+                }
+            });
+        });
+    </script>
+
+    <script>
+        $.ajaxSetup({
+            headers: {
+                'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
+            }
+        });
+        document.querySelectorAll('.unitTypeSelection').forEach(function (radio) {
+            radio.addEventListener('change', function () {
+                if (this.checked) {
+                    checkedValue = this.value;
+                    // console.log(checkedValue);
+                    xhr = $.ajax({
+                        url: '{{route('get.facilities.by.type')}}',
+                        type: 'POST',
+                        data: {unit_type_id:checkedValue},
+                        headers: {
+                            'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content') // Ensure CSRF token is sent
+                        },
+                        success: function (data) {
+                            // Handle success
+                            if (data.status === true) {
+
+                                $('#render-facilities').html("");
+                                $('#render-facilities').html(data.data);
+
+                                document.querySelectorAll('.selectedFacilityValue').forEach(function (radio) {
+                                    radio.addEventListener('change', function () {
+                                        if (this.checked) {
+                                            theId= $(this).data('id');
+                                            theCount= $(this).val();
+                                            document.getElementById('facilityCount'+theId).value =theCount;
+                                        }
+                                    });
+                                });
+
+                            } else {
+
+                            }
+                        },
+                        error: function (response) {
+
+                        }
+                    });
+                }
+            });
+        });
+
+    </script>
     <script>
         document.querySelectorAll('.guest-numbers').forEach(function (radio) {
             radio.addEventListener('change', function () {
@@ -257,5 +353,56 @@
     <script
         src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCfNbY4ldFKy2apqzKoQmR7arfGypZHI3I&language=ar&libraries=places&callback=initAutocomplete&loading=async"
         async defer></script>
+
+    <!-- Scripts of Removing image in AJAX  -->
+    <script>
+        $(".removeUnitImage").click(function (event) {
+
+                var url = $(this).data('url');
+                var UnitId = "{{$unit->id}}";
+                var imageNumber = $(this).data('image');
+                var $tr= $(this).closest($('#imageContainer' + imageNumber));
+                console.log('url::: '+url);
+                console.log('unit_id::: '+UnitId);
+                console.log('imageNum::: '+imageNumber);
+
+                $.ajax({
+                    type:'POST',
+                    url :url,
+                    data:{unit_id:UnitId,imageNum:imageNumber},
+                    dataType:'json',
+                    success:function(data){
+
+                        if(data.status == true){
+                            console.log(data);
+                            // var title = data.title;
+                            // var msg = data.message;
+                            // toastr.options = {
+                            //     positionClass : 'toast-top-left',
+                            //     onclick:null
+                            // };
+                            // var $toast = toastr['success'](msg,title);
+                            // $toastlast = $toast;
+
+                            $tr.fadeOut(500,function () {
+                                $tr.remove();
+                            });
+
+                        }else{
+                            // var title = data.title;
+                            // var msg = data.message;
+                            // toastr.options = {
+                            //     positionClass : 'toast-top-left',
+                            //     onclick:null
+                            // };
+                            // var $toast = toastr['error'](msg,title);
+                            // $toastlast = $toast
+                        }
+                    }
+                })
+            });
+
+    </script>
+
 
 @endsection
