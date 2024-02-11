@@ -72,6 +72,7 @@ Route::middleware(['language'])->group(function () {
         Route::get('/orders', [OrderController::class, 'index'])->name('orders');
 
 
+
 //        Route::post('store_order',[OrderController::class, 'store'])->name('orders.store');
 
         Route::get('/chat', [OrderController::class, 'index'])->name('chat');

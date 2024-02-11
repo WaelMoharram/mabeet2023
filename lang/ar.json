@@ -308,7 +308,16 @@
     "The budget.": "الميزانية.",
     "Specify the budget for the required housing unit cost": "حدد الميزانية لتكلفة الوحدة السكنية المطلوبة.",
     "By adding a new order, you automatically agree to the terms and conditions of the Stay platform": "من خلال إضافة طلب جديد، فإنك توافق تلقائيا على شروط وأحكام منصة مبيت.",
-    "Order confirmation": "تأكيد الطلب"
+    "Order confirmation": "تأكيد الطلب",
+    "Order owner": "مالك الطلب",
+    "Order time": "وقت الطلب",
+    "Unit type": "نوع الوحدة",
+    "budget": "الميزانية",
+    "New orders": "طلبات جديدة",
+    "Approved orders": "طلبات موافق عليها",
+    "Completed orders": "طلبات مكتملة",
+    "Deleted successfully": "تم الحذف بنجاح",
+    "Order accepted successfully": "تم قبول الطلب بنجاح"
 
 
 

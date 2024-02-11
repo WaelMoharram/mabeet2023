@@ -6,6 +6,8 @@ use App\Http\Requests\ProfileUpdateRequest;
 use App\Models\BookingOld;
 use App\Models\FacilityUnit;
 use App\Models\Offer;
+use App\Models\Order;
+use App\Models\OrderStatus;
 use App\Models\Page;
 use App\Models\ServiceUnit;
 use App\Models\TownOld;
@@ -202,6 +204,19 @@ class MigrationController extends Controller
 
     public function orders()
     {
+
+        $orders = Order::all();
+
+        foreach ($orders as $order){
+            $status = new OrderStatus();
+            $status->order_id = $order->id;
+            $status->user_type = 'admin';
+            $status->user_id = 1;
+            $status->status = Order::STATUS_COMPLETED;
+            $status->color = 'success';
+            $status->save();
+        }
+        return 'done';
         $old = BookingOld::all();
 
         foreach ($old as $item){
@@ -224,7 +239,7 @@ class MigrationController extends Controller
             $offer->price = $item->amount;
             $offer->status = 1;
             $offer->save();
-            
+
         }
     }
 

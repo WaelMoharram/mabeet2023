@@ -73,7 +73,7 @@
             @endcan
 
         <li class="nav-item @if(Request::is('dashboard/orders') ) active  @endif">
-            <a class="nav-link" href="#">
+            <a class="nav-link" href="{{route('dashboard.orders.index',['status'=>\App\Models\Order::STATUS_NEW])}}">
                 <img src="{{asset('assets/mabeet-dashboard')}}/assets/images/orders-icon.png">
                 <span class="menu-title">{{__('Orders')}}</span>
             </a>
