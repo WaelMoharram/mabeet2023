@@ -14,6 +14,12 @@ class Order extends Model
 
     protected $guarded = array('id');
 
+    const STATUS_NEW = 'new';
+    const STATUS_APPROVED = 'approved';
+    const STATUS_REJECTED = 'rejected';
+    const STATUS_CANCELED = 'canceled';
+    const STATUS_COMPLETED = 'completed';
+
     public function facilities(){
         return $this->belongsToMany(Facility::class);
     }
@@ -24,6 +30,30 @@ class Order extends Model
     public function statuses()
     {
         return $this->hasMany(OrderStatus::class);
+    }
+
+    public function unitType()
+    {
+        return $this->belongsTo(UnitType::class, 'unit_type_id');
+    }
+
+    public function user()
+    {
+        return $this->belongsTo(User::class);
+    }
+    public function season()
+    {
+        return $this->belongsTo(Season::class);
+    }
+
+    public function city()
+    {
+        return $this->belongsTo(City::class);
+    }
+
+    public function budget()
+    {
+        return $this->belongsTo(Budget::class);
     }
 
     public function getCurrentStatusAttribute()

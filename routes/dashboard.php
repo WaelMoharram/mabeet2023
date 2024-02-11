@@ -52,6 +52,8 @@ Route::name('dashboard.')->middleware(['language', 'auth:admins'])->prefix('dash
 
     Route::resource('units', \App\Http\Controllers\Dashboard\UnitController::class);
     Route::resource('orders', \App\Http\Controllers\Dashboard\OrderController::class);
+    Route::post('/orders/accept/{id}', [\App\Http\Controllers\Dashboard\OrderController::class, 'accept'])->name('orders.accept');
+
 
 
     Route::get('users.suspend',[\App\Http\Controllers\Dashboard\UserController::class, 'suspend'])->name('users.suspend');

@@ -34,7 +34,7 @@
         </li>
         @canany(['index clients','index providers'])
             <li class="nav-item @if(Request::is('dashboard/users')) active  @endif">
-                <a class="nav-link" href="{{route('dashboard.users.index')}}">
+                <a class="nav-link" href="{{route('dashboard.users.index',['type'=>'client'])}}">
                     <img src="{{asset('assets/mabeet-dashboard')}}/assets/images/users-icon.png">
                     <span class="menu-title">{{__('Users')}}</span>
 
@@ -73,7 +73,7 @@
             @endcan
 
         <li class="nav-item @if(Request::is('dashboard/orders') ) active  @endif">
-            <a class="nav-link" href="#">
+            <a class="nav-link" href="{{route('dashboard.orders.index',['status'=>\App\Models\Order::STATUS_NEW])}}">
                 <img src="{{asset('assets/mabeet-dashboard')}}/assets/images/orders-icon.png">
                 <span class="menu-title">{{__('Orders')}}</span>
             </a>
@@ -85,11 +85,18 @@
 {{--            </a>--}}
 {{--        </li>--}}
 
-            <li class="nav-item @if(Request::is('dashboard/pages')) active @endif">
-                <a class="nav-link" href="{{route('dashboard.pages.index')}}">
-                    <img src="{{asset('assets/mabeet-dashboard')}}/assets/images/orders-icon.png">
-                    <span class="menu-title">{{__('Pages')}}</span>
-                </a>
-            </li>
+        <li class="nav-item @if(Request::is('dashboard/pages')) active @endif">
+            <a class="nav-link" href="{{route('dashboard.pages.index')}}">
+                <img src="{{asset('assets/mabeet-dashboard')}}/assets/images/orders-icon.png">
+                <span class="menu-title">{{__('Pages')}}</span>
+            </a>
+        </li>
+
+        <li class="nav-item @if(Request::is('dashboard/roles')) active @endif">
+            <a class="nav-link" href="{{route('dashboard.roles.index')}}">
+                <img src="{{asset('assets/mabeet-dashboard')}}/assets/images/orders-icon.png">
+                <span class="menu-title">{{__('Roles')}}</span>
+            </a>
+        </li>
     </ul>
 </div>
