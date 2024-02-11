@@ -43,9 +43,9 @@ if (!function_exists('input_error')) {
     function input_error($errors, $input)
     {
         if ($errors->has($input)) {
-            echo '<label id="' . $input . '-error" class="invalid-feedback" style="display:block !important" for="' . $input . '">Error ! ' . $errors->first($input) . '</label>';
+            echo '<span id="' . $input . '-error" class="invalid-feedback" style="display:block !important" for="' . $input . '">Error ! ' . $errors->first($input) . '</span>';
         } else {
-            echo '<label id="' . $input . '-error" class="valid-feedback" for="' . $input . '">Good !</label>';
+            echo '<span id="' . $input . '-error" class="valid-feedback" for="' . $input . '">Good !</span>';
         }
     }
 }

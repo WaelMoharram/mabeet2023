@@ -10,6 +10,7 @@
 
                     @endif
                 </div>
+                <p>{{__('Request accommodation and receive offers directly from homeowners')}}</p>
                 <p>أطلب سكن و استقبل عروض من أصحاب المساكن مباشرة</p>
 
             </div>
@@ -36,16 +37,14 @@
                     <div class="col-lg-3 col-md-6 group text-center">
                         <h1 class="title-foot">{{__('Property Owner')}}</h1>
                         <ul class="list-unstyled">
-                            <li><a href="">كيفية إضافة مسكن</a></li>
-                            <li><a href="">إضافة مسكن</a></li>
-                            <li><a href="">كيفية إضافة مسكن</a></li>
-                            <li><a href="">إضافة مسكن</a></li>
+                            <li><a href="{{route('page',\App\Models\Page::find(6)->title)}}">{{__('How to add unit')}}</a></li>
+                            <li><a href="{{route('units.create')}}">إضافة مسكن</a></li>
                         </ul>
                     </div>
                     <div class="col-lg-3 col-md-6 group text-center">
                         <h1 class="title-foot">{{__('Housing Seeker')}}</h1>
                         <ul class="list-unstyled">
-                            <li><a href="">كيف يعمل مبيت</a></li>
+                            <li><a href="{{route('page',\App\Models\Page::find(7)->title)}}">{{__('How Mabeet work')}}</a></li>
                             <li><a href="">طلب جديد</a></li>
                         </ul>
                     </div>

@@ -3,7 +3,9 @@
 namespace App\Http\Controllers;
 
 use App\Http\Requests\ProfileUpdateRequest;
+use App\Models\BookingOld;
 use App\Models\FacilityUnit;
+use App\Models\Offer;
 use App\Models\Page;
 use App\Models\ServiceUnit;
 use App\Models\TownOld;
@@ -196,6 +198,34 @@ class MigrationController extends Controller
         }
         return 'DONE';
 
+    }
+
+    public function orders()
+    {
+        $old = BookingOld::all();
+
+        foreach ($old as $item){
+//            dd($item->home);
+            $order = new \App\Models\Order();
+            $order->id = $item->id;
+            $order->user_id = $item->user_id;
+            $order->city_id = 1;
+            $order->season_id = 0;
+            $order->name = $item->home->title ?? '';
+            $order->description = $item->home->description ?? '';
+            $order->unit_type_id = 1;//
+            $order->unit_number = 1;
+            $order->guest_number = $item->home->guests_count ?? 1;
+            $order->is_reviewed = 1;
+            $order->save();
+            $offer = new Offer();
+            $offer->order_id = $order->id;
+            $offer->unit_id = $item->home_id;
+            $offer->price = $item->amount;
+            $offer->status = 1;
+            $offer->save();
+            
+        }
     }
 
 }
