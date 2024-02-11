@@ -24,6 +24,7 @@
 
 
 
+            @if($order->status ==0 && $order->currentStatus->status == \App\Models\Order::STATUS_NEW)
 
 
             <li class="list-inline-item">
@@ -35,7 +36,6 @@
                 @endcomponent
             </li>
 
-            @if($order->status ==0 && $order->currentStatus->status == \App\Models\Order::STATUS_NEW)
 
     <li class="list-inline-item">
                 @component('dashboard.layouts.partials.buttons._delete_button',[
