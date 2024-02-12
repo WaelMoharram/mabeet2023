@@ -72,6 +72,7 @@
                         <div class="col-lg-3 filters">
                             <div id="main">
                                 <div class="container">
+                                    <form method="get" action="" >
                                     <div class="accordion" id="faq">
                                         {{--                                        <div class="card">--}}
                                         {{--                                            <div class="card-header" id="faqhead1">--}}
@@ -100,7 +101,8 @@
                                                 <div class="card-body">
                                                     <ul>
                                                         @foreach($cities as $city)
-                                                            <li><input type="checkbox" class="" name="cities_ids[]"
+                                                            <li>
+                                                                <input type="checkbox" class="" name="cities_ids[]"
                                                                        id="id_id_radio_buttons_0_{{$city->id}}"
                                                                        value="{{$city->id}}"/>
                                                                 {{$city->name}}
@@ -146,9 +148,14 @@
                                                  data-parent="#faq">
                                                 <div class="card-body">
                                                     <ul>
-                                                        <li>Option</li>
-                                                        <li>Option</li>
-                                                        <li>Option</li>
+                                                        @foreach($distance as $dist)
+                                                            <li>
+                                                                <input type="checkbox" class="" name="distances_ids[]"
+                                                                       id="id_id_radio_buttons_0_{{$dist->id}}"
+                                                                       value="{{$dist->id}}"/>
+                                                                {{$dist->name}}
+                                                            </li>
+                                                        @endforeach
                                                     </ul>
                                                 </div>
                                             </div>
@@ -200,6 +207,7 @@
                                             <button type="submit" class="btn btn-success mt-3">فلتره <i class="fa fa-search"></i></button>
                                         </div>
                                     </div>
+                                    </form>
                                 </div>
                             </div>
                         </div>
