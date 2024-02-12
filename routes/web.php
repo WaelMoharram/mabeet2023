@@ -98,5 +98,6 @@ Route::post('destroy-unit-image',[UnitsController::class,'destroyUnitImage'])->n
 // Provider Offers pages
 Route::get('provider/offers', [OffersController::class, 'index'])->name('offers');
 Route::get('provider/offers-details/{id}', [OffersController::class, 'show'])->name('offers.show');
+Route::post('provider/offers/add-offer/{unit_id}/{order_id}', [OffersController::class, 'addOffer'])->name('offers.add');
 
 

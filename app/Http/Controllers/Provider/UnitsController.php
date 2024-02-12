@@ -44,7 +44,7 @@ class UnitsController extends Controller
      */
     public function store(AddUnitRequest $request)
     {
-
+//        return $request->all();
         $unitData = $request->only(['city_id','name','description','amount','address','lat','lng','unit_type_id','guest_numbers']);
         $unitData['user_id']=auth()->id();
 //        $budget = Budget::find($request->budget_id);
@@ -72,8 +72,8 @@ class UnitsController extends Controller
         return view('website.success',[
             'title'=>"تم ارسال الطلب بنجاح",
             'message'=>"بإمكانك عرض الوحدة السكنية في صفحة تفاصيل الوحدة السكنية لحين قبول الإضافة من الإدارة.",
-            'route'=>route('units.show',$unit->id),
-            'routeText'=>"عرض تفاصيل الوحدة"
+            'route'=>route('units.index'),
+            'routeText'=>"عرض الوحدات السكنية"
         ]);
 
     }

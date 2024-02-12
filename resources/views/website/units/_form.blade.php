@@ -463,7 +463,8 @@
             {{--                            </div>--}}
         </div>
     </div>
-    <button type="submit" class="btn btn-success w-100 mb-5">تأكيد طلب التعديل</button>
+
+    <button type="submit" class="btn btn-success w-100 mb-5">{{request()->route()->getName() == 'units.create'?"إضافة المسكن":"تأكيد طلب التعديل"}}</button>
 
 </div>
 

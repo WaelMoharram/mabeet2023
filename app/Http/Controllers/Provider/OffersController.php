@@ -9,6 +9,7 @@ use App\Models\Distance;
 use App\Models\Offer;
 use App\Models\Order;
 use App\Models\Season;
+use App\Models\Unit;
 use App\Models\UnitType;
 use Illuminate\Http\Request;
 
@@ -76,6 +77,27 @@ class OffersController extends Controller
 
     public function show($id)
     {
-        return view('website.provider-offers.details');
+        $order = Order::findOrFail($id);
+        // provider units should be the same city of order .
+        $providerUnits = Unit::where('user_id',auth()->id())->where('city_id',$order->city_id)->where('status',1)->get(); // status 1 is reviewed unit
+        return view('website.provider-offers.details',compact('order','providerUnits'));
+    }
+
+    public function addOffer(Request $request,$unit_id,$order_id){
+        $unit = Unit::find($unit_id);
+
+        Offer::create([
+            'order_id'=>$order_id,
+            'unit_id'=>$unit_id,
+            'price'=>$request->price,
+            'provider_id'=>$unit->user_id,
+        ]);
+
+        return view('website.success',[
+            'title'=>"تم ارسال العرض بنجاح",
+            'message'=>"بإمكانك عرض تفاصيل الطلب و العرض المقدم في صفحة تفاصيل الوحدة السكنية لحين قبول العرض من المستخدم .",
+            'route'=>route('offers.show',$order_id),
+            'routeText'=>"تفاصيل العرض"
+        ]);
     }
 }
