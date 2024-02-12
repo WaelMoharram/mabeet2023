@@ -100,4 +100,16 @@ class OffersController extends Controller
             'routeText'=>"تفاصيل العرض"
         ]);
     }
+
+    public function finishOrderByOfferId($offer_id){
+        $offer = Offer::find($offer_id);
+        $offer->update(['status'=>Offer::COMPLETED_OFFER]);
+
+        return view('website.success',[
+            'title'=>"تم إنهاء الطلب بنجاح",
+            'message'=>"بإمكانك عرض تفاصيل الطلب و المحادثات السابقة في صفحة تفاصيل الطلب .",
+            'route'=>route('offers.show',$offer->order_id),
+            'routeText'=>"تفاصيل الطلب"
+        ]);
+    }
 }

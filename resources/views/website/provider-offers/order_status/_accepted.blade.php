@@ -190,6 +190,12 @@
                                 @endforeach
                             </div>
                             <a href="javascript:;" class="btn btn-completed"><i class="fa fa-check-circle" style="color: #81CC6DFF;"></i>  تم الموافقة على العرض </a>
+                            <form method="post" action="{{route('offers.finish',[$order->myOffer()->id])}}">
+                                @csrf
+                                <div class="input-field mb-2">
+                                    <button type="submit" class="btn btn-mabet" style="padding: 0;margin: 5px 0 0;">  إنهاء الطلب </button>
+                                </div>
+                            </form>
 
                         </div>
                     </div>
