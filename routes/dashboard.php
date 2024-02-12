@@ -32,6 +32,7 @@ Route::name('dashboard.')->middleware(['language', 'auth:admins'])->prefix('dash
     })->name('lang-en');
 
     Route::get('home', [\App\Http\Controllers\Dashboard\HomeController::class, 'index'])->name('home');
+    Route::get('profile', [\App\Http\Controllers\Dashboard\HomeController::class, 'profile'])->name('profile');
 
     Route::put('home/update/{id}', [\App\Http\Controllers\Dashboard\HomeController::class, 'عحيشفث'])->name('home.update');
 
