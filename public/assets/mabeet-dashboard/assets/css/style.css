@@ -20331,3 +20331,26 @@ dl li {
 .select2-selection{
     padding: 0.94rem 1.375rem;
 }
+
+.form-profile input
+{
+padding-right: 40px;
+}
+
+.form-profile .btn-save {
+    color: #fff;
+    background-color: #006E29;
+    border: none !important;
+    border-radius: 5px;
+    width: 100%;
+    padding: 20px 10px
+}
+
+.form-profile .btn-default {
+    color: #000;
+    background-color: #DEE5D9;
+    border: none !important;
+    border-radius: 5px;
+    width: 100%;
+    padding: 20px 10px;
+}

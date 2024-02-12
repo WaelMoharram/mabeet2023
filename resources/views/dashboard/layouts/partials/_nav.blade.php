@@ -306,7 +306,7 @@
                 </a>
             </li>
             <li class="nav-item d-none d-lg-block">
-                <a class="nav-link" href="#">
+                <a class="nav-link" href="{{route('dashboard.profile')}}">
                     <img src="{{asset('assets/mabeet-dashboard')}}/assets/images/profile.png">
                 </a>
             </li>
