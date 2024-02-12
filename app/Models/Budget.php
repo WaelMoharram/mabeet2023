@@ -8,6 +8,8 @@ use Spatie\Translatable\HasTranslations;
 class Budget extends Model
 {
 
+    use HasTranslations;
+    public $translatable = ['name'];
 
     protected $table = 'budgets';
     public $timestamps = true;

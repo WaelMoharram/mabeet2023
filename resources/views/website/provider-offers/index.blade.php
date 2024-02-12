@@ -72,6 +72,7 @@
                         <div class="col-lg-3 filters">
                             <div id="main">
                                 <div class="container">
+                                    <form method="get" action="" >
                                     <div class="accordion" id="faq">
                                         {{--                                        <div class="card">--}}
                                         {{--                                            <div class="card-header" id="faqhead1">--}}
@@ -100,7 +101,8 @@
                                                 <div class="card-body">
                                                     <ul>
                                                         @foreach($cities as $city)
-                                                            <li><input type="checkbox" class="" name="cities_ids[]"
+                                                            <li>
+                                                                <input type="checkbox" class="" name="cities_ids[]"
                                                                        id="id_id_radio_buttons_0_{{$city->id}}"
                                                                        value="{{$city->id}}"/>
                                                                 {{$city->name}}
@@ -146,9 +148,14 @@
                                                  data-parent="#faq">
                                                 <div class="card-body">
                                                     <ul>
-                                                        <li>Option</li>
-                                                        <li>Option</li>
-                                                        <li>Option</li>
+                                                        @foreach($distance as $dist)
+                                                            <li>
+                                                                <input type="checkbox" class="" name="distances_ids[]"
+                                                                       id="id_id_radio_buttons_0_{{$dist->id}}"
+                                                                       value="{{$dist->id}}"/>
+                                                                {{$dist->name}}
+                                                            </li>
+                                                        @endforeach
                                                     </ul>
                                                 </div>
                                             </div>
@@ -200,115 +207,30 @@
                                             <button type="submit" class="btn btn-success mt-3">فلتره <i class="fa fa-search"></i></button>
                                         </div>
                                     </div>
+                                    </form>
                                 </div>
                             </div>
                         </div>
 
                         <div class="col-lg-9">
+                            @forelse($orders as $order)
                             <div class="row align-items-center">
                                 <div class="col-md-6">
-                                    <p><b>منزل بكافة المرافق في مكة بالقرب من المسجد الحرام</b></p>
-                                    <p class="desc">الشَّقَّةُ (جمعها شُقَقٌ) هي وحدة سكنية تقع ضمن مجمع سكني متعدد
-                                        الطوابق، ويتألف كل دور من أدوار المبنى السكني من شقة أو أكثر.</p>
-                                    <button class="btn" disabled>لا يوجد عروض على الطلب</button>
-                                </div>
-                                <div class="col-md-6">
-                                    <div class="teble-responsive">
-                                        <table class="table table-light">
-                                            <tbody>
-                                            <tr>
-                                                <th>تاريخ الطلب</th>
-                                                <td><b>14/8/2022</b></td>
-                                            </tr>
-                                            <tr>
-                                                <th>المكان</th>
-                                                <td><b>مكة المكرمة</b></td>
-                                            </tr>
-                                            <tr>
-                                                <th>الموسم</th>
-                                                <td><b>موسم الحج</b></td>
-                                            </tr>
-                                            <tr>
-                                                <th>المسافة للمسجد</th>
-                                                <td><b>300 متر او اقل</b></td>
-                                            </tr>
-                                            <tr>
-                                                <th>الوحدة السكنية</th>
-                                                <td><b>غرفة</b></td>
-                                            </tr>
-                                            <tr>
-                                                <th>عدد الوحدات المطلوبة</th>
-                                                <td><b>2</b></td>
-                                            </tr>
-                                            <tr>
-                                                <th>عدد النزلاء</th>
-                                                <td><b>3</b></td>
-                                            </tr>
-                                            <tr>
-                                                <th>الميزانية</th>
-                                                <td><b>أقل من 5,000</b></td>
-                                            </tr>
-                                            </tbody>
-                                        </table>
-                                    </div>
-                                </div>
-                            </div>
+                                    <p><b>{{$order->name}}</b></p>
+                                    <p class="desc">{{$order->description}}</p>
+                                    @if($order->offers->count() <= 0)
+                                        <a href="{{route('offers.show',$order->id)}}" class="btn btn-success" >تقديم عرض</a>
+                                    @elseif($order->OfferPresented())
 
-                            <div class="row align-items-center">
-                                <div class="col-md-6">
-                                    <p><b>منزل بكافة المرافق في مكة بالقرب من المسجد الحرام</b></p>
-                                    <p class="desc">الشَّقَّةُ (جمعها شُقَقٌ) هي وحدة سكنية تقع ضمن مجمع سكني متعدد
-                                        الطوابق، ويتألف كل دور من أدوار المبنى السكني من شقة أو أكثر.</p>
-                                    <button class="btn btn-success">5 عروض</button>
-                                </div>
-                                <div class="col-md-6">
-                                    <div class="teble-responsive">
-                                        <table class="table table-light">
-                                            <tbody>
-                                            <tr>
-                                                <th>تاريخ الطلب</th>
-                                                <td><b>14/8/2022</b></td>
-                                            </tr>
-                                            <tr>
-                                                <th>المكان</th>
-                                                <td><b>مكة المكرمة</b></td>
-                                            </tr>
-                                            <tr>
-                                                <th>الموسم</th>
-                                                <td><b>موسم الحج</b></td>
-                                            </tr>
-                                            <tr>
-                                                <th>المسافة للمسجد</th>
-                                                <td><b>300 متر او اقل</b></td>
-                                            </tr>
-                                            <tr>
-                                                <th>الوحدة السكنية</th>
-                                                <td><b>غرفة</b></td>
-                                            </tr>
-                                            <tr>
-                                                <th>عدد الوحدات المطلوبة</th>
-                                                <td><b>2</b></td>
-                                            </tr>
-                                            <tr>
-                                                <th>عدد النزلاء</th>
-                                                <td><b>3</b></td>
-                                            </tr>
-                                            <tr>
-                                                <th>الميزانية</th>
-                                                <td><b>أقل من 5,000</b></td>
-                                            </tr>
-                                            </tbody>
-                                        </table>
-                                    </div>
-                                </div>
-                            </div>
+                                    <a href="{{route('offers.show',$order->id)}}" class="btn btn-completed">تم تقديم عرض بمبلغ {{$order->OfferPresented()->price}} ريال </a>
+                                    @elseif($order->OfferAccepted())
+                                        <a href="{{route('offers.show',$order->id)}}" class="btn btn-completed"><i class="fa fa-check-circle" style="color: #81CC6DFF;"></i>  تم الموافقة على العرض </a>
+                                    @elseif($order->OfferCompleted())
+                                        <a href="{{route('offers.show',$order->id)}}" class="btn btn-completed"><i class="fa fa-check-circle" style="color: #81CC6DFF;"></i>  طلب مكتمل </a>
+                                    @else
+                                        <a href="{{route('offers.show',$order->id)}}" class="btn btn-success">{{$order->offers_count}} عروض</a>
+                                    @endif
 
-                            <div class="row align-items-center">
-                                <div class="col-md-6">
-                                    <p><b>منزل بكافة المرافق في مكة بالقرب من المسجد الحرام</b></p>
-                                    <p class="desc">الشَّقَّةُ (جمعها شُقَقٌ) هي وحدة سكنية تقع ضمن مجمع سكني متعدد
-                                        الطوابق، ويتألف كل دور من أدوار المبنى السكني من شقة أو أكثر.</p>
-                                    <button class="btn btn-completed">طلب مكتمل</button>
                                 </div>
                                 <div class="col-md-6">
                                     <div class="teble-responsive">
@@ -351,6 +273,18 @@
                                     </div>
                                 </div>
                             </div>
+                                @empty
+                                @if(request('status') == 'offers')
+                                    <h3 class="align-content-center">عفواً لا يوجد عروض مقدمة منك حالياً</h3>
+                                    @elseif(request('status')=='current')
+                                    <h3 class="align-content-center">عفواً لا يوجد طلبات جاريه حالياً</h3>
+                                @elseif(request('status')=='current')
+                                    <h3 class="align-content-center">عفواً لا يوجد طلبات سابقةً</h3>
+                                 @else
+                                <h3 class="align-content-center">عفواً لا يوجد طلبات جديدة حالياً</h3>
+                                @endif
+
+                            @endforelse
                         </div>
                     </div>
 

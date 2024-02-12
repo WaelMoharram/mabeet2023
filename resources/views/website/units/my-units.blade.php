@@ -71,19 +71,19 @@
                                                 <p>{{$unit->description}}</p>
                                                 <div class="row p-0 m-0">
                                                     <ul class="list-inline flat-option">
-                                                        <li class="list-inline-item"><img src="asset/images/ico.png"
+                                                        <li class="list-inline-item"><img src="{{asset('/')}}asset/images/ico.png"
                                                                                           class="img-fluid"></li>
                                                         <li class="list-inline-item">نوع الوحدة : {{$unit->type->name}} </li>
                                                     </ul>
                                                     <ul class="list-inline flat-option">
-                                                        <li class="list-inline-item"><img src="asset/images/ico.png"
+                                                        <li class="list-inline-item"><img src="{{asset('/')}}asset/images/ico.png"
                                                                                           class="img-fluid"></li>
                                                         <li class="list-inline-item"> عدد النزلاء : {{$unit->guest_numbers}}</li>
                                                     </ul>
 
                                                     @foreach($unit->facilities as $facility)
                                                         <ul class="list-inline flat-option">
-                                                            <li class="list-inline-item"><img src="asset/images/ico.png"
+                                                            <li class="list-inline-item"><img src="{{asset('/')}}asset/images/ico.png"
                                                                                               class="img-fluid"></li>
                                                             <li class="list-inline-item"> {{$facility->name}} : {{$facility->pivot->amount}}  </li>
                                                         </ul>
