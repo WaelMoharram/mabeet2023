@@ -16,7 +16,12 @@ class Unit extends Model
 
 //    protected $guarded = array('id');
 
+    protected $appends = ['distance'];
 
+    public function user(): \Illuminate\Database\Eloquent\Relations\BelongsTo
+    {
+        return $this->belongsTo(User::class);
+    }
     public function images(): \Illuminate\Database\Eloquent\Relations\HasMany
     {
         return $this->hasMany(UnitImage::class);
@@ -50,6 +55,33 @@ class Unit extends Model
     public function budget(): \Illuminate\Database\Eloquent\Relations\BelongsTo
     {
         return $this->belongsTo(Budget::class,'budget_id');
+    }
+
+    public function offers(): \Illuminate\Database\Eloquent\Relations\HasMany
+    {
+        return $this->hasMany(Offer::class);
+    }
+
+    public function getDistanceAttribute()
+    {
+        $haramLatitude = $this->city->lat; // Latitude of the city center
+        $haramLongitude = $this->city->lng; // Longitude of the city center
+
+        $placeLatitude = $this->lat;
+        $placeLongitude = $this->lng;
+
+        // Calculate distance using Haversine formula
+        $earthRadius = 6371000; // Earth's radius in meters
+        $deltaLatitude = deg2rad($placeLatitude - $haramLatitude);
+        $deltaLongitude = deg2rad($placeLongitude - $haramLongitude);
+
+        $a = sin($deltaLatitude / 2) * sin($deltaLatitude / 2) +
+            cos(deg2rad($haramLatitude)) * cos(deg2rad($placeLatitude)) *
+            sin($deltaLongitude / 2) * sin($deltaLongitude / 2);
+        $c = 2 * atan2(sqrt($a), sqrt(1 - $a));
+        $distance = $earthRadius * $c;
+
+        return $distance;
     }
 
 }

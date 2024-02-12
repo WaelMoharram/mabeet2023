@@ -7,6 +7,7 @@ use App\Http\Controllers\OrderController;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\Provider\OffersController;
 use App\Http\Controllers\Provider\UnitsController;
+use App\Http\Controllers\ChatController;
 
 /*
 |--------------------------------------------------------------------------
@@ -75,7 +76,9 @@ Route::middleware(['language'])->group(function () {
 
 //        Route::post('store_order',[OrderController::class, 'store'])->name('orders.store');
 
-        Route::get('/chat', [OrderController::class, 'index'])->name('chat');
+        Route::get('/chat', [ChatController::class, 'index'])->name('chat');
+        Route::post('/chat-message', [ChatController::class, 'message'])->name('chat.message');
+
         Route::get('/notifications', [OrderController::class, 'index'])->name('notifications');
         Route::get('/request', [OrderController::class, 'create'])->name('request');
     });

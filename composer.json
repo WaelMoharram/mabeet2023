@@ -16,6 +16,7 @@
         "laravel/tinker": "^2.8",
         "laravelcollective/html": "^6.4",
         "proengsoft/laravel-jsvalidation": "^4.8",
+        "pusher/pusher-php-server": "^7.2",
         "realrashid/sweet-alert": "^6.0",
         "spatie/laravel-permission": "^5.10",
         "spatie/laravel-translatable": "^6.3"

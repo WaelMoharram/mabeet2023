@@ -317,7 +317,21 @@
     "Approved orders": "طلبات موافق عليها",
     "Completed orders": "طلبات مكتملة",
     "Deleted successfully": "تم الحذف بنجاح",
-    "Order accepted successfully": "تم قبول الطلب بنجاح"
+    "Order accepted successfully": "تم قبول الطلب بنجاح",
+    "Total units": "إجمالي الوحدات",
+    "New units": "وحدات جديدة",
+    "Total orders": "إجمالي الطلبات",
+    "Total Clients": "إجمالي العملاء",
+    "Total Providers": "إجمالي المزودين",
+    "New requests": "طلبات جديدة",
+    "New orders requests": "طلبات جديدة",
+    "New units requests": "طلبات وحدات جديدة",
+    "All conversations": "جميع المحادثات",
+    "Cost": "التكلفة",
+    "SAR": "ريال",
+    "Distance to the mosque": "المسافة للمسجد",
+    "Meters": "متر",
+    "My profile": "ملفي الشخصي"
 
 
 
