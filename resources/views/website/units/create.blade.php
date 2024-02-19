@@ -5,6 +5,13 @@
 @section('content')
     <div class="add-mabet new-order">
         <div class="container">
+            @if ($errors->any())
+                @foreach ($errors->all() as $error)
+                    <div class="alert alert-danger" role="alert">
+                        {{ $error }}
+                    </div>
+                @endforeach
+            @endif
             <div class="main-title text-center mt-5">
                 <h1>سكن جديد</h1>
                 <h5>ادخل تفاصيل السكن الجديد لإستقبال افضل العروض</h5>

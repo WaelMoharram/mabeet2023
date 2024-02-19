@@ -23,7 +23,8 @@ class OffersController extends Controller
         $budgets = Budget::all();
         $seasons = Season::all();
         $distance = Distance::all();
-        $orders = Order::where('is_reviewed', 1)->with('offers')->withCount('offers');
+        $orders = Order::query();
+
 
         if(request()->has('status') && \request()->status == 'offers'){
             $orders = $orders->whereHas('offers', function ($query) {
@@ -70,7 +71,8 @@ class OffersController extends Controller
             $orders = $orders->whereIn('budgets_id', request()->budgets_id);
         }
 
-        $orders = $orders->get();
+        $orders = $orders->where('is_reviewed','=',"1")->with('offers')->withCount('offers')->get();
+
 
         return view('website.provider-offers.index', compact('cities', 'unitTypes', 'budgets', 'seasons', 'distance','orders'));
     }

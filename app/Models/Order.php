@@ -7,7 +7,9 @@ use Spatie\Translatable\HasTranslations;
 
 class Order extends Model
 {
-
+    protected $casts = [
+        'is_reviewed' => 'boolean', // or any other type
+    ];
 
     protected $table = 'orders';
     public $timestamps = true;

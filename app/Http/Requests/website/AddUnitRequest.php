@@ -31,7 +31,7 @@ class AddUnitRequest extends FormRequest
             'lng'=>'required|string|min:2|max:191',
             'unit_type_id'=>'required|numeric|exists:unit_types,id',
             'guest_numbers'=>'required|numeric|min:1|max:1000',
-            'guestNumbersSelect'=>'required|numeric|min:1|max:1000',
+//            'guestNumbersSelect'=>'required|numeric|min:1|max:1000',
 //            'budget_id'=>'required|numeric|exists:budgets,id',
             'service_ids.*'=>'required|numeric|exists:services,id',
             'image1'=>'required|image',
