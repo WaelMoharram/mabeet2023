@@ -241,35 +241,35 @@
                                                 <tbody>
                                                 <tr>
                                                     <th>تاريخ الطلب</th>
-                                                    <td><b>14/8/2022</b></td>
+                                                    <td><b>{{\Carbon\Carbon::parse($order->created_at)->format('Y-m-d')}}</b></td>
                                                 </tr>
                                                 <tr>
                                                     <th>المكان</th>
-                                                    <td><b>مكة المكرمة</b></td>
+                                                    <td><b>{{$order->city->name}}</b></td>
                                                 </tr>
                                                 <tr>
                                                     <th>الموسم</th>
-                                                    <td><b>موسم الحج</b></td>
+                                                    <td><b>{{$order->season->name}}</b></td>
                                                 </tr>
                                                 <tr>
                                                     <th>المسافة للمسجد</th>
-                                                    <td><b>300 متر او اقل</b></td>
+                                                    <td><b>{{optional($order->distance)->name??"غير محددة"}}</b></td>
                                                 </tr>
                                                 <tr>
                                                     <th>الوحدة السكنية</th>
-                                                    <td><b>غرفة</b></td>
+                                                    <td><b>{{$order->unitType->name}}</b></td>
                                                 </tr>
                                                 <tr>
                                                     <th>عدد الوحدات المطلوبة</th>
-                                                    <td><b>2</b></td>
+                                                    <td><b>{{$order->unit_number}}</b></td>
                                                 </tr>
                                                 <tr>
                                                     <th>عدد النزلاء</th>
-                                                    <td><b>3</b></td>
+                                                    <td><b>{{$order->guest_number}}</b></td>
                                                 </tr>
                                                 <tr>
                                                     <th>الميزانية</th>
-                                                    <td><b>أقل من 5,000</b></td>
+                                                    <td><b>{{optional($order->budget)->name??"غير محددة"}}</b></td>
                                                 </tr>
                                                 </tbody>
                                             </table>
