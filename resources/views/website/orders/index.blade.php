@@ -233,7 +233,7 @@
                                                 <td><b>{{$order->created_at}}</b></td>
                                             </tr>
                                             <tr>
-                                                <th>المكان</th>
+                                                <th>{{__('Place')}}</th>
                                                 <td><b>مكة المكرمة</b></td>
                                             </tr>
                                             <tr>
