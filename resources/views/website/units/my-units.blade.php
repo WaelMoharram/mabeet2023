@@ -13,11 +13,11 @@
                 </div>
 
                 <div class="row mt-5">
-                    <div class="col-md-3">
+{{--                    <div class="col-md-3">--}}
 
-                    </div>
+{{--                    </div>--}}
 
-                    <div class="col-md-8">
+                    <div class="col-md-12">
                         @foreach($units as $unit)
 
                             <div class="product-gallery offer-bg m-3">
