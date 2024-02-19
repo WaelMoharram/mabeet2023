@@ -84,7 +84,11 @@ class OrderController extends Controller
             $orders = $orders->whereIn('budgets_id', request()->budgets_id);
         }
 
-        $orders = $orders->orderByDesc('created_at')->where('user_id',Auth::id())->get();
+        $orders = $orders->orderByDesc('created_at');
+        if (\auth()->check() == 1){
+            $orders = $orders->where('user_id',Auth::id());
+        }
+        $orders = $orders->paginate(5);
 
         return view('website.orders.index', compact('cities', 'unitTypes', 'budgets', 'seasons', 'distance','orders'));
     }
@@ -105,7 +109,7 @@ class OrderController extends Controller
     {
         $order = Order::findOrFail($id);
         // provider units should be the same city of order .
-        $offers = $order->offers()->get();
+        $offers = $order->offers()->orderByDesc('status')->get();
         return view('website.orders.details',compact('order','offers'));
     }
 
@@ -190,7 +194,7 @@ class OrderController extends Controller
 
     public function accept($id){
         $offer = Offer::find($id);
-        Offer::where('order_id',$offer->order_id)->update('status',Offer::REJECTED_OFFER);
+        Offer::where('order_id',$offer->order_id)->update(['status'=>Offer::REJECTED_OFFER]);
         $offer->update(['status'=>Offer::ACCEPTED_OFFER]);
         toast(__('Offer accepted'),'success');
         return redirect()->back();

@@ -87,8 +87,13 @@
                                                     </div>
                                                 </div>
                                                 <div class="col-md-6 btns">
-                                                    <a href="" class="btn btn-default">كل التفاصيل</a>
-                                                    <a href="" class="btn btn-mabet">قبول العرض</a>
+                                                    @if($offer->order)
+                                                    <a  href="{{route('orders.show',$offer->order->id)}}" class="btn btn-default" >{{__('All details')}}</a>
+                                                    @endif
+                                                    @if($offer && $offer->status == \App\Models\Offer::NEW_OFFER)
+
+                                                    <a href="{{route('orders.accept',$offer->id)}}" class="btn btn-mabet">{{__('Accept offer')}}</a>
+                                                        @endif
                                                 </div>
                                             </div>
                                         </div>
@@ -112,7 +117,7 @@
                                             </ul>
                                         </div>
                                     </div>
-                                    @if($offer)
+                                    @if($offer && $offer->status == \App\Models\Offer::NEW_OFFER)
                                         <div class="send-box">
                                             <form id="chat-message">
                                                 <input type="hidden" id="offer_id" name="offer_id" value="{{$offer->id}}">

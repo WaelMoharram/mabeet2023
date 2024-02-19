@@ -32,7 +32,7 @@
 
                 <li class="nav-item">
                     <a class="nav-link {{request()->status=='current'?'active':""}}"
-                       href="{{route('orders')}}?status=current">
+                       href="{{ route('orders', array_merge(request()->except(['page','status']), ['status' => 'current'])) }}">
                         <div class="box">
                             <label>
                                 <h2>{{__('Current orders')}}</h2>
@@ -44,7 +44,8 @@
 
                 <li class="nav-item">
                     <a class="nav-link {{request()->status=='previous'?'active':""}}"
-                       href="{{route('orders')}}?status=previous">
+                       href="{{ route('orders', array_merge(request()->except(['page','status']), ['status' => 'previous'])) }}">
+
                         <div class="box">
                             <label>
                                 <h2>{{__('Previous orders')}}</h2>
@@ -262,6 +263,8 @@
                                     </div>
                                 </div>
                             </div>
+
+
                                 @empty
                                 @if(request('status') == 'offers')
                                     <h3 class="align-content-center">عفواً لا يوجد عروض مقدمة منك حالياً</h3>
@@ -274,6 +277,12 @@
                                 @endif
 
                             @endforelse
+                            @if($orders->count())
+                                    <div class="d-flex justify-content-around">
+                                {{$orders->appends(request()->except('page'))->links('pagination::bootstrap-4')}}
+                                    </div>
+                            @endif
+
                         </div>
                     </div>
 

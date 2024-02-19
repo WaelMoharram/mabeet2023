@@ -254,6 +254,7 @@
     "Status": "الحالة",
     "Add new units": "إضافة وحدة جديدة",
     "Create Unit": "إنشاء وحدة جديدة",
+    "Add new unit": "إضافة سكن",
     "Orders": "الطلبات",
     "Hello": "أهلا",
     "Hello,": "أهلا،",
@@ -396,6 +397,7 @@
     "Start order now": "اطلب الطلب الان",
     "looking for accommodation in Mecca and Medina...": "اطلب سكن فى مكة و المدينة",
     "and receive offers directly from owners":"...واستقبل عروض من أصحاب المساكن مباشرة!",
-    "Offer accepted": "تم الموافقة على الطلب"
-
+    "Offer accepted": "تم الموافقة على الطلب",
+    "All details": "كل التفاصيل",
+    "Show chat": "عرض المحادثة"
 }

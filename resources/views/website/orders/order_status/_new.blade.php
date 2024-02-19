@@ -151,8 +151,12 @@
 
                         <div class="col-xl-6 col-lg-6">
                             <div class="box">
+                                @if($offer->status == \App\Models\Offer::ACCEPTED_OFFER || $offer->status == \App\Models\Offer::COMPLETED_OFFER)
+                                    <span style="margin-bottom: 25px;" class="badge badge-success badge-xl">{{__('Accepted')}}</span>
+                                @endif
                                 <h1 class="mb-3">{{$offer->unit->name}} - {{$offer->unit->city->name}}</h1>
                                 <p>{{$offer->unit->description}}</p>
+
                                 <div class="row p-0 m-0">
                                     <ul class="list-inline flat-option">
                                         <li class="list-inline-item"><img src="{{asset('/')}}asset/images/ico.png"
@@ -199,13 +203,22 @@
                                         </div>
                                     @endforeach
                                 </div>
+                                    <a href="javascript:;" class="btn btn-completed">تم تقديم عرض بمبلغ {{$offer->price}} ريال </a>
+@if(auth()->check())
+                                @if($offer->status == 0)
 <div class="row m-3">
     <a href="{{route('chat',['offer_id'=>$offer->id])}}" class="btn btn-secondary col-md-6 p-2" style="padding: 0;margin: 5px 0 0;">{{__('Start chat')}}</a>
     <a href="#" class="btn btn-mabet col-md-6 p-2" style="padding: 0;margin: 5px 0 0;">{{__('Accept offer')}}</a>
 
 </div>
+                                @else
+                                    <div class="row m-3">
+                                        <a href="{{route('chat',['offer_id'=>$offer->id])}}" class="btn btn-secondary  p-2" style="padding: 0;margin: 5px 0 0;">{{__('Show chat')}}</a>
+{{--                                        <a href="#" class="btn btn-mabet col-md-6 p-2" style="padding: 0;margin: 5px 0 0;">{{__('Accept offer')}}</a>--}}
 
-
+                                    </div>
+                                @endif
+                                    @endif
                             </div>
                         </div>
                     </div>

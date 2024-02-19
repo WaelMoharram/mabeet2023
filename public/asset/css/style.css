@@ -2849,4 +2849,14 @@ button:focus {
 }
 
 
+.page-item.active .page-link {
+    z-index: 3;
+    color: #fff!important;
+    background-color: #006f29 !important;
+    border-color: #006f29!important;
+}
+.page-link {
+    color:#006f29!important;
+}
+
 /* package-register */
