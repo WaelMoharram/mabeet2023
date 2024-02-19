@@ -15,6 +15,7 @@ use App\Models\UnitType;
 use Illuminate\Http\RedirectResponse;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
+use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Facades\Redirect;
 use Illuminate\View\View;
 
@@ -42,30 +43,26 @@ class OrderController extends Controller
         $distance = Distance::all();
         $orders = Order::with('offers')->withCount('offers');
 
-        if(request()->has('status') && \request()->status == 'offers'){
-            $orders = $orders->whereHas('offers', function ($query) {
-                $query->where('provider_id', '=', auth()->id())->where('status',Offer::NEW_OFFER);
+
+        if(request()->has('status') && \request()->status == 'current'){
+            $orders = $orders->whereHas('statuses', function ($query) {
+                $query->where(function ($query) {
+                    $query->whereNotExists(function ($subquery) {
+                        $subquery->select(DB::raw(1))
+                            ->from('order_statuses')
+                            ->whereRaw('order_statuses.order_id = orders.id')
+                            ->whereIn('order_statuses.status', [Order::STATUS_REJECTED,Order::STATUS_CANCELED,Order::STATUS_COMPLETED]);
+                    });
+                });
             });
         }
 
-        elseif(request()->has('status') && \request()->status == 'current'){
-            $orders = $orders->whereHas('offers', function ($query) {
-                $query->where('provider_id', '=', auth()->id())->where('status',Offer::ACCEPTED_OFFER); // Assuming '1' means 'accepted'
+        if(request()->has('status') && \request()->status == 'previous'){
+            $orders = $orders->whereHas('statuses', function ($query) {
+                $query->whereIn('status', [Order::STATUS_REJECTED,Order::STATUS_CANCELED,Order::STATUS_COMPLETED]);
             });
         }
 
-        elseif(request()->has('status') && \request()->status == 'previous'){
-            $orders = $orders->whereHas('offers', function ($query) {
-                $query->where('provider_id', '=', auth()->id())->whereIn('status',[Offer::REJECTED_OFFER,Offer::COMPLETED_OFFER]); // Assuming '2' means 'completed'
-            });
-        }
-
-        else{
-            $orders = $orders->whereHas('offers', function ($query) {
-                $query->where('status', '=', Offer::NEW_OFFER);
-                $query->where('provider_id',"!=",auth()->id());
-            })->orWhereDoesntHave('offers');
-        }
 
         if (request()->has('cities_ids')) {
             $orders = $orders->whereIn('city_id', request()->cities_ids);
@@ -87,7 +84,7 @@ class OrderController extends Controller
             $orders = $orders->whereIn('budgets_id', request()->budgets_id);
         }
 
-        $orders = $orders->get();
+        $orders = $orders->orderByDesc('created_at')->where('user_id',Auth::id())->get();
 
         return view('website.orders.index', compact('cities', 'unitTypes', 'budgets', 'seasons', 'distance','orders'));
     }
@@ -129,7 +126,15 @@ class OrderController extends Controller
         if ($request->budget_id == 0){
             $requests['budget_id'] = null;
         }
-        Order::create($requests);
+        $order = Order::create($requests);
+
+        $order->statuses()->create([
+            'order_id' => $order->id,
+         'status' => Order::STATUS_NEW,
+            'user_type'=>'user',
+            'user_id' =>\auth()->id(),
+            'color'=>'success'
+        ]);
 
         toast(__('تمت الاضافة بنجاح - سيتم مراجعة طلبك قريبا'),'success');
         return redirect()->back();

@@ -3,6 +3,7 @@
 namespace App\Models;
 
 use Illuminate\Database\Eloquent\Model;
+use Illuminate\Database\Eloquent\SoftDeletes;
 use Spatie\Translatable\HasTranslations;
 
 class Order extends Model
@@ -10,6 +11,7 @@ class Order extends Model
     protected $casts = [
         'is_reviewed' => 'boolean', // or any other type
     ];
+use SoftDeletes;
 
     protected $table = 'orders';
     public $timestamps = true;

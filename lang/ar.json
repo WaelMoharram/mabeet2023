@@ -376,6 +376,11 @@
     "return to orders": " عوده للطلبات",
     "Unit": "الوحدة السكنية",
     "required unit numbers": "عدد الوحدات المطلوبة",
-    "not specs": "غير محدد"
+    "not specs": "غير محدد",
+    "There are no offers for the request": "لا يوجد عروض على الطلب",
+    "Waiting for approval": "فى انتظار الموافقة",
+    "The request has been rejected": "تم رفض الطلب من الادارة",
+    "The request has been canceled": "تم الغاء الطلب",
+    "Finished order": "طلب مكتمل"
 
 }

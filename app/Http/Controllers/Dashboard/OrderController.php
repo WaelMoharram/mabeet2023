@@ -149,12 +149,27 @@ class OrderController extends Controller
      */
     public function destroy($id)
     {
+        $order = Order::findOrFail($id);
+        $order->is_reviewed = 1;
+        $order->save();
 
+        $status = new OrderStatus();
+        $status->order_id = $order->id;
+        $status->user_type = 'admin';
+        $status->user_id = Auth::id();
+        $status->status = Order::STATUS_REJECTED;
+        $status->color = 'success';
+        $status->save();
+
+        toast(__('Order rejected successfully'),'success');
+
+
+        return redirect()->back();
 
         $order= Order::findOrFail($id);
-        $order->delete();
-        toast(__('Deleted successfully'),'success');
-        return redirect()->back();
+//        $order->delete();
+//        toast(__('Deleted successfully'),'success');
+//        return redirect()->back();
     }
     /**
      * Switch between dark and light theme

@@ -199,17 +199,28 @@
                                 <div class="col-md-6">
                                     <p><b>{{$order->name}}</b></p>
                                     <p class="desc">{{$order->description}}</p>
-                                    @if($order->offers->count() <= 0)
-                                        <a href="{{route('offers.show',$order->id)}}" class="btn btn-success" >{{__('There are no offers for the request')}}</a>
-                                    @elseif($order->OfferPresented())
+                                    @if($order->CurrentStatus->status == \App\Models\Order::STATUS_NEW)
+                                        <a  class="btn btn-secondary" >{{__('Waiting for approval')}}</a>
+                                    @endif
+                                    @if($order->CurrentStatus->status == \App\Models\Order::STATUS_REJECTED)
+                                        <a  class="btn btn-danger" >{{__('The request has been rejected')}}</a>
+                                    @endif
+                                    @if($order->CurrentStatus->status == \App\Models\Order::STATUS_CANCELED)
+                                        <a  class="btn btn-secondary" >{{__('The request has been canceled')}}</a>
+                                    @endif
+                                    @if($order->CurrentStatus->status == \App\Models\Order::STATUS_COMPLETED)
+                                        <a  class="btn btn-success" >{{__('Finished order')}}</a>
+                                    @endif
+                                    @if($order->CurrentStatus->status == \App\Models\Order::STATUS_APPROVED)
+                                        <a  class="btn btn-secondary" >{{__('There are no offers for the request')}}</a>
+                                    @endif
 
-                                    <a href="{{route('offers.show',$order->id)}}" class="btn btn-completed">تم تقديم عرض بمبلغ {{$order->OfferPresented()->price}} ريال </a>
-                                    @elseif($order->OfferAccepted())
-                                        <a href="{{route('offers.show',$order->id)}}" class="btn btn-completed"><i class="fa fa-check-circle" style="color: #81CC6DFF;"></i>  تم الموافقة على العرض </a>
-                                    @elseif($order->OfferCompleted())
-                                        <a href="{{route('offers.show',$order->id)}}" class="btn btn-completed"><i class="fa fa-check-circle" style="color: #81CC6DFF;"></i>  طلب مكتمل </a>
-                                    @else
-                                        <a href="{{route('offers.show',$order->id)}}" class="btn btn-success">{{$order->offers_count}} عروض</a>
+                                    @if($order->CurrentStatus->status == \App\Models\Order::STATUS_PRESENTED)
+                                        @if($order->offers->count() <= 0)
+                                            <a href="#" class="btn btn-secondary" >{{__('There are no offers for the request')}}</a>
+                                        @else
+                                            <a href="#" class="btn btn-success" >{{$order->offers->count()}} {{__('Offers')}}</a>
+                                        @endif
                                     @endif
 
                                 </div>
@@ -218,8 +229,8 @@
                                         <table class="table table-light">
                                             <tbody>
                                             <tr>
-                                                <th>تاريخ الطلب</th>
-                                                <td><b>14/8/2022</b></td>
+                                                <th>{{__('Order date')}}</th>
+                                                <td><b>{{$order->created_at}}</b></td>
                                             </tr>
                                             <tr>
                                                 <th>المكان</th>
