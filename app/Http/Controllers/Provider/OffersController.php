@@ -96,10 +96,10 @@ class OffersController extends Controller
         ]);
 
         return view('website.success',[
-            'title'=>"تم ارسال العرض بنجاح",
-            'message'=>"بإمكانك عرض تفاصيل الطلب و العرض المقدم في صفحة تفاصيل الوحدة السكنية لحين قبول العرض من المستخدم .",
+            'title'=>__('offer_send_successfully'),
+            'message'=>__('offer_send_successfully_desc'),
             'route'=>route('offers.show',$order_id),
-            'routeText'=>"تفاصيل العرض"
+            'routeText'=>__('offer_details')
         ]);
     }
 
@@ -108,10 +108,10 @@ class OffersController extends Controller
         $offer->update(['status'=>Offer::COMPLETED_OFFER]);
 
         return view('website.success',[
-            'title'=>"تم إنهاء الطلب بنجاح",
-            'message'=>"بإمكانك عرض تفاصيل الطلب و المحادثات السابقة في صفحة تفاصيل الطلب .",
+            'title'=>__('order_finished'),
+            'message'=>__('order_finished_desc'),
             'route'=>route('offers.show',$offer->order_id),
-            'routeText'=>"تفاصيل الطلب"
+            'routeText'=>__('order_details')
         ]);
     }
 }

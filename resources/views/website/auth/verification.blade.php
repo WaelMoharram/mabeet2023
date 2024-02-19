@@ -7,7 +7,7 @@
     <div class="register text-center new-order">
         <div class="container">
             <div class="main-title">
-                <h1>تأكيد رقم الجوال</h1>
+                <h1>{{__('verify_phone')}}</h1>
 {{--                <h5>اشتراك حساب جديد مع منصّة مبيت لتتمكن من طلب وحدات سكنية.<br> لديك حساب؟ تسجيل الدخول</h5>--}}
             </div>
 
@@ -33,11 +33,11 @@
                                 <div class="row justify-content-center">
                                     <div class="col-lg-6 col-md-6">
                                         <div class="box-details">
-                                            <h3>قم بتأكيد الجوال</h3>
-                                            <p>ادخل الكود المرسل على رقم الجوال</p>
+                                            <h3>{{__('do_verify')}}</h3>
+                                            <p>{{__('enter_code')}}</p>
                                             <input type="number" required class="form-control mb-3"
                                                    name="verify_code"
-                                                   placeholder="مثال:1234">
+                                                   placeholder="{{__('example')}}:1234">
                                         </div>
                                     </div>
                                 </div>
@@ -46,7 +46,7 @@
                                 <div class="row justify-content-center">
                                     <div class="col-lg-6 col-md-6">
                                         <div class="box">
-                                            <button type="submit" class="btn btn-mabet">تأكيد</button>
+                                            <button type="submit" class="btn btn-mabet">{{__("confirm")}}</button>
                                         </div>
                                     </div>
                                 </div>
@@ -57,7 +57,7 @@
 
 
                 <div class="content">
-                    <p class="my-5 py-2">بالإشتراك، انت توافق تلقائياً على <a href="index.html">الشروط والأحكام</a> الخاصة بمنصة مبيت.</p>
+                    <p class="my-5 py-2">{{__('by_sign_you_accept')}}<a href="index.html">{{__('terms')}}</a> {{__('belongs_to_mabeet')}}</p>
                 </div>
             </div>
         </div>

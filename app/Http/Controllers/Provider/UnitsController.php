@@ -68,12 +68,12 @@ class UnitsController extends Controller
         }
         DB::table('facility_unit')->insert($unitFacilityData);
 
-        session()->flash('success','تم ارسال الطلب بنجاح');
+        session()->flash('success',__('order_send_successfully'));
         return view('website.success',[
-            'title'=>"تم ارسال الطلب بنجاح",
-            'message'=>"بإمكانك عرض الوحدة السكنية في صفحة تفاصيل الوحدة السكنية لحين قبول الإضافة من الإدارة.",
+            'title'=>__('order_send_successfully'),
+            'message'=>__('add_unit_success_desc'),
             'route'=>route('units.index'),
-            'routeText'=>"عرض الوحدات السكنية"
+            'routeText'=>__('view_all_units')
         ]);
 
     }
@@ -132,12 +132,12 @@ class UnitsController extends Controller
         DB::table('facility_unit')->where('unit_id',$unit->id)->delete();
         DB::table('facility_unit')->insert($unitFacilityData);
 
-        session()->flash('success','تم ارسال طلب التعديل بنجاح');
+        session()->flash('success',__('edit_request_sent'));
         return view('website.success',[
-            'title'=>"تم ارسال الطلب بنجاح",
-            'message'=>"بإمكانك عرض الوحدة السكنية في صفحة تفاصيل الوحدة السكنية لحين قبول الإضافة من الإدارة.",
+            'title'=>__('order_send_successfully'),
+            'message'=>__('add_unit_success_desc'),
             'route'=>route('units.index'),
-            'routeText'=>"عرض تفاصيل الوحدة"
+            'routeText'=>__('view_all_units')
         ]);
     }
 

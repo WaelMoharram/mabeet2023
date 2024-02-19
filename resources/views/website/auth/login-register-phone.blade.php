@@ -14,8 +14,8 @@
     <div class="register text-center new-order">
         <div class="container">
             <div class="main-title">
-                <h1>اشتراك حساب جديد</h1>
-                <h5>اشتراك حساب جديد مع منصّة مبيت لتتمكن من طلب وحدات سكنية.<br> لديك حساب؟ تسجيل الدخول</h5>
+                <h1>{{__('new_account')}}</h1>
+                <h5>{{__('new_acc_desc')}}<br>{{__('have_acc_login')}}</h5>
             </div>
 
 
@@ -52,8 +52,8 @@
                                 <div class="row justify-content-center">
                                     <div class="col-lg-6 col-md-6">
                                         <div class="box-details">
-                                            <h3>قم بتسجيل الدخول او انشاء حساب جديد</h3>
-                                            <p>ادخل كود الدولة ورقم الهاتف للتأكيد</p>
+                                            <h3>{{__('register_or_login')}}</h3>
+                                            <p>{{__("enter_code_phone")}}</p>
                                             <div class="input-group col-md-12" dir="ltr">
                                                 {{Form::select('phone_code', \App\Models\Country::all()->pluck('phone_code','phone_code'), null, ['id'=>'phoneCode','class'=>'form-control col-md-2'] ) }}
 
@@ -71,7 +71,7 @@
                                 <div class="row justify-content-center">
                                     <div class="col-lg-6 col-md-6">
                                         <div class="box">
-                                            <button type="submit" class="btn btn-mabet">إرسال</button>
+                                            <button type="submit" class="btn btn-mabet">{{__('send')}}</button>
                                         </div>
                                     </div>
                                 </div>
@@ -82,7 +82,7 @@
 
 
                 <div class="content">
-                    <p class="my-5 py-2">بالإشتراك، انت توافق تلقائياً على <a href="index.html">الشروط والأحكام</a> الخاصة بمنصة مبيت.</p>
+                    <p class="my-5 py-2">{{__('by_sign_you_accept')}}<a href="index.html">{{__('terms')}}</a> {{__('belongs_to_mabeet')}}</p>
                 </div>
             </div>
         </div>
