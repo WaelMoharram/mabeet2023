@@ -1,103 +1,53 @@
+
 <div class="row mt-5">
     <div class="col-md-3">
         <a href="{{route('orders')}}" class="d-block text-dark mt-4 mb-4"> <i
-                class="fas fa-arrow-circle-right mx-1 text-dark"></i> عوده للطلبات </a>
-
-        {{--        <div class="sidebar my-2">--}}
-        {{--            <div class="teble-responsive">--}}
-        {{--                <h5 class="text-center py-2">المستخدم</h5>--}}
-        {{--                <table class="table table-light">--}}
-        {{--                    <tbody>--}}
-        {{--                    <tr>--}}
-        {{--                        <th>الاسم</th>--}}
-        {{--                        <td><b>{{$order->user->name??"غير موجود"}}</b></td>--}}
-        {{--                    </tr>--}}
-        {{--                    <tr>--}}
-        {{--                        <th>الهاتف</th>--}}
-        {{--                        <td><b>{{$order->user->phone??"غير موجود"}}</b></td>--}}
-        {{--                    </tr>--}}
-
-        {{--                    </tbody>--}}
-        {{--                </table>--}}
-        {{--            </div>--}}
-
-
-        {{--        </div>--}}
+                class="fas fa-arrow-circle-right mx-1 text-dark"></i>{{__('return to orders')}} </a>
 
         <div class="sidebar my-3">
 
-            <div class="teble-responsive">
-                {{--                <table class="table table-light">--}}
-                {{--                    <tbody>--}}
-                {{--                    <tr>--}}
-                {{--                        <th>تاريخ الطلب</th>--}}
-                {{--                        <td><b>14/8/2022</b></td>--}}
-                {{--                    </tr>--}}
-                {{--                    <tr>--}}
-                {{--                        <th>المكان</th>--}}
-                {{--                        <td><b>مكة المكرمة</b></td>--}}
-                {{--                    </tr>--}}
 
-                {{--                    </tbody>--}}
-                {{--                </table>--}}
-            </div>
-            <hr>
             <div class="teble-responsive">
-                <h5 class="text-center py-2">تفاصيل الطلب</h5>
+                <h5 class="text-center py-2">{{__('Order details')}}</h5>
                 <table class="table table-light">
                     <tbody>
                     <tr>
-                        <th>تاريخ الطلب</th>
+                        <th>{{__('order date')}}</th>
                         <td><b>{{\Carbon\Carbon::parse($order->created_at)->format('Y-m-d')}}</b></td>
                     </tr>
                     <tr>
-                        <th>المكان</th>
+                        <th>{{__('Place')}}</th>
                         <td><b>{{optional($order->city)->name}}</b></td>
                     </tr>
                     <tr>
-                        <th>الموسم</th>
+                        <th>{{__('season')}}</th>
                         <td><b>{{optional($order->season)->name}}</b></td>
                     </tr>
                     <tr>
-                        <th>المسافة للمسجد</th>
+                        <th>{{__("The distance to the mosque.")}}</th>
                         <td><b>{{optional($order->distance)->name}}</b></td>
                     </tr>
                     <tr>
 
-                        <th>الوحدة السكنية</th>
+                        <th>{{__('Unit type')}}</th>
                         <td><b>{{optional($order->unitType)->name}}</b></td>
                     </tr>
                     <tr>
-                        <th>عدد الوحدات المطلوبة</th>
+                        <th>{{__('required unit numbers')}}</th>
                         <td><b>{{$order->unit_number}}</b></td>
                     </tr>
                     <tr>
-                        <th>عدد النزلاء</th>
+                        <th>{{__('guest number')}}</th>
                         <td><b>{{$order->guest_number}}</b></td>
                     </tr>
                     <tr>
-                        <th>الميزانية</th>
-                        <td><b>{{$order->budget_id?$order->budget->name:"غير محدد"}}</b></td>
+                        <th>{{__('budget')}}</th>
+                        <td><b>{{$order->budget_id?$order->budget->name:__("not specs")}}</b></td>
                     </tr>
                     </tbody>
                 </table>
             </div>
             <hr>
-            {{--            <div class="teble-responsive">--}}
-            {{--                <table class="table table-light">--}}
-            {{--                    <tbody>--}}
-            {{--                    <tr>--}}
-            {{--                        <th>تاريخ الطلب</th>--}}
-            {{--                        <td><b>14/8/2022</b></td>--}}
-            {{--                    </tr>--}}
-            {{--                    <tr>--}}
-            {{--                        <th>المكان</th>--}}
-            {{--                        <td><b>مكة المكرمة</b></td>--}}
-            {{--                    </tr>--}}
-
-            {{--                    </tbody>--}}
-            {{--                </table>--}}
-            {{--            </div>--}}
 
         </div>
 
@@ -203,7 +153,7 @@
                                         </div>
                                     @endforeach
                                 </div>
-                                    <a href="javascript:;" class="btn btn-completed">تم تقديم عرض بمبلغ {{$offer->price}} ريال </a>
+                                    <a href="javascript:;" style="color: #0B0B0B" class="btn btn-completed">{{__('Offer presented with price ')}} <span style="color: red!important;">{{$offer->price}}</span> {{__('SAR')}} </a>
 @if(auth()->check())
                                 @if($offer->status == 0)
 <div class="row m-3">

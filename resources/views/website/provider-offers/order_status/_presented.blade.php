@@ -3,43 +3,12 @@
         <a href="{{route('offers')}}?status=offers" class="d-block text-dark mt-4 mb-4"> <i
                 class="fas fa-arrow-circle-right mx-1 text-dark"></i>{{__('return to orders')}} </a>
 
-        {{--        <div class="sidebar my-2">--}}
-        {{--            <div class="teble-responsive">--}}
-        {{--                <h5 class="text-center py-2">المستخدم</h5>--}}
-        {{--                <table class="table table-light">--}}
-        {{--                    <tbody>--}}
-        {{--                    <tr>--}}
-        {{--                        <th>الاسم</th>--}}
-        {{--                        <td><b>{{$order->user->name??"غير موجود"}}</b></td>--}}
-        {{--                    </tr>--}}
-        {{--                    <tr>--}}
-        {{--                        <th>الهاتف</th>--}}
-        {{--                        <td><b>{{$order->user->phone??"غير موجود"}}</b></td>--}}
-        {{--                    </tr>--}}
 
-        {{--                    </tbody>--}}
-        {{--                </table>--}}
-        {{--            </div>--}}
-
-
-        {{--        </div>--}}
 
         <div class="sidebar my-3">
 
             <div class="teble-responsive">
-                {{--                <table class="table table-light">--}}
-                {{--                    <tbody>--}}
-                {{--                    <tr>--}}
-                {{--                        <th>تاريخ الطلب</th>--}}
-                {{--                        <td><b>14/8/2022</b></td>--}}
-                {{--                    </tr>--}}
-                {{--                    <tr>--}}
-                {{--                        <th>المكان</th>--}}
-                {{--                        <td><b>مكة المكرمة</b></td>--}}
-                {{--                    </tr>--}}
 
-                {{--                    </tbody>--}}
-                {{--                </table>--}}
             </div>
             <hr>
             <div class="teble-responsive">
@@ -83,21 +52,7 @@
                 </table>
             </div>
             <hr>
-            {{--            <div class="teble-responsive">--}}
-            {{--                <table class="table table-light">--}}
-            {{--                    <tbody>--}}
-            {{--                    <tr>--}}
-            {{--                        <th>تاريخ الطلب</th>--}}
-            {{--                        <td><b>14/8/2022</b></td>--}}
-            {{--                    </tr>--}}
-            {{--                    <tr>--}}
-            {{--                        <th>المكان</th>--}}
-            {{--                        <td><b>مكة المكرمة</b></td>--}}
-            {{--                    </tr>--}}
 
-            {{--                    </tbody>--}}
-            {{--                </table>--}}
-            {{--            </div>--}}
 
         </div>
 

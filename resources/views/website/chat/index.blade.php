@@ -34,7 +34,6 @@
                                                     <div class="chat-list">
                                                         @foreach($offers as $one)
                                                             <a href="{{route('chat',['offer_id'=>$one->id])}}" class="content box @if($offer && $one->id == $offer->id)selected @endif">
-{{--                                                                    @dd($one->unit->user)--}}
                                                                     <h3>{{$one->unit->description}}</h3>
                                                                     @if(auth()->user()->type =='client')
                                                                         <p>{{optional(optional($one->unit)->user)->name}}</p>
