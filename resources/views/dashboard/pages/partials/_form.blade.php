@@ -20,7 +20,15 @@
     {{input_error($errors,'image')}}
 </div>
 {{--//show_in_footer select--}}
-<div class="form-group py-1 col-md-12">
+<div class="form-group py-1 col-md-6">
+    <label for="formInputRole"> {{__('Show in nav')}}</label>
+    <br>
+    {!! Form::select('show_in_nav',['1'=>__('Yes'),'0'=>__('No')],null,['class'=>'form-control col']) !!}
+    {{input_error($errors,'show_in_nav')}}
+</div>
+
+{{--//show_in_footer select--}}
+<div class="form-group py-1 col-md-6">
     <label for="formInputRole"> {{__('Show in footer')}}</label>
     <br>
     {!! Form::select('show_in_footer',['1'=>__('Yes'),'0'=>__('No')],null,['class'=>'form-control col']) !!}
