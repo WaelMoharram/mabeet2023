@@ -3,7 +3,11 @@
     {!! __('Provider Orders') !!}
 @endsection
 @section('styles')
-
+<style>
+    .order-filter.new-order .nav-item {
+        width: 33.3%;
+    }
+</style>
 @endsection
 @section('content')
 
@@ -17,21 +21,10 @@
 
                 <li class="nav-item">
                     <a class="nav-link {{request()->status==null?'active':""}}"
-                       href="{{route('offers')}}">
+                       href="{{route('orders')}}">
                         <div class="box">
                             <label>
-                                <h2>{{__('New orders')}}</h2>
-                            </label>
-                        </div>
-                    </a>
-                </li>
-
-                <li class="nav-item">
-                    <a class="nav-link {{request()->status=='offers'?'active':""}}"
-                       href="{{route('offers')}}?status=offers">
-                        <div class="box">
-                            <label>
-                                <h2>{{__('Offers')}}</h2>
+                                <h2>{{__('All orders')}}</h2>
                             </label>
                         </div>
                     </a>
@@ -39,7 +32,7 @@
 
                 <li class="nav-item">
                     <a class="nav-link {{request()->status=='current'?'active':""}}"
-                       href="{{route('offers')}}?status=current">
+                       href="{{route('orders')}}?status=current">
                         <div class="box">
                             <label>
                                 <h2>{{__('Current orders')}}</h2>
@@ -51,7 +44,7 @@
 
                 <li class="nav-item">
                     <a class="nav-link {{request()->status=='previous'?'active':""}}"
-                       href="{{route('offers')}}?status=previous">
+                       href="{{route('orders')}}?status=previous">
                         <div class="box">
                             <label>
                                 <h2>{{__('Previous orders')}}</h2>
@@ -74,21 +67,6 @@
                                 <div class="container">
                                     <form method="get" action="" >
                                     <div class="accordion" id="faq">
-                                        {{--                                        <div class="card">--}}
-                                        {{--                                            <div class="card-header" id="faqhead1">--}}
-                                        {{--                                                <a href="#" class="btn btn-header-link " data-toggle="collapse" data-target="#faq1" aria-expanded="true" aria-controls="faq1">دولة النزيل</a>--}}
-                                        {{--                                            </div>--}}
-                                        {{--                                            <div id="faq1" class="collapse show" aria-labelledby="faqhead1" data-parent="#faq">--}}
-                                        {{--                                                <div class="card-body">--}}
-                                        {{--                                                    <ul>--}}
-                                        {{--                                                        <li>Option</li>--}}
-                                        {{--                                                        <li>Option</li>--}}
-                                        {{--                                                        <li>Option</li>--}}
-                                        {{--                                                    </ul>--}}
-                                        {{--                                                </div>--}}
-                                        {{--                                            </div>--}}
-                                        {{--                                        </div>--}}
-
                                         <div class="card">
                                             <div class="card-header" id="faqhead2">
                                                 <a href="#" class="btn btn-header-link collapsed" data-toggle="collapse"
@@ -222,7 +200,7 @@
                                     <p><b>{{$order->name}}</b></p>
                                     <p class="desc">{{$order->description}}</p>
                                     @if($order->offers->count() <= 0)
-                                        <a href="{{route('offers.show',$order->id)}}" class="btn btn-success" >تقديم عرض</a>
+                                        <a href="{{route('offers.show',$order->id)}}" class="btn btn-success" >{{__('There are no offers for the request')}}</a>
                                     @elseif($order->OfferPresented())
 
                                     <a href="{{route('offers.show',$order->id)}}" class="btn btn-completed">تم تقديم عرض بمبلغ {{$order->OfferPresented()->price}} ريال </a>

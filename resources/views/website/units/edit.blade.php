@@ -2,11 +2,7 @@
 @section('title')
     {!! __('Edit Unit') !!}
 @endsection
-@extends('website.layouts.app')
 
-@section('title')
-    {!! __('Add New Unit') !!}
-@endsection
 
 @section('styles')
     <style>

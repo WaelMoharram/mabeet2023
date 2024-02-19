@@ -7,6 +7,7 @@ use App\Http\Requests\website\AddOrderRequest;
 use App\Models\Budget;
 use App\Models\City;
 use App\Models\Distance;
+use App\Models\Offer;
 use App\Models\Order;
 use App\Models\Season;
 use App\Models\Unit;

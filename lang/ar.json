@@ -345,6 +345,8 @@
     "Current orders": "طلبات جارية",
     "Previous orders": "طلبات سابقة",
     "Orders & Offers": "الطلبات و العروض",
-    "Enter the details of the new order to receive the best offers": "ادخل تفاصيل الطلب الجديد لإستقبال افضل العروض"
+    "Enter the details of the new order to receive the best offers": "ادخل تفاصيل الطلب الجديد لإستقبال افضل العروض",
+    "All orders": "كل الطلبات",
+    "There are no offers for the request": "لا يوجد عروض على الطلب"
 
 }
