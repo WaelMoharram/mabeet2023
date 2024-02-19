@@ -85,7 +85,7 @@
                 <li class="nav-item list-inline-item">
                     <a class="nav-item list-inline-item btn" href="{{route('login')}}">{{__('Login')}}</a>
                 </li>
-                @foreach(\App\Models\Page::where('show_in_footer',1)->get() as $page)
+                @foreach(\App\Models\Page::where('show_in_nav',1)->get() as $page)
                     <li class="nav-item list-inline-item">
                         <a class="nav-item list-inline-item btn" href="{{route('page',$page->title)}}">{{$page->title}}</a>
                     </li>
