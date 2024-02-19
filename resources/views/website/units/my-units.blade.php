@@ -12,12 +12,12 @@
                     <h5>تفاصيل الوحدات السكنية الخاصة بك .</h5>
                 </div>
 
-                <div class="row mt-5">
+                <div class="row mt-5 d-flex justify-content-around">
 {{--                    <div class="col-md-3">--}}
 
 {{--                    </div>--}}
 
-                    <div class="col-md-12">
+                    <div class="col-md-10">
                         @foreach($units as $unit)
 
                             <div class="product-gallery offer-bg m-3">
