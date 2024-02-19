@@ -62,6 +62,17 @@ class User extends Authenticatable
     public function orders(){
         return $this->hasMany(Order::class);
     }
+    public function offers(){
+        return $this->hasMany(Offer::class,'provider_id');
+    }
+    public function finishedOffers(){
+        return $this->hasMany(Offer::class,'provider_id')->whereHas('order',function ($query) {
+
+            $query->whereHas('statuses', function ($q) {
+                $q->where('status', 'finished');
+            });
+        });
+    }
 
     public function units(){
         return $this->hasMany(Unit::class);

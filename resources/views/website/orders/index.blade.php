@@ -73,143 +73,143 @@
                             <div id="main">
                                 <div class="container">
                                     <form method="get" action="" >
-                                        <div class="accordion" id="faq">
-                                            {{--                                        <div class="card">--}}
-                                            {{--                                            <div class="card-header" id="faqhead1">--}}
-                                            {{--                                                <a href="#" class="btn btn-header-link " data-toggle="collapse" data-target="#faq1" aria-expanded="true" aria-controls="faq1">دولة النزيل</a>--}}
-                                            {{--                                            </div>--}}
-                                            {{--                                            <div id="faq1" class="collapse show" aria-labelledby="faqhead1" data-parent="#faq">--}}
-                                            {{--                                                <div class="card-body">--}}
-                                            {{--                                                    <ul>--}}
-                                            {{--                                                        <li>Option</li>--}}
-                                            {{--                                                        <li>Option</li>--}}
-                                            {{--                                                        <li>Option</li>--}}
-                                            {{--                                                    </ul>--}}
-                                            {{--                                                </div>--}}
-                                            {{--                                            </div>--}}
-                                            {{--                                        </div>--}}
+                                    <div class="accordion" id="faq">
+                                        {{--                                        <div class="card">--}}
+                                        {{--                                            <div class="card-header" id="faqhead1">--}}
+                                        {{--                                                <a href="#" class="btn btn-header-link " data-toggle="collapse" data-target="#faq1" aria-expanded="true" aria-controls="faq1">دولة النزيل</a>--}}
+                                        {{--                                            </div>--}}
+                                        {{--                                            <div id="faq1" class="collapse show" aria-labelledby="faqhead1" data-parent="#faq">--}}
+                                        {{--                                                <div class="card-body">--}}
+                                        {{--                                                    <ul>--}}
+                                        {{--                                                        <li>Option</li>--}}
+                                        {{--                                                        <li>Option</li>--}}
+                                        {{--                                                        <li>Option</li>--}}
+                                        {{--                                                    </ul>--}}
+                                        {{--                                                </div>--}}
+                                        {{--                                            </div>--}}
+                                        {{--                                        </div>--}}
 
-                                            <div class="card">
-                                                <div class="card-header" id="faqhead2">
-                                                    <a href="#" class="btn btn-header-link collapsed" data-toggle="collapse"
-                                                       data-target="#faq2" aria-expanded="true"
-                                                       aria-controls="faq2">{{__('Place')}}</a>
-                                                </div>
-
-                                                <div id="faq2" class="collapse show" aria-labelledby="faqhead2"
-                                                     data-parent="#faq">
-                                                    <div class="card-body">
-                                                        <ul>
-                                                            @foreach($cities as $city)
-                                                                <li>
-                                                                    <input type="checkbox" class="" name="cities_ids[]"
-                                                                           id="id_id_radio_buttons_0_{{$city->id}}"
-                                                                           value="{{$city->id}}"/>
-                                                                    {{$city->name}}
-                                                                </li>
-                                                            @endforeach
-
-                                                        </ul>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                            <div class="card">
-                                                <div class="card-header" id="faqhead3">
-                                                    <a href="#" class="btn btn-header-link collapsed" data-toggle="collapse"
-                                                       data-target="#faq3" aria-expanded="true" aria-controls="faq3">
-                                                        {{__('Unit type')}}
-                                                    </a>
-                                                </div>
-
-                                                <div id="faq3" class="collapse" aria-labelledby="faqhead3"
-                                                     data-parent="#faq">
-                                                    <div class="card-body">
-                                                        <ul>
-                                                            @foreach($unitTypes as $type)
-                                                                <li><input type="checkbox" class="" name="unit_types_ids[]"
-                                                                           id="id_id_radio_buttons_0_{{$type->id}}"
-                                                                           value="{{$type->id}}"/>
-                                                                    {{$type->name}}
-                                                                </li>
-                                                            @endforeach
-
-                                                        </ul>
-                                                    </div>
-                                                </div>
+                                        <div class="card">
+                                            <div class="card-header" id="faqhead2">
+                                                <a href="#" class="btn btn-header-link collapsed" data-toggle="collapse"
+                                                   data-target="#faq2" aria-expanded="true"
+                                                   aria-controls="faq2">{{__('Place')}}</a>
                                             </div>
 
-                                            <div class="card">
-                                                <div class="card-header" id="faqhead4">
-                                                    <a href="#" class="btn btn-header-link collapsed" data-toggle="collapse"
-                                                       data-target="#faq4" aria-expanded="true" aria-controls="faq4">
-                                                        {{__('The distance to the mosque.')}}
-                                                    </a>
-                                                </div>
+                                            <div id="faq2" class="collapse show" aria-labelledby="faqhead2"
+                                                 data-parent="#faq">
+                                                <div class="card-body">
+                                                    <ul>
+                                                        @foreach($cities as $city)
+                                                            <li>
+                                                                <input type="checkbox" class="" name="cities_ids[]"
+                                                                       id="id_id_radio_buttons_0_{{$city->id}}"
+                                                                       value="{{$city->id}}"/>
+                                                                {{$city->name}}
+                                                            </li>
+                                                        @endforeach
 
-                                                <div id="faq4" class="collapse" aria-labelledby="faqhead4"
-                                                     data-parent="#faq">
-                                                    <div class="card-body">
-                                                        <ul>
-                                                            @foreach($distance as $dist)
-                                                                <li>
-                                                                    <input type="checkbox" class="" name="distances_ids[]"
-                                                                           id="id_id_radio_buttons_0_{{$dist->id}}"
-                                                                           value="{{$dist->id}}"/>
-                                                                    {{$dist->name}}
-                                                                </li>
-                                                            @endforeach
-                                                        </ul>
-                                                    </div>
+                                                    </ul>
                                                 </div>
-                                            </div>
-                                            <div class="card">
-                                                <div class="card-header" id="faqhead5">
-                                                    <a href="#" class="btn btn-header-link collapsed" data-toggle="collapse"
-                                                       data-target="#faq5" aria-expanded="true" aria-controls="faq5">
-                                                        {{__('The number of guests.')}}
-                                                    </a>
-                                                </div>
-
-                                                <div id="faq5" class="collapse" aria-labelledby="faqhead5"
-                                                     data-parent="#faq">
-                                                    <div class="card-body">
-                                                        <ul>
-                                                            @for($i=1;$i<=6;$i++)
-                                                                <li><input type="checkbox" class="" name="guest_number[]"
-                                                                           id="id_id_radio_buttons_0_{{$i}}"
-                                                                           value="{{$i}}"/>
-                                                                    {{$i}}
-                                                                </li>
-                                                            @endfor
-
-                                                        </ul>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                            <div class="card">
-                                                <div class="card-header" id="faqhead6">
-                                                    <a href="#" class="btn btn-header-link collapsed" data-toggle="collapse"
-                                                       data-target="#faq6" aria-expanded="true" aria-controls="faq6">{{__('The budget.')}}</a>
-                                                </div>
-
-                                                <div id="faq6" class="collapse" aria-labelledby="faqhead6"
-                                                     data-parent="#faq">
-                                                    <div class="card-body">
-                                                        <ul>
-                                                            @foreach($budgets as $budget)
-                                                                <li><input type="checkbox" class="" name="budgets_ids[]"
-                                                                           id="id_id_radio_buttons_0_{{$budget->id}}"
-                                                                           value="{{$budget->id}}"/>
-                                                                    {{$budget->name}}
-                                                                </li>
-                                                            @endforeach
-
-                                                        </ul>
-                                                    </div>
-                                                </div>
-                                                <button type="submit" class="btn btn-success mt-3">{{__('Filter')}} <i class="fa fa-search"></i></button>
                                             </div>
                                         </div>
+                                        <div class="card">
+                                            <div class="card-header" id="faqhead3">
+                                                <a href="#" class="btn btn-header-link collapsed" data-toggle="collapse"
+                                                   data-target="#faq3" aria-expanded="true" aria-controls="faq3">
+                                                {{__('Unit type')}}
+                                                </a>
+                                            </div>
+
+                                            <div id="faq3" class="collapse" aria-labelledby="faqhead3"
+                                                 data-parent="#faq">
+                                                <div class="card-body">
+                                                    <ul>
+                                                        @foreach($unitTypes as $type)
+                                                            <li><input type="checkbox" class="" name="unit_types_ids[]"
+                                                                       id="id_id_radio_buttons_0_{{$type->id}}"
+                                                                       value="{{$type->id}}"/>
+                                                                {{$type->name}}
+                                                            </li>
+                                                        @endforeach
+
+                                                    </ul>
+                                                </div>
+                                            </div>
+                                        </div>
+
+                                        <div class="card">
+                                            <div class="card-header" id="faqhead4">
+                                                <a href="#" class="btn btn-header-link collapsed" data-toggle="collapse"
+                                                   data-target="#faq4" aria-expanded="true" aria-controls="faq4">
+                                                    {{__('The distance to the mosque.')}}
+                                                    </a>
+                                            </div>
+
+                                            <div id="faq4" class="collapse" aria-labelledby="faqhead4"
+                                                 data-parent="#faq">
+                                                <div class="card-body">
+                                                    <ul>
+                                                        @foreach($distance as $dist)
+                                                            <li>
+                                                                <input type="checkbox" class="" name="distances_ids[]"
+                                                                       id="id_id_radio_buttons_0_{{$dist->id}}"
+                                                                       value="{{$dist->id}}"/>
+                                                                {{$dist->name}}
+                                                            </li>
+                                                        @endforeach
+                                                    </ul>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="card">
+                                            <div class="card-header" id="faqhead5">
+                                                <a href="#" class="btn btn-header-link collapsed" data-toggle="collapse"
+                                                   data-target="#faq5" aria-expanded="true" aria-controls="faq5">
+                                                    {{__('The number of guests.')}}
+                                                    </a>
+                                            </div>
+
+                                            <div id="faq5" class="collapse" aria-labelledby="faqhead5"
+                                                 data-parent="#faq">
+                                                <div class="card-body">
+                                                    <ul>
+                                                        @for($i=1;$i<=6;$i++)
+                                                            <li><input type="checkbox" class="" name="guest_number[]"
+                                                                       id="id_id_radio_buttons_0_{{$i}}"
+                                                                       value="{{$i}}"/>
+                                                                {{$i}}
+                                                            </li>
+                                                        @endfor
+
+                                                    </ul>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="card">
+                                            <div class="card-header" id="faqhead6">
+                                                <a href="#" class="btn btn-header-link collapsed" data-toggle="collapse"
+                                                   data-target="#faq6" aria-expanded="true" aria-controls="faq6">{{__('The budget.')}}</a>
+                                            </div>
+
+                                            <div id="faq6" class="collapse" aria-labelledby="faqhead6"
+                                                 data-parent="#faq">
+                                                <div class="card-body">
+                                                    <ul>
+                                                        @foreach($budgets as $budget)
+                                                            <li><input type="checkbox" class="" name="budgets_ids[]"
+                                                                       id="id_id_radio_buttons_0_{{$budget->id}}"
+                                                                       value="{{$budget->id}}"/>
+                                                                {{$budget->name}}
+                                                            </li>
+                                                        @endforeach
+
+                                                    </ul>
+                                                </div>
+                                            </div>
+                                            <button type="submit" class="btn btn-success mt-3">{{__('Filter')}} <i class="fa fa-search"></i></button>
+                                        </div>
+                                    </div>
                                     </form>
                                 </div>
                             </div>
@@ -217,74 +217,74 @@
 
                         <div class="col-lg-9">
                             @forelse($orders as $order)
-                                <div class="row align-items-center">
-                                    <div class="col-md-6">
-                                        <p><b>{{$order->name}}</b></p>
-                                        <p class="desc">{{$order->description}}</p>
-                                        @if($order->offers->count() <= 0)
-                                            <a href="{{route('offers.show',$order->id)}}" class="btn btn-success" >تقديم عرض</a>
-                                        @elseif($order->OfferPresented())
+                            <div class="row align-items-center">
+                                <div class="col-md-6">
+                                    <p><b>{{$order->name}}</b></p>
+                                    <p class="desc">{{$order->description}}</p>
+                                    @if($order->offers->count() <= 0)
+                                        <a href="{{route('offers.show',$order->id)}}" class="btn btn-success" >تقديم عرض</a>
+                                    @elseif($order->OfferPresented())
 
-                                            <a href="{{route('offers.show',$order->id)}}" class="btn btn-completed">تم تقديم عرض بمبلغ {{$order->OfferPresented()->price}} ريال </a>
-                                        @elseif($order->OfferAccepted())
-                                            <a href="{{route('offers.show',$order->id)}}" class="btn btn-completed"><i class="fa fa-check-circle" style="color: #81CC6DFF;"></i>  تم الموافقة على العرض </a>
-                                        @elseif($order->OfferCompleted())
-                                            <a href="{{route('offers.show',$order->id)}}" class="btn btn-completed"><i class="fa fa-check-circle" style="color: #81CC6DFF;"></i>  طلب مكتمل </a>
-                                        @else
-                                            <a href="{{route('offers.show',$order->id)}}" class="btn btn-success">{{$order->offers_count}} عروض</a>
-                                        @endif
+                                    <a href="{{route('offers.show',$order->id)}}" class="btn btn-completed">تم تقديم عرض بمبلغ {{$order->OfferPresented()->price}} ريال </a>
+                                    @elseif($order->OfferAccepted())
+                                        <a href="{{route('offers.show',$order->id)}}" class="btn btn-completed"><i class="fa fa-check-circle" style="color: #81CC6DFF;"></i>  تم الموافقة على العرض </a>
+                                    @elseif($order->OfferCompleted())
+                                        <a href="{{route('offers.show',$order->id)}}" class="btn btn-completed"><i class="fa fa-check-circle" style="color: #81CC6DFF;"></i>  طلب مكتمل </a>
+                                    @else
+                                        <a href="{{route('offers.show',$order->id)}}" class="btn btn-success">{{$order->offers_count}} عروض</a>
+                                    @endif
 
-                                    </div>
-                                    <div class="col-md-6">
-                                        <div class="teble-responsive">
-                                            <table class="table table-light">
-                                                <tbody>
-                                                <tr>
-                                                    <th>تاريخ الطلب</th>
-                                                    <td><b>14/8/2022</b></td>
-                                                </tr>
-                                                <tr>
-                                                    <th>المكان</th>
-                                                    <td><b>مكة المكرمة</b></td>
-                                                </tr>
-                                                <tr>
-                                                    <th>الموسم</th>
-                                                    <td><b>موسم الحج</b></td>
-                                                </tr>
-                                                <tr>
-                                                    <th>المسافة للمسجد</th>
-                                                    <td><b>300 متر او اقل</b></td>
-                                                </tr>
-                                                <tr>
-                                                    <th>الوحدة السكنية</th>
-                                                    <td><b>غرفة</b></td>
-                                                </tr>
-                                                <tr>
-                                                    <th>عدد الوحدات المطلوبة</th>
-                                                    <td><b>2</b></td>
-                                                </tr>
-                                                <tr>
-                                                    <th>عدد النزلاء</th>
-                                                    <td><b>3</b></td>
-                                                </tr>
-                                                <tr>
-                                                    <th>الميزانية</th>
-                                                    <td><b>أقل من 5,000</b></td>
-                                                </tr>
-                                                </tbody>
-                                            </table>
-                                        </div>
+                                </div>
+                                <div class="col-md-6">
+                                    <div class="teble-responsive">
+                                        <table class="table table-light">
+                                            <tbody>
+                                            <tr>
+                                                <th>تاريخ الطلب</th>
+                                                <td><b>14/8/2022</b></td>
+                                            </tr>
+                                            <tr>
+                                                <th>المكان</th>
+                                                <td><b>مكة المكرمة</b></td>
+                                            </tr>
+                                            <tr>
+                                                <th>الموسم</th>
+                                                <td><b>موسم الحج</b></td>
+                                            </tr>
+                                            <tr>
+                                                <th>المسافة للمسجد</th>
+                                                <td><b>300 متر او اقل</b></td>
+                                            </tr>
+                                            <tr>
+                                                <th>الوحدة السكنية</th>
+                                                <td><b>غرفة</b></td>
+                                            </tr>
+                                            <tr>
+                                                <th>عدد الوحدات المطلوبة</th>
+                                                <td><b>2</b></td>
+                                            </tr>
+                                            <tr>
+                                                <th>عدد النزلاء</th>
+                                                <td><b>3</b></td>
+                                            </tr>
+                                            <tr>
+                                                <th>الميزانية</th>
+                                                <td><b>أقل من 5,000</b></td>
+                                            </tr>
+                                            </tbody>
+                                        </table>
                                     </div>
                                 </div>
-                            @empty
+                            </div>
+                                @empty
                                 @if(request('status') == 'offers')
                                     <h3 class="align-content-center">عفواً لا يوجد عروض مقدمة منك حالياً</h3>
-                                @elseif(request('status')=='current')
+                                    @elseif(request('status')=='current')
                                     <h3 class="align-content-center">عفواً لا يوجد طلبات جاريه حالياً</h3>
                                 @elseif(request('status')=='current')
                                     <h3 class="align-content-center">عفواً لا يوجد طلبات سابقةً</h3>
-                                @else
-                                    <h3 class="align-content-center">عفواً لا يوجد طلبات جديدة حالياً</h3>
+                                 @else
+                                <h3 class="align-content-center">عفواً لا يوجد طلبات جديدة حالياً</h3>
                                 @endif
 
                             @endforelse

@@ -317,17 +317,22 @@
         $(document).ready(function(){
             // Hide the div initially
             $(".toggle-date-div").hide();
-
+console.log('test')
             // Listen for change event on the radio button
             $('input[name="season_id"]').change(function(){
                 // Check if the radio button is checked
                 if($(this).is(':checked')){
                     // Check if the selected value is not empty
-                    if($(this).val() !== ''){
+                    if($(this).val() !== '0'){
                         // Show the div
+                        console.log($(this).val())
+
                         $(".toggle-date-div").hide();
-                    } else {
+                    }
+                    else {
                         // Hide the div
+                        console.log($(this).val())
+
                         $(".toggle-date-div").show();
                     }
                 }

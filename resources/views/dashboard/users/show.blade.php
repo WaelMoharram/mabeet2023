@@ -11,7 +11,7 @@
 @endsection
 @section('content')
     @if($user->type == 'client')
-        @include('dashboard.users.partials.clients._form')
+        @include('dashboard.users.partials.clients._show')
     @else
         @include('dashboard.users.partials.providers._show')
     @endif

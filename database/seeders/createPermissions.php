@@ -39,25 +39,30 @@ class createPermissions extends Seeder
 //        Permission::create(['name' => 'edit roles','group' => 'roles','guard_name' => 'admins']);
 //        Permission::create(['name' => 'delete roles','group' => 'roles','guard_name' => 'admins']);
 
-        Permission::create(['name' => 'index seasons','group' => 'seasons','guard_name' => 'admins']);
-        Permission::create(['name' => 'add seasons','group' => 'seasons','guard_name' => 'admins']);
-        Permission::create(['name' => 'edit seasons','group' => 'seasons','guard_name' => 'admins']);
-        Permission::create(['name' => 'delete seasons','group' => 'seasons','guard_name' => 'admins']);
+//        Permission::create(['name' => 'index seasons','group' => 'seasons','guard_name' => 'admins']);
+//        Permission::create(['name' => 'add seasons','group' => 'seasons','guard_name' => 'admins']);
+//        Permission::create(['name' => 'edit seasons','group' => 'seasons','guard_name' => 'admins']);
+//        Permission::create(['name' => 'delete seasons','group' => 'seasons','guard_name' => 'admins']);
+//
+//        Permission::create(['name' => 'index unit types','group' => 'unit types','guard_name' => 'admins']);
+//        Permission::create(['name' => 'add unit types','group' => 'unit types','guard_name' => 'admins']);
+//        Permission::create(['name' => 'edit unit types','group' => 'unit types','guard_name' => 'admins']);
+//        Permission::create(['name' => 'delete unit types','group' => 'unit types','guard_name' => 'admins']);
+//
+//        Permission::create(['name' => 'index facilities','group' => 'facilities','guard_name' => 'admins']);
+//        Permission::create(['name' => 'add facilities','group' => 'facilities','guard_name' => 'admins']);
+//        Permission::create(['name' => 'edit facilities','group' => 'facilities','guard_name' => 'admins']);
+//        Permission::create(['name' => 'delete facilities','group' => 'facilities','guard_name' => 'admins']);
+//
+//        Permission::create(['name' => 'index services','group' => 'services','guard_name' => 'admins']);
+//        Permission::create(['name' => 'add services','group' => 'services','guard_name' => 'admins']);
+//        Permission::create(['name' => 'edit services','group' => 'services','guard_name' => 'admins']);
+//        Permission::create(['name' => 'delete services','group' => 'services','guard_name' => 'admins']);
 
-        Permission::create(['name' => 'index unit types','group' => 'unit types','guard_name' => 'admins']);
-        Permission::create(['name' => 'add unit types','group' => 'unit types','guard_name' => 'admins']);
-        Permission::create(['name' => 'edit unit types','group' => 'unit types','guard_name' => 'admins']);
-        Permission::create(['name' => 'delete unit types','group' => 'unit types','guard_name' => 'admins']);
-
-        Permission::create(['name' => 'index facilities','group' => 'facilities','guard_name' => 'admins']);
-        Permission::create(['name' => 'add facilities','group' => 'facilities','guard_name' => 'admins']);
-        Permission::create(['name' => 'edit facilities','group' => 'facilities','guard_name' => 'admins']);
-        Permission::create(['name' => 'delete facilities','group' => 'facilities','guard_name' => 'admins']);
-
-        Permission::create(['name' => 'index services','group' => 'services','guard_name' => 'admins']);
-        Permission::create(['name' => 'add services','group' => 'services','guard_name' => 'admins']);
-        Permission::create(['name' => 'edit services','group' => 'services','guard_name' => 'admins']);
-        Permission::create(['name' => 'delete services','group' => 'services','guard_name' => 'admins']);
+        Permission::create(['name' => 'index budgets','group' => 'budgets','guard_name' => 'admins']);
+        Permission::create(['name' => 'add budgets','group' => 'budgets','guard_name' => 'admins']);
+        Permission::create(['name' => 'edit budgets','group' => 'budgets','guard_name' => 'admins']);
+        Permission::create(['name' => 'delete budgets','group' => 'budgets','guard_name' => 'admins']);
 
     }
 }

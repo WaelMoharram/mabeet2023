@@ -57,6 +57,7 @@ class Admin extends Authenticatable
         'unit types',
         'facilities',
         'services',
+        'budgets',
         'options'
     ];
 

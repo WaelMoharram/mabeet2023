@@ -41,16 +41,14 @@
                                 <td><b>{{$user->last_login_at ? $user->last_login_at->format('Y-m-d') : __('Never')}}</b></td>
                             </tr>
                             <tr>
-                                <th>{{__('Units count')}}</th>
-                                <td><b>{{$user->units->count()}}</b></td>
-                            </tr>
-                            <tr>
                                 <th>{{__('Orders number')}}</th>
-                                <td><b>{{$user->offers->count()}}</b></td>
+                                <td><b>{{$user->orders->count()}}</b></td>
                             </tr>
                             <tr>
                                 <th>{{__('Orders finished')}}</th>
-                                <td><b>{{$user->finishedOffers()->count()}}</b></td>
+                                <td><b>{{$user->orders()->whereHas('statuses',function ($q){
+                                    $q->where('status','finished');
+})->count()}}</b></td>
                             </tr>
 
                             </tbody>

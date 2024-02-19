@@ -334,8 +334,17 @@
     "My profile": "ملفي الشخصي",
     "Personal data": "البيانات الشخصية",
     "Save edits": "حفظ التعديلات",
-    "Log out": "تسجيل الخروج"
-
-
+    "Log out": "تسجيل الخروج",
+    "Add new budgets": "اضافة ميزانية جديدة",
+    "Amount From": "المبلغ من",
+    "Amount To":"المبلغ الى ",
+    "Amount from": "المبلغ من",
+    "Amount to":"المبلغ الى ",
+    "Edit Budget": "تعديل الميزانية",
+    "Budgets": "الميزانيات",
+    "Current orders": "طلبات جارية",
+    "Previous orders": "طلبات سابقة",
+    "Orders & Offers": "الطلبات و العروض",
+    "Enter the details of the new order to receive the best offers": "ادخل تفاصيل الطلب الجديد لإستقبال افضل العروض"
 
 }

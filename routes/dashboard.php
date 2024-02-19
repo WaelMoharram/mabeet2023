@@ -50,6 +50,7 @@ Route::name('dashboard.')->middleware(['language', 'auth:admins'])->prefix('dash
     Route::resource('unit-types', \App\Http\Controllers\Dashboard\UnitTypeController::class);
     Route::resource('facilities', \App\Http\Controllers\Dashboard\FacilityController::class);
     Route::resource('services', \App\Http\Controllers\Dashboard\ServiceController::class);
+    Route::resource('budgets', \App\Http\Controllers\Dashboard\BudgetController::class);
 
     Route::resource('units', \App\Http\Controllers\Dashboard\UnitController::class);
     Route::resource('orders', \App\Http\Controllers\Dashboard\OrderController::class);

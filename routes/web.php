@@ -24,26 +24,28 @@ use App\Http\Controllers\ChatController;
 //    return view('welcome');
 //});
 
+//Migrations routes
+//Route::get('migrate/users', [\App\Http\Controllers\MigrationController::class, 'users'])->name('migrate.users');
+//Route::get('migrate/towns', [\App\Http\Controllers\MigrationController::class, 'towns'])->name('migrate.towns');
+//Route::get('migrate/homes', [\App\Http\Controllers\MigrationController::class, 'homes'])->name('migrate.homes');
+//Route::get('migrate/options', [\App\Http\Controllers\MigrationController::class, 'options'])->name('migrate.options');
+//Route::get('migrate/orders', [\App\Http\Controllers\MigrationController::class, 'orders'])->name('migrate.orders');
+
+
 // Socialite auth
-Route::get('migrate/users', [\App\Http\Controllers\MigrationController::class, 'users'])->name('migrate.users');
-Route::get('migrate/towns', [\App\Http\Controllers\MigrationController::class, 'towns'])->name('migrate.towns');
-Route::get('migrate/homes', [\App\Http\Controllers\MigrationController::class, 'homes'])->name('migrate.homes');
-Route::get('migrate/options', [\App\Http\Controllers\MigrationController::class, 'options'])->name('migrate.options');
-Route::get('migrate/orders', [\App\Http\Controllers\MigrationController::class, 'orders'])->name('migrate.orders');
 
-Route::get('auth/google', [LoginController::class, 'redirectToGoogle'])->name('google-login');
-Route::get('auth/google/callback', [LoginController::class, 'handleGoogleCallback']);
+//Route::get('auth/google', [LoginController::class, 'redirectToGoogle'])->name('google-login');
+//Route::get('auth/google/callback', [LoginController::class, 'handleGoogleCallback']);
+//
+//Route::get('auth/apple', [LoginController::class, 'redirectToApple']);
+//Route::get('auth/apple/callback', [LoginController::class, 'handleAppleCallback']);
 
-Route::get('auth/apple', [LoginController::class, 'redirectToApple']);
-Route::get('auth/apple/callback', [LoginController::class, 'handleAppleCallback']);
+
 Route::middleware(['language'])->group(function () {
     Route::get('/', [HomeController::class, 'index'])->name('home');
 
     Route::get('/page/{title}',[\App\Http\Controllers\HomeController::class,'page'])->name('page');
-    Route::prefix('client')->group(function () {
-        Route::get('create_order', [OrderController::class, 'create'])->name('orders.create');
-        Route::post('save_order', [OrderController::class, 'store'])->name('orders.store');
-    });
+
     Route::get('lang-ar', function () {
         session()->put('lang', 'ar');
         return back();
@@ -55,14 +57,15 @@ Route::middleware(['language'])->group(function () {
     })->name('lang-en');
 
 
-
-//    Route::get('/dashboard', function () {
-//        return view('dashboard');
-//    })->middleware(['auth', 'verified'])->name('dashboard');
-
-
-
     Route::middleware('auth:web')->group(function () {
+        Route::prefix('client')->group(function () {
+            Route::get('/orders', [OrderController::class, 'index'])->name('orders');
+
+            Route::get('create_order', [OrderController::class, 'create'])->name('orders.create');
+            Route::post('save_order', [OrderController::class, 'store'])->name('orders.store');
+        });
+
+
         Route::get('/my-profile', [ProfileController::class, 'show'])->name('my-profile');
         Route::get('/profile', [ProfileController::class, 'edit'])->name('profile.edit');
 
@@ -70,7 +73,6 @@ Route::middleware(['language'])->group(function () {
 
         Route::delete('/profile', [ProfileController::class, 'destroy'])->name('profile.destroy');
 
-        Route::get('/orders', [OrderController::class, 'index'])->name('orders');
 
 
 

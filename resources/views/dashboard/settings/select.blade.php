@@ -23,6 +23,12 @@
                 <a href="{{route('dashboard.services.index')}}" class="nav-link  @if(Request::is('dashboard/services'))  active @endif ">{{__('Services')}}</a>
             </li>
         @endcan
+
+        @can('index budgets')
+            <li class="nav-item">
+                <a href="{{route('dashboard.budgets.index')}}" class="nav-link  @if(Request::is('dashboard/budgets'))  active @endif ">{{__('Budgets')}}</a>
+            </li>
+        @endcan
         <li class="nav-item" role="presentation">
             <form class="">
                 @if(request()->has('role'))
