@@ -1,7 +1,7 @@
 <div class="row mt-5">
     <div class="col-md-3">
         <a href="{{route('offers')}}" class="d-block text-dark mt-4 mb-4"> <i
-                class="fas fa-arrow-circle-right mx-1 text-dark"></i> عوده للطلبات </a>
+                class="fas fa-arrow-circle-right mx-1 text-dark"></i> {{__('return to orders')}} </a>
 
         {{--        <div class="sidebar my-2">--}}
         {{--            <div class="teble-responsive">--}}
@@ -43,41 +43,41 @@
             </div>
             <hr>
             <div class="teble-responsive">
-                <h5 class="text-center py-2">تفاصيل الطلب</h5>
+                <h5 class="text-center py-2">{{__('Order details')}}</h5>
                 <table class="table table-light">
                     <tbody>
                     <tr>
-                        <th>تاريخ الطلب</th>
+                        <th>{{__('order date')}}</th>
                         <td><b>{{\Carbon\Carbon::parse($order->created_at)->format('Y-m-d')}}</b></td>
                     </tr>
                     <tr>
-                        <th>المكان</th>
+                        <th>{{__('Place')}}</th>
                         <td><b>{{optional($order->city)->name}}</b></td>
                     </tr>
                     <tr>
-                        <th>الموسم</th>
+                        <th>{{__('season')}}</th>
                         <td><b>{{optional($order->season)->name}}</b></td>
                     </tr>
                     <tr>
-                        <th>المسافة للمسجد</th>
+                        <th>{{__("The distance to the mosque.")}}</th>
                         <td><b>{{optional($order->distance)->name}}</b></td>
                     </tr>
                     <tr>
 
-                        <th>الوحدة السكنية</th>
+                        <th>{{__('Unit type')}}</th>
                         <td><b>{{optional($order->unitType)->name}}</b></td>
                     </tr>
                     <tr>
-                        <th>عدد الوحدات المطلوبة</th>
+                        <th>{{__('required unit numbers')}}</th>
                         <td><b>{{$order->unit_number}}</b></td>
                     </tr>
                     <tr>
-                        <th>عدد النزلاء</th>
+                        <th>{{__('guest number')}}</th>
                         <td><b>{{$order->guest_number}}</b></td>
                     </tr>
                     <tr>
-                        <th>الميزانية</th>
-                        <td><b>{{$order->budget_id?$order->budget->name:"غير محدد"}}</b></td>
+                        <th>{{__('budget')}}</th>
+                        <td><b>{{$order->budget_id?$order->budget->name:__("not specs")}}</b></td>
                     </tr>
                     </tbody>
                 </table>
@@ -157,12 +157,12 @@
                                     <ul class="list-inline flat-option">
                                         <li class="list-inline-item"><img src="{{asset('/')}}asset/images/ico.png"
                                                                           class="img-fluid"></li>
-                                        <li class="list-inline-item">نوع الوحدة : {{$unit->type->name}} </li>
+                                        <li class="list-inline-item">{{__('unit type')}} : {{$unit->type->name}} </li>
                                     </ul>
                                     <ul class="list-inline flat-option">
                                         <li class="list-inline-item"><img src="{{asset('/')}}asset/images/ico.png"
                                                                           class="img-fluid"></li>
-                                        <li class="list-inline-item"> عدد النزلاء : {{$unit->guest_numbers}}</li>
+                                        <li class="list-inline-item"> {{__('guest numbers')}} : {{$unit->guest_numbers}}</li>
                                     </ul>
 
                                     @foreach($unit->facilities as $facility)
@@ -203,9 +203,9 @@
                                 <form method="post" action="{{route('offers.add',[$unit->id,$order->id])}}">
                                     @csrf
                                 <div class="input-field mb-2">
-                                    <input name="price" type="text" class="form-control" placeholder="10,000 ريال"
+                                    <input name="price" type="text" class="form-control" placeholder="10,000 {{__("SAR")}}"
                                            value="{{$unit->amount}}" required min="0" >
-                                    <button type="submit" class="btn btn-mabet" style="padding: 0;margin: 5px 0 0;">ارسال العرض</button>
+                                    <button type="submit" class="btn btn-mabet" style="padding: 0;margin: 5px 0 0;">{{__('Send offer')}}</button>
                                 </div>
                                 </form>
 
@@ -217,7 +217,7 @@
                 </div>
             </div>
         @empty
-            <h3>عفواً لا يوجد مسكن حالياً</h3>
+            <h3>{{__('Sorry, there is no Units available at the moment')}}ً</h3>
         @endforelse
 
 
