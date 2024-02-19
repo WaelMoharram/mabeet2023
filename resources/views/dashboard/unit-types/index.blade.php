@@ -20,7 +20,7 @@
             <div class="card  pb-0 mb-3">
                 <div class="row">
                     <div class="col-lg-9">
-                        @include('dashboard.settings.select')
+                        @include('dashboard.settings.units-settings-select')
 
                     </div>
                     <div class="col-lg-3 text-left">

@@ -85,22 +85,25 @@ Route::middleware(['language'])->group(function () {
         Route::get('/request', [OrderController::class, 'create'])->name('request');
     });
 
-    require __DIR__ . '/auth.php';
-});
 
-Route::get('order-details', [OrderController::class, 'show'])->name('orders.show');
+    Route::get('order-details', [OrderController::class, 'show'])->name('orders.show');
 
 
 // Provider Routes ...
-Route::resource('units', UnitsController::class)->middleware('auth');
-Route::post('get-facilities-by-unit-type-id',[UnitsController::class,'getFacilitiesByUnitTypeId'])->name('get.facilities.by.type');
-Route::post('destroy-unit-image',[UnitsController::class,'destroyUnitImage'])->name('unit.image.destroy');
+    Route::resource('units', UnitsController::class)->middleware('auth');
+    Route::post('get-facilities-by-unit-type-id',[UnitsController::class,'getFacilitiesByUnitTypeId'])->name('get.facilities.by.type');
+    Route::post('destroy-unit-image',[UnitsController::class,'destroyUnitImage'])->name('unit.image.destroy');
 
 
 // Provider Offers pages
-Route::get('provider/offers', [OffersController::class, 'index'])->name('offers');
-Route::get('provider/offers-details/{id}', [OffersController::class, 'show'])->name('offers.show');
-Route::post('provider/offers/add-offer/{unit_id}/{order_id}', [OffersController::class, 'addOffer'])->name('offers.add');
-Route::post('provider/offers/finish-order/{offer_id}', [OffersController::class, 'finishOrderByOfferId'])->name('offers.finish');
+    Route::get('provider/offers', [OffersController::class, 'index'])->name('offers');
+    Route::get('provider/offers-details/{id}', [OffersController::class, 'show'])->name('offers.show');
+    Route::post('provider/offers/add-offer/{unit_id}/{order_id}', [OffersController::class, 'addOffer'])->name('offers.add');
+    Route::post('provider/offers/finish-order/{offer_id}', [OffersController::class, 'finishOrderByOfferId'])->name('offers.finish');
+
+
+
+    require __DIR__ . '/auth.php';
+});
 
 

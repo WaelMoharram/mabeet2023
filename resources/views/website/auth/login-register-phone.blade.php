@@ -1,6 +1,13 @@
 @extends('website.layouts.app')
 @section('title'){!! __('Login') !!}@endsection
+@section('header')
+    <style>
+    @foreach(\App\Models\Country::all() as $country)
 
+        select#phoneCode option[value={{$country->phone_code}}]   { background-image:url({{url($country->image)}});   }
+    @endforeach
+    </style>
+@endsection
 
 
 @section('content')
@@ -47,11 +54,15 @@
                                         <div class="box-details">
                                             <h3>قم بتسجيل الدخول او انشاء حساب جديد</h3>
                                             <p>ادخل كود الدولة ورقم الهاتف للتأكيد</p>
-                                            <input type="number" required class="form-control mb-3"
+                                            <div class="input-group col-md-12" dir="ltr">
+                                                {{Form::select('phone_code', \App\Models\Country::all()->pluck('phone_code','phone_code'), null, ['id'=>'phoneCode','class'=>'form-control col-md-2'] ) }}
 
-                                                   name="phone"
-{{--                                                   oninput="this.value = Math.abs(this.value)"--}}
-                                                   placeholder="كود الدولة ورقم الجوال">
+                                                <div class=" col-md-10">
+                                                    {!! Form::text('phone_value',null,['id'=>'phoneValue','class'=>'form-control col','placeholder'=>__("Phone"),'required']) !!}
+                                                </div>
+                                            </div>
+
+                                            <input id="phone" type="hidden" required class="form-control mb-3" name="phone">
                                         </div>
                                     </div>
                                 </div>
@@ -83,32 +94,49 @@
 @endsection
 @section('footer')
     <script>
-        $(document).ready(function() {
-            // Initially, disable Google and Apple links
-            $('.social-links').addClass('disabled');
+    {{--    $(document).ready(function() {--}}
+    {{--        // Initially, disable Google and Apple links--}}
+    {{--        $('.social-links').addClass('disabled');--}}
 
-            // Handle radio button change event
-            $('input[name="select"]').change(function() {
-                // Check if any radio button is selected
-                const isSelected = $('input[name="select"]:checked').length > 0;
-                $('.social-links').toggleClass('disabled', !isSelected);
+    {{--        // Handle radio button change event--}}
+    {{--        $('input[name="select"]').change(function() {--}}
+    {{--            // Check if any radio button is selected--}}
+    {{--            const isSelected = $('input[name="select"]:checked').length > 0;--}}
+    {{--            $('.social-links').toggleClass('disabled', !isSelected);--}}
 
-                const selectedValue = $('input[name="select"]:checked').val();
-                const googleLink = '{{ route('google-login') }}' + '?type=' + selectedValue;
-                $('#google-link').attr('href', googleLink);
-                // Enable/disable Google and Apple links based on the radio button selection
-            });
+    {{--            const selectedValue = $('input[name="select"]:checked').val();--}}
+    {{--            const googleLink = '{{ route('google-login') }}' + '?type=' + selectedValue;--}}
+    {{--            $('#google-link').attr('href', googleLink);--}}
+    {{--            // Enable/disable Google and Apple links based on the radio button selection--}}
+    {{--        });--}}
 
-            // Handle clicking on links
-            $(document).on('click', '.social-links', function(e) {
-                // Check if the link is disabled
-                if ($(this).hasClass('disabled')) {
-                    e.preventDefault(); // Prevent the default action if the link is disabled
-                } else {
-                    // Perform the desired action when an enabled link is clicked
-                    // For example, you can redirect to the link's href
-                    window.location.href = $(this).attr('href');
-                }
+    {{--        // Handle clicking on links--}}
+    {{--        $(document).on('click', '.social-links', function(e) {--}}
+    {{--            // Check if the link is disabled--}}
+    {{--            if ($(this).hasClass('disabled')) {--}}
+    {{--                e.preventDefault(); // Prevent the default action if the link is disabled--}}
+    {{--            } else {--}}
+    {{--                // Perform the desired action when an enabled link is clicked--}}
+    {{--                // For example, you can redirect to the link's href--}}
+    {{--                window.location.href = $(this).attr('href');--}}
+    {{--            }--}}
+    {{--        });--}}
+    {{--    });--}}
+    </script>
+
+    <script>
+        $(document).ready(function(){
+            // Function to update the phone hidden input
+            function updatePhone() {
+                var phoneCode = $("#phoneCode").val();
+                var phoneValue = $("#phoneValue").val();
+                // Set the value of the hidden input
+                $("#phone").val(phoneCode + phoneValue);
+            }
+
+            // Listen for changes in phone code or phone value inputs
+            $("#phoneCode, #phoneValue").on("change keyup", function(){
+                updatePhone(); // Update the hidden input when there's a change
             });
         });
     </script>

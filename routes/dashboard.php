@@ -43,7 +43,9 @@ Route::name('dashboard.')->middleware(['language', 'auth:admins'])->prefix('dash
     Route::resource('users', \App\Http\Controllers\Dashboard\UserController::class);
 
     Route::resource('admins', \App\Http\Controllers\Dashboard\AdminController::class);
+
     Route::resource('roles', \App\Http\Controllers\Dashboard\RoleController::class);
+    Route::resource('countries', \App\Http\Controllers\Dashboard\CountryController::class);
 
 
     Route::resource('seasons', \App\Http\Controllers\Dashboard\SeasonController::class);

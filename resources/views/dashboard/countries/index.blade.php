@@ -1,16 +1,16 @@
 
 @extends('dashboard.layouts.app')
 @section('title')
-    {!! __('Services') !!}
+    {!! __('Countries') !!}
 @endsection
 @section('header')
 
 @endsection
 @section('breadcrumb')
-    @include('dashboard.layouts.partials._breadcrumb',['level'=>'services'])
+    @include('dashboard.layouts.partials._breadcrumb',['level'=>'countries'])
 @endsection
 @section('btn')
-    @include('dashboard.layouts.partials._add_icon',['route'=>'services'])
+    @include('dashboard.layouts.partials._add_icon',['route'=>'countries'])
 @endsection
 @section('content')
     <div class="main-panel">
@@ -32,7 +32,7 @@
 
 
             </div>
-            @include('dashboard.services.partials._table')
+            @include('dashboard.countries.partials._table')
 
 
         </div>

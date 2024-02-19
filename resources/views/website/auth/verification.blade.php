@@ -69,33 +69,33 @@
 @endsection
 @section('footer')
     <script>
-        $(document).ready(function() {
-            // Initially, disable Google and Apple links
-            $('.social-links').addClass('disabled');
+        {{--$(document).ready(function() {--}}
+        {{--    // Initially, disable Google and Apple links--}}
+        {{--    $('.social-links').addClass('disabled');--}}
 
-            // Handle radio button change event
-            $('input[name="select"]').change(function() {
-                // Check if any radio button is selected
-                const isSelected = $('input[name="select"]:checked').length > 0;
-                $('.social-links').toggleClass('disabled', !isSelected);
+        {{--    // Handle radio button change event--}}
+        {{--    $('input[name="select"]').change(function() {--}}
+        {{--        // Check if any radio button is selected--}}
+        {{--        const isSelected = $('input[name="select"]:checked').length > 0;--}}
+        {{--        $('.social-links').toggleClass('disabled', !isSelected);--}}
 
-                const selectedValue = $('input[name="select"]:checked').val();
-                const googleLink = '{{ route('google-login') }}' + '?type=' + selectedValue;
-                $('#google-link').attr('href', googleLink);
-                // Enable/disable Google and Apple links based on the radio button selection
-            });
+        {{--        const selectedValue = $('input[name="select"]:checked').val();--}}
+        {{--        const googleLink = '{{ route('google-login') }}' + '?type=' + selectedValue;--}}
+        {{--        $('#google-link').attr('href', googleLink);--}}
+        {{--        // Enable/disable Google and Apple links based on the radio button selection--}}
+        {{--    });--}}
 
-            // Handle clicking on links
-            $(document).on('click', '.social-links', function(e) {
-                // Check if the link is disabled
-                if ($(this).hasClass('disabled')) {
-                    e.preventDefault(); // Prevent the default action if the link is disabled
-                } else {
-                    // Perform the desired action when an enabled link is clicked
-                    // For example, you can redirect to the link's href
-                    window.location.href = $(this).attr('href');
-                }
-            });
-        });
+        {{--    // Handle clicking on links--}}
+        {{--    $(document).on('click', '.social-links', function(e) {--}}
+        {{--        // Check if the link is disabled--}}
+        {{--        if ($(this).hasClass('disabled')) {--}}
+        {{--            e.preventDefault(); // Prevent the default action if the link is disabled--}}
+        {{--        } else {--}}
+        {{--            // Perform the desired action when an enabled link is clicked--}}
+        {{--            // For example, you can redirect to the link's href--}}
+        {{--            window.location.href = $(this).attr('href');--}}
+        {{--        }--}}
+        {{--    });--}}
+        {{--});--}}
     </script>
 @endsection

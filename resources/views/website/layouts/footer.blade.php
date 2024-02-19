@@ -11,7 +11,6 @@
                     @endif
                 </div>
                 <p>{{__('Request accommodation and receive offers directly from homeowners')}}</p>
-                <p>أطلب سكن و استقبل عروض من أصحاب المساكن مباشرة</p>
 
             </div>
             <div class="col-lg-12">

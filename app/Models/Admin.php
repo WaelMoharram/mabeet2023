@@ -58,6 +58,7 @@ class Admin extends Authenticatable
         'facilities',
         'services',
         'budgets',
+        'countries',
         'options'
     ];
 

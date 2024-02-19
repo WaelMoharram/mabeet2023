@@ -19,7 +19,14 @@
                 <div class="card-body">
                     <div class="row">
                         <div class="col-lg-9">
-                            <h4 class="card-title">@yield('title')</h4>
+                            <ul class="nav nav-tabs tabs-wg" id="myTab" role="tablist">
+                                @include('dashboard.settings.general-settings-select')
+
+
+
+
+
+                            </ul>
 
                         </div>
                         <div class="col-lg-3 mt-3 text-left">
@@ -29,7 +36,7 @@
                     </div>
 
                     <div class="table-responsive">
-                            @include('dashboard.roles.partials._table')
+                        @include('dashboard.roles.partials._table')
 
                     </div>
                 </div>
@@ -38,6 +45,7 @@
 
         </div>
     </div>
+
 
 @endsection
 
