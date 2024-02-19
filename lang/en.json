@@ -232,5 +232,14 @@
     "enter_code":"Enter the code sent to your mobile number",
     "example":"example",
     "confirm":"Confirm",
-    "add_unit_success_desc": "You can display the residential unit on the residential unit details page until the addition is accepted by the administration."
+    "add_unit_success_desc": "You can display the residential unit on the residential unit details page until the addition is accepted by the administration.",
+    "return to orders":  "return to orders",
+    "Unit": "Unit",
+    "required unit numbers":"required unit numbers",
+    "not specs": "not specs",
+    "view chats": "view chats",
+    "offer accepted":   "offer accepted",
+    "Offer presented with price ":  "Offer presented with price ",
+    "Send offer": "Send offer",
+    "Sorry, there is no accommodation at the moment":"Sorry, there is no accommodation at the moment"
 }
