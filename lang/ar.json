@@ -313,6 +313,7 @@
     "Order time": "وقت الطلب",
     "Unit type": "نوع الوحدة",
     "budget": "الميزانية",
+    "Budget": "الميزانية",
     "New orders": "طلبات جديدة",
     "Approved orders": "طلبات موافق عليها",
     "Completed orders": "طلبات مكتملة",
@@ -388,6 +389,9 @@
     "The request has been rejected": "تم رفض الطلب من الادارة",
     "The request has been canceled": "تم الغاء الطلب",
     "Finished order": "طلب مكتمل",
-    "Order date": "تاريخ الطلب"
+    "Order date": "تاريخ الطلب",
+    "Guests number": "عدد النزلاء",
+    "Start chat": "بدء المحادثة",
+    "Accept offer": "قبول العرض"
 
 }

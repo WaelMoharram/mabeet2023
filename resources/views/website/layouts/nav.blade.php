@@ -11,10 +11,10 @@
         <ul class="navbar-nav mr-auto">
             @auth
 
-                <li class="nav-item list-inline-item">
-                    <a class="nav-item list-inline-item btn"
-                       href="{{route('notifications')}}">{{__('Notifications')}}</a>
-                </li>
+{{--                <li class="nav-item list-inline-item">--}}
+{{--                    <a class="nav-item list-inline-item btn"--}}
+{{--                       href="{{route('notifications')}}">{{__('Notifications')}}</a>--}}
+{{--                </li>--}}
 
                 <li class="nav-item list-inline-item">
                     <a class="nav-item list-inline-item btn" href="{{route('chat')}}">{{__('Chat')}}</a>
@@ -85,9 +85,13 @@
                 <li class="nav-item list-inline-item">
                     <a class="nav-item list-inline-item btn" href="{{route('login')}}">{{__('Login')}}</a>
                 </li>
-                <li class="nav-item list-inline-item">
-                    <a class="nav-item list-inline-item btn" href="about-mabet.html">{{__('About mabeet')}}</a>
-                </li>
+                @foreach(\App\Models\Page::where('show_in_footer',1)->get() as $page)
+                    <li class="nav-item list-inline-item">
+                        <a class="nav-item list-inline-item btn" href="{{route('page',$page->title)}}">{{$page->title}}</a>
+                    </li>
+{{--                    <li><a href="{{route('page',$page->title)}}">{{$page->title}}</a></li>--}}
+                @endforeach
+
                 <li class="nav-item list-inline-item">
                     <a class="nav-item list-inline-item btn" href="#">{{__('Add your unit')}}</a>
                 </li>

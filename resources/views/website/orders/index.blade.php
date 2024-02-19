@@ -200,26 +200,26 @@
                                     <p><b>{{$order->name}}</b></p>
                                     <p class="desc">{{$order->description}}</p>
                                     @if($order->CurrentStatus->status == \App\Models\Order::STATUS_NEW)
-                                        <a  class="btn btn-secondary" >{{__('Waiting for approval')}}</a>
+                                        <a href="{{route('orders.show',$order->id)}}"  class="btn btn-secondary" >{{__('Waiting for approval')}}</a>
                                     @endif
                                     @if($order->CurrentStatus->status == \App\Models\Order::STATUS_REJECTED)
-                                        <a  class="btn btn-danger" >{{__('The request has been rejected')}}</a>
+                                        <a  href="{{route('orders.show',$order->id)}}" class="btn btn-danger" >{{__('The request has been rejected')}}</a>
                                     @endif
                                     @if($order->CurrentStatus->status == \App\Models\Order::STATUS_CANCELED)
-                                        <a  class="btn btn-secondary" >{{__('The request has been canceled')}}</a>
+                                        <a  href="{{route('orders.show',$order->id)}}" class="btn btn-secondary" >{{__('The request has been canceled')}}</a>
                                     @endif
                                     @if($order->CurrentStatus->status == \App\Models\Order::STATUS_COMPLETED)
-                                        <a  class="btn btn-success" >{{__('Finished order')}}</a>
+                                        <a  href="{{route('orders.show',$order->id)}}" class="btn btn-success" >{{__('Finished order')}}</a>
                                     @endif
                                     @if($order->CurrentStatus->status == \App\Models\Order::STATUS_APPROVED)
-                                        <a  class="btn btn-secondary" >{{__('There are no offers for the request')}}</a>
+                                        <a  href="{{route('orders.show',$order->id)}}" class="btn btn-secondary" >{{__('There are no offers for the request')}}</a>
                                     @endif
 
                                     @if($order->CurrentStatus->status == \App\Models\Order::STATUS_PRESENTED)
                                         @if($order->offers->count() <= 0)
-                                            <a href="#" class="btn btn-secondary" >{{__('There are no offers for the request')}}</a>
+                                            <a  href="{{route('orders.show',$order->id)}}" class="btn btn-secondary" >{{__('There are no offers for the request')}}</a>
                                         @else
-                                            <a href="#" class="btn btn-success" >{{$order->offers->count()}} {{__('Offers')}}</a>
+                                            <a  href="{{route('orders.show',$order->id)}}" class="btn btn-success" >{{$order->offers->count()}} {{__('Offers')}}</a>
                                         @endif
                                     @endif
 
@@ -234,31 +234,31 @@
                                             </tr>
                                             <tr>
                                                 <th>{{__('Place')}}</th>
-                                                <td><b>مكة المكرمة</b></td>
+                                                <td><b>{{optional($order->city)->name}}</b></td>
                                             </tr>
                                             <tr>
-                                                <th>الموسم</th>
-                                                <td><b>موسم الحج</b></td>
+                                                <th>{{__('Season')}}</th>
+                                                <td><b>{{optional($order->season)->name}}</b></td>
                                             </tr>
                                             <tr>
-                                                <th>المسافة للمسجد</th>
-                                                <td><b>300 متر او اقل</b></td>
+                                                <th>{{__('The distance to the mosque.')}}</th>
+                                                <td><b><b>{{optional($order->distance)->name}}</b></b></td>
                                             </tr>
                                             <tr>
-                                                <th>الوحدة السكنية</th>
-                                                <td><b>غرفة</b></td>
+                                                <th>{{__('Unit type')}}</th>
+                                                <td><b>{{$order->unitType->name}}</b></td>
                                             </tr>
                                             <tr>
-                                                <th>عدد الوحدات المطلوبة</th>
-                                                <td><b>2</b></td>
+                                                <th>{{__('The number of units required')}}</th>
+                                                <td><b>{{$order->unit_number ?? 0}}</b></td>
                                             </tr>
                                             <tr>
-                                                <th>عدد النزلاء</th>
-                                                <td><b>3</b></td>
+                                                <th>{{__('Guests number')}}</th>
+                                                <td><b>{{$order->guest_number ?? 0}}</b></td>
                                             </tr>
                                             <tr>
-                                                <th>الميزانية</th>
-                                                <td><b>أقل من 5,000</b></td>
+                                                <th>{{__('Budget')}}</th>
+                                                <td><b>{{optional($order->budget)->name}}</b></td>
                                             </tr>
                                             </tbody>
                                         </table>

@@ -1,6 +1,6 @@
 <div class="row mt-5">
     <div class="col-md-3">
-        <a href="{{route('offers')}}" class="d-block text-dark mt-4 mb-4"> <i
+        <a href="{{route('orders')}}" class="d-block text-dark mt-4 mb-4"> <i
                 class="fas fa-arrow-circle-right mx-1 text-dark"></i> عوده للطلبات </a>
 
         {{--        <div class="sidebar my-2">--}}
@@ -104,42 +104,42 @@
     </div>
     <div class="col-md-8 pb-5">
 
-        @forelse($providerUnits as $unit)
+        @forelse($offers as $offer)
             <div class="product-gallery offer-bg mt-5 mb-5">
                 <div class="container">
                     <div class="row">
                         <div class="col-xl-6 col-lg-6">
                             <div class="fotorama" data-nav="thumbs">
-                                <div data-img="{{asset($unit->image1)}}">
+                                <div data-img="{{asset($offer->unit->image1)}}">
                                     <a href="https://www.google.com.tw/" target="_blank"></a>
                                 </div>
-                                @if($unit->image2)
-                                    <div data-img="{{asset($unit->image2)}}">
+                                @if($offer->unit->image2)
+                                    <div data-img="{{asset($offer->unit->image2)}}">
                                         <a href="https://www.google.com.tw/" target="_blank"></a>
                                     </div>
                                 @endif
-                                @if($unit->image3)
-                                    <div data-img="{{asset($unit->image3)}}">
+                                @if($offer->unit->image3)
+                                    <div data-img="{{asset($offer->unit->image3)}}">
                                         <a href="https://www.google.com.tw/" target="_blank"></a>
                                     </div>
                                 @endif
-                                @if($unit->image4)
-                                    <div data-img="{{asset($unit->image4)}}">
+                                @if($offer->unit->image4)
+                                    <div data-img="{{asset($offer->unit->image4)}}">
                                         <a href="https://www.google.com.tw/" target="_blank"></a>
                                     </div>
                                 @endif
-                                @if($unit->image5)
-                                    <div data-img="{{asset($unit->image5)}}">
+                                @if($offer->unit->image5)
+                                    <div data-img="{{asset($offer->unit->image5)}}">
                                         <a href="https://www.google.com.tw/" target="_blank"></a>
                                     </div>
                                 @endif
-                                @if($unit->image6)
-                                    <div data-img="{{asset($unit->image6)}}">
+                                @if($offer->unit->image6)
+                                    <div data-img="{{asset($offer->unit->image6)}}">
                                         <a href="https://www.google.com.tw/" target="_blank"></a>
                                     </div>
                                 @endif
-                                @if($unit->image7)
-                                    <div data-img="{{asset($unit->image7)}}">
+                                @if($offer->unit->image7)
+                                    <div data-img="{{asset($offer->unit->image7)}}">
                                         <a href="https://www.google.com.tw/" target="_blank"></a>
                                     </div>
                                 @endif
@@ -151,21 +151,21 @@
 
                         <div class="col-xl-6 col-lg-6">
                             <div class="box">
-                                <h1 class="mb-3">{{$unit->name}} - {{$unit->city->name}}</h1>
-                                <p>{{$unit->description}}</p>
+                                <h1 class="mb-3">{{$offer->unit->name}} - {{$offer->unit->city->name}}</h1>
+                                <p>{{$offer->unit->description}}</p>
                                 <div class="row p-0 m-0">
                                     <ul class="list-inline flat-option">
                                         <li class="list-inline-item"><img src="{{asset('/')}}asset/images/ico.png"
                                                                           class="img-fluid"></li>
-                                        <li class="list-inline-item">نوع الوحدة : {{$unit->type->name}} </li>
+                                        <li class="list-inline-item">نوع الوحدة : {{$offer->unit->type->name}} </li>
                                     </ul>
                                     <ul class="list-inline flat-option">
                                         <li class="list-inline-item"><img src="{{asset('/')}}asset/images/ico.png"
                                                                           class="img-fluid"></li>
-                                        <li class="list-inline-item"> عدد النزلاء : {{$unit->guest_numbers}}</li>
+                                        <li class="list-inline-item"> عدد النزلاء : {{$offer->unit->guest_numbers}}</li>
                                     </ul>
 
-                                    @foreach($unit->facilities as $facility)
+                                    @foreach($offer->unit->facilities as $facility)
                                         <ul class="list-inline flat-option">
                                             <li class="list-inline-item"><img src="{{asset('/')}}asset/images/ico.png"
                                                                               class="img-fluid"></li>
@@ -189,25 +189,22 @@
                                 {{--                            </div>--}}
 
                                 <div class="row p-0 ">
-                                    @foreach($unit->services as $unitService)
+                                    @foreach($offer->unit->services as $offer->unitService)
                                         <div class="col-lg-4 col-md-6">
                                             <ul class="list-inline" style="font-size: 0.9rem;">
-                                                <li class="list-inline-item"><img src="{{asset($unitService->image)}}"
+                                                <li class="list-inline-item"><img src="{{asset($offer->unitService->image)}}"
                                                                                   class="img-fluid"></li>
-                                                <li class="list-inline-item ">{{$unitService->name}}</li>
+                                                <li class="list-inline-item ">{{$offer->unitService->name}}</li>
                                             </ul>
                                         </div>
                                     @endforeach
                                 </div>
+<div class="row m-3">
+    <a href="{{route('chat',['offer_id'=>$offer->id])}}" class="btn btn-secondary col-md-6 p-2" style="padding: 0;margin: 5px 0 0;">{{__('Start chat')}}</a>
+    <a href="#" class="btn btn-mabet col-md-6 p-2" style="padding: 0;margin: 5px 0 0;">{{__('Accept offer')}}</a>
 
-                                <form method="post" action="{{route('offers.add',[$unit->id,$order->id])}}">
-                                    @csrf
-                                <div class="input-field mb-2">
-                                    <input name="price" type="text" class="form-control" placeholder="10,000 ريال"
-                                           value="{{$unit->amount}}" required min="0" >
-                                    <button type="submit" class="btn btn-mabet" style="padding: 0;margin: 5px 0 0;">ارسال العرض</button>
-                                </div>
-                                </form>
+</div>
+
 
                             </div>
                         </div>

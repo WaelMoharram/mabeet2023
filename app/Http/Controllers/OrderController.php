@@ -101,10 +101,12 @@ class OrderController extends Controller
         return view('website.orders.create',compact('cities','seasons','distances','unitTypes','budgets'));
     }
 
-    public function show():View
+    public function show($id):View
     {
-//        $order = Order::findOrFail($order_id);
-        return view('website.orders.details');
+        $order = Order::findOrFail($id);
+        // provider units should be the same city of order .
+        $offers = $order->offers()->get();
+        return view('website.orders.details',compact('order','offers'));
     }
 
     public function store(AddOrderRequest $request)
