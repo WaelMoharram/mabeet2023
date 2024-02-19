@@ -187,4 +187,13 @@ class OrderController extends Controller
 
         return Redirect::to('/');
     }
+
+    public function accept($id){
+        $offer = Offer::find($id);
+        Offer::where('order_id',$offer->order_id)->update('status',Offer::REJECTED_OFFER);
+        $offer->update(['status'=>Offer::ACCEPTED_OFFER]);
+        toast(__('Offer accepted'),'success');
+        return redirect()->back();
+    }
+
 }

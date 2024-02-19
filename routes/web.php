@@ -64,6 +64,7 @@ Route::middleware(['language'])->group(function () {
             Route::get('create_order', [OrderController::class, 'create'])->name('orders.create');
             Route::post('save_order', [OrderController::class, 'store'])->name('orders.store');
             Route::get('order-details/{id}', [OrderController::class, 'show'])->name('orders.show');
+            Route::get('accept-offer/{id}', [OrderController::class, 'accept'])->name('orders.accept');
 
         });
 

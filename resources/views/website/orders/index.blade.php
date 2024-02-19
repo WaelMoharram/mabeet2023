@@ -211,12 +211,9 @@
                                     @if($order->CurrentStatus->status == \App\Models\Order::STATUS_COMPLETED)
                                         <a  href="{{route('orders.show',$order->id)}}" class="btn btn-success" >{{__('Finished order')}}</a>
                                     @endif
-                                    @if($order->CurrentStatus->status == \App\Models\Order::STATUS_APPROVED)
-                                        <a  href="{{route('orders.show',$order->id)}}" class="btn btn-secondary" >{{__('There are no offers for the request')}}</a>
-                                    @endif
+                                    @if($order->CurrentStatus->status == \App\Models\Order::STATUS_APPROVED || $order->CurrentStatus->status == \App\Models\Order::STATUS_PRESENTED)
 
-                                    @if($order->CurrentStatus->status == \App\Models\Order::STATUS_PRESENTED)
-                                        @if($order->offers->count() <= 0)
+                                        @if($order->offers->count() == 0)
                                             <a  href="{{route('orders.show',$order->id)}}" class="btn btn-secondary" >{{__('There are no offers for the request')}}</a>
                                         @else
                                             <a  href="{{route('orders.show',$order->id)}}" class="btn btn-success" >{{$order->offers->count()}} {{__('Offers')}}</a>

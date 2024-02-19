@@ -93,7 +93,7 @@
                 @endforeach
 
                 <li class="nav-item list-inline-item">
-                    <a class="nav-item list-inline-item btn" href="#">{{__('Add your unit')}}</a>
+                    <a class="nav-item list-inline-item btn" href={{route('units.create')}}>{{__('Add your unit')}}</a>
                 </li>
                 <li class="nav-item list-inline-item">
                     <a href="{{route('orders.create')}}" class="btn btn-mabet btn">{{__('New request')}}</a>

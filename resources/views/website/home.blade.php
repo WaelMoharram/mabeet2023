@@ -9,7 +9,7 @@
     <section class="home-bg">
         <div class="two-cities">
             <div class="container">
-                <h1 class="text-center">أطلب سكن في مكة والمدينة...</h1>
+                <h1 class="text-center">{{__('looking for accommodation in Mecca and Medina...')}}</h1>
                 <p class="text-center">...واستقبل عروض من أصحاب المساكن مباشرة!</p>
                 <div class="row">
                     <div class="col-md-6 wow fadeInUp">
@@ -68,7 +68,7 @@
                 </div>
 
                 <div class="step wow fadeInDown">
-                    <a href="#" class="btn">ابدأ الطلب الآن</a>
+                    <a href="{{route('orders.create')}}" class="btn">{{__('Start order now')}}</a>
                 </div>
 
             </div>
