@@ -59,15 +59,15 @@ class CreatePermissions extends Seeder
 //        Permission::create(['name' => 'edit services','group' => 'services','guard_name' => 'admins']);
 //        Permission::create(['name' => 'delete services','group' => 'services','guard_name' => 'admins']);
 //
-        Permission::create(['name' => 'index budgets','group' => 'budgets','guard_name' => 'admins']);
-        Permission::create(['name' => 'add budgets','group' => 'budgets','guard_name' => 'admins']);
-        Permission::create(['name' => 'edit budgets','group' => 'budgets','guard_name' => 'admins']);
-        Permission::create(['name' => 'delete budgets','group' => 'budgets','guard_name' => 'admins']);
-
-        Permission::create(['name' => 'index countries','group' => 'countries','guard_name' => 'admins']);
-        Permission::create(['name' => 'add countries','group' => 'countries','guard_name' => 'admins']);
-        Permission::create(['name' => 'edit countries','group' => 'countries','guard_name' => 'admins']);
-        Permission::create(['name' => 'delete countries','group' => 'countries','guard_name' => 'admins']);
+//        Permission::create(['name' => 'index budgets','group' => 'budgets','guard_name' => 'admins']);
+//        Permission::create(['name' => 'add budgets','group' => 'budgets','guard_name' => 'admins']);
+//        Permission::create(['name' => 'edit budgets','group' => 'budgets','guard_name' => 'admins']);
+//        Permission::create(['name' => 'delete budgets','group' => 'budgets','guard_name' => 'admins']);
+//
+//        Permission::create(['name' => 'index countries','group' => 'countries','guard_name' => 'admins']);
+//        Permission::create(['name' => 'add countries','group' => 'countries','guard_name' => 'admins']);
+//        Permission::create(['name' => 'edit countries','group' => 'countries','guard_name' => 'admins']);
+//        Permission::create(['name' => 'delete countries','group' => 'countries','guard_name' => 'admins']);
 
 
     }
