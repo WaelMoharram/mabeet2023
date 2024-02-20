@@ -79,7 +79,7 @@ class LoginController extends Controller
         $verifyCode = rand(1000,9999);
         $user->update(['verify_code'=>$verifyCode]);
         // send whatsapp
-        send_whatsapp($user->phone,"".$verifyCode);
+        send_whatsapp($user->phone,__('Your OTP to login to Mabeet is : ').$verifyCode);
 
 
         \session()->flash("success",'Verify your phone.');
