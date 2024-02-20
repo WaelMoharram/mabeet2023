@@ -76,7 +76,11 @@ class LoginController extends Controller
             ['phone' => request('phone')],
             ['type' =>  request('type')],
         );
-        $user->update(['verify_code'=>1111]);
+        $verifyCode = rand(1000,9999);
+        $user->update(['verify_code'=>$verifyCode]);
+        // send whatsapp
+        send_whatsapp($user->phone,"".$verifyCode);
+
 
         \session()->flash("success",'Verify your phone.');
         return redirect()->route('verify',['phone'=>request('phone')]);

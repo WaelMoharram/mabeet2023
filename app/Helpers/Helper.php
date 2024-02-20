@@ -184,6 +184,28 @@ function googleOauth(){
       ]);
 
 }
+function send_whatsapp($phone, $message)
 {
+    $curl = curl_init();
 
+    $data = array(
+        "number"=>$phone,
+        "message"=>$message,
+    );
+
+    curl_setopt_array($curl, array(
+        CURLOPT_URL => env("WHATSAPP_BASE_URL"),
+        CURLOPT_RETURNTRANSFER => true,
+        CURLOPT_CUSTOMREQUEST => "POST",
+        CURLOPT_POSTFIELDS => json_encode($data),
+        CURLOPT_HTTPHEADER => array(
+            "Authorization: Bearer ".env("WHATSAPP_AUTH_TOKEN"),
+            "Content-Type: application/json",
+            "Accept: application/json"
+        ),
+    ));
+
+    $response = curl_exec($curl);
+    $err = curl_error($curl);
+    curl_close($curl);
 }
