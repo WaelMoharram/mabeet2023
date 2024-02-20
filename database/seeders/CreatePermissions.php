@@ -5,7 +5,7 @@ namespace Database\Seeders;
 use Illuminate\Database\Seeder;
 use Spatie\Permission\Models\Permission;
 
-class createPermissions extends Seeder
+class CreatePermissions extends Seeder
 {
     /**
      * Run the database seeds.
